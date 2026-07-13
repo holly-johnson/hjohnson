@@ -36,12 +36,20 @@ Source Figma Make file: `fIp92WTgzbxcxRSqM9mIRU` (HJohnson-Design).
   - The four per-project diagrams as components under `home/diagrams/`
     (`penlink`, `nucleus`, `ai`, `analysis`) — wired via `@switch(project.id)`
   - Metrics section (15+ / 9+ / 20+ / 2) and dark CTA
+- DONE — Resume page (`Resume.tsx`), real NotFound, shared `app-icon` (inline lucide)
+- DONE — Penlink case study (`PenLinkCaseStudy.tsx`) with 16 real screenshots +
+  pure-markup token-architecture diagram
 - TODO:
-  - Resume page ← `Resume.tsx`
-  - The four case-study pages ← `components/work/*CaseStudy.tsx`
-  - Contact ← `Contact.tsx`
-  - Footer (the Make source has none wired into `Root`; confirm design intent)
-  - Case-study screenshot assets (222 PNGs in the Make file) → `src/assets/`
+  - Remaining 3 case studies ← `AnalysisWorkflow` / `NUcleus` / `AIDesign` `CaseStudy.tsx`
+    (same layout pattern as Penlink; each needs its own images pulled from the Make file)
+  - Contact ← `Contact.tsx` — SKIPPED (orphaned in source: no route, placeholder data)
+
+## Image pipeline (case studies)
+Make images live at `file://figma/make/image/<fileKey>/<hash>.png`. Reading each via the
+figma MCP resource saves the binary to disk (no base64 in context); copy into
+`projects/portfolio/public/assets/work/` and reference as `assets/work/<name>.png`
+(resolves via `<base href="/">`). NOTE: the dev server only scans `public/` at startup —
+restart `ng serve` after adding new static files.
 
 ## Preview pane caveat
 The in-app Browser pane renders this app with `window.innerWidth === 0`, which

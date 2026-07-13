@@ -1,15 +1,16 @@
 import { Routes } from '@angular/router';
 import { Home } from './components/home/home';
 import { Resume } from './components/resume/resume';
+import { PenlinkCaseStudy } from './components/work/penlink-case-study';
 import { Stub } from './components/stub/stub';
 import { NotFound } from './components/not-found/not-found';
 
-// Mirrors the Figma Make router (src/app/routes.ts). Home + Resume are built;
-// the four case studies are stubs until they're ported.
+// Mirrors the Figma Make router (src/app/routes.ts). Home + Resume + the Penlink
+// case study are built; the remaining three case studies are stubs.
 export const routes: Routes = [
   { path: '', component: Home, title: 'Holly Johnson — UX Designer' },
   { path: 'resume', component: Resume, title: 'Resume — Holly Johnson' },
-  { path: 'work/penlink', component: Stub, title: 'Penlink Design System — Holly Johnson' },
+  { path: 'work/penlink', component: PenlinkCaseStudy, title: 'Penlink Design System — Holly Johnson' },
   { path: 'work/analysis-workflow', component: Stub, title: 'Investigative Analysis Workflow — Holly Johnson' },
   { path: 'work/nucleus', component: Stub, title: 'NUcleus Design System — Holly Johnson' },
   { path: 'work/ai-design', component: Stub, title: 'UX Doesn’t Stop at Design — Holly Johnson' },
