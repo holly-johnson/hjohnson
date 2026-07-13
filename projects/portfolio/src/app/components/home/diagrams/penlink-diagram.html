@@ -1,0 +1,162 @@
+<div class="w-full h-full relative bg-secondary/30 flex items-center justify-center overflow-hidden p-8">
+  <div class="w-full h-full relative">
+
+    <!-- Row 1 - Top Left - Line Chart -->
+    <div class="absolute top-6 left-6 w-48 h-24 border border-border bg-background p-3">
+      <div class="flex items-end justify-between h-full gap-1">
+        <div class="relative flex-1">
+          <svg width="100%" height="60" viewBox="0 0 160 60" class="absolute bottom-0">
+            <polyline points="0,45 20,38 40,42 60,28 80,32 100,18 120,22 140,12 160,16" fill="none" stroke="currentColor" stroke-width="2" class="text-primary" />
+            <polyline points="0,45 20,38 40,42 60,28 80,32 100,18 120,22 140,12 160,16 160,60 0,60" fill="currentColor" class="text-[#E8D8CC]" />
+          </svg>
+        </div>
+      </div>
+      <div class="flex justify-between mt-1">
+        <div class="text-[8px] font-mono text-muted-foreground">Jan</div>
+        <div class="text-[8px] font-mono text-muted-foreground">Jun</div>
+        <div class="text-[8px] font-mono text-muted-foreground">Dec</div>
+      </div>
+    </div>
+
+    <!-- Row 1 - Top Center - Data Table -->
+    <div class="absolute top-4 left-64 w-36 border border-border bg-background">
+      <div class="grid grid-cols-3 gap-px bg-border">
+        <div class="bg-secondary px-2 py-1 text-[8px] font-mono text-muted-foreground font-bold">ID</div>
+        <div class="bg-secondary px-2 py-1 text-[8px] font-mono text-muted-foreground font-bold">Status</div>
+        <div class="bg-secondary px-2 py-1 text-[8px] font-mono text-muted-foreground font-bold">Val</div>
+        <div class="bg-background px-2 py-1 text-[8px] font-mono text-foreground">001</div>
+        <div class="bg-background px-2 py-1 text-[8px]"><div class="w-2 h-2 rounded-full bg-primary inline-block"></div></div>
+        <div class="bg-background px-2 py-1 text-[8px] font-mono text-primary">87</div>
+        <div class="bg-background px-2 py-1 text-[8px] font-mono text-foreground">002</div>
+        <div class="bg-background px-2 py-1 text-[8px]"><div class="w-2 h-2 rounded-full bg-border inline-block"></div></div>
+        <div class="bg-background px-2 py-1 text-[8px] font-mono text-muted-foreground">42</div>
+        <div class="bg-background px-2 py-1 text-[8px] font-mono text-foreground">003</div>
+        <div class="bg-background px-2 py-1 text-[8px]"><div class="w-2 h-2 rounded-full bg-primary inline-block"></div></div>
+        <div class="bg-background px-2 py-1 text-[8px] font-mono text-primary">95</div>
+      </div>
+    </div>
+
+    <!-- Row 1 - Top Right - KPI Cards -->
+    <div class="absolute top-6 right-6 flex gap-2">
+      <div class="w-20 border border-border bg-background p-2">
+        <div class="text-[8px] font-mono text-muted-foreground mb-1">TOTAL</div>
+        <div class="text-lg font-bold text-foreground">1.2K</div>
+        <div class="text-[8px] font-mono text-primary">+12%</div>
+      </div>
+      <div class="w-20 border border-border bg-background p-2">
+        <div class="text-[8px] font-mono text-muted-foreground mb-1">ACTIVE</div>
+        <div class="text-lg font-bold text-foreground">847</div>
+        <div class="text-[8px] font-mono text-primary">+8%</div>
+      </div>
+    </div>
+
+    <!-- Row 2 - Left - Bar Chart -->
+    <div class="absolute top-32 left-4 w-32 h-20 border border-border bg-background p-2">
+      <div class="flex items-end justify-between h-full gap-1">
+        <div class="w-3 bg-foreground/15" style="height:40%"></div>
+        <div class="w-3 bg-foreground/15" style="height:65%"></div>
+        <div class="w-3 bg-[#D06A3D]" style="height:85%"></div>
+        <div class="w-3 bg-foreground/15" style="height:55%"></div>
+        <div class="w-3 bg-foreground/15" style="height:70%"></div>
+        <div class="w-3 bg-foreground/15" style="height:45%"></div>
+      </div>
+    </div>
+
+    <!-- Row 2 - Center - Timeline/Gantt -->
+    <div class="absolute top-36 left-40 w-48 border border-border bg-background p-2">
+      <div class="space-y-1.5">
+        <div class="flex items-center gap-2">
+          <div class="text-[8px] font-mono text-muted-foreground w-12">Task A</div>
+          <div class="flex-1 h-2 bg-secondary relative"><div class="absolute left-[10%] w-[30%] h-full bg-foreground/30"></div></div>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="text-[8px] font-mono text-muted-foreground w-12">Task B</div>
+          <div class="flex-1 h-2 bg-secondary relative"><div class="absolute left-[25%] w-[45%] h-full bg-foreground/20"></div></div>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="text-[8px] font-mono text-muted-foreground w-12">Task C</div>
+          <div class="flex-1 h-2 bg-secondary relative"><div class="absolute left-[50%] w-[25%] h-full bg-border"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 - Right - Progress Rings -->
+    <div class="absolute top-32 right-8 flex gap-3">
+      <div class="relative w-16 h-16">
+        <svg class="w-full h-full -rotate-90">
+          <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="4" class="text-border" />
+          <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="4" class="text-foreground/35" stroke-dasharray="175.93" stroke-dashoffset="44" />
+        </svg>
+        <div class="absolute inset-0 flex items-center justify-center"><div class="text-xs font-bold text-foreground/50">75%</div></div>
+      </div>
+      <div class="relative w-16 h-16">
+        <svg class="w-full h-full -rotate-90">
+          <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="4" class="text-border" />
+          <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="4" class="text-foreground/35" stroke-dasharray="175.93" stroke-dashoffset="88" />
+        </svg>
+        <div class="absolute inset-0 flex items-center justify-center"><div class="text-xs font-bold text-foreground/50">50%</div></div>
+      </div>
+    </div>
+
+    <!-- Row 3 - Bottom Left - Heatmap Grid -->
+    <div class="absolute bottom-20 left-6 border border-border bg-background p-2">
+      <div class="grid grid-cols-8 gap-0.5">
+        <div class="w-3 h-3 bg-foreground/10"></div>
+        <div class="w-3 h-3 bg-foreground/20"></div>
+        <div class="w-3 h-3 bg-foreground/35"></div>
+        <div class="w-3 h-3 bg-foreground/55"></div>
+        <div class="w-3 h-3 bg-foreground/40"></div>
+        <div class="w-3 h-3 bg-foreground/15"></div>
+        <div class="w-3 h-3 bg-foreground/25"></div>
+        <div class="w-3 h-3 bg-foreground/45"></div>
+        <div class="w-3 h-3 bg-foreground/15"></div>
+        <div class="w-3 h-3 bg-foreground/25"></div>
+        <div class="w-3 h-3 bg-foreground/40"></div>
+        <div class="w-3 h-3 bg-foreground/50"></div>
+        <div class="w-3 h-3 bg-foreground/30"></div>
+        <div class="w-3 h-3 bg-foreground/20"></div>
+        <div class="w-3 h-3 bg-foreground/10"></div>
+        <div class="w-3 h-3 bg-foreground/25"></div>
+      </div>
+      <div class="text-[7px] font-mono text-muted-foreground mt-1">Activity Matrix</div>
+    </div>
+
+    <!-- Row 3 - Bottom Center - Network Graph -->
+    <div class="absolute bottom-16 left-1/2 -translate-x-1/2 w-40 h-28 border border-border bg-background p-3 relative">
+      <div class="absolute top-4 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-foreground/50 border-2 border-background z-10"></div>
+      <div class="absolute top-12 left-6 w-2.5 h-2.5 rounded-full bg-foreground/30 border-2 border-background z-10"></div>
+      <div class="absolute top-12 right-6 w-2.5 h-2.5 rounded-full bg-foreground/30 border-2 border-background z-10"></div>
+      <div class="absolute bottom-4 left-8 w-2 h-2 rounded-full bg-foreground/20 border-2 border-background z-10"></div>
+      <div class="absolute bottom-4 right-8 w-2 h-2 rounded-full bg-foreground/20 border-2 border-background z-10"></div>
+      <svg class="absolute inset-0 w-full h-full">
+        <line x1="50%" y1="16" x2="24" y2="48" stroke="currentColor" stroke-width="1" class="text-border" />
+        <line x1="50%" y1="16" x2="116" y2="48" stroke="currentColor" stroke-width="1" class="text-border" />
+        <line x1="24" y1="48" x2="32" y2="84" stroke="currentColor" stroke-width="1" class="text-border" />
+        <line x1="116" y1="48" x2="108" y2="84" stroke="currentColor" stroke-width="1" class="text-border" />
+      </svg>
+    </div>
+
+    <!-- Row 3 - Bottom Right - Metrics List -->
+    <div class="absolute bottom-8 right-6 w-32 border border-border bg-background p-2 space-y-1.5">
+      <div class="flex items-center justify-between">
+        <div class="text-[8px] font-mono text-muted-foreground">Latency</div>
+        <div class="text-[8px] font-mono text-primary font-bold">42ms</div>
+      </div>
+      <div class="h-px bg-border"></div>
+      <div class="flex items-center justify-between">
+        <div class="text-[8px] font-mono text-muted-foreground">Success</div>
+        <div class="text-[8px] font-mono text-primary font-bold">99.8%</div>
+      </div>
+      <div class="h-px bg-border"></div>
+      <div class="flex items-center justify-between">
+        <div class="text-[8px] font-mono text-muted-foreground">Errors</div>
+        <div class="text-[8px] font-mono text-muted-foreground">0.2%</div>
+      </div>
+    </div>
+
+    <!-- Decorative Data Points -->
+    <div class="absolute top-28 left-1/3"><div class="w-1.5 h-1.5 bg-foreground/30 rotate-45"></div></div>
+    <div class="absolute bottom-32 right-1/4"><div class="w-1.5 h-1.5 border border-foreground/25 rotate-45"></div></div>
+
+  </div>
+</div>

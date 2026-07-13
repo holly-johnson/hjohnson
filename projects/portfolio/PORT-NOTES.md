@@ -30,15 +30,24 @@ Source Figma Make file: `fIp92WTgzbxcxRSqM9mIRU` (HJohnson-Design).
   Selected Work (4 project cards) ← `Home.tsx`
 - `Stub` — placeholder for the not-yet-ported routes
 
-**Phase 2 — TODO**
-- Selected Work card previews: the rich per-project inline-SVG diagrams (Penlink data
-  dashboard, NUcleus website viz, AI design-to-code triptych). Phase 1 uses a simple
-  `❖ {title}` placeholder motif in their place.
-- Resume page ← `Resume.tsx`
-- The four case-study pages ← `components/work/*CaseStudy.tsx`
-- Contact ← `Contact.tsx`
-- Footer (the Make source has none wired into `Root`; confirm design intent)
-- Case-study screenshot assets (222 PNGs in the Make file) → `src/assets/`
+**Phase 2 — IN PROGRESS**
+- DONE — Home fully ported to match source:
+  - Real Selected Work card body (0N index, impact with orange rule, discipline + role tags)
+  - The four per-project diagrams as components under `home/diagrams/`
+    (`penlink`, `nucleus`, `ai`, `analysis`) — wired via `@switch(project.id)`
+  - Metrics section (15+ / 9+ / 20+ / 2) and dark CTA
+- TODO:
+  - Resume page ← `Resume.tsx`
+  - The four case-study pages ← `components/work/*CaseStudy.tsx`
+  - Contact ← `Contact.tsx`
+  - Footer (the Make source has none wired into `Root`; confirm design intent)
+  - Case-study screenshot assets (222 PNGs in the Make file) → `src/assets/`
+
+## Preview pane caveat
+The in-app Browser pane renders this app with `window.innerWidth === 0`, which
+collapses responsive breakpoints (grid cols → 0px, page height balloons) and blanks
+scrolled screenshots. Not a code issue — build is clean, DOM/tokens verified. Real
+visual sign-off must happen in a normal browser at a real width.
 
 ## Verify
 `npx ng serve portfolio --port 4200` → http://localhost:4200. Hero + nav confirmed

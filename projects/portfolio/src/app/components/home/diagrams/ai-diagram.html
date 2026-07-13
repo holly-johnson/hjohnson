@@ -1,0 +1,191 @@
+<div class="w-full h-full relative flex overflow-hidden" style="background:#1C1912">
+  <!-- Dot grid backdrop -->
+  <div class="absolute inset-0 opacity-[0.07]" style="background-image: radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 18px 18px"></div>
+
+  <!-- ── LEFT: Figma Panel (light) ───────────────────────── -->
+  <div class="relative z-10 flex flex-col border-r border-zinc-300" style="width:28%; background:#F0EBE3">
+    <!-- macOS title bar -->
+    <div class="h-6 flex items-center px-2 gap-1.5 border-b border-zinc-200 flex-shrink-0" style="background:#EDE8E1">
+      <div class="flex gap-1">
+        <div class="w-2 h-2 rounded-full bg-[#ff5f57]"></div>
+        <div class="w-2 h-2 rounded-full bg-[#febc2e]"></div>
+        <div class="w-2 h-2 rounded-full bg-[#28c840]"></div>
+      </div>
+      <span class="font-mono text-[7.5px] text-zinc-400 ml-1 truncate">Design System.fig</span>
+    </div>
+    <!-- Figma toolbar strip -->
+    <div class="h-5 border-b border-zinc-200 flex items-center px-2 gap-2 flex-shrink-0" style="background:#EAE5DE">
+      <svg width="8" height="8" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" class="text-zinc-400"><path d="M3 3l4 4-4 4M9 11h4" /></svg>
+      <div class="w-px h-3 bg-zinc-200"></div>
+      @for (t of toolbar; track t) {
+        <span class="text-[7px] font-mono text-zinc-400">{{ t }}</span>
+      }
+    </div>
+    <!-- Layers panel -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <div class="px-2 py-1 border-b border-zinc-100">
+        <span class="text-[7px] font-mono text-zinc-400 uppercase tracking-wider">Layers</span>
+      </div>
+      @for (layer of layers; track $index) {
+        <div
+          class="flex items-center py-[3px] text-[7.5px] font-mono border-l-2"
+          [class]="layer.active ? 'border-l-primary text-zinc-800' : 'border-l-transparent text-zinc-500'"
+          [style.padding-left.px]="layer.depth * 8 + 6"
+          [style.background]="layer.active ? '#E8D8CC' : 'transparent'"
+        >
+          @if (layer.open) { <span class="mr-0.5 text-zinc-300">▾</span> }
+          {{ layer.label }}
+        </div>
+      }
+    </div>
+    <!-- Inspect panel -->
+    <div class="border-t border-zinc-200 px-2 py-1.5 flex-shrink-0" style="background:#fafafa">
+      <div class="text-[7px] font-mono text-zinc-400 uppercase tracking-wider mb-1">Inspect</div>
+      <div class="space-y-0.5">
+        @for (row of inspect; track row[0]) {
+          <div class="flex justify-between items-center">
+            <span class="text-[7px] font-mono text-zinc-400">{{ row[0] }}</span>
+            <span class="text-[7px] font-mono" [class]="row[0] === 'Fill' ? 'text-primary' : 'text-zinc-600'">{{ row[1] }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CENTER: Terminal running Claude ──────────────────── -->
+  <div class="relative z-10 flex flex-col flex-shrink-0 border-l border-r border-zinc-800" style="width:44%; background:#201C17">
+    <!-- Terminal title bar -->
+    <div class="h-6 flex items-center px-2 gap-1.5 border-b border-zinc-800 flex-shrink-0" style="background:#271F19">
+      <div class="flex gap-1">
+        <div class="w-2 h-2 rounded-full bg-[#ff5f57]"></div>
+        <div class="w-2 h-2 rounded-full bg-[#febc2e]"></div>
+        <div class="w-2 h-2 rounded-full bg-[#28c840]"></div>
+      </div>
+      <span class="font-mono text-[8px] text-zinc-500 mx-auto">terminal — claude</span>
+    </div>
+
+    <!-- Terminal body -->
+    <div class="flex-1 px-2.5 py-2 font-mono text-[7.5px] leading-[1.75] overflow-hidden">
+      <!-- Shell prompt + command -->
+      <div class="flex items-center gap-1">
+        <span class="text-[#28c840]">~</span>
+        <span class="text-zinc-500">$</span>
+        <span class="text-zinc-200 ml-1">claude</span>
+      </div>
+
+      <!-- Claude REPL header -->
+      <div class="text-zinc-700">╭─────────────────────────╮</div>
+      <div><span class="text-zinc-700">│ </span><span class="text-zinc-300">Claude Code</span><span class="text-zinc-700">            │</span></div>
+      <div><span class="text-zinc-700">│ </span><span class="text-zinc-600">sonnet-4-5 · mcp on</span><span class="text-zinc-700">    │</span></div>
+      <div class="text-zinc-700">╰─────────────────────────╯</div>
+
+      <!-- User message -->
+      <div class="mt-0.5 flex gap-1">
+        <span class="text-primary">❯</span>
+        <span class="text-zinc-300">translate Button to Angular</span>
+      </div>
+      <div class="pl-3 text-zinc-600">using figma MCP + design tokens</div>
+
+      <!-- Thinking -->
+      <div class="mt-0.5 flex gap-1 items-center">
+        <span class="text-[#D06A3D]">✻</span>
+        <span class="text-zinc-600">Thinking…</span>
+      </div>
+
+      <!-- Tool calls -->
+      <div class="flex gap-1.5 items-baseline">
+        <span class="text-[#28c840]">✔</span>
+        <span class="text-zinc-500">figma_read<span class="text-zinc-700">(Button)</span></span>
+      </div>
+      <div class="flex gap-1.5 items-baseline">
+        <span class="text-[#28c840]">✔</span>
+        <span class="text-zinc-500">parse_tokens<span class="text-zinc-700"> → 4 found</span></span>
+      </div>
+      <div class="flex gap-1.5 items-baseline">
+        <span class="text-[#28c840]">✔</span>
+        <span class="text-zinc-500">map_variants<span class="text-zinc-700"> → 3 states</span></span>
+      </div>
+      <div class="flex gap-1.5 items-baseline">
+        <span class="text-primary animate-pulse">⟳</span>
+        <span class="text-[#D06A3D]">write_file<span class="text-[#7A2C10]">(button.component.ts)</span></span>
+      </div>
+
+      <!-- Divider -->
+      <div class="my-1.5 h-px bg-zinc-800"></div>
+
+      <!-- Response -->
+      <div class="text-zinc-500">Generated <span class="text-primary">ButtonComponent</span></div>
+      <div class="text-zinc-600 pl-1">· &#64;Input() label, variant</div>
+      <div class="text-zinc-600 pl-1">· ds-button selector</div>
+      <div class="text-zinc-600 pl-1">· token-mapped styles</div>
+
+      <!-- Next prompt with blinking cursor -->
+      <div class="mt-1.5 flex items-center gap-1">
+        <span class="text-[#28c840]">~</span>
+        <span class="text-zinc-500">$</span>
+        <span class="inline-block w-[5px] h-[9px] bg-zinc-400 ml-1 animate-pulse"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RIGHT: VS Code / Angular Output ─────────────────── -->
+  <div class="relative z-10 flex flex-col border-l border-zinc-800 font-mono flex-1 overflow-hidden" style="background:#252119">
+    <!-- Tab bar -->
+    <div class="h-6 flex items-end border-b border-zinc-800 flex-shrink-0" style="background:#2A261E">
+      <div class="px-2.5 h-full flex items-center border-t border-primary text-zinc-200 text-[7.5px] gap-1" style="background:#252119">
+        <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#dd0031]"><polygon points="12,2 2,7 2,17 12,22 22,17 22,7" /></svg>
+        button.component.ts
+      </div>
+      <div class="px-2.5 h-full flex items-center text-zinc-600 text-[7.5px]">button.scss</div>
+    </div>
+    <!-- Auto-generated banner -->
+    <div class="border-b border-[#C8AFA4] px-2 py-1 flex-shrink-0 flex items-center gap-1.5" style="background:#E8D8CC">
+      <span class="w-1 h-1 rounded-full bg-[#B04318] animate-pulse"></span>
+      <span class="font-mono text-[7px] text-[#7A2C10]">// auto-generated · claude+mcp</span>
+    </div>
+    <!-- Code + line numbers -->
+    <div class="flex flex-1 overflow-hidden">
+      <div class="flex flex-col text-zinc-700 text-right px-1 py-1.5 leading-[1.6] select-none border-r border-zinc-800 flex-shrink-0 text-[7px]" style="background:#201C17">
+        @for (n of lineNumbers; track n) { <span>{{ n }}</span> }
+      </div>
+      <div class="flex-1 px-2 py-1.5 overflow-hidden leading-[1.6] text-[7px]">
+        <div><span class="text-[#c586c0]">import</span> <span class="text-zinc-300">&#123; Component, Input &#125;</span></div>
+        <div><span class="text-[#c586c0]">  from</span> <span class="text-[#ce9178]">'&#64;angular/core'</span>;</div>
+        <div>&nbsp;</div>
+        <div><span class="text-[#c586c0]">&#64;Component</span><span class="text-zinc-400">(&#123;</span></div>
+        <div>&nbsp;<span class="text-[#9cdcfe]">selector</span>: <span class="text-[#ce9178]">'ds-button'</span>,</div>
+        <div>&nbsp;<span class="text-[#9cdcfe]">styles</span>: [<span class="text-[#ce9178]">`</span></div>
+        <div>&nbsp;&nbsp;<span class="text-[#ce9178]">:host &#123; display:block &#125;</span></div>
+        <div>&nbsp;<span class="text-[#ce9178]">`</span>],</div>
+        <div>&nbsp;<span class="text-[#9cdcfe]">template</span>: <span class="text-[#ce9178]">`</span></div>
+        <div>&nbsp;&nbsp;<span class="text-zinc-400">&lt;button</span> <span class="text-[#9cdcfe]">[class]</span>=<span class="text-[#ce9178]">"cls"</span><span class="text-zinc-400">&gt;</span></div>
+        <div>&nbsp;&nbsp;&nbsp;<span class="text-zinc-300">{{ labelBinding }}</span></div>
+        <div>&nbsp;&nbsp;<span class="text-zinc-400">&lt;/button&gt;</span><span class="text-[#ce9178]">`</span>,</div>
+        <div><span class="text-zinc-400">&#125;</span>)</div>
+        <div><span class="text-[#c586c0]">export class</span> <span class="text-[#4ec9b0]">ButtonComponent</span> <span class="text-zinc-400">&#123;</span></div>
+        <div class="flex items-center">
+          <span>&nbsp;</span>
+          <span class="text-[#c586c0]">&#64;Input</span>
+          <span class="text-zinc-400">()</span>
+          <span class="text-[#9cdcfe]"> label</span>
+          <span class="text-zinc-400"> = </span>
+          <span class="text-[#ce9178]">'Submit'</span>
+          <span class="inline-block w-[4px] h-[8px] bg-primary ml-0.5 animate-pulse"></span>
+        </div>
+      </div>
+    </div>
+    <!-- VS Code status bar -->
+    <div class="h-3.5 flex items-center px-2 gap-3 flex-shrink-0" style="background:#007acc">
+      <span class="text-[6.5px] text-[#F2EEE9]/80 flex items-center gap-1">
+        <span class="w-1 h-1 rounded-full bg-green-400 inline-block"></span>Angular · TS
+      </span>
+      <span class="text-[6.5px] text-[#F2EEE9]/40 ml-auto">UTF-8</span>
+    </div>
+  </div>
+
+  <!-- Floating status chip -->
+  <div class="absolute top-2 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 px-2.5 py-1 border border-[#C8AFA4] shadow-[0_0_10px_#C8AFA4]" style="background: rgba(28,25,18,0.96)">
+    <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+    <span class="font-mono text-[8.5px] text-primary tracking-wider">status: generating</span>
+  </div>
+</div>

@@ -1,10 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { PenlinkDiagram } from './diagrams/penlink-diagram';
+import { NucleusDiagram } from './diagrams/nucleus-diagram';
+import { AiDiagram } from './diagrams/ai-diagram';
+import { AnalysisDiagram } from './diagrams/analysis-diagram';
 
 interface Approach {
   num: string;
   title: string;
   desc: string;
+}
+
+interface Metric {
+  label: string;
+  value: string;
 }
 
 interface Project {
@@ -19,10 +28,17 @@ interface Project {
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink],
+  imports: [RouterLink, PenlinkDiagram, NucleusDiagram, AiDiagram, AnalysisDiagram],
   templateUrl: './home.html',
 })
 export class Home {
+  protected readonly metrics: Metric[] = [
+    { label: 'years_exp', value: '15+' },
+    { label: 'brands_unified', value: '9+' },
+    { label: 'platforms', value: '20+' },
+    { label: 'systems_led', value: '2' },
+  ];
+
   protected readonly social = {
     linkedin: 'https://www.linkedin.com/in/holly-johnson-27336129/',
     email: 'mailto:hme2784@gmail.com',
