@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["ng", "serve", "portfolio", "--port", "4200"],
+      "port": 4200
+    },
+    {
+      "name": "cultivate",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["ng", "serve", "cultivate", "--port", "4300"],
+      "port": 4300
+    }
+  ]
+}

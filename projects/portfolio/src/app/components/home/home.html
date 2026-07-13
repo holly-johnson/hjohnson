@@ -1,0 +1,221 @@
+<div>
+  <!-- ── Hero ──────────────────────────────────────────────────── -->
+  <section class="min-h-screen flex items-center relative bg-[#171513] pt-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Left content -->
+        <div class="space-y-8">
+          <div class="space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-[#3D2A1E] font-mono text-xs" style="background: #2A1E18">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #D06A3D">
+                <path d="m4 17 6-6-6-6" /><path d="M12 19h8" />
+              </svg>
+              <span style="color: #D06A3D">status: available</span>
+            </div>
+
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-[#F2EEE9]">
+              Bringing clarity to <span class="text-[#B04318]">complex</span> products
+            </h1>
+
+            <p class="text-lg max-w-xl leading-relaxed" style="color: #C9C1B8">
+              UX designer specializing in design systems and product platforms that connect design, engineering, and real user workflows.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a
+              routerLink="/"
+              fragment="work"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-[#B04318] text-[#F2EEE9] hover:bg-[#913615] transition-colors font-medium border border-[#913615]"
+            >
+              View Work
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+            <a
+              routerLink="/resume"
+              class="inline-flex items-center gap-2 px-6 py-3 border border-[#F2EEE9]/30 text-[#F2EEE9] hover:bg-[#F2EEE9] hover:text-[#171513] transition-colors font-medium"
+            >
+              Resume
+            </a>
+          </div>
+
+          <div class="flex gap-4">
+            <a
+              [href]="social.linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-10 h-10 border border-[#F2EEE9]/20 text-[#F2EEE9] flex items-center justify-center hover:border-[#F2EEE9] hover:bg-[#F2EEE9] hover:text-[#171513] transition-all"
+              aria-label="LinkedIn"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a
+              [href]="social.email"
+              class="w-10 h-10 border border-[#F2EEE9]/20 text-[#F2EEE9] flex items-center justify-center hover:border-[#F2EEE9] hover:bg-[#F2EEE9] hover:text-[#171513] transition-all"
+              aria-label="Email"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right — Half Figma / Half VS Code graphic -->
+        <div class="hidden lg:block relative w-full h-[400px]" style="opacity: 0.85">
+          <div class="absolute inset-0 border border-border bg-card flex overflow-hidden shadow-sm">
+
+            <!-- Left: Design (Figma) -->
+            <div class="w-1/2 border-r border-border relative bg-[#F7F6F4] dark:bg-zinc-900 flex flex-col">
+              <div class="h-10 border-b border-border bg-card flex items-center px-4 gap-4">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-foreground">
+                  <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
+                </svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-muted-foreground">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                </svg>
+                <div class="w-px h-4 bg-border mx-1"></div>
+                <div class="text-[11px] text-muted-foreground font-sans font-medium flex items-center gap-1.5">
+                  <span class="text-[#D06A3D]">❖</span> Button
+                </div>
+              </div>
+
+              <div class="flex-1 relative flex items-center justify-center overflow-hidden bg-[#E8E4DE] dark:bg-zinc-800/50">
+                <div class="w-48 h-32 bg-card border border-border/50 shadow-sm relative flex items-center justify-center">
+                  <div class="absolute -top-5 left-0 text-[10px] text-[#D06A3D] font-sans font-medium flex items-center gap-1">
+                    ❖ Button
+                  </div>
+                  <div class="relative z-10">
+                    <div class="absolute -top-[34px] left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none">
+                      <div class="text-[9px] text-background bg-[#D06A3D] px-1 rounded-[2px] mb-0.5 font-mono">34</div>
+                      <div class="h-[20px] w-px bg-[#D06A3D]"></div>
+                    </div>
+                    <div class="absolute top-1/2 -left-[42px] -translate-y-1/2 flex items-center pointer-events-none">
+                      <div class="text-[9px] text-background bg-[#D06A3D] px-1 rounded-[2px] mr-0.5 font-mono">42</div>
+                      <div class="w-[24px] h-px bg-[#D06A3D]"></div>
+                    </div>
+                    <div class="ring-1 ring-[#D06A3D] relative flex items-center justify-center px-6 py-2.5 bg-foreground text-background font-sans font-medium text-sm shadow-sm">
+                      <div class="absolute -top-[3px] -left-[3px] w-1.5 h-1.5 bg-background border border-[#D06A3D]"></div>
+                      <div class="absolute -top-[3px] -right-[3px] w-1.5 h-1.5 bg-background border border-[#D06A3D]"></div>
+                      <div class="absolute -bottom-[3px] -left-[3px] w-1.5 h-1.5 bg-background border border-[#D06A3D]"></div>
+                      <div class="absolute -bottom-[3px] -right-[3px] w-1.5 h-1.5 bg-background border border-[#D06A3D]"></div>
+                      System UI
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Code (VS Code) -->
+            <div class="w-1/2 flex flex-col font-mono text-xs text-zinc-300" style="background: #201C15">
+              <div class="h-10 flex items-center border-b border-zinc-800" style="background: #27231A">
+                <div class="px-4 h-full flex items-center border-t border-[#D06A3D] text-zinc-100 text-[11px]" style="background: #201C15">
+                  Button.tsx
+                </div>
+                <div class="px-4 h-full flex items-center text-zinc-500 text-[11px]">
+                  tokens.css
+                </div>
+              </div>
+
+              <div class="flex-1 p-4 flex gap-4 overflow-hidden">
+                <div class="flex flex-col text-zinc-700 text-right select-none">
+                  <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
+                </div>
+                <div class="flex flex-col whitespace-pre tracking-tight">
+                  <div><span class="text-zinc-500">import</span> &#123;&nbsp;<span class="text-zinc-200">styled</span>&nbsp;&#125; <span class="text-zinc-500">from</span> <span class="text-[#D06A3D]">'&#64;ds/core'</span>;</div>
+                  <br />
+                  <div><span class="text-zinc-500">export const</span> <span class="text-zinc-100 font-semibold">Button</span> = () <span class="text-zinc-500">=&gt;</span> (</div>
+                  <div>&nbsp;&nbsp;<span class="text-zinc-500">&lt;</span><span class="text-zinc-200">button</span></div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-zinc-400">className</span>=<span class="text-[#D06A3D]">"btn-primary"</span></div>
+                  <div>&nbsp;&nbsp;<span class="text-zinc-500">&gt;</span></div>
+                  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-zinc-300">System UI</span></div>
+                  <div>&nbsp;&nbsp;<span class="text-zinc-500">&lt;/</span><span class="text-zinc-200">button</span><span class="text-zinc-500">&gt;</span></div>
+                  <div>);</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Center sync badge -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full border border-zinc-700 shadow-md z-20" style="background: #27231A">
+              <div class="text-[#D06A3D] flex items-center justify-center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m17 2 4 4-4 4" /><path d="M3 11v-1a4 4 0 0 1 4-4h14" /><path d="m7 22-4-4 4-4" /><path d="M21 13v1a4 4 0 0 1-4 4H3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── My Approach ───────────────────────────────────────────── -->
+  <section class="pt-28 pb-24 border-t border-[#E6E0D8]" style="background: #F3F1EE">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-10 max-w-2xl">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3 text-foreground">My Approach</h2>
+        <p class="text-lg text-muted-foreground">
+          Designing systems that help teams build better products.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-8">
+        @for (item of approach; track item.num) {
+          <div class="bg-[#FCFBF9] border border-[#E6E0D8] p-6 flex flex-col" style="border-left: 2px solid #B04318">
+            <div class="font-mono text-[10px] text-[#7A2C10] font-medium mb-2">{{ item.num }}</div>
+            <h3 class="font-medium text-foreground mb-1.5">{{ item.title }}</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed">{{ item.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Selected Work ─────────────────────────────────────────── -->
+  <section id="work" class="pt-28 pb-24 border-t border-[#E6E0D8]" style="background: #F7F6F4">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-10 max-w-2xl">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3 text-foreground">Selected Work</h2>
+        <p class="text-lg text-muted-foreground">
+          Designing systems, workflows, and interfaces for complex products.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        @for (project of projects; track project.id) {
+          <a [routerLink]="project.link" class="group flex flex-col border border-border bg-card cursor-pointer">
+            <!-- Preview — placeholder motif for Phase 1; the rich per-project
+                 diagrams from the Make source land in Phase 2. -->
+            <div class="h-64 bg-secondary/30 border-b border-border flex items-center justify-center relative overflow-hidden" style="filter: saturate(0.8)">
+              <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, var(--foreground) 1px, transparent 1px); background-size: 16px 16px"></div>
+              <div class="relative px-5 py-2.5 bg-card border border-border shadow-sm font-sans text-sm text-foreground flex items-center gap-2">
+                <span class="text-[#D06A3D]">❖</span> {{ project.title }}
+              </div>
+            </div>
+
+            <!-- Card body -->
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex flex-wrap gap-2 mb-3">
+                @for (tag of project.discipline; track tag) {
+                  <span class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10] border border-[#E6E0D8] px-2 py-1">{{ tag }}</span>
+                }
+              </div>
+              <h3 class="text-xl font-bold tracking-tight text-foreground mb-1 group-hover:text-[#B04318] transition-colors">{{ project.title }}</h3>
+              <div class="font-mono text-xs text-muted-foreground mb-3">{{ project.role }}</div>
+              <p class="text-sm text-muted-foreground leading-relaxed mb-4">{{ project.description }}</p>
+              <div class="mt-auto pt-4 border-t border-border">
+                <div class="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Impact</div>
+                <p class="text-sm text-foreground leading-relaxed">{{ project.impact }}</p>
+              </div>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+</div>

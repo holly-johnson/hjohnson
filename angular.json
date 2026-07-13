@@ -29,7 +29,7 @@
                 "input": "projects/portfolio/public"
               }
             ],
-            "styles": ["projects/portfolio/src/styles.scss"]
+            "styles": ["projects/portfolio/src/styles.css"]
           },
           "configurations": {
             "production": {
