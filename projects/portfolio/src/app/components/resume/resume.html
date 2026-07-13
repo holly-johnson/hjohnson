@@ -1,0 +1,217 @@
+<div class="pt-20 bg-background min-h-screen">
+
+  <!-- Header -->
+  <section class="border-b border-border">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between pt-6 pb-10">
+        <a routerLink="/" class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          ← Back to Portfolio
+        </a>
+        <div class="font-mono text-xs bg-[#E8D8CC] text-[#7A2C10] px-2 py-1 border border-[#C8AFA4]">
+          // Resume
+        </div>
+      </div>
+
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 pb-16">
+        <div>
+          <h1 class="text-5xl font-bold mb-3">Holly Johnson</h1>
+          <p class="text-lg text-muted-foreground mb-6">
+            Senior UX Designer | Design Systems &amp; Product Ecosystems
+          </p>
+
+          <div class="flex flex-wrap gap-6">
+            <div class="flex items-center gap-2">
+              <app-icon name="mail" [size]="14" class="text-[#B04318]" />
+              <a href="mailto:hme2784@gmail.com" class="text-sm hover:text-[#B04318] transition-colors">hme2784&#64;gmail.com</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <app-icon name="phone" [size]="14" class="text-[#B04318]" />
+              <a href="tel:+14028903676" class="text-sm hover:text-[#B04318] transition-colors">+1 (402) 890-3676</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <app-icon name="map-pin" [size]="14" class="text-[#B04318]" />
+              <span class="text-sm">Lincoln, NE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section class="py-12 border-b border-[#E6E0D8]" style="background: #F3F1EE">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+      <p class="text-lg text-muted-foreground leading-relaxed max-w-4xl">
+        Systems-focused UX designer who brings structure to complex products. Experienced designing scalable design systems, building token architectures, and translating design frameworks into implementation through close collaboration with engineering teams.
+      </p>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="py-12 border-b border-[#E6E0D8]" style="background: #F7F6F4">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+      <h2 class="text-2xl font-bold tracking-tight mb-8">Experience</h2>
+
+      <div class="space-y-10 mb-16">
+        @for (job of experience; track job.title + job.period) {
+          <div class="border border-border p-8 bg-card">
+            <div class="grid lg:grid-cols-12 gap-6">
+              <div class="lg:col-span-4">
+                <h3 class="text-lg font-semibold mb-2">{{ job.title }}</h3>
+                <div class="text-muted-foreground mb-3">{{ job.company }}</div>
+                <div class="inline-block font-mono text-xs bg-[#E8D8CC] text-[#7A2C10] px-2 py-1 border border-[#C8AFA4]">{{ job.period }}</div>
+              </div>
+              <div class="lg:col-span-8">
+                @if (job.note) {
+                  <p class="text-sm text-muted-foreground mb-4" style="font-style: italic">{{ job.note }}</p>
+                }
+                <ul class="space-y-2.5">
+                  @for (achievement of job.achievements; track achievement) {
+                    <li class="flex gap-3 text-sm text-muted-foreground">
+                      <div class="w-1.5 h-1.5 bg-[#B04318] mt-2 flex-shrink-0"></div>
+                      <span>{{ achievement }}</span>
+                    </li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <h2 class="text-2xl font-bold tracking-tight mb-8 mt-16">Additional Experience</h2>
+
+      <div class="space-y-10">
+        @for (job of additionalExperience; track job.title + job.period) {
+          <div class="border border-border p-8 bg-card">
+            <div class="grid lg:grid-cols-12 gap-6">
+              <div class="lg:col-span-4">
+                <h3 class="text-lg font-semibold mb-2">{{ job.title }}</h3>
+                <div class="text-muted-foreground mb-3">{{ job.company }}</div>
+                <div class="inline-block font-mono text-xs bg-[#E8D8CC] text-[#7A2C10] px-2 py-1 border border-[#C8AFA4]">{{ job.period }}</div>
+              </div>
+              <div class="lg:col-span-8">
+                <ul class="space-y-2.5">
+                  @for (achievement of job.achievements; track achievement) {
+                    <li class="flex gap-3 text-sm text-muted-foreground">
+                      <div class="w-1.5 h-1.5 bg-[#B04318] mt-2 flex-shrink-0"></div>
+                      <span>{{ achievement }}</span>
+                    </li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section class="py-12 border-b border-[#E6E0D8]" style="background: #F3F1EE">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+      <h2 class="text-2xl font-bold tracking-tight mb-8">Approach to Product Design</h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        @for (item of approach; track item.label) {
+          <div class="bg-card border border-border p-5">
+            <div class="flex items-start gap-3 mb-3">
+              <app-icon [name]="item.icon" [size]="16" class="mt-0.5 text-[#B04318] flex-shrink-0" />
+              <div class="text-sm font-semibold">{{ item.label }}</div>
+            </div>
+            <p class="text-sm text-muted-foreground leading-relaxed">{{ item.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Leadership -->
+  <section class="py-12 border-b border-[#E6E0D8]" style="background: #F7F6F4">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+      <h2 class="text-2xl font-bold tracking-tight mb-8">Education &amp; Leadership</h2>
+
+      <div class="grid lg:grid-cols-2 gap-6">
+        <div class="border border-border bg-card p-8">
+          <div class="inline-block font-mono text-xs bg-[#E8D8CC] text-[#7A2C10] px-2 py-1 border border-[#C8AFA4] mb-4">2016</div>
+          <h3 class="text-xl font-semibold mb-2">Associate Degree of Applied Science</h3>
+          <div class="text-muted-foreground mb-1">Graphic Design | Media Arts</div>
+          <div class="text-sm text-muted-foreground">Southeast Community College</div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          @for (item of leadership; track item.role + item.year) {
+            <div class="border border-border bg-card p-4">
+              <div class="flex justify-between items-start gap-4">
+                <div class="flex-1">
+                  <h3 class="text-sm font-semibold mb-0.5">{{ item.role }}</h3>
+                  <div class="text-xs text-muted-foreground">{{ item.org }}</div>
+                </div>
+                <div class="font-mono text-xs bg-[#E8D8CC] text-[#7A2C10] px-2 py-1 border border-[#C8AFA4] shrink-0">{{ item.year }}</div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recognition -->
+  <section class="py-12 border-b border-[#E6E0D8]" style="background: #F3F1EE">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+      <h2 class="text-2xl font-bold tracking-tight mb-8">Recognition</h2>
+
+      <div class="border border-border bg-card p-8">
+        <div class="inline-block font-mono text-xs bg-[#E8D8CC] text-[#7A2C10] px-2 py-1 border border-[#C8AFA4] mb-4">May 2022</div>
+        <h3 class="text-lg font-semibold mb-2">Prism Award for Consumer Marketing Campaigns</h3>
+        <div class="text-sm text-muted-foreground mb-1">NUforNE Campaign</div>
+        <div class="text-sm text-muted-foreground mb-4">American Marketing Association - Lincoln Chapter</div>
+        <p class="text-sm text-muted-foreground leading-relaxed mb-4">
+          Received an AMA Lincoln Prism Award for the NUforNE statewide impact campaign, which built awareness of the university's impact on Nebraskans and communities across the state through online storytelling and a digital media campaign.
+        </p>
+        <div class="flex items-center justify-between gap-4">
+          <div class="text-xs font-mono text-muted-foreground">Associated with University of Nebraska</div>
+          <a href="https://nebraska.edu/nuforne/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-mono text-[#B04318] hover:underline">
+            View Campaign
+            <app-icon name="external-link" [size]="12" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Links -->
+  <section class="py-12 border-b border-[#E6E0D8]" style="background: #F7F6F4">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+      <h2 class="text-2xl font-bold tracking-tight mb-8">Links</h2>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        @for (link of links; track link.label) {
+          <a [href]="'https://' + link.url" target="_blank" rel="noopener noreferrer" class="border border-border bg-card p-5 hover:border-[#B04318] transition-colors group">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex-1 min-w-0">
+                <div class="font-mono text-xs text-muted-foreground mb-1.5">{{ link.label }}</div>
+                <div class="text-sm font-mono break-all">{{ link.url }}</div>
+              </div>
+              <app-icon [name]="link.icon" [size]="14" class="flex-shrink-0 text-[#B04318]" />
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark footer — matches project pages -->
+  <section style="background: #141210">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16 flex justify-between items-center" style="border-top: 1px solid #2A2420">
+      <a routerLink="/" fragment="work" class="group space-y-1 block">
+        <div class="font-mono text-xs text-[#857C74] group-hover:text-[#D06A3D] transition-colors">Back to</div>
+        <div class="text-lg font-bold text-[#F2EEE9] group-hover:text-[#D06A3D] transition-colors">Portfolio</div>
+      </a>
+      <a routerLink="/work/penlink" class="group space-y-1 block text-right">
+        <div class="font-mono text-xs text-[#857C74] group-hover:text-[#D06A3D] transition-colors">View Case Study</div>
+        <div class="text-lg font-bold text-[#F2EEE9] group-hover:text-[#D06A3D] transition-colors">Penlink Design System</div>
+      </a>
+    </div>
+  </section>
+</div>
