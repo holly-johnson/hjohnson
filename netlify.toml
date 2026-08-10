@@ -1,0 +1,13 @@
+[build]
+  command = "npx ng build portfolio"
+  publish = "dist/portfolio/browser"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Angular is a single-page app: send all routes to index.html
+# so deep links (e.g. /work, /resume) and page refreshes work.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
