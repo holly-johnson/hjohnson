@@ -4,12 +4,8 @@ import { App } from './app';
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [App],
-    })
-      .overrideComponent(App, {
-        set: { template: '<h1>Hello, portfolio</h1>' },
-      })
-      .compileComponents();
+      imports: [App],
+    }).compileComponents();
   });
 
   it('should create the app', () => {

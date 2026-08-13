@@ -8,8 +8,8 @@ TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicT
 
 // Preload component resources (HTML and SCSS) using Vite's glob import as raw strings.
 // The keys are file paths; map them by filename to make resolution by relative URLs easier.
-const htmlResources = import.meta.glob('./projects/**/src/**/*.html', { as: 'raw', eager: true }) as Record<string, string>;
-const styleResources = import.meta.glob('./projects/**/src/**/*.{css,scss,sass}', { as: 'raw', eager: true }) as Record<string, string>;
+const htmlResources = import.meta.glob('./projects/**/src/**/*.html', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+const styleResources = import.meta.glob('./projects/**/src/**/*.{css,scss,sass}', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
 
 const resourceMap = new Map<string, string>();
 for (const key of Object.keys(htmlResources)) {
