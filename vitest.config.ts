@@ -38,6 +38,18 @@ function inlineResourcesPlugin() {
         }
         out = out.replace(/styleUrls\s*:\s*\[([^\]]*)\]/, `styles: [${styles.join(',')}]`);
       }
+      // inline singular styleUrl property
+      const singleStyleMatch = out.match(/styleUrl\s*:\s*['"]([^'"]+)['"]/);
+      if (singleStyleMatch) {
+        const rel = singleStyleMatch[1];
+        const file = path.resolve(dir, rel);
+        try {
+          const content = fs.readFileSync(file, 'utf8').replace(/`/g, '\\`');
+          out = out.replace(/styleUrl\s*:\s*['"]([^'"]+)['"]/g, `styles: [\`${content}\`]`);
+        } catch (e) {
+          out = out.replace(/styleUrl\s*:\s*['"]([^'"]+)['"]/g, `styles: [\`\`]`);
+        }
+      }
       return { code: out, map: null };
     },
   };
