@@ -203,10 +203,9 @@
                 </div>
               }
               @switch (project.id) {
-                @case ('1') { <app-penlink-diagram /> }
-                @case ('4') { <app-nucleus-diagram /> }
-                @case ('2') { <app-ai-diagram /> }
-                @case ('3') { <app-analysis-diagram /> }
+                @case ('1') { <app-helios-diagram /> }
+                @case ('2') { <app-analysis-diagram /> }
+                @case ('3') { <app-nucleus-diagram /> }
                 @default {
                   <div class="font-mono text-xs text-muted-foreground border border-border/50 bg-background/50 backdrop-blur-sm px-3 py-1.5 flex items-center gap-2">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

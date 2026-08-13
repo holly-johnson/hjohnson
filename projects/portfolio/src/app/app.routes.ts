@@ -12,7 +12,12 @@ import { NotFound } from './components/not-found/not-found';
 export const routes: Routes = [
   { path: '', component: Home, title: 'Holly Johnson — UX Designer' },
   { path: 'resume', component: Resume, title: 'Resume — Holly Johnson' },
-  { path: 'work/penlink', component: PenlinkCaseStudy, title: 'Penlink Design System — Holly Johnson' },
+  // Helios is the flagship case study. It currently renders the existing Penlink
+  // case-study component as an INTERIM page — the real Helios narrative (merging in
+  // "UX Doesn't Stop at Design") is the next task. The old /work/penlink URL
+  // redirects here so existing links still resolve.
+  { path: 'work/helios', component: PenlinkCaseStudy, title: 'Helios — Holly Johnson' },
+  { path: 'work/penlink', redirectTo: 'work/helios', pathMatch: 'full' },
   { path: 'work/analysis-workflow', component: AnalysisWorkflowCaseStudy, title: 'Investigative Analysis Workflow — Holly Johnson' },
   { path: 'work/nucleus', component: NucleusCaseStudy, title: 'NUcleus Design System — Holly Johnson' },
   { path: 'work/ai-design', component: AiDesignCaseStudy, title: 'UX Doesn’t Stop at Design — Holly Johnson' },
