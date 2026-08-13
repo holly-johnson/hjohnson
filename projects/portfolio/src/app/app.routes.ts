@@ -1,20 +1,12 @@
 import { Routes } from '@angular/router';
-import { Home } from './components/home/home';
-import { Resume } from './components/resume/resume';
-import { PenlinkCaseStudy } from './components/work/penlink-case-study';
-import { AiDesignCaseStudy } from './components/work/ai-design-case-study';
-import { AnalysisWorkflowCaseStudy } from './components/work/analysis-workflow-case-study';
-import { NucleusCaseStudy } from './components/work/nucleus-case-study';
-import { NotFound } from './components/not-found/not-found';
 
-// Mirrors the Figma Make router (src/app/routes.ts). All four case studies are
-// ported from the HJohnson-Design Make file.
+// Lazy-load standalone components with loadComponent to reduce initial bundle
 export const routes: Routes = [
-  { path: '', component: Home, title: 'Holly Johnson — UX Designer' },
-  { path: 'resume', component: Resume, title: 'Resume — Holly Johnson' },
-  { path: 'work/penlink', component: PenlinkCaseStudy, title: 'Penlink Design System — Holly Johnson' },
-  { path: 'work/analysis-workflow', component: AnalysisWorkflowCaseStudy, title: 'Investigative Analysis Workflow — Holly Johnson' },
-  { path: 'work/nucleus', component: NucleusCaseStudy, title: 'NUcleus Design System — Holly Johnson' },
-  { path: 'work/ai-design', component: AiDesignCaseStudy, title: 'UX Doesn’t Stop at Design — Holly Johnson' },
-  { path: '**', component: NotFound, title: 'Not Found — Holly Johnson' },
+  { path: '', loadComponent: () => import('./components/home/home').then(m => m.Home), title: 'Holly Johnson — UX Designer' },
+  { path: 'resume', loadComponent: () => import('./components/resume/resume').then(m => m.Resume), title: 'Resume — Holly Johnson' },
+  { path: 'work/penlink', loadComponent: () => import('./components/work/penlink-case-study').then(m => m.PenlinkCaseStudy), title: 'Penlink Design System — Holly Johnson' },
+  { path: 'work/analysis-workflow', loadComponent: () => import('./components/work/analysis-workflow-case-study').then(m => m.AnalysisWorkflowCaseStudy), title: 'Investigative Analysis Workflow — Holly Johnson' },
+  { path: 'work/nucleus', loadComponent: () => import('./components/work/nucleus-case-study').then(m => m.NucleusCaseStudy), title: 'NUcleus Design System — Holly Johnson' },
+  { path: 'work/ai-design', loadComponent: () => import('./components/work/ai-design-case-study').then(m => m.AiDesignCaseStudy), title: 'UX Doesn’t Stop at Design — Holly Johnson' },
+  { path: '**', loadComponent: () => import('./components/not-found/not-found').then(m => m.NotFound), title: 'Not Found — Holly Johnson' },
 ];

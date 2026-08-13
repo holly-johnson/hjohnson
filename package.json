@@ -5,9 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:portfolio": "ng build portfolio --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
+    "test": "ng test",
+    "test:unit": "vitest run --coverage"
+  ,
   "private": true,
   "packageManager": "npm@10.8.2",
   "dependencies": {
