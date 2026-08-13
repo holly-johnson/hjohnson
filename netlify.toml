@@ -1,5 +1,5 @@
 [build]
-  command = "npx ng build portfolio"
+  command = "npx ng build portfolio --configuration production"
   publish = "dist/portfolio/browser"
 
 [build.environment]
