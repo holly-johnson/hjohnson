@@ -1,0 +1,408 @@
+<div class="pt-20 bg-background min-h-screen">
+
+  <!-- Hero -->
+  <section class="border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between pt-6 pb-10">
+        <a routerLink="/" fragment="work" class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <app-icon name="arrow-left" [size]="14" />
+          Back to Projects
+        </a>
+        <div class="font-mono text-xs bg-[#E8D8CC] text-[#7A2C10] px-2 py-1 border border-[#C8AFA4]">
+          status: deployed
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12 items-start pb-24">
+        <div class="lg:col-span-8 space-y-8">
+          <div class="space-y-4">
+            <div class="font-mono text-xs text-[#7A2C10]">// Design Systems</div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">NUcleus Design System</h1>
+            <p class="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              A scalable system that unified websites across the University of Nebraska System while enabling departments and institutes to maintain their own identity.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 border border-border bg-card p-6 space-y-6">
+          <div class="grid grid-cols-2 gap-6">
+            <div class="space-y-1.5">
+              <div class="font-mono text-[10px] text-muted-foreground uppercase">Role</div>
+              <div class="text-sm font-medium">Product Owner<br />Lead Designer</div>
+            </div>
+            <div class="space-y-1.5">
+              <div class="font-mono text-[10px] text-muted-foreground uppercase">Timeline</div>
+              <div class="text-sm font-medium">2018 – 2022</div>
+            </div>
+            <div class="space-y-1.5 col-span-2">
+              <div class="font-mono text-[10px] text-muted-foreground uppercase">Disciplines</div>
+              <div class="text-sm font-medium">Design Systems, Front-End Integration, Product Management</div>
+            </div>
+            <div class="space-y-1.5 col-span-2">
+              <div class="font-mono text-[10px] text-muted-foreground uppercase">Technologies</div>
+              <div class="flex flex-wrap gap-2 pt-1">
+                @for (tech of technologies; track tech) {
+                  <span class="font-mono text-[10px] border border-border px-2 py-0.5 bg-background text-muted-foreground">{{ tech }}</span>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-16">
+
+      <!-- Left Column -->
+      <div class="lg:col-span-8 space-y-24">
+
+        <!-- 01 The Challenge -->
+        <div class="space-y-6" id="challenge">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <span class="font-mono text-[11px] text-[#7A2C10]">01.</span>
+            The Challenge
+          </h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>The University of Nebraska System needed to unify its digital presence following a major rebrand while supporting a wide range of organizations with different goals and audiences.</p>
+            <p>Key challenges:</p>
+            <ul class="space-y-2 pl-4">
+              @for (item of ['1 designer supporting multiple teams and sites', 'Transition to a new CMS powering system-wide websites', 'Rebrand without a scalable implementation strategy', 'Inconsistent UI patterns and growing design/technical debt']; track item) {
+                <li class="flex items-start gap-2">
+                  <span class="mt-[7px] w-1 h-1 rounded-full bg-[#B04318] flex-shrink-0"></span>
+                  <span>{{ item }}</span>
+                </li>
+              }
+            </ul>
+            <p>While the rebrand established visual direction, inconsistent implementation across sites quickly created fragmentation.</p>
+            <p>Without a shared system, components and layouts were built as one-off solutions—often outsourced or custom developed—leading to increased cost, slower progress, and inconsistency across the University's digital ecosystem.</p>
+            <p>The challenge was to translate the University brand into a scalable system that could support many organizations while maintaining a cohesive identity.</p>
+          </div>
+
+          <!-- Fig 1. UI Audit -->
+          <div class="border border-border bg-card overflow-hidden">
+            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
+              <span class="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">Fig 1. UI Audit</span>
+              <span class="font-mono text-[10px] uppercase text-[#B04318] tracking-wider">2017 Era</span>
+            </div>
+            <div class="grid grid-cols-2 gap-px bg-border">
+              <div class="col-span-2 bg-card">
+                <img src="assets/work/nucleus-website.png" alt="University of Nebraska website" class="w-full block" />
+              </div>
+              <div class="bg-card">
+                <img src="assets/work/nucleus-road-ahead.png" alt="The Road Ahead Starts Right Here campaign" class="w-full block" />
+              </div>
+              <div class="bg-card">
+                <img src="assets/work/nucleus-access.png" alt="Access & Affordability component" class="w-full block" />
+              </div>
+              <div class="col-span-2 bg-card">
+                <img src="assets/work/nucleus-quote.png" alt="Student testimonial banner" class="w-full block" />
+              </div>
+              <div class="col-span-2 bg-card">
+                <img src="assets/work/nucleus-brand-colors.png" alt="University of Nebraska brand color palette" class="w-full block" />
+              </div>
+            </div>
+            <div class="bg-muted/10 px-4 py-3 border-t border-border">
+              <p class="font-mono text-xs text-muted-foreground leading-relaxed">UI audit — existing brand content and design patterns across University properties prior to NUcleus.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 Approach -->
+        <div class="space-y-6" id="scale">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <span class="font-mono text-[11px] text-[#7A2C10]">02.</span>
+            Approach
+          </h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>Rather than relying on rigid page templates, I focused on creating a system of flexible building blocks that could scale across the University's diverse digital ecosystem.</p>
+            <p>Organizations needed the ability to create their own websites with unique content and structure while still maintaining a clear relationship to the broader University brand.</p>
+            <p>The system introduced reusable front-end patterns implemented as CMS components, allowing teams to assemble pages using shared structures while adapting them to their needs.</p>
+            <p>As new priorities emerged across departments and institutes, new components were added to the system—benefiting all teams and allowing the platform to evolve continuously.</p>
+          </div>
+
+          <!-- Fig 2. System Scale -->
+          <div class="border border-border bg-card overflow-hidden">
+            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
+              <span class="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">Fig 2. System Scale</span>
+              <span class="font-mono text-[10px] uppercase text-[#B04318] tracking-wider">Ecosystem</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4">
+              @for (site of scaleSites; track site) {
+                <div class="aspect-[4/3] border border-border bg-[#F7F6F4] flex items-center justify-center text-center p-3">
+                  <span class="font-mono text-[10px] leading-snug text-muted-foreground">{{ site }}</span>
+                </div>
+              }
+            </div>
+            <div class="bg-muted/10 px-4 py-3 border-t border-border">
+              <p class="font-mono text-xs text-muted-foreground leading-relaxed">NUcleus allows organizations across the University to build unique sites while maintaining a shared design foundation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 System Foundations -->
+        <div class="space-y-6" id="foundations">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <span class="font-mono text-[11px] text-[#7A2C10]">03.</span>
+            System Foundations
+          </h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>NUcleus established a shared visual and structural language across the University's digital ecosystem.</p>
+            <p>Core elements such as typography, color, spacing, and layout patterns defined how websites should look and behave, creating a consistent baseline across all properties.</p>
+            <p>Alongside visual design, the system defined front-end implementation patterns to ensure alignment between design and development.</p>
+            <p>This foundation translated the University brand into reusable patterns that could scale across departments, institutes, and programs.</p>
+          </div>
+
+          <!-- NUcleus System Architecture Diagram -->
+          <div class="border border-border bg-card overflow-hidden">
+            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
+              <span class="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">NUcleus System Architecture</span>
+              <span class="font-mono text-[10px] uppercase text-[#B04318] tracking-wider">System Overview</span>
+            </div>
+
+            <div class="px-8 py-10 flex flex-col items-center gap-0">
+              <!-- Input -->
+              <div class="w-full max-w-md">
+                <div class="border border-border bg-background px-4 py-3 text-center">
+                  <div class="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Input</div>
+                  <div class="font-medium text-sm text-foreground">University Brand</div>
+                  <div class="font-mono text-[10px] text-muted-foreground mt-0.5">Brand standards · Visual identity</div>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center py-1">
+                <div class="w-px h-5 bg-border"></div>
+                <svg width="12" height="7" viewBox="0 0 12 7" fill="none" class="text-muted-foreground">
+                  <path d="M6 7L0.803848 0.25L11.1962 0.25L6 7Z" fill="currentColor" />
+                </svg>
+              </div>
+
+              <!-- NUcleus System -->
+              <div class="w-full max-w-md border border-border bg-card">
+                <div class="border-b border-border bg-[#F0ECE6] px-4 py-2 text-center">
+                  <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">NUcleus System</div>
+                </div>
+                <div class="p-4 space-y-2">
+                  @for (row of archRows; track row.label) {
+                    <div class="border border-border bg-background px-4 py-2.5 flex items-baseline gap-3">
+                      <span class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10] whitespace-nowrap">{{ row.label }}</span>
+                      <span class="font-mono text-[10px] text-muted-foreground">{{ row.detail }}</span>
+                    </div>
+                  }
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center py-1">
+                <div class="w-px h-5 bg-border"></div>
+                <svg width="12" height="7" viewBox="0 0 12 7" fill="none" class="text-muted-foreground">
+                  <path d="M6 7L0.803848 0.25L11.1962 0.25L6 7Z" fill="currentColor" />
+                </svg>
+              </div>
+
+              <!-- Output -->
+              <div class="w-full max-w-md">
+                <div class="border border-border bg-[#F7F6F4] px-4 py-4 text-center">
+                  <div class="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-2">Output</div>
+                  <div class="font-medium text-sm text-foreground mb-3">University Websites</div>
+                  <div class="flex flex-wrap justify-center gap-2">
+                    @for (label of outputLabels; track label) {
+                      <span class="font-mono text-[10px] border border-border px-2 py-1 bg-background text-muted-foreground">{{ label }}</span>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-muted/10 px-4 py-3 border-t border-border">
+              <p class="font-mono text-xs text-muted-foreground leading-relaxed">
+                NUcleus translated the University brand into reusable front-end patterns implemented as Sitecore (CMS) components, enabling departments and institutes to build their own websites while maintaining a consistent University identity.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 Component System -->
+        <div class="space-y-6" id="components">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <span class="font-mono text-[11px] text-[#7A2C10]">04.</span>
+            Component System
+          </h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>NUcleus evolved into a modular system of reusable front-end components designed to support a wide range of content and layout needs.</p>
+            <p>Components were developed in HTML and SCSS, with Handlebars templates used to prototype layouts and interactions. These served as the reference patterns for implementation.</p>
+            <p>Developers integrated these patterns into the CMS as configurable components, enabling marketing teams to build and manage their own websites using shared modules.</p>
+            <p>As new needs emerged, components were added to the system—expanding capabilities while maintaining consistency across the platform.</p>
+
+            <!-- Fig. 04 — Component output -->
+            <div class="mt-2 space-y-3">
+              <div class="border border-border bg-card overflow-hidden">
+                <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
+                  <span class="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">Fig. 04 — Component output</span>
+                  <span class="font-mono text-[10px] uppercase text-[#B04318] tracking-wider">NU Platform</span>
+                </div>
+                <div class="bg-[#F7F6F4] p-2 space-y-1.5">
+                  <div class="overflow-hidden">
+                    <img src="assets/work/nucleus-never-stop.png" alt="NU Advance — Never Stop Learning" class="w-full block" />
+                  </div>
+                  <div class="overflow-hidden space-y-1.5">
+                    <img src="assets/work/nucleus-masterclasses.png" alt="Masterclasses banner" class="w-full block" />
+                    <img src="assets/work/nucleus-credentials.png" alt="Credentials banner" class="w-full block" />
+                  </div>
+                  <div class="overflow-hidden">
+                    <img src="assets/work/nucleus-scholarship.png" alt="No One Ever Won a Scholarship for Doubting Themselves — student stats" class="w-full block" />
+                  </div>
+                  <div class="overflow-hidden">
+                    <img src="assets/work/nucleus-stats.png" alt="350+ undergrad majors, 80% financial aid stats banner" class="w-full block" />
+                  </div>
+                  <div class="flex gap-1.5 items-stretch">
+                    <div class="w-1/2 flex-shrink-0 overflow-hidden">
+                      <img src="assets/work/nucleus-unl.png" alt="University of Nebraska – Lincoln" class="w-full block" />
+                    </div>
+                    <div class="flex-1 overflow-hidden">
+                      <img src="assets/work/nucleus-course-card.png" alt="Applied Science course card" class="block h-full w-auto" />
+                    </div>
+                  </div>
+                  <div class="overflow-hidden">
+                    <img src="assets/work/nucleus-testimonial.png" alt="April Shaw student testimonial" class="w-full block" />
+                  </div>
+                  <div class="overflow-hidden">
+                    <img src="assets/work/nucleus-online-exp.png" alt="Your Online Experience at NU" class="w-full block" />
+                  </div>
+                </div>
+                <div class="bg-muted/10 px-4 py-3 border-t border-border">
+                  <p class="font-mono text-xs text-muted-foreground leading-relaxed">NUcleus component output across NU platform pages.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 Impact -->
+        <div class="space-y-6" id="impact">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <span class="font-mono text-[11px] text-[#7A2C10]">05.</span>
+            Impact
+          </h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>NUcleus transformed how the University designs, builds, and maintains its digital ecosystem.</p>
+            <p>By moving away from fragmented, one-off implementations, the University adopted a shared platform used across departments, institutes, and programs.</p>
+            <p>Teams gained access to reusable patterns, documented standards, and a consistent front-end architecture—significantly improving efficiency and collaboration.</p>
+            <p>The system reduced reliance on outsourced development and established a scalable foundation for long-term growth.</p>
+          </div>
+
+          <!-- Impact Snapshot -->
+          <div class="space-y-2">
+            <div class="font-mono text-[10px] uppercase tracking-wider text-muted-foreground pb-1">Outcomes</div>
+            <div class="grid grid-cols-2 gap-3">
+              @for (item of outcomes; track item.category) {
+                <div class="border border-border bg-card p-5 border-l-2 border-l-[#B04318] space-y-2">
+                  <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">{{ item.category }}</div>
+                  <div class="text-sm text-muted-foreground leading-snug">{{ item.stat }}</div>
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- Pull Quote -->
+          <div class="pt-6">
+            <div class="space-y-8">
+              <blockquote class="text-base leading-relaxed italic text-muted-foreground max-w-2xl">
+                "Holly recognized that Nebraska.edu lacked a design system and proposed building one to improve efficiency and consistency. She designed, implemented, and has maintained the system for years, saving the University countless hours of work while creating consistent design elements across all web properties."
+              </blockquote>
+              <div class="flex items-start gap-4">
+                <div class="w-8 border-t-2 border-primary mt-2 flex-shrink-0"></div>
+                <div class="space-y-0.5">
+                  <div class="font-medium text-foreground">Jackie Ostrowicki</div>
+                  <div class="text-sm text-muted-foreground font-mono">Assistant Vice President</div>
+                  <div class="text-sm text-muted-foreground font-mono">Director of Marketing, Brand & Digital Media</div>
+                  <div class="text-sm text-muted-foreground font-mono">University of Nebraska System</div>
+                  <a
+                    href="https://www.linkedin.com/in/holly-johnson-27336129"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground/50 hover:text-primary transition-colors pt-1"
+                  >
+                    via LinkedIn ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 Implementation -->
+        <div class="space-y-6" id="bridge">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <span class="font-mono text-[11px] text-[#7A2C10]">06.</span>
+            Implementation
+          </h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>The NUcleus team operated across design and development, often moving from simple wireframes directly into working front-end prototypes.</p>
+            <p>These implementations served as reference patterns and were integrated into the CMS as reusable components.</p>
+            <p>Working closely with brand leadership in the President's Office, I translated the University brand into scalable patterns that balanced flexibility for individual teams with consistency across the ecosystem.</p>
+            <p>Over time, I became a steward of the system, ensuring it evolved while maintaining alignment with the University's broader identity.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: TOC -->
+      <div class="lg:col-span-4 hidden lg:block">
+        <div class="sticky top-24 border border-border bg-card p-6">
+          <div class="font-mono text-xs text-primary mb-4">// Table of Contents</div>
+          <ul class="space-y-3 font-mono text-sm">
+            <li><a href="#challenge" class="text-foreground hover:text-primary transition-colors">01. The Challenge</a></li>
+            <li><a href="#scale" class="text-foreground hover:text-primary transition-colors">02. Approach</a></li>
+            <li><a href="#foundations" class="text-foreground hover:text-primary transition-colors">03. System Foundations</a></li>
+            <li><a href="#components" class="text-foreground hover:text-primary transition-colors">04. Component System</a></li>
+            <li><a href="#impact" class="text-foreground hover:text-primary transition-colors">05. Impact</a></li>
+            <li><a href="#bridge" class="text-foreground hover:text-primary transition-colors">06. Implementation</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- References -->
+  <section class="pt-4 pb-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-2xl space-y-3">
+        <div class="font-mono text-xs text-[#7A2C10]">// References</div>
+        <div class="flex flex-wrap gap-2">
+          @for (ref of references; track ref.url) {
+            <a
+              [href]="ref.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              [title]="ref.label"
+              class="inline-flex items-center gap-1.5 border border-border bg-card px-2.5 py-1.5 hover:border-primary/50 hover:bg-primary/5 transition-colors group"
+            >
+              <img [src]="favicon(ref.domain)" alt="" width="12" height="12" class="opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+              <span class="font-mono text-[10px] text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap">{{ ref.domain }}</span>
+            </a>
+          }
+        </div>
+        <p class="font-mono text-[10px] text-muted-foreground/60 leading-relaxed pt-1">
+          The
+          <a href="https://nsri.nebraska.edu/nsrireports/2024/index.html" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary transition-colors">NSRI 2024 Biennial Report</a>
+          was completed as a contracted project after my employment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Project Footer -->
+  <section style="background: #141210">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 flex justify-between items-center" style="border-top: 1px solid #2A2420">
+      <a routerLink="/work/analysis-workflow" class="group space-y-1 block">
+        <div class="font-mono text-xs text-[#857C74] group-hover:text-[#D06A3D] transition-colors">Previous Project</div>
+        <div class="text-lg font-bold text-[#F2EEE9] group-hover:text-[#D06A3D] transition-colors">Investigative Analysis</div>
+      </a>
+      <a routerLink="/work/penlink" class="group space-y-1 block text-right">
+        <div class="font-mono text-xs text-[#857C74] group-hover:text-[#D06A3D] transition-colors">Next Project</div>
+        <div class="text-lg font-bold text-[#F2EEE9] group-hover:text-[#D06A3D] transition-colors">Penlink Design System</div>
+      </a>
+    </div>
+  </section>
+</div>
