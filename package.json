@@ -26,6 +26,7 @@
     "@angular/build": "^21.2.19",
     "@angular/cli": "^21.2.10",
     "@angular/compiler-cli": "^21.2.0",
+    "@angular/platform-browser-dynamic": "^21.2.20",
     "@tailwindcss/postcss": "^4.3.2",
     "@vitest/coverage-v8": "^4.1.10",
     "c8": "^8.0.0",
