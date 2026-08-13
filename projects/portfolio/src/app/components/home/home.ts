@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { PenlinkDiagram } from './diagrams/penlink-diagram';
+import { HeliosDiagram } from './diagrams/helios-diagram';
 import { NucleusDiagram } from './diagrams/nucleus-diagram';
-import { AiDiagram } from './diagrams/ai-diagram';
 import { AnalysisDiagram } from './diagrams/analysis-diagram';
 
 interface Approach {
@@ -30,7 +29,7 @@ interface Project {
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, PenlinkDiagram, NucleusDiagram, AiDiagram, AnalysisDiagram],
+  imports: [RouterLink, HeliosDiagram, NucleusDiagram, AnalysisDiagram],
   templateUrl: './home.html',
 })
 export class Home {
@@ -55,29 +54,22 @@ export class Home {
     { num: '06', title: 'Design for Good', desc: 'The systems we build should make the world better.' },
   ];
 
+  // NOTE: Helios card prose below is INTERIM — placeholder pending the approved
+  // Helios narrative. The description reuses Holly's own brief wording; the impact
+  // line is carried over from the former Penlink card and will be replaced.
   protected readonly projects: Project[] = [
     {
       id: '1',
-      title: 'Penlink Design System',
-      discipline: ['Design Systems', 'Product UX'],
-      role: 'Lead UX Designer',
-      description: 'Created a design system aligning multiple investigative products under a consistent UI and scalable component architecture.',
+      title: 'Helios',
+      discipline: ['Design Systems', 'Design Engineering'],
+      role: 'Lead',
+      description: 'A design system and product infrastructure initiative connecting design, coded components, documentation, distribution, and real product implementation.',
       impact: 'Established a shared foundation that improved consistency across investigative tools and enabled faster feature development.',
-      link: '/work/penlink',
+      link: '/work/helios',
       ready: true,
     },
     {
       id: '2',
-      title: "UX Doesn't Stop at Design",
-      discipline: ['Design Systems', 'Engineering Collab'],
-      role: 'UX Engineer · Exploration',
-      description: 'Bridging design systems and front-end through AI-assisted workflows to improve speed, alignment, and system integrity.',
-      impact: 'Demonstrated a potential future workflow where design systems can move more directly from design architecture into engineering implementation.',
-      link: '/work/ai-design',
-      ready: true,
-    },
-    {
-      id: '3',
       title: 'Investigative Analysis Workflow',
       discipline: ['Product UX', 'Data Interfaces'],
       role: 'UX Designer',
@@ -87,7 +79,7 @@ export class Home {
       ready: true,
     },
     {
-      id: '4',
+      id: '3',
       title: 'NUcleus Design System',
       discipline: ['Design Systems', 'Front-End Integration'],
       role: 'Product Owner · Lead Designer',
