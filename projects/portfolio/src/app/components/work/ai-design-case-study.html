@@ -1,0 +1,309 @@
+<div class="pt-20 bg-background min-h-screen">
+
+  <!-- Hero -->
+  <section class="border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between pt-6 pb-10">
+        <a routerLink="/" fragment="work" class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <app-icon name="arrow-left" [size]="14" />
+          Back to Projects
+        </a>
+        <div class="font-mono text-xs bg-[#E8D8CC] text-[#7A2C10] px-2 py-1 border border-[#C8AFA4]">
+          status: experimental
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12 items-start pb-24">
+        <div class="lg:col-span-8 space-y-8">
+          <div class="space-y-4">
+            <div class="font-mono text-xs text-[#7A2C10]">// AI Exploration</div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">UX Doesn't Stop at Design</h1>
+            <p class="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              Exploring how AI-assisted workflows enable design systems to move directly into implementation and extend UX ownership into front-end development.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              @for (tag of ['Design Systems', 'Engineering', 'AI Integration']; track tag) {
+                <span class="font-mono text-[10px] border border-border px-2 py-1 bg-background text-muted-foreground">{{ tag }}</span>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 border border-border bg-card p-6 space-y-6">
+          <div class="grid grid-cols-2 gap-6">
+            <div class="space-y-1.5">
+              <div class="font-mono text-[10px] text-muted-foreground uppercase">Role</div>
+              <div class="text-sm font-medium">UX Engineer<br />Exploration</div>
+            </div>
+            <div class="space-y-1.5">
+              <div class="font-mono text-[10px] text-muted-foreground uppercase">Timeline</div>
+              <div class="text-sm font-medium">2024 – Present</div>
+            </div>
+            <div class="space-y-1.5 col-span-2">
+              <div class="font-mono text-[10px] text-muted-foreground uppercase">Disciplines</div>
+              <div class="text-sm font-medium">Design Systems, Engineering, AI Integration</div>
+            </div>
+            <div class="space-y-1.5 col-span-2">
+              <div class="font-mono text-[10px] text-muted-foreground uppercase">Technologies</div>
+              <div class="flex flex-wrap gap-2 pt-1">
+                @for (tech of ['Figma', 'Claude', 'Angular']; track tech) {
+                  <span class="font-mono text-[10px] border border-border px-2 py-0.5 bg-background text-muted-foreground">{{ tech }}</span>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-16">
+
+      <!-- Left Column -->
+      <div class="lg:col-span-8 space-y-24">
+
+        <!-- 01 The Challenge -->
+        <div class="space-y-6" id="challenge">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <span class="font-mono text-[11px] text-[#7A2C10]">01.</span>
+            The Challenge
+          </h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>As the primary designer responsible for the Penlink design system, I saw a consistent gap between how systems are defined in Figma and how they are implemented in code.</p>
+            <p>While components and tokens provide structure in design, translating that structure into production still requires interpretation, creating inconsistencies and slowing development.</p>
+            <p>As the system scaled across products and teams, this gap became more pronounced. Maintaining alignment between design and engineering required ongoing effort, especially as new features and components were introduced.</p>
+            <p>I began exploring how the system could be structured not just for designers and engineers, but in a way that could be directly interpreted and consumed by code and AI-assisted workflows.</p>
+          </div>
+        </div>
+
+        <!-- 02 Impact -->
+        <div class="space-y-6" id="impact">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <span class="font-mono text-[11px] text-[#7A2C10]">02.</span>
+            Impact
+          </h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>This exploration demonstrated how design systems can move more directly from design architecture into engineering implementation.</p>
+            <div class="space-y-3">
+              @for (item of impactBullets; track item) {
+                <div class="flex items-start gap-3 text-sm text-muted-foreground">
+                  <span class="text-[#B04318] font-mono mt-0.5 shrink-0">→</span>
+                  <span>{{ item }}</span>
+                </div>
+              }
+            </div>
+            <p>Rather than treating design and engineering as separate phases, this approach explores a more continuous system where structure, logic, and implementation are more tightly connected.</p>
+          </div>
+        </div>
+
+        <!-- 03 Approach -->
+        <div class="space-y-6" id="approach">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <span class="font-mono text-[11px] text-[#7A2C10]">03.</span>
+            Approach
+          </h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>I explored how Figma component architecture could be structured in a way that more closely aligns with front-end implementation.</p>
+            <p>This included organizing components, states, and tokens to reflect how they would be built and consumed in code, rather than purely how they are presented in design.</p>
+            <p>By treating the design system as a source of structured data, I was able to experiment with workflows that translate component definitions directly into Angular component structures using AI-assisted tooling.</p>
+            <p>This approach shifts the role of the design system from a reference artifact to a system that can more directly inform production.</p>
+          </div>
+
+          <!-- Fig. 01 — Translation Pipeline -->
+          <div class="pt-4">
+            <div class="border border-border bg-card overflow-hidden">
+              <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">Fig. 01 — Translation Pipeline</span>
+                <span class="font-mono text-[10px] uppercase text-[#B04318] tracking-wider">Design → Code</span>
+              </div>
+              <div class="px-8 py-10 flex flex-col items-center gap-0">
+                @for (step of flowSteps; track step.label; let last = $last) {
+                  <div class="w-full max-w-md">
+                    <div class="border border-border bg-background px-4 py-3 flex items-baseline justify-between">
+                      <span class="text-sm font-medium text-foreground">{{ step.label }}</span>
+                      <span class="font-mono text-[10px] text-muted-foreground">{{ step.sub }}</span>
+                    </div>
+                    @if (!last) {
+                      <div class="flex flex-col items-center py-1">
+                        <div class="w-px h-5 bg-border"></div>
+                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" class="text-muted-foreground">
+                          <path d="M6 7L0.803848 0.25L11.1962 0.25L6 7Z" fill="currentColor" />
+                        </svg>
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+              <div class="bg-muted/10 px-4 py-3 border-t border-border">
+                <p class="font-mono text-xs text-muted-foreground leading-relaxed">Structured Figma component architecture enables AI-assisted translation directly into Angular component output.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 Design → Engineering Bridge -->
+        <div class="space-y-6" id="bridge">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <span class="font-mono text-[11px] text-[#7A2C10]">04.</span>
+            Design → Engineering Bridge
+          </h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>To support this exploration, I worked closely with engineering concepts and implementation patterns to better understand how design decisions translate into production.</p>
+            <p>The experiment focused on reducing friction between design and engineering by aligning system structure more directly with code, rather than relying on interpretation.</p>
+            <p>This work represents an early step toward a more integrated workflow, where design systems can serve as both a design tool and a source of truth for implementation.</p>
+          </div>
+
+          <!-- Fig. 02 — Process Comparison -->
+          <div class="pt-4">
+            <div class="border border-border bg-card overflow-hidden">
+              <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">Fig. 02 — Process Comparison</span>
+                <span class="font-mono text-[10px] uppercase text-[#B04318] tracking-wider">Traditional → Continuous</span>
+              </div>
+              <div class="px-6 py-8 flex gap-8 items-start">
+                <!-- Traditional -->
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">Traditional Workflow</span>
+                    <span class="font-mono text-[9px] border px-1.5 py-0.5" style="color: #6B7280; border-color: #6B728055">sequential</span>
+                  </div>
+                  <div class="flex flex-col items-stretch">
+                    @for (step of traditionalSteps; track step.label; let last = $last) {
+                      <div>
+                        <div class="border border-border bg-background px-3 py-2.5 flex items-baseline justify-between gap-2">
+                          <span class="text-sm font-medium text-foreground">{{ step.label }}</span>
+                          <span class="font-mono text-[9px] text-muted-foreground shrink-0">{{ step.sub }}</span>
+                        </div>
+                        @if (!last) {
+                          <div class="flex flex-col items-center py-0.5">
+                            <div class="w-px h-4 bg-border"></div>
+                            <svg width="10" height="6" viewBox="0 0 12 7" fill="none" class="text-muted-foreground">
+                              <path d="M6 7L0.803848 0.25L11.1962 0.25L6 7Z" fill="currentColor" />
+                            </svg>
+                          </div>
+                        }
+                      </div>
+                    }
+                  </div>
+                </div>
+
+                <div class="w-px self-stretch bg-border shrink-0"></div>
+
+                <!-- AI-Assisted -->
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">AI-Assisted Workflow</span>
+                    <span class="font-mono text-[9px] border px-1.5 py-0.5" style="color: #B04318; border-color: #B0431855">continuous</span>
+                  </div>
+                  <div class="flex flex-col items-stretch">
+                    @for (step of continuousSteps; track step.label; let last = $last) {
+                      <div>
+                        <div class="border border-border bg-background px-3 py-2.5 flex items-baseline justify-between gap-2">
+                          <span class="text-sm font-medium text-foreground">{{ step.label }}</span>
+                          <span class="font-mono text-[9px] text-muted-foreground shrink-0">{{ step.sub }}</span>
+                        </div>
+                        @if (!last) {
+                          <div class="flex flex-col items-center py-0.5">
+                            <div class="w-px h-4 bg-border"></div>
+                            <svg width="10" height="6" viewBox="0 0 12 7" fill="none" class="text-muted-foreground">
+                              <path d="M6 7L0.803848 0.25L11.1962 0.25L6 7Z" fill="currentColor" />
+                            </svg>
+                          </div>
+                        }
+                      </div>
+                    }
+                  </div>
+                </div>
+              </div>
+              <div class="bg-muted/10 px-4 py-3 border-t border-border">
+                <p class="font-mono text-xs text-muted-foreground leading-relaxed">Pulling iteration back into UX means designers close the loop faster — returning the time that used to go to back-and-forth corrections to developers, freeing them for feature planning and new development.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 Key Insights -->
+        <div id="insights">
+          <div class="space-y-6 mb-10">
+            <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+              <span class="font-mono text-[11px] text-[#7A2C10]">05.</span>
+              Key Insights
+            </h2>
+          </div>
+
+          <div class="space-y-12">
+            <div class="space-y-3">
+              <h3 class="text-foreground tracking-tight" style="font-size: 1.125rem; font-weight: 700">Structured systems enable automation</h3>
+              <div class="space-y-3 text-muted-foreground leading-relaxed">
+                <p>AI translation was most effective when the design system was well structured. Clear naming, defined states, and consistent token usage improved reliability.</p>
+                <p>Simpler component architecture produced cleaner and more maintainable outputs.</p>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-foreground tracking-tight" style="font-size: 1.125rem; font-weight: 700">Speed changes the feedback loop</h3>
+              <div class="space-y-3 text-muted-foreground leading-relaxed">
+                <p>The primary value was iteration speed.</p>
+                <p>Components could be generated, tested, and refined in rapid succession. This compressed the feedback loop between design and implementation.</p>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-foreground tracking-tight" style="font-size: 1.125rem; font-weight: 700">Alignment comes from execution</h3>
+              <div class="space-y-3 text-muted-foreground leading-relaxed">
+                <p>Generating components directly in code surfaced edge cases earlier and maintained alignment between the design system and production UI.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 Reflection -->
+        <div class="space-y-6" id="reflection">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <span class="font-mono text-[11px] text-[#7A2C10]">06.</span>
+            Reflection
+          </h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>This work reinforced a shift in how I think about design systems.</p>
+            <p class="border-l-2 border-[#B04318] pl-5 my-6 text-foreground" style="font-size: 1.375rem; font-weight: 700; line-height: 1.35">
+              Front-end implementation is part of the user experience—not a separate phase.
+            </p>
+            <p>By treating design and implementation as a continuous system, the process has fewer gaps and less friction.</p>
+            <p>I had seen this in practice before, but this exploration provided a clear proof of concept: when system architecture, design, and development are aligned, teams move faster and with more clarity.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: TOC -->
+      <div class="lg:col-span-4 hidden lg:block">
+        <div class="sticky top-24 border border-border bg-card p-6">
+          <div class="font-mono text-xs text-primary mb-4">// Table of Contents</div>
+          <ul class="space-y-3 font-mono text-sm">
+            <li><a href="#challenge" class="text-foreground hover:text-primary transition-colors">01. The Challenge</a></li>
+            <li><a href="#impact" class="text-foreground hover:text-primary transition-colors">02. Impact</a></li>
+            <li><a href="#approach" class="text-foreground hover:text-primary transition-colors">03. Approach</a></li>
+            <li><a href="#bridge" class="text-foreground hover:text-primary transition-colors">04. Design → Engineering Bridge</a></li>
+            <li><a href="#insights" class="text-foreground hover:text-primary transition-colors">05. Key Insights</a></li>
+            <li><a href="#reflection" class="text-foreground hover:text-primary transition-colors">06. Reflection</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Project Footer -->
+  <section style="background: #141210">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 flex justify-between items-center" style="border-top: 1px solid #2A2420">
+      <a routerLink="/work/penlink" class="group space-y-1 block">
+        <div class="font-mono text-xs text-[#857C74] group-hover:text-[#D06A3D] transition-colors">Previous Project</div>
+        <div class="text-lg font-bold text-[#F2EEE9] group-hover:text-[#D06A3D] transition-colors">Penlink Design System</div>
+      </a>
+      <a routerLink="/work/analysis-workflow" class="group space-y-1 block text-right">
+        <div class="font-mono text-xs text-[#857C74] group-hover:text-[#D06A3D] transition-colors">Next Project</div>
+        <div class="text-lg font-bold text-[#F2EEE9] group-hover:text-[#D06A3D] transition-colors">Investigative Analysis</div>
+      </a>
+    </div>
+  </section>
+</div>

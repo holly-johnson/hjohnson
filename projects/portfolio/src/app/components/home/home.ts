@@ -24,6 +24,8 @@ interface Project {
   description: string;
   impact: string;
   link: string;
+  /** Case study is fully built; unfinished ones render as non-clickable cards. */
+  ready: boolean;
 }
 
 @Component({
@@ -62,6 +64,7 @@ export class Home {
       description: 'Created a design system aligning multiple investigative products under a consistent UI and scalable component architecture.',
       impact: 'Established a shared foundation that improved consistency across investigative tools and enabled faster feature development.',
       link: '/work/penlink',
+      ready: true,
     },
     {
       id: '2',
@@ -71,6 +74,7 @@ export class Home {
       description: 'Bridging design systems and front-end through AI-assisted workflows to improve speed, alignment, and system integrity.',
       impact: 'Demonstrated a potential future workflow where design systems can move more directly from design architecture into engineering implementation.',
       link: '/work/ai-design',
+      ready: true,
     },
     {
       id: '3',
@@ -80,6 +84,7 @@ export class Home {
       description: 'Designed dashboards and exploration workflows that help analysts navigate complex datasets and generate investigative insights.',
       impact: 'Reduced cognitive load for analysts by organizing complex data into clearer workflows that support faster investigative analysis.',
       link: '/work/analysis-workflow',
+      ready: true,
     },
     {
       id: '4',
@@ -89,6 +94,7 @@ export class Home {
       description: 'Created and led a design system supporting 9 university brands and more than 20 websites and applications.',
       impact: 'Unified the university’s digital ecosystem while reducing reliance on external contractors by enabling internal teams to build and maintain sites more efficiently.',
       link: '/work/nucleus',
+      ready: true,
     },
   ];
 }

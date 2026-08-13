@@ -188,10 +188,20 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         @for (project of projects; track project.id) {
-          <a [routerLink]="project.link" class="group flex flex-col border border-border bg-card cursor-pointer">
+          <a
+            [routerLink]="project.ready ? project.link : null"
+            [attr.aria-disabled]="project.ready ? null : 'true'"
+            [class]="project.ready ? 'group cursor-pointer' : 'cursor-default'"
+            class="flex flex-col border border-border bg-card"
+          >
             <!-- Image Area — per-project component-library visualization -->
             <div class="h-64 bg-secondary/30 border-b border-border flex items-center justify-center relative overflow-hidden" style="filter: saturate(0.8)">
               <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, var(--foreground) 1px, transparent 1px); background-size: 16px 16px"></div>
+              @if (!project.ready) {
+                <div class="absolute top-3 right-3 z-10 font-mono text-[10px] text-muted-foreground border border-border bg-background/70 backdrop-blur-sm px-2 py-0.5">
+                  Coming soon
+                </div>
+              }
               @switch (project.id) {
                 @case ('1') { <app-penlink-diagram /> }
                 @case ('4') { <app-nucleus-diagram /> }

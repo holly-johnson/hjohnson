@@ -39,9 +39,18 @@ Source Figma Make file: `fIp92WTgzbxcxRSqM9mIRU` (HJohnson-Design).
 - DONE — Resume page (`Resume.tsx`), real NotFound, shared `app-icon` (inline lucide)
 - DONE — Penlink case study (`PenLinkCaseStudy.tsx`) with 16 real screenshots +
   pure-markup token-architecture diagram
-- TODO:
-  - Remaining 3 case studies ← `AnalysisWorkflow` / `NUcleus` / `AIDesign` `CaseStudy.tsx`
-    (same layout pattern as Penlink; each needs its own images pulled from the Make file)
+- DONE — Remaining 3 case studies ported from the Make file:
+  - `ai-design-case-study` ← `AIDesignCaseStudy.tsx` (no images; two pure-markup
+    diagrams: Translation Pipeline + Process Comparison)
+  - `analysis-workflow-case-study` ← `AnalysisWorkflowCaseStudy.tsx` (source uses
+    "screen 01/02" placeholder figure boxes — reproduced as-is)
+  - `nucleus-case-study` ← `NUcleusCaseStudy.tsx` (14 real screenshots copied into
+    `public/assets/work/nucleus-*.png`). NOTE: the source's 8 "Fig 2 System Scale"
+    image fills are broken in the Make file itself (they render as broken images in
+    Figma's own preview and are absent from every project export), so that figure is
+    rendered as labeled institution tiles instead of images.
+  - Content was extracted from the Make file's Code view (CodeMirror doc), not the
+    cross-origin live preview; images came from the project "Download code" export.
   - Contact ← `Contact.tsx` — SKIPPED (orphaned in source: no route, placeholder data)
 
 ## Image pipeline (case studies)
