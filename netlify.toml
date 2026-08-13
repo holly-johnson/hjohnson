@@ -1,6 +1,6 @@
 [build]
-  command = "npx ng build portfolio"
-  publish = "dist/portfolio/browser"
+  command = "npx ng build portfolio --configuration production"
+  publish = "dist/portfolio"
 
 [build.environment]
   NODE_VERSION = "22"
