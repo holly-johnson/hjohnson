@@ -5,7 +5,7 @@ export default defineConfig({
     environment: 'jsdom',
     include: ['projects/**/*.spec.ts', 'projects/**/*.test.ts'],
     coverage: {
-      provider: 'c8',
+      provider: 'v8',
       reporter: ['text', 'lcov'],
       reportsDirectory: 'coverage',
       lines: 80,
