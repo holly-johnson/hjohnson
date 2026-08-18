@@ -13,6 +13,8 @@ export const routes: Routes = [
   { path: 'work/penlink', redirectTo: 'work/helios', pathMatch: 'full' },
   { path: 'work/analysis-workflow', loadComponent: () => import('./components/work/analysis-workflow-case-study').then(m => m.AnalysisWorkflowCaseStudy), title: 'Investigative Analysis Workflow — Holly Johnson' },
   { path: 'work/nucleus', loadComponent: () => import('./components/work/nucleus-case-study').then(m => m.NucleusCaseStudy), title: 'NUcleus Design System — Holly Johnson' },
+  // Orbit — case-study scaffold (WIP). Reachable directly and linked from Helios §05; not yet featured on the homepage.
+  { path: 'work/orbit', loadComponent: () => import('./components/work/orbit-case-study').then(m => m.OrbitCaseStudy), title: 'Orbit — Holly Johnson' },
   { path: 'work/ai-design', redirectTo: 'work/helios', pathMatch: 'full' },
   { path: '**', loadComponent: () => import('./components/not-found/not-found').then(m => m.NotFound), title: 'Not Found — Holly Johnson' },
 ];
