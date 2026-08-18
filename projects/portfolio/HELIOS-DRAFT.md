@@ -1,7 +1,11 @@
-# Helios — Case Study Content Draft (prose, pre-build)
+# Helios — Case Study Content Draft (prose)
 
-**Status:** Content draft for review. No app code changed. Follows the approved
-structure in `HELIOS-OUTLINE.md` (8 sections, AI work as scoped §07).
+**Status:** BUILT. Live at `src/app/components/work/helios-case-study.{ts,html}`, routed at
+`/work/helios` (replaced the interim Penlink render; `/work/penlink` still redirects here).
+Compiles clean, renders with all 8 sections + 16 images, no runtime errors. Publishing is
+still gated on the verification checklist below (metrics, screenshot scrub, separation
+agreement, timeline dates, MCP slot). Follows the approved structure in `HELIOS-OUTLINE.md`
+(8 sections, AI work as scoped §07).
 **Sources merged:** `work/penlink` (Penlink Design System — spine) + `work/ai-design`
 ("UX Doesn't Stop at Design" — §07). Enriched with the 2026-08-13 Helios debrief.
 
@@ -33,7 +37,7 @@ structure in `HELIOS-OUTLINE.md` (8 sections, AI work as scoped §07).
 **Meta card**
 | Field | Value |
 |---|---|
-| Role | ⚑ HOLLY — see note below |
+| Role | **Senior UX Designer** |
 | Timeline | 2023 – 2025 ⚑ VERIFY exact span/end |
 | Disciplines | Design Systems · Product UX · Design/Engineering · Accessibility |
 | Technologies | Figma · Design Tokens · Angular · Claude / MCP |
@@ -41,14 +45,10 @@ structure in `HELIOS-OUTLINE.md` (8 sections, AI work as scoped §07).
 **Status chip:** `status: deployed` (the system spine shipped; §07 is internally
 labeled *experimental*).
 
-> ⚑ HOLLY — **Role/title.** The debrief is explicit that "Senior UX Designer" doesn't
-> capture the scope (you crossed into component engineering, accessibility ownership,
-> publishing, adoption). But the *live Penlink case study currently says "Lead UX
-> Designer"* — I want to flag that discrepancy rather than silently pick one. Options:
-> (a) your real title "Senior UX Designer" with the scope told through the body;
-> (b) a scope-accurate label like "Senior UX Designer — Design Systems & UX Engineering";
-> (c) keep "Lead UX Designer" if that was in fact your title. Your call — this is the
-> one spot most likely to read as overstated to a hiring manager who checks.
+> ✔ DECIDED — Role = **Senior UX Designer** (your real title; scope is carried by the
+> body copy, not inflated in the label). Note: this differs from the *current live Penlink
+> case study, which says "Lead UX Designer"* — when we build, that page's title should be
+> reconciled to match, or it will contradict this one.
 
 ---
 
@@ -57,9 +57,10 @@ labeled *experimental*).
 *(from Penlink §01 Challenge, enriched with debrief §2/§4)*
 
 When I joined Penlink, the product ecosystem had evolved as a collection of independent
-investigative tools with inconsistent UI patterns and interaction models. The company had
-also grown through acquisition, bringing previously separate products and teams under one
-roof — each with its own UI conventions, engineering history, and product-specific solutions.
+investigative tools — PLX Desktop, GeoTime Enterprise, Tangles, PLX Web, PenLink 360 — with
+inconsistent UI patterns and interaction models. The company had also grown through
+acquisition, bringing previously separate products and teams under one roof — each with its
+own UI conventions, engineering history, and product-specific solutions.
 
 Analysts regularly moved between products to complete investigations. The lack of
 consistency increased cognitive load and made workflows harder to learn. Every team was, in
@@ -76,11 +77,10 @@ decisions into infrastructure that could scale beyond the designers themselves.
 **Fig 1. UI Component Audit** — keep the 9 legacy button screenshots (`btn-*.png`) and
 existing caption. ‹REUSE›
 
-> ⚑ VERIFY — "150+ engineers / 3 products" are internal org figures. Confirm you're
-> comfortable stating them publicly next to the Penlink name (outline §5).
-> ⚑ HOLLY — Do we name specific products (PLX Desktop, GeoTime, Tangles, PLX Web,
-> PenLink 360) or keep the generic "investigative products"? Naming them is more concrete
-> but raises the confidentiality bar. My default: keep generic in prose.
+> ✔ DECIDED — OK to state the internal figures (150+ engineers, 3 products) and to name
+> the specific products publicly. Both are now in the prose above.
+> ⚑ VERIFY still — these choices raise the confidentiality bar; they're gated behind the
+> separation-agreement check (§08) and the screenshot scrub (§04) before anything publishes.
 
 ---
 
@@ -185,30 +185,27 @@ gradually — so a Helios upgrade never forces an immediate rewrite everywhere. 
 architecture supports standalone applications, not just the existing products. **Three
 products were adopting the system.**
 
-To operate the system as infrastructure — not just ship components — I was building out
-operational tooling (internally, *Orbit*): a component-lifecycle/readiness view, a
-cross-repository scanner to find existing UI that could migrate onto Helios, and release/
-publishing support that guards against breaking API changes.
+Around adoption I ran the governance that keeps a shared system trustworthy: **auditing**
+components for consistency, **versioning** releases with safeguards against breaking API
+changes, and a **contribution, review, and documentation model** so other people could add to
+the system without eroding it.
 
-The maturity goal was to **measure real migration** — tracking adoption inside one or two
+To operate Helios as infrastructure — not just ship components — I built **Orbit**, a set of
+operational tooling around the system: a component-lifecycle/readiness view, a
+cross-repository scanner that surfaces existing UI that could migrate onto Helios, and a
+publish pipeline that guards releases against breaking changes.
+
+The next maturity goal was to **measure real migration** — tracking adoption inside one or two
 consuming applications — rather than counting components. A system succeeds because products
 use it and development improves, not because the library is large.
 
-> ⚑ HOLLY — **Biggest honesty flag in the whole draft.** The debrief frames governance and
-> Orbit as things you were *establishing / building toward*, and adoption-measurement as a
-> *next-stage goal*. The old outline note said §05 describes "real practices you ran." I need
-> you to split this cleanly: which of the below was **actually running** vs. **planned/
-> in-progress** when you left?
-> - contribution / review model
-> - component auditing & versioning
-> - the npm package + wrapper adoption model (this one reads as real/shipped)
-> - Orbit tooling (lifecycle view, adoption scanner, publish pipeline)
-> - adoption measurement in a real app
-> I'll frame each exactly as you mark it. Overstating governance is the easiest way for this
-> section to ring false, so I'd rather under-claim.
-
-> ⚑ HOLLY — Do you want **Orbit named** in the public case study, or described generically
-> as "operational tooling"? (Orbit has its own memory now; it's a separate sub-project.)
+> ✔ DECIDED — All four were real/shipped, so they're stated as delivered work, and Orbit is
+> named. I've deliberately calibrated the wording (e.g. "auditing components," "a publish
+> pipeline") to describe concrete practices rather than a fully mature governance *program* —
+> that keeps every claim defensible if a former colleague reads it. Adoption-measurement stays
+> framed as the next-stage goal (you didn't mark it as shipped).
+> ⚑ NOTE — Orbit is the single strongest claim here (a live tool > a concept). If any Orbit
+> piece was more prototype than production, tell me and I'll soften just that one.
 
 ---
 
@@ -266,11 +263,12 @@ directly.
 - **Alignment comes from execution.** Generating components directly in code surfaced edge
   cases earlier and kept the design system and production UI aligned.
 
-> ⚑ HOLLY — **§07 MCP specifics still needed.** The decision is to name MCP explicitly, but I
-> only have the concept, not the mechanics. To write this section truthfully I need: which
-> MCP servers/tools you used, what they read from Figma (variables? component props? states?),
-> and how output landed in Angular. Until then I've kept it at the honest conceptual level and
-> named Claude/MCP without over-specifying.
+> ✔ DECIDED — Keep §07 conceptual for now, fill in specifics later. The section is written at
+> an honest conceptual level (Claude/MCP named, the pipeline and insights intact) with a slot
+> held open below. Before publish, drop in: which MCP servers/tools you used, what they read
+> from Figma (variables? component props? states?), and how output reached Angular.
+>
+> `[ SLOT — MCP mechanics: servers/tools · what they read from Figma · how output reached Angular ]`
 
 ---
 
@@ -308,33 +306,39 @@ architecture into production code.
 - Resolve the Figma ↔ code source-of-truth model.
 - Measure real adoption/migration inside one or two consuming products.
 
-> ⚑ HOLLY — **Tone + legal gate on constraints.** The debrief's organizational material
-> (being excluded from meetings, the ownership/authority mismatch, the layoff framing) is real
-> and important context, but a public portfolio should tell the *constructive* version —
-> "the system needed engineering partnership and governance, and here's what I'd build next" —
-> not a grievance. I've drafted it that way. Two gates before this goes public:
-> (1) check the separation agreement for any confidentiality / non-disparagement clause
-> touching proprietary work product; (2) confirm you're comfortable naming the single-person-
-> dependency candidly — it's honest and reads as maturity, but it's your call.
+> ✔ DECIDED — You're comfortable naming the single-person dependency candidly, so it stays
+> (drafted as the constructive version — "the system needed partnership and governance, here's
+> what I'd build next," not a grievance). The debrief's sharper organizational material
+> (meeting exclusion, authority mismatch, layoff framing) is intentionally kept *out* of the
+> public copy.
+> ⚑ HARD GATE (unchanged) — before this goes public, check the separation agreement for any
+> confidentiality / non-disparagement clause touching proprietary work product. This gate
+> matters more now that you're naming Penlink, the specific products, the figures, and Orbit.
 
 ---
 
-## Pre-publish checklist (carried from outline §3 & §5)
+## Decisions — RESOLVED (2026-08-13)
+- ✔ Role = **Senior UX Designer** (§00) — reconcile the live Penlink page to match at build time.
+- ✔ Governance §05 — all four items (package+wrapper, auditing & versioning, contribution/
+  review + docs, Orbit) stated as real/shipped, with calibrated wording. Orbit named.
+- ✔ MCP §07 — kept conceptual now; specifics slot held open.
+- ✔ Naming — OK to state the internal figures, name the specific products, name Orbit, and
+  name the single-person dependency candidly.
 
+## Pre-publish checklist (still open — gates before anything goes live)
 - [ ] ⚑ VERIFY metrics: 200+ tokens · 50+ components · 20+ patterns · 4 designers · 150+ engineers · 3 products
 - [ ] ⚑ Screenshot scrub (HARD GATE): all reused figures show sample/synthetic data — esp. map + timebar
-- [ ] ⚑ Role/title decision (§00)
-- [ ] ⚑ Governance real-vs-planned split (§05)
-- [ ] ⚑ MCP mechanics (§07)
-- [ ] ⚑ Separation-agreement check before naming Penlink + showing its UI (§08)
-- [ ] ⚑ Decide: name specific products & name "Orbit," or keep generic
+- [ ] ⚑ Separation-agreement check (HARD GATE) — now higher stakes: names Penlink, products, figures, Orbit
+- [ ] ⚑ Confirm exact timeline span/end date (§00)
+- [ ] ⚑ Fill the MCP mechanics slot (§07) when ready
+- [ ] ⚑ Sanity-check Orbit "shipped tool" claim (§05 note)
 
-## Open questions that block a final, publishable draft
-1. Role/title (§00).
-2. Governance: what actually ran vs. what was planned (§05).
-3. MCP mechanics (§07).
-4. Comfort level on the two internal figures and on the single-person-dependency candor.
+## Remaining before a final, publishable draft
+The four blocking *decisions* are resolved. What's left is **verification, not authoring**:
+metrics, screenshot scrub, separation-agreement check, timeline dates, and the (optional-now)
+MCP specifics. None of these block writing the final prose or building the component — they
+block *publishing*.
 
-*Once these land: finalize prose → build the Angular `helios` case-study component (reusing
-the existing case-study layout + real assets) → then the standalone homepage `helios-diagram`
-concept.*
+*Next build steps: finalize prose → build the Angular `helios` case-study component (reusing
+the existing case-study layout + real assets) → reconcile the live Penlink page's title →
+then the standalone homepage `helios-diagram` concept.*

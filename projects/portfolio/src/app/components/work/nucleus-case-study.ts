@@ -40,7 +40,7 @@ export class NucleusCaseStudy {
   protected readonly archRows: ArchRow[] = [
     { label: 'Brand', detail: 'Typography · Color · Spacing' },
     { label: 'Patterns', detail: 'Layout systems · Interaction rules' },
-    { label: 'Components', detail: 'HTML · SCSS · Handlebars · Sitecore CMS' },
+    { label: 'Components', detail: 'HTML · SCSS · Handlebars · NU CMS' },
   ];
 
   protected readonly outputLabels: string[] = ['Departments', 'Institutes', 'Programs', 'Online High School'];
@@ -61,7 +61,7 @@ export class NucleusCaseStudy {
     { label: 'Transfer Nebraska', url: 'https://transfer.nebraska.edu/', domain: 'transfer.nebraska.edu' },
   ];
 
-  protected readonly technologies: string[] = ['Figma', 'HTML', 'SCSS', 'Handlebars', 'Sitecore (CMS)'];
+  protected readonly technologies: string[] = ['Figma', 'HTML', 'SCSS', 'Handlebars', 'NU CMS'];
 
   protected favicon(domain: string): string {
     return `https://www.google.com/s2/favicons?domain=${domain}&sz=16`;
