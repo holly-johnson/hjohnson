@@ -96,7 +96,7 @@
           <div class="space-y-4 text-muted-foreground leading-relaxed">
             <p>The system began as a “glow-up” and redesign of Penlink’s flagship product, PLX Desktop, around the time of the merger. At the time, it was called the Penlink Design System, or PLDS. That redesign became the desktop mode in Figma.</p>
             <p>For web, the same design language was softened and rounded to better suit the platform. Desktop and web became distinct Figma modes within one system.</p>
-            <p>Mobile was always a future goal for Helios and remained a consideration in architectural decisions. After Laura and another designer worked through the mobile expression, I was consulted on adding it as another Figma mode.</p>
+            <p>Mobile was always a future goal for Helios and remained a consideration in architectural decisions. After two other designers worked through the mobile expression, I was consulted on adding it as another Figma mode.</p>
           </div>
 
           <!-- Evolution strip -->
@@ -213,7 +213,7 @@
           </h2>
           <div class="space-y-4 text-muted-foreground leading-relaxed">
             <p>Individual components created consistency at the interface level, but products also shared larger workflow problems. Helios expanded to include reusable patterns that showed how components could work together across common investigative tasks.</p>
-            <p>PLX Web’s timeline bar was one example. After Joel, the product designer, worked through the design for PLX Web, the plan was to build it in Angular as a reusable Helios component and pattern. That would make the same solution available to Tangles and other web products when future feature work called for it, instead of each team solving the same problem again.</p>
+            <p>PLX Web’s timeline bar was one example. After the product designer worked through the design for PLX Web, the plan was to build it in Angular as a reusable Helios component and pattern. That would make the same solution available to Tangles and other web products when future feature work called for it, instead of each team solving the same problem again.</p>
           </div>
 
           <!-- Fig 3. Timeline Bar -->
@@ -299,8 +299,7 @@
             <p>When a prototype was flagged, the plan was for me to review it with the designer and determine whether the AI had changed the component unintentionally or exposed a valid feature requirement Helios needed to support. Live demos and dedicated documentation would follow as the component lifecycle became more connected.</p>
             <p>AI assistance started as an experiment in the system work and earned a durable role as it proved its value. I directed Claude to turn repeated manual processes — scanning, capturing, and organizing — into the recurring workflows below.</p>
             <h3 class="text-base font-semibold text-foreground">Adoption made visible</h3>
-            <p>The initial audit became the dashboard’s first recurring workflow. Working with Claude, I set up a scan across all product repositories. It found every existing instance a Helios component needed to account for as an adoption candidate, along with similar implementations that could be aligned as possible adoptions. The results appeared within each component view.</p>
-            <p>An adoption candidate was the same element already implemented in a product. Once the Helios version was published, the product could repoint to it. A possible adoption candidate was similar enough to investigate, but needed review to determine whether it could align with Helios or had different requirements.</p>
+            <p>The initial audit became the dashboard’s first recurring workflow. Working with Claude, I set up a scan across all product repositories that surfaced two kinds of matches within each component view: <span class="text-foreground font-medium">adoption candidates</span> — the same element already implemented in a product, ready to repoint to the published Helios version — and <span class="text-foreground font-medium">possible adoptions</span>, similar enough to investigate but needing review to see whether they could align with Helios or had different requirements.</p>
             <p>When a product needed properties Helios did not yet support, those requirements were added through non-breaking extensions so the team could adopt without reworking active features. The compromise moved some complexity into Helios, where it was documented for later system-level cleanup.</p>
           </div>
 
