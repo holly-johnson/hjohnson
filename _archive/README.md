@@ -17,8 +17,10 @@ Archived on 2026-08-18, after the "Rework portfolio around Helios" commit
   deleted in `c005188`). `/work/penlink` now redirects to `/work/helios`.
 
 ## diagrams/
-Homepage-card diagrams no longer imported by `home.ts` (the reworked homepage
-uses only `helios-diagram`). Kept in case per-project card diagrams return.
+Homepage-card diagrams no longer imported by `home.ts`. The reworked homepage
+is text-forward and uses no card diagrams. Kept in case they return.
+- **helios-diagram.{ts,html}** — the Design → Helios → Product flow that used to
+  sit in the flagship card; removed 2026-08-18 in favor of a text-forward flagship.
 - **analysis-diagram.{ts,html}**
 - **nucleus-diagram.{ts,html}**
 - **penlink-diagram.{ts,html}**

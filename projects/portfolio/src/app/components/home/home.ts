@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { HeliosDiagram } from './diagrams/helios-diagram';
 
 interface Project {
   id: string;
@@ -15,7 +14,7 @@ interface Project {
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, HeliosDiagram],
+  imports: [RouterLink],
   templateUrl: './home.html',
 })
 export class Home {

@@ -163,60 +163,51 @@
         @if (project.id === '1') {
           <a
             [routerLink]="project.link"
-            class="group block"
+            class="group block lg:w-2/3"
           >
-            <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-center">
-              <div>
-                <div class="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.16em] text-primary mb-8">
-                  <span>01</span>
-                  <span class="w-8 h-px bg-primary/40"></span>
-                  <span>Flagship case study</span>
-                </div>
+            <div class="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.16em] text-primary mb-3">
+              <span>01</span>
+              <span class="w-8 h-px bg-primary/40"></span>
+              <span>Flagship case study</span>
+            </div>
 
-                <h3 class="text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] text-foreground mb-6 group-hover:text-primary transition-colors">
-                  {{ project.title }}
-                </h3>
+            <h3 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-foreground group-hover:text-primary transition-colors mb-6">
+              {{ project.title }}
+            </h3>
 
-                <p class="text-lg leading-relaxed text-muted-foreground">
-                  {{ project.description }}
-                </p>
+            <div>
+              <p class="text-lg leading-relaxed text-muted-foreground">
+                {{ project.description }}
+              </p>
 
-                <div class="mt-8 border-l-2 border-primary pl-5">
-                  <p class="text-sm md:text-base leading-relaxed text-foreground">{{ project.impact }}</p>
-                </div>
-
-                <div class="flex flex-wrap gap-2 mt-8">
-                  @for (disc of project.discipline; track disc) {
-                    <span class="font-mono text-[10px] border border-border px-2.5 py-1 text-muted-foreground">{{ disc }}</span>
-                  }
-                </div>
-
-                <div class="mt-10 inline-flex items-center gap-3 font-medium text-foreground">
-                  Explore Helios
-                  <span class="text-primary transition-transform group-hover:translate-x-1">→</span>
-                </div>
+              <div class="mt-6 border-l-2 border-primary pl-5">
+                <p class="text-sm md:text-base leading-relaxed text-foreground">{{ project.impact }}</p>
               </div>
+            </div>
 
-              <div class="min-h-[360px] bg-secondary/30 flex items-center justify-center p-8 md:p-12 relative overflow-hidden">
-                <div class="absolute inset-0 opacity-[0.035]" style="background-image: radial-gradient(circle, var(--foreground) 1px, transparent 1px); background-size: 18px 18px"></div>
-                <div class="relative w-full max-w-lg transition-transform duration-500 group-hover:scale-[1.02]">
-                  <app-helios-diagram />
-                </div>
-              </div>
+            <div class="flex flex-wrap gap-2 mt-8">
+              @for (disc of project.discipline; track disc) {
+                <span class="font-mono text-[10px] border border-border px-2.5 py-1 text-muted-foreground">{{ disc }}</span>
+              }
+            </div>
+
+            <div class="mt-8 inline-flex items-center gap-3 font-medium text-foreground">
+              Explore Helios
+              <span class="text-primary transition-transform group-hover:translate-x-1">→</span>
             </div>
           </a>
         }
       }
 
       <!-- Supporting projects -->
-      <div class="grid md:grid-cols-2 gap-10 lg:gap-16 mt-12">
+      <div class="grid md:grid-cols-2 gap-10 lg:gap-16 mt-16 pt-16 border-t border-border">
         @for (project of projects; track project.id) {
           @if (project.id !== '1') {
             <a
               [routerLink]="project.link"
               class="group pt-8"
             >
-              <div class="font-mono text-[10px] text-primary mb-6">0{{ project.id }}</div>
+              <div class="font-mono text-[10px] text-primary mb-3">0{{ project.id }}</div>
 
               <h3 class="text-2xl font-bold text-foreground group-hover:text-primary transition-colors leading-tight mb-4">
                 {{ project.title }}
