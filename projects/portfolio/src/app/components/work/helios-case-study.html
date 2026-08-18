@@ -394,19 +394,19 @@
             Design, Verified in Code
           </h2>
           <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>The recurring dashboard scan answered where Helios could be adopted. A deeper review of the product repositories answered a different question: would the Helios component meet the engineering bar? I inspected comparable implementations to understand the standards they followed and the requirements their teams had already solved. Those implementations established the baseline for Helios.</p>
-            <p>I then evaluated the coded Helios component against that baseline. It had to support what products genuinely depended on, meet their engineering standards, and improve on the existing experience wherever possible.</p>
-            <p>Production code became research, and the finished Helios component became proof that the design could hold up in a real product.</p>
+            <p>Helios created a two-way bridge between product code and the shared system. Existing implementations revealed the behaviors teams already depended on; the finished Helios component returned those requirements to products as a supported, reusable foundation.</p>
+            <p>I inspected comparable implementations across the product repositories, then evaluated the coded Helios component against that evidence. The component had to preserve required states and API behavior, meet accessibility and keyboard expectations, support translation and RTL layouts, and remain compatible with existing product workflows.</p>
+            <p>Production code became research. Figma defined the shared intent, Angular tested whether it could survive real engineering constraints, and implementation in a product proved the system could carry the design all the way through.</p>
 
             <div class="border border-dashed border-[#B8B1AA] bg-[#EAE7E3] min-h-72 flex items-center justify-center p-8 text-center">
               <div class="max-w-lg space-y-2">
                 <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image needed · Design verified in code</div>
-                <p class="text-sm font-medium text-foreground">The same meaningful component shown in three places: its Figma definition, the coded Angular component in Helios, and the component running in a product. Choose one with visible states or behavior rather than a basic button.</p>
+                <p class="text-sm font-medium text-foreground">Show one behaviorally rich component as a sequence: Figma definition → coded Angular component → component running in a product. Enlarge the meaningful states and annotate the API, accessibility behavior, localization or RTL support, and product requirement carried across each step.</p>
               </div>
             </div>
 
             <blockquote class="border-l-4 border-l-[#B04318] bg-[#F7F1ED] px-6 py-5 text-foreground">
-              <p class="text-lg md:text-xl font-semibold leading-snug">Translating Figma into Angular wasn’t enough. Every Helios component had to match the capabilities teams already relied on, then improve consistency and behavior across products.</p>
+              <p class="text-lg md:text-xl font-semibold leading-snug">Products informed the system; the system returned those lessons as shared infrastructure.</p>
             </blockquote>
           </div>
         </div>
@@ -422,22 +422,24 @@
           </div>
 
           <div class="grid grid-cols-1 gap-3">
-            <div class="flex items-start gap-3 border border-border bg-card p-4 text-sm text-muted-foreground leading-relaxed">
-              <span class="text-[#B04318] font-mono shrink-0">→</span>
-              <span>Built the system from its first Figma foundations and token architecture through a published Angular component library.</span>
+            <div class="border border-[#B04318]/40 bg-[#F7F1ED] p-6 space-y-2">
+              <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Infrastructure built</div>
+              <p class="text-base font-semibold text-foreground leading-relaxed">Built Helios from its first Figma foundations and token architecture through a published Angular component library.</p>
             </div>
-            <div class="flex items-start gap-3 border border-border bg-card p-4 text-sm text-muted-foreground leading-relaxed">
-              <span class="text-[#B04318] font-mono shrink-0">→</span>
-              <span>Connected components to real product needs through repository scans, recurring UX review, documentation, and contributions emerging from feature work in Orbit.</span>
-            </div>
-            <div class="flex items-start gap-3 border border-border bg-card p-4 text-sm text-muted-foreground leading-relaxed">
-              <span class="text-[#B04318] font-mono shrink-0">→</span>
-              <span>Made incremental adoption easier for product teams by preserving required behavior through additive, non-breaking changes.</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="border border-border bg-card p-4 space-y-2">
+                <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Teams enabled</div>
+                <p class="text-sm text-muted-foreground leading-relaxed">Made incremental adoption easier by preserving required product behavior through additive, non-breaking changes.</p>
+              </div>
+              <div class="border border-border bg-card p-4 space-y-2">
+                <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Operating model established</div>
+                <p class="text-sm text-muted-foreground leading-relaxed">Connected repository evidence, recurring UX review, documentation, publishing, and product adoption in one component lifecycle.</p>
+              </div>
             </div>
           </div>
 
           <div class="space-y-4 pt-2">
-            <h3 class="text-base font-semibold text-foreground">The tradeoffs were real</h3>
+            <h3 class="text-base font-semibold text-foreground">What remained unresolved</h3>
             <p class="text-muted-foreground leading-relaxed">Making adoption easier sometimes moved compatibility debt into Helios. That was a compromise I accepted deliberately, but it increased the work the system would need later.</p>
             <div class="space-y-3">
               @for (item of constraints; track item) {
@@ -452,12 +454,12 @@
           <div class="border border-dashed border-[#B8B1AA] bg-[#EAE7E3] min-h-56 flex items-center justify-center p-8 text-center">
             <div class="max-w-lg space-y-2">
               <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image needed · Published library evidence</div>
-              <p class="text-sm font-medium text-foreground">A tightly cropped view of the published npm package, release history, publishing interface, or a product dependency consuming the Helios package.</p>
+              <p class="text-sm font-medium text-foreground">Pair a tightly cropped release or published-package view with a product dependency consuming that Helios version. The evidence should connect publishing to use, without implying migration beyond what was verified.</p>
             </div>
           </div>
 
           <blockquote class="border-l-4 border-l-[#B04318] bg-[#F7F1ED] px-6 py-5 text-foreground">
-            <p class="text-lg md:text-xl font-semibold leading-snug">I built Helios from the first Figma foundations through a published Angular library, creating the governance that kept design, code, documentation, and adoption connected.</p>
+            <p class="text-lg md:text-xl font-semibold leading-snug">The next maturity step was to distribute ownership, resolve the source of truth across design and code, and measure migration and product impact directly.</p>
           </blockquote>
         </div>
 
