@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Icon } from '../shared/icon';
 
 interface ArchRow {
   label: string;
@@ -20,7 +19,7 @@ interface Reference {
 
 @Component({
   selector: 'app-nucleus-case-study',
-  imports: [RouterLink, Icon],
+  imports: [RouterLink],
   templateUrl: './nucleus-case-study.html',
 })
 export class NucleusCaseStudy {
