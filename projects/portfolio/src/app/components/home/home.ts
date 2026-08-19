@@ -28,9 +28,9 @@ export class Home {
     {
       id: '1',
       title: 'Helios',
-      discipline: ['Design Systems', 'Product Platforms', 'Design Engineering'],
+      discipline: ['Design Systems', 'Product Platforms', 'Design Engineering', 'Applied AI'],
       description: 'A design system and product foundation connecting design architecture, coded components, documentation, distribution, and real product implementation.',
-      impact: 'Built Helios from the ground up — from the first Figma foundations and token architecture to a published Angular component library that products could adopt incrementally.',
+      impact: 'Built Helios from the ground up, from the first Figma foundations and token architecture to a published Angular component library, with Claude woven into everything from how products adopt components to how design decisions get captured.',
       link: '/work/helios',
       ready: true,
     },
