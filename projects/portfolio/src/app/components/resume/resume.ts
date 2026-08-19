@@ -38,13 +38,12 @@ export class Resume {
     {
       title: 'Senior UX Designer',
       company: 'Penlink',
-      period: 'Jan 2023 – Present',
+      period: 'Jan 2023 – Aug 2026',
       achievements: [
-        'Built and evolved Helios, a shared product foundation of design tokens, structured Figma architecture, and a published Angular component library that unified Penlink’s investigative products — evolving the earlier Penlink Design System into a multi-platform system 4 designers could scale across 150+ engineers.',
+        'Built the original Figma-based Penlink Design System (PLDS) and evolved it into Helios, a shared product foundation of design tokens, structured Figma architecture, and a published Angular library for building new web products and transitioning existing ones onto the system, that 4 designers scaled across 150+ engineers.',
         'Architected a layered design token system (primitive → semantic → component) in Figma variables and SCSS, keeping design and front-end implementation in sync across 3 adopting products.',
-        'Engineered and published Helios as a shared Angular package with an incremental-adoption model (product-owned UI wrappers), letting teams adopt shared components without big-bang rewrites.',
-        'Built accessibility into the component architecture — focus management, ARIA, modal focus-trapping, and RTL/logical-property support — so fixes at the foundation improved every consuming product.',
-        'Pioneered an AI-assisted design-to-code workflow, directing Claude via MCP to turn structured design-system information (components, tokens, states) into Angular and to run recurring adoption and critique workflows — an experimental next stage that structured system architecture made possible.',
+        'Built accessibility and internationalization into the component architecture: focus management, ARIA, and modal focus-trapping, plus localization and RTL support (i18n and CSS logical properties) for multi-language products. Fixes at the foundation improved every consuming product.',
+        'Led an experimental AI-assisted design-to-code workflow, directing Claude via MCP to turn structured design-system information (components, tokens, states) into Angular and to run recurring adoption and critique workflows, a next stage that structured system architecture made possible.',
         'Drive UX design for complex intelligence platforms including investigative dashboards, alert systems, and geospatial analysis tools, grounded in analyst interviews and contextual research into investigative workflows.',
       ],
     },
@@ -62,7 +61,7 @@ export class Resume {
       title: 'Lead Web Designer / Developer',
       company: 'University of Nebraska System – Information Technology Services',
       period: 'May 2018 – Apr 2022',
-      note: 'Product Owner — NUcleus Design System',
+      note: 'Product Owner, NUcleus Design System',
       achievements: [
         'Created and led the NUcleus design system from the ground up, defining the vision, roadmap, and governance model supporting 9 university brands and 20+ website and application implementations.',
         "Designed and implemented the system's design token architecture (primitive, semantic, and component layers) using Figma variables and SCSS, ensuring consistency between design and front-end implementation.",
@@ -85,7 +84,7 @@ export class Resume {
   protected readonly additionalExperience: Job[] = [
     {
       title: 'Adjunct Instructor',
-      company: 'Southeast Community College — Graphic Design & Continuing Education',
+      company: 'Southeast Community College, Graphic Design & Continuing Education',
       period: 'Apr 2017 – 2023',
       achievements: [
         'Taught courses in Adobe Illustrator, web design, and HTML/CSS development.',
