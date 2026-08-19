@@ -1,51 +1,33 @@
 <div class="pt-20 bg-background min-h-screen">
 
   <!-- Hero -->
-  <section class="border-b border-border">
+  <section>
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="flex items-center justify-between pt-6 pb-10">
-        <a routerLink="/" fragment="work" class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-          <app-icon name="arrow-left" [size]="14" />
-          Back to Projects
-        </a>
-        <div class="font-mono text-xs bg-[#E8D8CC] text-[#7A2C10] px-2 py-1 border border-[#C8AFA4]">
-          status: deployed
-        </div>
-      </div>
-
-      <div class="grid lg:grid-cols-12 gap-12 items-start pb-24">
-        <div class="lg:col-span-8 space-y-8">
-          <div class="space-y-4">
-            <div class="font-mono text-xs text-[#7A2C10]">// Design Systems</div>
+      <div class="py-20 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div class="lg:col-span-8 space-y-5">
+          <div class="space-y-1">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">NUcleus Design System</h1>
-            <p class="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              A scalable system that unified websites across the University of Nebraska System while enabling departments and institutes to maintain their own identity.
-            </p>
+            <p class="text-xl md:text-2xl font-semibold text-foreground leading-snug">One system, many institutional identities.</p>
           </div>
+          <p class="text-lg text-muted-foreground leading-relaxed">A scalable system that unified websites across the University of Nebraska System while enabling departments and institutes to maintain their own identity.</p>
         </div>
 
-        <div class="lg:col-span-4 border border-border bg-card p-6 space-y-6">
-          <div class="grid grid-cols-2 gap-6">
-            <div class="space-y-1.5">
-              <div class="font-mono text-[10px] text-muted-foreground uppercase">Role</div>
-              <div class="text-sm font-medium">Product Owner<br />Lead Designer<br />Developer</div>
-            </div>
-            <div class="space-y-1.5">
-              <div class="font-mono text-[10px] text-muted-foreground uppercase">Timeline</div>
-              <div class="text-sm font-medium">2018 – 2022</div>
-            </div>
-            <div class="space-y-1.5 col-span-2">
-              <div class="font-mono text-[10px] text-muted-foreground uppercase">Disciplines</div>
-              <div class="text-sm font-medium">Design Systems, Front-End Integration, Product Management</div>
-            </div>
-            <div class="space-y-1.5 col-span-2">
-              <div class="font-mono text-[10px] text-muted-foreground uppercase">Technologies</div>
-              <div class="flex flex-wrap gap-2 pt-1">
-                @for (tech of technologies; track tech) {
-                  <span class="font-mono text-[10px] border border-border px-2 py-0.5 bg-background text-muted-foreground">{{ tech }}</span>
-                }
-              </div>
-            </div>
+        <div class="lg:col-span-4 lg:border-l lg:border-border lg:pl-6 grid grid-cols-1 gap-y-5">
+          <div class="space-y-1.5">
+            <div class="font-mono text-[10px] text-[#7A2C10] uppercase">Timeline</div>
+            <div class="text-sm font-medium">2016 – 2022</div>
+          </div>
+          <div class="space-y-1.5">
+            <div class="font-mono text-[10px] text-[#7A2C10] uppercase">Focus</div>
+            <div class="text-sm font-medium leading-relaxed">Design systems · Front-end integration · Product management</div>
+          </div>
+          <div class="space-y-1.5">
+            <div class="font-mono text-[10px] text-[#7A2C10] uppercase">Role</div>
+            <div class="text-sm font-medium leading-relaxed">Product Owner · Lead Designer · Developer</div>
+          </div>
+          <div class="space-y-1.5">
+            <div class="font-mono text-[10px] text-[#7A2C10] uppercase">Built with</div>
+            <div class="text-sm font-medium leading-relaxed">Figma · HTML · SCSS · Handlebars · NU CMS</div>
           </div>
         </div>
       </div>
@@ -60,7 +42,7 @@
       <div class="lg:col-span-8 space-y-24">
 
         <!-- 01 The Challenge -->
-        <div class="space-y-6" id="challenge">
+        <div class="space-y-6 scroll-mt-32" id="challenge">
           <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
             <span class="font-mono text-[11px] text-[#7A2C10]">01.</span>
             The Challenge
@@ -111,7 +93,7 @@
         </div>
 
         <!-- 02 Approach -->
-        <div class="space-y-6" id="scale">
+        <div class="space-y-6 scroll-mt-32" id="scale">
           <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
             <span class="font-mono text-[11px] text-[#7A2C10]">02.</span>
             Approach
@@ -143,7 +125,7 @@
         </div>
 
         <!-- 03 System Foundations -->
-        <div class="space-y-6" id="foundations">
+        <div class="space-y-6 scroll-mt-32" id="foundations">
           <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
             <span class="font-mono text-[11px] text-[#7A2C10]">03.</span>
             System Foundations
@@ -224,7 +206,7 @@
         </div>
 
         <!-- 04 Component System -->
-        <div class="space-y-6" id="components">
+        <div class="space-y-6 scroll-mt-32" id="components">
           <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
             <span class="font-mono text-[11px] text-[#7A2C10]">04.</span>
             Component System
@@ -280,7 +262,7 @@
         </div>
 
         <!-- 05 Impact -->
-        <div class="space-y-6" id="impact">
+        <div class="space-y-6 scroll-mt-32" id="impact">
           <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
             <span class="font-mono text-[11px] text-[#7A2C10]">05.</span>
             Impact
@@ -297,7 +279,7 @@
             <div class="font-mono text-[10px] uppercase tracking-wider text-muted-foreground pb-1">Outcomes</div>
             <div class="grid grid-cols-2 gap-3">
               @for (item of outcomes; track item.category) {
-                <div class="border border-border bg-card p-5 border-l-2 border-l-[#B04318] space-y-2">
+                <div class="border border-border bg-card p-5 space-y-2">
                   <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">{{ item.category }}</div>
                   <div class="text-sm text-muted-foreground leading-snug">{{ item.stat }}</div>
                 </div>
@@ -333,7 +315,7 @@
         </div>
 
         <!-- 06 Implementation -->
-        <div class="space-y-6" id="bridge">
+        <div class="space-y-6 scroll-mt-32" id="bridge">
           <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
             <span class="font-mono text-[11px] text-[#7A2C10]">06.</span>
             Implementation
@@ -348,16 +330,16 @@
       </div>
 
       <!-- Right Column: TOC -->
-      <div class="lg:col-span-4 hidden lg:block">
-        <div class="sticky top-24 border border-border bg-card p-6">
-          <div class="font-mono text-xs text-primary mb-4">// Table of Contents</div>
+      <div class="lg:col-span-4 hidden lg:block lg:pl-6">
+        <div class="sticky top-24">
+          <div class="font-mono text-[10px] text-[#7A2C10] uppercase mb-4">Table of Contents</div>
           <ul class="space-y-3 font-mono text-sm">
-            <li><a href="#challenge" class="text-foreground hover:text-primary transition-colors">01. The Challenge</a></li>
-            <li><a href="#scale" class="text-foreground hover:text-primary transition-colors">02. Approach</a></li>
-            <li><a href="#foundations" class="text-foreground hover:text-primary transition-colors">03. System Foundations</a></li>
-            <li><a href="#components" class="text-foreground hover:text-primary transition-colors">04. Component System</a></li>
-            <li><a href="#impact" class="text-foreground hover:text-primary transition-colors">05. Impact</a></li>
-            <li><a href="#bridge" class="text-foreground hover:text-primary transition-colors">06. Implementation</a></li>
+            <li><a [routerLink]="[]" fragment="challenge" class="text-foreground hover:text-primary transition-colors">01. The Challenge</a></li>
+            <li><a [routerLink]="[]" fragment="scale" class="text-foreground hover:text-primary transition-colors">02. Approach</a></li>
+            <li><a [routerLink]="[]" fragment="foundations" class="text-foreground hover:text-primary transition-colors">03. System Foundations</a></li>
+            <li><a [routerLink]="[]" fragment="components" class="text-foreground hover:text-primary transition-colors">04. Component System</a></li>
+            <li><a [routerLink]="[]" fragment="impact" class="text-foreground hover:text-primary transition-colors">05. Impact</a></li>
+            <li><a [routerLink]="[]" fragment="bridge" class="text-foreground hover:text-primary transition-colors">06. Implementation</a></li>
           </ul>
         </div>
       </div>

@@ -2,16 +2,9 @@
   <div class="max-w-5xl mx-auto px-6 lg:px-12">
 
     <!-- Header -->
-    <header class="pt-10 pb-10">
-      <div class="flex items-center justify-between mb-10">
-        <a routerLink="/" class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-          ← Back to Portfolio
-        </a>
-        <div class="font-mono text-xs text-[#7A2C10] uppercase tracking-wider">Resume</div>
-      </div>
-
+    <header class="pt-20 pb-10">
       <h1 class="text-4xl md:text-5xl font-bold mb-2">Holly Johnson</h1>
-      <p class="text-lg text-muted-foreground mb-6">Senior UX Designer · Design Systems &amp; Product Ecosystems</p>
+      <p class="text-lg text-muted-foreground mb-6">Product Designer · Design Systems Lead</p>
 
       <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
         <div class="flex items-center gap-2">
@@ -30,9 +23,9 @@
     </header>
 
     <!-- Summary -->
-    <section class="border-t border-border py-10">
+    <section class="pb-10">
       <p class="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl">
-        Systems-focused UX designer who brings structure to complex products. Creator of Helios, a shared product foundation connecting design architecture to production code across an enterprise software ecosystem. Experienced building scalable design systems and token architectures, and translating them into implementation through close collaboration with engineering teams.
+        Product designer and design systems lead who connects complex product needs, design decisions, and production implementation. I create clear workflows, shared systems, and practical ways for design and engineering teams to <em class="text-foreground">build better together.</em>
       </p>
     </section>
 
@@ -42,7 +35,7 @@
 
       <div class="space-y-10">
         @for (job of experience; track job.title + job.period) {
-          <div class="grid md:grid-cols-12 gap-x-8 gap-y-2">
+          <div class="grid md:grid-cols-12 md:items-baseline gap-x-8 gap-y-2">
             <div class="md:col-span-3">
               <div class="font-mono text-xs text-[#7A2C10]">{{ job.period }}</div>
             </div>
@@ -55,7 +48,7 @@
               <ul class="space-y-2 mt-4">
                 @for (achievement of job.achievements; track achievement) {
                   <li class="flex gap-3 text-sm text-muted-foreground leading-relaxed">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#7A2C10] mt-2 flex-shrink-0"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></span>
                     <span>{{ achievement }}</span>
                   </li>
                 }
@@ -69,7 +62,7 @@
 
       <div class="space-y-8">
         @for (job of additionalExperience; track job.title + job.period) {
-          <div class="grid md:grid-cols-12 gap-x-8 gap-y-2">
+          <div class="grid md:grid-cols-12 md:items-baseline gap-x-8 gap-y-2">
             <div class="md:col-span-3">
               <div class="font-mono text-xs text-[#7A2C10]">{{ job.period }}</div>
             </div>
@@ -79,7 +72,7 @@
               <ul class="space-y-2 mt-4">
                 @for (achievement of job.achievements; track achievement) {
                   <li class="flex gap-3 text-sm text-muted-foreground leading-relaxed">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#7A2C10] mt-2 flex-shrink-0"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></span>
                     <span>{{ achievement }}</span>
                   </li>
                 }
