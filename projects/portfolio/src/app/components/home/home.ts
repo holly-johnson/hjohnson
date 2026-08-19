@@ -1,25 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { HeliosDiagram } from './diagrams/helios-diagram';
-import { NucleusDiagram } from './diagrams/nucleus-diagram';
-import { AnalysisDiagram } from './diagrams/analysis-diagram';
-
-interface Approach {
-  num: string;
-  title: string;
-  desc: string;
-}
-
-interface Metric {
-  label: string;
-  value: string;
-}
 
 interface Project {
   id: string;
   title: string;
   discipline: string[];
-  role: string;
   description: string;
   impact: string;
   link: string;
@@ -29,62 +14,41 @@ interface Project {
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, HeliosDiagram, NucleusDiagram, AnalysisDiagram],
+  imports: [RouterLink],
   templateUrl: './home.html',
 })
 export class Home {
-  protected readonly metrics: Metric[] = [
-    { label: 'years_exp', value: '15+' },
-    { label: 'brands_unified', value: '9+' },
-    { label: 'platforms', value: '20+' },
-    { label: 'systems_led', value: '2' },
-  ];
-
   protected readonly social = {
     linkedin: 'https://www.linkedin.com/in/holly-johnson-27336129/',
     email: 'mailto:hme2784@gmail.com',
   };
 
-  protected readonly approach: Approach[] = [
-    { num: '01', title: 'Systems First', desc: 'Products scale when built from coherent systems rather than isolated features.' },
-    { num: '02', title: 'Clarity Over Complexity', desc: 'Design should organize complex tools so people can focus on their work.' },
-    { num: '03', title: 'Design That Ships', desc: 'Strong design translates cleanly into implementation through shared components.' },
-    { num: '04', title: 'Collaborative by Design', desc: 'Great products emerge when design and engineering work closely together.' },
-    { num: '05', title: 'Evolving the Craft', desc: 'AI is reshaping our tools. Responsible design must guide their use.' },
-    { num: '06', title: 'Design for Good', desc: 'The systems we build should make the world better.' },
-  ];
-
-  // NOTE: Helios card prose below is INTERIM — placeholder pending the approved
-  // Helios narrative. The description reuses Holly's own brief wording; the impact
-  // line is carried over from the former Penlink card and will be replaced.
+  // Helios card — aligned to the built /work/helios case study (role, impact).
   protected readonly projects: Project[] = [
     {
       id: '1',
       title: 'Helios',
-      discipline: ['Design Systems', 'Design Engineering'],
-      role: 'Lead',
-      description: 'A design system and product infrastructure initiative connecting design, coded components, documentation, distribution, and real product implementation.',
-      impact: 'Established a shared foundation that improved consistency across investigative tools and enabled faster feature development.',
+      discipline: ['Design Systems', 'Product Platforms', 'Design Engineering', 'Applied AI'],
+      description: 'A design system and product foundation connecting design architecture, coded components, documentation, distribution, and real product implementation.',
+      impact: 'Built Helios from the ground up, from the first Figma foundations and token architecture to a published Angular component library, with Claude woven into everything from how products adopt components to how design decisions get captured.',
       link: '/work/helios',
       ready: true,
     },
     {
       id: '2',
       title: 'Investigative Analysis Workflow',
-      discipline: ['Product UX', 'Data Interfaces'],
-      role: 'UX Designer',
-      description: 'Designed dashboards and exploration workflows that help analysts navigate complex datasets and generate investigative insights.',
-      impact: 'Reduced cognitive load for analysts by organizing complex data into clearer workflows that support faster investigative analysis.',
+      discipline: ['Product UX', 'Complex Workflows', 'Data Visualization'],
+      description: 'End-to-end workflows for law enforcement analysts — from dashboard triage through relationship exploration and reporting.',
+      impact: 'Replaced dense tables and disconnected views with progressive, visual workflows that made patterns easier to find and investigative context easier to maintain.',
       link: '/work/analysis-workflow',
       ready: true,
     },
     {
       id: '3',
       title: 'NUcleus Design System',
-      discipline: ['Design Systems', 'Front-End Integration'],
-      role: 'Product Owner · Lead Designer',
-      description: 'Created and led a design system supporting 9 university brands and more than 20 websites and applications.',
-      impact: 'Unified the university’s digital ecosystem while reducing reliance on external contractors by enabling internal teams to build and maintain sites more efficiently.',
+      discipline: ['Design Systems', 'Platform Strategy', 'Front-End Integration'],
+      description: 'A shared design and front-end system supporting 9 university brands and more than 20 websites and applications.',
+      impact: 'Built the reusable front-end foundation first, then implemented it in the NU CMS. The same front-end has since been carried into a different CMS, allowing the system to outlast its original platform.',
       link: '/work/nucleus',
       ready: true,
     },

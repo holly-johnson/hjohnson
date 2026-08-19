@@ -1,6 +1,4 @@
 <div class="pt-20 bg-background min-h-screen">
-
-  <!-- Hero -->
   <section class="border-b border-border">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between pt-6 pb-10">
@@ -8,181 +6,235 @@
           <app-icon name="arrow-left" [size]="14" />
           Back to Projects
         </a>
-        <div class="font-mono text-xs bg-[#E8D8CC] text-[#7A2C10] px-2 py-1 border border-[#C8AFA4]">
-          status: deployed
-        </div>
+        <div class="font-mono text-xs bg-[#E8D8CC] text-[#7A2C10] px-2 py-1 border border-[#C8AFA4]">case study · 02</div>
       </div>
 
       <div class="grid lg:grid-cols-12 gap-12 items-start pb-24">
-        <div class="lg:col-span-8 space-y-8">
-          <div class="space-y-4">
-            <div class="font-mono text-xs text-[#7A2C10]">// Product UX</div>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">Investigative Analysis Workflow</h1>
-            <p class="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Designed dashboards and exploration workflows that help analysts navigate complex datasets and generate investigative insights.
-            </p>
-          </div>
+        <div class="lg:col-span-8 space-y-7">
+          <div class="font-mono text-xs text-[#7A2C10]">// Complex Product UX</div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight max-w-3xl">From a data dump to an investigative thread</h1>
+          <p class="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+            I redesigned how analysts move from a broad set of records to a defensible finding—without losing the chain of people, places, events, and evidence that led them there.
+          </p>
         </div>
 
-        <div class="lg:col-span-4 border border-border bg-card p-6 space-y-6">
-          <div class="grid grid-cols-2 gap-6">
-            <div class="space-y-1.5">
-              <div class="font-mono text-[10px] text-muted-foreground uppercase">Role</div>
-              <div class="text-sm font-medium">UX Designer</div>
-            </div>
-            <div class="space-y-1.5">
-              <div class="font-mono text-[10px] text-muted-foreground uppercase">Timeline</div>
-              <div class="text-sm font-medium">2022 – 2024</div>
-            </div>
-            <div class="space-y-1.5 col-span-2">
-              <div class="font-mono text-[10px] text-muted-foreground uppercase">Disciplines</div>
-              <div class="text-sm font-medium">Product UX, Data Interfaces, Workflow Design</div>
-            </div>
-            <div class="space-y-1.5 col-span-2">
-              <div class="font-mono text-[10px] text-muted-foreground uppercase">Technologies</div>
-              <div class="flex flex-wrap gap-2 pt-1">
-                <span class="font-mono text-[10px] border border-border px-2 py-0.5 bg-background text-muted-foreground">Figma</span>
+        <div class="lg:col-span-4 border border-border bg-card p-6">
+          <dl class="grid grid-cols-2 gap-x-6 gap-y-5">
+            @for (detail of projectDetails; track detail.label) {
+              <div [class.col-span-2]="detail.wide">
+                <dt class="font-mono text-[10px] text-muted-foreground uppercase mb-1.5">{{ detail.label }}</dt>
+                <dd class="text-sm font-medium leading-relaxed">{{ detail.value }}</dd>
               </div>
-            </div>
-          </div>
+            }
+          </dl>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Main Content -->
+  <section class="border-b border-border bg-[#171512] text-[#F2EEE9]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-14 grid md:grid-cols-3 gap-px bg-[#3A342E]">
+      @for (item of thesis; track item.label) {
+        <div class="bg-[#171512] px-6 py-2 md:py-4">
+          <div class="font-mono text-[10px] uppercase tracking-widest text-[#D58A68] mb-3">{{ item.label }}</div>
+          <p class="text-sm leading-relaxed text-[#C9C1B9]">{{ item.text }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
   <section class="py-24">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-16">
-
-      <!-- Left Column -->
-      <div class="lg:col-span-8 space-y-24">
-
-        <!-- 01 The Challenge -->
-        <div class="space-y-6" id="challenge">
-          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
-            <span class="font-mono text-[11px] text-[#7A2C10]">01.</span>
-            The Challenge
-          </h2>
+      <main class="lg:col-span-8 space-y-24">
+        <section class="space-y-7" id="problem">
+          <div class="space-y-3">
+            <div class="font-mono text-[11px] text-[#7A2C10]">01 / THE PROBLEM</div>
+            <h2 class="text-3xl font-bold tracking-tight">The tool showed records. The analyst had to build the story.</h2>
+          </div>
           <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>Law enforcement analysts investigate complex cases across large volumes of interconnected data—phone records, financial transactions, social networks, and digital communications.</p>
-            <p>Existing tools presented this data in dense tables and disconnected views, requiring analysts to manually piece together relationships and patterns.</p>
-            <p>The cognitive load was high, the learning curve was steep, and critical insights could be missed in the noise.</p>
-            <p>The challenge was to design workflows that reduce friction, surface patterns more clearly, and support the investigative process from initial exploration through final reporting.</p>
-          </div>
-        </div>
-
-        <!-- 02 The Approach -->
-        <div class="space-y-6" id="approach">
-          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
-            <span class="font-mono text-[11px] text-[#7A2C10]">02.</span>
-            The Approach
-          </h2>
-          <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>I worked closely with law enforcement analysts to understand their workflows, pain points, and mental models.</p>
-            <p>Through contextual interviews and workflow mapping, I identified key moments where the interface could better support analytical thinking.</p>
-            <p>The design solution focused on three core areas: a dashboard that surfaces critical insights at a glance, an exploration interface for investigating complex data relationships, and a structured reporting workflow that captures findings in a format ready for legal review.</p>
-            <p>These workflows were designed to align with how analysts think through investigations, not just how data is structured.</p>
+            <p>Analysts were working across call records, locations, financial activity, identities, and digital communications. The information existed, but it was split across dense tables and isolated views.</p>
+            <p>Every pivot introduced a risk: filters reset, time ranges drifted, selected entities disappeared, and the reason a record mattered lived in the analyst’s memory or a separate note. The real design problem was continuity—not simply visualization.</p>
           </div>
 
-          <!-- Fig. 01 — Final Design -->
-          <div class="border border-border bg-card overflow-hidden">
-            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
-              <span class="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">Fig. 01 — Final Design</span>
-              <span class="font-mono text-[10px] uppercase text-[#B04318] tracking-wider">Investigative Analysis</span>
+          <div class="border border-border bg-card">
+            <div class="grid sm:grid-cols-[1fr_auto_1fr_auto_1fr] items-stretch">
+              @for (step of oldFlow; track step.title; let last = $last) {
+                <div class="p-5">
+                  <div class="font-mono text-[10px] text-[#B04318] mb-2">{{ step.index }}</div>
+                  <div class="font-semibold text-sm mb-1">{{ step.title }}</div>
+                  <div class="text-xs text-muted-foreground leading-relaxed">{{ step.text }}</div>
+                </div>
+                @if (!last) {
+                  <div class="hidden sm:flex items-center text-border">→</div>
+                }
+              }
             </div>
-            <div class="bg-[#F7F6F4] p-4 space-y-4">
-              <div class="w-full aspect-[16/10] bg-[#E6E0D8] flex items-center justify-center">
-                <span class="font-mono text-xs text-muted-foreground">screen 01</span>
+            <div class="border-t border-border px-5 py-3 font-mono text-[10px] text-muted-foreground uppercase tracking-wider">The original experience repeatedly broke context</div>
+          </div>
+        </section>
+
+        <section class="space-y-8" id="model">
+          <div class="space-y-3">
+            <div class="font-mono text-[11px] text-[#7A2C10]">02 / WORKFLOW MODEL</div>
+            <h2 class="text-3xl font-bold tracking-tight">Design around the questions analysts ask</h2>
+            <p class="text-muted-foreground leading-relaxed max-w-2xl">Research conversations and workflow mapping shifted the structure away from feature areas and toward four recurring investigative moves.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            @for (step of workflow; track step.number) {
+              <article class="border border-border bg-card p-6 relative overflow-hidden">
+                <div class="absolute top-4 right-5 font-mono text-4xl text-[#E8D8CC]">{{ step.number }}</div>
+                <div class="font-mono text-[10px] uppercase tracking-wider text-[#B04318] mb-5">{{ step.verb }}</div>
+                <h3 class="text-lg font-semibold mb-2">{{ step.question }}</h3>
+                <p class="text-sm text-muted-foreground leading-relaxed max-w-sm">{{ step.detail }}</p>
+              </article>
+            }
+          </div>
+        </section>
+
+        <section class="space-y-8" id="workspace">
+          <div class="space-y-3">
+            <div class="font-mono text-[11px] text-[#7A2C10]">03 / THE WORKSPACE</div>
+            <h2 class="text-3xl font-bold tracking-tight">One investigation, multiple lenses</h2>
+            <p class="text-muted-foreground leading-relaxed">The workspace keeps the active entities, time window, and filters visible while analysts change how they inspect the data. The view changes; the investigative frame does not.</p>
+          </div>
+
+          <figure class="border border-[#B9AEA4] bg-[#E9E4DD] shadow-[0_20px_45px_rgba(45,35,27,0.12)] overflow-hidden">
+            <div class="bg-[#24201C] text-[#F4F0EA] px-4 py-3 flex items-center justify-between gap-4">
+              <div class="flex items-center gap-3 min-w-0">
+                <span class="w-2 h-2 rounded-full bg-[#D06A3D]"></span>
+                <span class="font-mono text-[10px] uppercase tracking-wider truncate">Case 24-071 · Harbor inquiry</span>
               </div>
-              <div class="w-full aspect-[16/10] bg-[#E6E0D8] flex items-center justify-center">
-                <span class="font-mono text-xs text-muted-foreground">screen 02</span>
+              <span class="font-mono text-[9px] text-[#AFA59C]">SYNTHETIC DATA</span>
+            </div>
+            <div class="grid md:grid-cols-[170px_1fr] min-h-[520px]">
+              <div class="bg-[#F7F4EF] border-r border-[#CFC6BD] p-3 space-y-5">
+                <div>
+                  <div class="font-mono text-[9px] uppercase text-[#7C726A] mb-2">Active frame</div>
+                  <div class="border border-[#CFC6BD] bg-white p-2.5 space-y-1">
+                    <div class="text-[11px] font-semibold">May 08–12, 2024</div>
+                    <div class="font-mono text-[9px] text-[#7C726A]">4 entities · 3 filters</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="font-mono text-[9px] uppercase text-[#7C726A] mb-2">Pinned entities</div>
+                  @for (entity of ['M. Rivera', 'Northstar LLC', 'Device ··38', 'Pier 9']; track entity) {
+                    <div class="flex items-center gap-2 py-1.5 text-[10px]"><span class="w-1.5 h-1.5 rounded-full bg-[#B04318]"></span>{{ entity }}</div>
+                  }
+                </div>
+                <div class="border-t border-[#D8D0C8] pt-3">
+                  <div class="font-mono text-[9px] text-[#7C726A]">8 findings saved</div>
+                </div>
+              </div>
+
+              <div class="bg-[#F0ECE6] flex flex-col">
+                <div class="border-b border-[#CFC6BD] bg-white px-4 flex gap-5">
+                  @for (tab of ['Overview', 'Map', 'Timeline', 'Connections']; track tab; let first = $first) {
+                    <div class="py-3 text-[10px]" [class.font-semibold]="first" [class.border-b-2]="first" [class.border-[#B04318]]="first">{{ tab }}</div>
+                  }
+                </div>
+                <div class="grid sm:grid-cols-[1fr_190px] flex-1">
+                  <div class="p-4 space-y-4">
+                    <div class="grid grid-cols-3 gap-2">
+                      @for (stat of workspaceStats; track stat.label) {
+                        <div class="bg-white border border-[#D5CDC5] p-3">
+                          <div class="font-mono text-[8px] uppercase text-[#7C726A]">{{ stat.label }}</div>
+                          <div class="text-lg font-bold mt-1">{{ stat.value }}</div>
+                        </div>
+                      }
+                    </div>
+                    <div class="bg-[#DDD7CF] border border-[#C9C0B7] min-h-[280px] relative overflow-hidden">
+                      <div class="absolute inset-0 opacity-60" style="background-image: linear-gradient(#C3BAB0 1px, transparent 1px), linear-gradient(90deg, #C3BAB0 1px, transparent 1px); background-size: 36px 36px;"></div>
+                      @for (node of nodes; track node.label) {
+                        <div class="absolute -translate-x-1/2 -translate-y-1/2 text-center" [style.left.%]="node.x" [style.top.%]="node.y">
+                          <div class="mx-auto rounded-full border-2 border-white shadow-md" [class.w-10]="node.primary" [class.h-10]="node.primary" [class.w-7]="!node.primary" [class.h-7]="!node.primary" [style.background]="node.primary ? '#B04318' : '#4E5D66'"></div>
+                          <div class="bg-white border border-[#C9C0B7] px-2 py-0.5 mt-1 text-[8px] whitespace-nowrap">{{ node.label }}</div>
+                        </div>
+                      }
+                      <svg class="absolute inset-0 w-full h-full" viewBox="0 0 500 280" preserveAspectRatio="none" aria-hidden="true">
+                        <path d="M105 78 L260 135 L390 70 M260 135 L375 215 M105 78 L125 220" stroke="#766A60" stroke-width="1.5" stroke-dasharray="5 4" fill="none" />
+                      </svg>
+                    </div>
+                    <div class="bg-white border border-[#D5CDC5] p-3">
+                      <div class="flex justify-between font-mono text-[8px] text-[#7C726A] mb-3"><span>MAY 08</span><span>MAY 12</span></div>
+                      <div class="h-2 bg-[#DDD7CF] relative"><div class="absolute left-[24%] right-[18%] h-full bg-[#B04318]"></div></div>
+                    </div>
+                  </div>
+                  <div class="border-l border-[#CFC6BD] bg-white p-4">
+                    <div class="font-mono text-[9px] uppercase text-[#7C726A] mb-4">Selected finding</div>
+                    <div class="font-semibold text-xs leading-relaxed mb-2">Three entities converged within a 42-minute window</div>
+                    <p class="text-[10px] leading-relaxed text-[#6E655D] mb-4">The same time range remains active across connection, location, and event evidence.</p>
+                    <div class="space-y-2">
+                      @for (source of ['Location event · 21:14', 'Call record · 21:31', 'Transaction · 21:56']; track source) {
+                        <div class="border border-[#D5CDC5] bg-[#F8F5F1] p-2 text-[9px]">{{ source }}</div>
+                      }
+                    </div>
+                    <div class="mt-4 bg-[#B04318] text-white text-center py-2 font-mono text-[9px] uppercase">Add to findings</div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="bg-muted/10 px-4 py-3 border-t border-border">
-              <p class="font-mono text-xs text-muted-foreground leading-relaxed">Final design screens from the Investigative Analysis workflow redesign.</p>
-            </div>
+            <figcaption class="bg-card border-t border-border px-4 py-3 font-mono text-[10px] text-muted-foreground leading-relaxed">Conceptual reconstruction using synthetic names and records. The persistent investigation frame carries selected entities, filters, and time range between views.</figcaption>
+          </figure>
+        </section>
+
+        <section class="space-y-8" id="decisions">
+          <div class="space-y-3">
+            <div class="font-mono text-[11px] text-[#7A2C10]">04 / DESIGN DECISIONS</div>
+            <h2 class="text-3xl font-bold tracking-tight">Make reasoning visible, not just results</h2>
           </div>
-        </div>
+          <div class="divide-y divide-border border-y border-border">
+            @for (decision of decisions; track decision.title; let i = $index) {
+              <article class="grid sm:grid-cols-[56px_1fr] gap-4 py-7">
+                <div class="font-mono text-xs text-[#B04318]">0{{ i + 1 }}</div>
+                <div>
+                  <h3 class="font-semibold mb-2">{{ decision.title }}</h3>
+                  <p class="text-sm text-muted-foreground leading-relaxed">{{ decision.desc }}</p>
+                </div>
+              </article>
+            }
+          </div>
+        </section>
 
-        <!-- 03 Key Design Decisions -->
-        <div class="space-y-6" id="decisions">
-          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
-            <span class="font-mono text-[11px] text-[#7A2C10]">03.</span>
-            Key Design Decisions
-          </h2>
-
-          <div class="space-y-8">
-            @for (d of decisions; track d.title) {
-              <div class="border-l-2 border-l-[#B04318] pl-6 space-y-2">
-                <h3 class="text-base font-semibold text-foreground">{{ d.title }}</h3>
-                <p class="text-muted-foreground leading-relaxed">{{ d.desc }}</p>
+        <section class="space-y-8" id="outcome">
+          <div class="space-y-3">
+            <div class="font-mono text-[11px] text-[#7A2C10]">05 / OUTCOME</div>
+            <h2 class="text-3xl font-bold tracking-tight">A workflow analysts could follow—and explain</h2>
+          </div>
+          <p class="text-muted-foreground leading-relaxed">The redesign gave analysts a consistent path from orientation to evidence capture. Instead of rebuilding context after every pivot, they could compare different views of the same investigative frame and preserve why a finding mattered alongside its source records.</p>
+          <div class="grid sm:grid-cols-3 gap-4">
+            @for (result of outcomes; track result.title) {
+              <div class="border border-border bg-card p-5 border-t-2 border-t-[#B04318]">
+                <h3 class="font-semibold text-sm mb-2">{{ result.title }}</h3>
+                <p class="text-xs text-muted-foreground leading-relaxed">{{ result.text }}</p>
               </div>
             }
           </div>
-        </div>
-
-        <!-- 04 Impact & Outcomes -->
-        <div class="space-y-6" id="impact">
-          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
-            <span class="font-mono text-[11px] text-[#7A2C10]">04.</span>
-            Impact & Outcomes
-          </h2>
-
-          <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>The redesigned workflow reduced cognitive load by organizing complex data into clearer, more navigable structures.</p>
-            <p>Law enforcement users reported faster case analysis, improved pattern recognition, and increased confidence in investigative findings.</p>
-            <p>By aligning the interface with investigative mental models, the system supports the analytical process rather than slowing it down.</p>
+          <div class="bg-[#EFE8E1] border-l-2 border-[#B04318] p-6">
+            <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10] mb-2">What I learned</div>
+            <p class="text-sm leading-relaxed">In high-stakes analytical tools, speed is not only fewer clicks. It is fewer moments where a person has to reconstruct what they were looking at, why it mattered, and whether the evidence still supports the conclusion.</p>
           </div>
+        </section>
+      </main>
 
-          <div class="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">User feedback indicated</div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            @for (m of metrics; track m.label) {
-              <div class="border border-border bg-card p-6 border-l-2 border-l-[#B04318] flex flex-col h-full">
-                <div class="font-mono text-[10px] text-muted-foreground mb-3">{{ m.label }}</div>
-                <div class="text-3xl font-bold text-[#B04318] mb-3">{{ m.value }}</div>
-                <div class="text-sm text-muted-foreground leading-relaxed">{{ m.desc }}</div>
-              </div>
-            }
-          </div>
-        </div>
-
-        <!-- 05 Reflection -->
-        <div class="space-y-6" id="reflection">
-          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
-            <span class="font-mono text-[11px] text-[#7A2C10]">05.</span>
-            Reflection
-          </h2>
-          <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>Designing for investigative workflows reinforced the importance of understanding domain-specific mental models.</p>
-            <p>Generic data visualization patterns are not enough—the interface must align with how analysts think through cases.</p>
-            <p>This work strengthened my belief that effective UX for complex systems is not about adding features, but about organizing complexity to support human cognition and workflow.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Column: TOC -->
-      <div class="lg:col-span-4 hidden lg:block">
+      <aside class="lg:col-span-4 hidden lg:block">
         <div class="sticky top-24 border border-border bg-card p-6">
-          <div class="font-mono text-xs text-primary mb-4">// Table of Contents</div>
-          <ul class="space-y-3 font-mono text-sm">
-            <li><a href="#challenge" class="text-foreground hover:text-primary transition-colors">01. The Challenge</a></li>
-            <li><a href="#approach" class="text-foreground hover:text-primary transition-colors">02. The Approach</a></li>
-            <li><a href="#decisions" class="text-foreground hover:text-primary transition-colors">03. Key Design Decisions</a></li>
-            <li><a href="#impact" class="text-foreground hover:text-primary transition-colors">04. Impact & Outcomes</a></li>
-            <li><a href="#reflection" class="text-foreground hover:text-primary transition-colors">05. Reflection</a></li>
-          </ul>
+          <div class="font-mono text-xs text-[#7A2C10] mb-4">// In this case study</div>
+          <ol class="space-y-3 font-mono text-sm">
+            @for (item of toc; track item.href) {
+              <li><a [href]="item.href" class="text-foreground hover:text-primary transition-colors">{{ item.label }}</a></li>
+            }
+          </ol>
         </div>
-      </div>
+      </aside>
     </div>
   </section>
 
-  <!-- Next Project Footer -->
   <section style="background: #141210">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 flex justify-between items-center" style="border-top: 1px solid #2A2420">
-      <a routerLink="/work/ai-design" class="group space-y-1 block">
+      <a routerLink="/work/helios" class="group space-y-1 block">
         <div class="font-mono text-xs text-[#857C74] group-hover:text-[#D06A3D] transition-colors">Previous Project</div>
-        <div class="text-lg font-bold text-[#F2EEE9] group-hover:text-[#D06A3D] transition-colors">AI-Assisted Design-to-Code</div>
+        <div class="text-lg font-bold text-[#F2EEE9] group-hover:text-[#D06A3D] transition-colors">Helios</div>
       </a>
       <a routerLink="/work/nucleus" class="group space-y-1 block text-right">
         <div class="font-mono text-xs text-[#857C74] group-hover:text-[#D06A3D] transition-colors">Next Project</div>
