@@ -26,6 +26,15 @@ is text-forward and uses no card diagrams. Kept in case they return.
 - **penlink-diagram.{ts,html}**
 - **ai-diagram.{ts,html}**
 
+## assets/work/
+Real Penlink product screenshots pulled out of the deployable `public/` folder
+on 2026-08-19 so they are NOT served on the public site while confidentiality /
+NDA is unresolved. The Helios page shows "Image pending" placeholders in their
+place. Restore (ideally sanitized/synthetic versions) once cleared.
+- **btn-*.png** — the Fig 1 button audit
+- **pattern-timebar / filter-panel / category-intensity / table / toast / map.png** — Fig 3 & Fig 4 patterns
+- **input-utilities.png**
+
 ## Restoring something
 Move the files back under `projects/portfolio/src/app/components/...`, re-add the
 `import` + `imports: [...]` entry (and, for a case study, its route in

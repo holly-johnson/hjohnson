@@ -40,11 +40,12 @@ export class Resume {
       company: 'Penlink',
       period: 'Jan 2023 – Present',
       achievements: [
-        'Unified multiple product brands under a scalable design system aligned with the company brand, creating a consistent foundation across the product ecosystem.',
-        'Designed and applied design token architecture using Figma variables, enabling consistent UI development across products and supporting scalable component systems.',
-        'Drive UX design for complex intelligence platforms including investigative dashboards, alert systems, and geospatial analysis tools.',
-        'Conduct analyst interviews and contextual research to understand investigative workflows and translate them into intuitive product experiences.',
-        'Used Claude to translate Figma design system components into reusable Angular components for feature teams to integrate via MCP, creating a bridge between design systems and engineering implementation.',
+        'Built and evolved Helios, a shared product foundation of design tokens, structured Figma architecture, and a published Angular component library that unified Penlink’s investigative products — evolving the earlier Penlink Design System into a multi-platform system 4 designers could scale across 150+ engineers.',
+        'Architected a layered design token system (primitive → semantic → component) in Figma variables and SCSS, keeping design and front-end implementation in sync across 3 adopting products.',
+        'Engineered and published Helios as a shared Angular package with an incremental-adoption model (product-owned UI wrappers), letting teams adopt shared components without big-bang rewrites.',
+        'Built accessibility into the component architecture — focus management, ARIA, modal focus-trapping, and RTL/logical-property support — so fixes at the foundation improved every consuming product.',
+        'Pioneered an AI-assisted design-to-code workflow, directing Claude via MCP to turn structured design-system information (components, tokens, states) into Angular and to run recurring adoption and critique workflows — an experimental next stage that structured system architecture made possible.',
+        'Drive UX design for complex intelligence platforms including investigative dashboards, alert systems, and geospatial analysis tools, grounded in analyst interviews and contextual research into investigative workflows.',
       ],
     },
     {
