@@ -72,10 +72,8 @@ export class Navigation {
   // ── Conditional class strings (mirror the Make source's ternaries) ──
 
   protected navClass(): string {
-    if (this.isDark()) return 'bg-transparent border-b border-transparent';
-    return this.scrolled()
-      ? 'bg-background/95 backdrop-blur-sm border-b border-border'
-      : 'bg-background/95 backdrop-blur-sm border-b border-transparent';
+    if (this.isDark()) return 'bg-transparent';
+    return 'bg-background/95 backdrop-blur-sm';
   }
 
   protected logoBoxClass(): string {

@@ -25,7 +25,7 @@
     <!-- Summary -->
     <section class="pb-10">
       <p class="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl">
-        Product designer and design systems lead who connects complex product needs, design decisions, and production implementation. I create clear workflows, shared systems, and practical ways for design and engineering teams to <em class="text-foreground">build better together.</em>
+        Product designer and design systems lead who connects complex product needs, design decisions, and production implementation, creating clear workflows, shared systems, and practical ways for design and engineering teams to <em class="text-foreground">build better together.</em>
       </p>
     </section>
 
@@ -152,7 +152,7 @@
 
       <div class="flex flex-wrap gap-x-10 gap-y-4">
         @for (link of links; track link.label) {
-          <a [href]="'https://' + link.url" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2.5">
+          <a [href]="link.href" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2.5">
             <app-icon [name]="link.icon" [size]="14" class="text-[#B04318] flex-shrink-0" />
             <span class="text-sm font-mono break-all group-hover:text-[#B04318] transition-colors">{{ link.url }}</span>
           </a>
