@@ -31,7 +31,7 @@
 
     <!-- Experience -->
     <section class="border-t border-border py-10">
-      <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8">Experience</div>
+      <h2 class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8">Experience</h2>
 
       <div class="space-y-10">
         @for (job of experience; track job.title + job.period) {
@@ -58,7 +58,7 @@
         }
       </div>
 
-      <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8 mt-12">Additional Experience</div>
+      <h2 class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8 mt-12">Additional Experience</h2>
 
       <div class="space-y-8">
         @for (job of additionalExperience; track job.title + job.period) {
@@ -85,7 +85,7 @@
 
     <!-- Approach -->
     <section class="border-t border-border py-10">
-      <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8">Approach to Product Design</div>
+      <h2 class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8">Approach to Product Design</h2>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
         @for (item of approach; track item.label) {
@@ -104,7 +104,7 @@
     <section class="border-t border-border py-10">
       <div class="grid lg:grid-cols-2 gap-x-8 gap-y-10">
         <div>
-          <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8">Education</div>
+          <h2 class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8">Education</h2>
           <div class="font-mono text-xs text-[#7A2C10] mb-2">2016</div>
           <h3 class="text-base font-semibold">Associate Degree of Applied Science</h3>
           <div class="text-sm text-muted-foreground">Graphic Design | Media Arts</div>
@@ -112,7 +112,7 @@
         </div>
 
         <div>
-          <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8">Leadership</div>
+          <h2 class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8">Leadership</h2>
           <ul class="space-y-4">
             @for (item of leadership; track item.role + item.year) {
               <li>
@@ -127,7 +127,7 @@
 
     <!-- Recognition -->
     <section class="border-t border-border py-10">
-      <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8">Recognition</div>
+      <h2 class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8">Recognition</h2>
 
       <div class="max-w-3xl">
         <div class="font-mono text-xs text-[#7A2C10] mb-2">May 2022</div>
@@ -148,7 +148,7 @@
 
     <!-- Links -->
     <section class="border-t border-border py-10">
-      <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8">Links</div>
+      <h2 class="font-mono text-xs uppercase tracking-wider text-[#7A2C10] mb-8">Links</h2>
 
       <div class="flex flex-wrap gap-x-10 gap-y-4">
         @for (link of links; track link.label) {

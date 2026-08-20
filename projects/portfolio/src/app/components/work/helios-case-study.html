@@ -3,34 +3,44 @@
   <!-- Hero -->
   <section>
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="py-20 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        <div class="lg:col-span-8 space-y-5">
+      <div class="py-20 space-y-12">
+        <div class="max-w-4xl space-y-5">
           <div class="space-y-1">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">Helios</h1>
             <p class="text-xl md:text-2xl font-semibold text-foreground leading-snug">Design decisions, shipped as code.</p>
           </div>
           <p class="text-lg text-muted-foreground leading-relaxed">
-            Helios unified a fragmented suite of investigative products through a shared foundation spanning Figma architecture, Angular components, documentation, governance, and adoption. As the connector between design and engineering, I architected the system and led its development, translating the design team's decisions into the production Angular components that products shipped. The system itself was shaped through UX review and real product needs.
+            Helios gave a fragmented suite of investigative products a shared foundation across Figma and production Angular. Serving as design system architect and Angular developer, I built its production components for PLX Web and led an incremental adoption strategy within a product organization of more than 150 engineers.
           </p>
         </div>
 
-        <div class="lg:col-span-4 lg:border-l lg:border-border lg:pl-6 grid grid-cols-1 gap-y-5">
-          <div class="space-y-1.5">
-            <div class="font-mono text-[10px] text-[#7A2C10] uppercase">Timeline</div>
-            <div class="text-sm font-medium">Jan 2023 – Aug 2026</div>
+        <div class="grid lg:grid-cols-[1.15fr_2fr] border border-border">
+          <div class="bg-[#171513] p-6 md:p-8 flex flex-col justify-between min-h-52">
+            <div class="font-mono text-xs uppercase tracking-wider text-[#D06A3D]">Production release</div>
+            <div class="space-y-2 mt-10">
+              <div class="text-4xl md:text-5xl font-bold tracking-tight text-[#F2EEE9]">1.2.0</div>
+              <p class="text-sm leading-relaxed text-[#C9C1B8]">Released August 3, 2026</p>
+            </div>
           </div>
-          <div class="space-y-1.5">
-            <div class="font-mono text-[10px] text-[#7A2C10] uppercase">Focus</div>
-            <div class="text-sm font-medium leading-relaxed">Design systems · Product platforms · Applied AI · Accessibility</div>
-          </div>
-          <div class="space-y-1.5">
-            <div class="font-mono text-[10px] text-[#7A2C10] uppercase">Role</div>
-            <div class="text-sm font-medium leading-relaxed">Architect · Connector · Lead Developer</div>
-          </div>
-          <div class="space-y-1.5">
-            <div class="font-mono text-[10px] text-[#7A2C10] uppercase">Built with</div>
-            <div class="text-sm font-medium leading-relaxed">Figma · Design tokens · Angular · npm · Claude</div>
-          </div>
+
+          <dl class="grid grid-cols-2 bg-card">
+            <div class="p-5 md:p-6 border-b border-r border-border">
+              <dd class="text-3xl md:text-4xl font-bold tracking-tight text-foreground">150+</dd>
+              <dt class="font-mono text-xs text-muted-foreground mt-2">engineers</dt>
+            </div>
+            <div class="p-5 md:p-6 border-b border-border">
+              <dd class="text-3xl md:text-4xl font-bold tracking-tight text-foreground">200+</dd>
+              <dt class="font-mono text-xs text-muted-foreground mt-2">design tokens</dt>
+            </div>
+            <div class="p-5 md:p-6 border-r border-border">
+              <dd class="text-3xl md:text-4xl font-bold tracking-tight text-foreground">50+</dd>
+              <dt class="font-mono text-xs text-muted-foreground mt-2">components</dt>
+            </div>
+            <div class="p-5 md:p-6">
+              <dd class="text-3xl md:text-4xl font-bold tracking-tight text-foreground">20+</dd>
+              <dt class="font-mono text-xs text-muted-foreground mt-2">product patterns</dt>
+            </div>
+          </dl>
         </div>
       </div>
     </div>
@@ -39,465 +49,286 @@
   <!-- Main Content -->
   <section class="py-24">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-16">
+      <main class="lg:col-span-8 space-y-24">
 
-      <!-- Left Column -->
-      <div class="lg:col-span-8 space-y-24">
-
-        <!-- 01 Why the System Was Needed -->
-        <div class="space-y-6 scroll-mt-32" id="challenge">
+        <!-- 01 Organizational Problem -->
+        <section class="space-y-6 scroll-mt-32" id="problem">
           <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
-            <span class="font-mono text-[11px] text-[#7A2C10]">01.</span>
-            Why It Was Needed
+            <span class="font-mono text-xs text-[#7A2C10]">01.</span>
+            The Organizational Problem
           </h2>
           <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>At Penlink, the product ecosystem was a collection of independent investigative tools, including PLX Desktop, PenPoint, GeoTime, Webloc, Tangles, and TanglesGo. Each carried its own brand, visual language, interaction patterns, and engineering history, much of it inherited over time.</p>
-            <p>Leadership set a clear directive: unify the suite under one product brand, then move products onto a shared system as their timelines allowed.</p>
+            <p>Penlink’s investigative products had evolved independently, each with its own visual language, interaction patterns, and engineering history. Analysts moved between those products during the same investigation, but the interfaces did not behave like parts of one suite.</p>
+            <p>Four designers worked across a product organization of more than 150 engineers. Consistency could not depend on reviewing every screen manually, and product development could not pause while a system was built.</p>
+            <p>Helios had to unify products incrementally while those products continued shipping.</p>
+          </div>
 
-            <div class="flow-root">
-              <blockquote class="md:float-right w-full md:w-5/12 md:ml-10 mb-2 mt-0 pt-0 text-left text-[#B04318]">
-                <p class="text-lg md:text-xl font-semibold italic leading-snug" style="font-family: 'Roboto Condensed', 'Inter', sans-serif;">“Every team was, in effect, re-solving the same interface problems independently.”</p>
-              </blockquote>
-              <p>Analysts regularly moved between products to complete investigations. The lack of consistency increased cognitive load and made workflows harder to learn. Every team was, in effect, re-solving the same interface problems independently.</p>
+          <figure class="border border-border bg-card overflow-hidden">
+            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between gap-4">
+              <span class="font-mono text-xs uppercase text-muted-foreground tracking-wider">Fig 1. UI Component Audit</span>
+              <span class="font-mono text-xs uppercase text-[#B04318] tracking-wider text-right">Pre-system inconsistencies</span>
             </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-px bg-border">
+              <div class="bg-card aspect-video flex items-center justify-center p-3 sm:p-4"><div class="w-full h-full border border-border/50 bg-background flex items-center justify-center p-2"><img src="assets/work/btn-cancel.png" alt="" class="max-w-full max-h-full object-contain" /></div></div>
+              <div class="bg-card aspect-video flex items-center justify-center p-3 sm:p-4"><div class="w-full h-full border border-border/50 bg-background flex items-center justify-center p-2"><img src="assets/work/btn-download.png" alt="" class="max-w-full max-h-full object-contain" /></div></div>
+              <div class="bg-card aspect-video flex items-center justify-center p-3 sm:p-4"><div class="w-full h-full border border-border/50 bg-background flex items-center justify-center p-2"><img src="assets/work/btn-save3.png" alt="" class="max-w-full max-h-full object-contain" /></div></div>
+              <div class="bg-card aspect-video flex items-center justify-center p-3 sm:p-4"><div class="w-full h-full border border-border/50 bg-background flex items-center justify-center p-2"><img src="assets/work/btn-save.png" alt="" class="max-w-full max-h-full object-contain" /></div></div>
+              <div class="bg-card aspect-video flex items-center justify-center p-3 sm:p-4"><div class="w-full h-full border border-border/50 bg-background flex items-center justify-center p-2"><img src="assets/work/btn-contact.png" alt="" class="max-w-full max-h-full object-contain" /></div></div>
+              <div class="bg-card aspect-video flex items-center justify-center p-3 sm:p-4"><div class="w-full h-full border border-border/50 bg-background flex items-center justify-center p-2"><img src="assets/work/btn-cancel3.png" alt="" class="max-w-full max-h-full object-contain" /></div></div>
+              <div class="bg-card aspect-video flex items-center justify-center p-3 sm:p-4"><div class="w-full h-full border border-border/50 bg-background flex items-center justify-center p-2"><img src="assets/work/btn-row3-col1.png" alt="" class="max-w-full max-h-full object-contain" /></div></div>
+              <div class="bg-card aspect-video flex items-center justify-center p-3 sm:p-4"><div class="w-full h-full border border-border/50 bg-background flex items-center justify-center p-2"><img src="assets/work/btn-row3-col2.png" alt="" class="max-w-full max-h-full object-contain" /></div></div>
+              <div class="bg-card aspect-video flex items-center justify-center p-3 sm:p-4"><div class="w-full h-full border border-border/50 bg-background flex items-center justify-center p-2"><img src="assets/work/btn-row3-col3.png" alt="" class="max-w-full max-h-full object-contain" /></div></div>
+            </div>
+            <figcaption class="bg-muted/10 px-4 py-3 border-t border-border font-mono text-xs text-muted-foreground leading-relaxed">Distinct patterns across the suite increased cognitive load for analysts and repeated the same design and engineering decisions across teams.</figcaption>
+          </figure>
+        </section>
 
-            <p>Four designers were supporting over 150 engineers across distributed teams. A four-person design team could not hold the line on consistency by manually reviewing every screen, for every feature, across every product, without inconsistencies slipping through.</p>
+        <!-- 02 System Established -->
+        <section class="space-y-6 scroll-mt-32" id="system">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <span class="font-mono text-xs text-[#7A2C10]">02.</span>
+            Building the Shared Foundation
+          </h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>Helios began as the Penlink Design System during a redesign of PLX Desktop, then expanded into distinct desktop and web modes within one Figma architecture. Shared decisions could vary intentionally by platform without being redefined component by component.</p>
+            <p>The system connected structured Figma libraries to a production Angular library. Its architecture covered tokens, components, reusable product patterns, documentation, accessibility behavior, internationalization, and contribution workflows.</p>
+            <p>A layered token model translated primitive values into semantic meaning and component-level implementation, keeping Figma variables and SCSS aligned.</p>
+          </div>
 
-            <p>At the same time, development could not pause while the system was built. Helios had to unify the product suite through iterative delivery, giving teams shared components and standards they could adopt while continuing feature work.</p>
-
-            <div class="mt-12 border border-border bg-card overflow-hidden">
-              <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
-                <span class="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">Fig 1. UI Component Audit</span>
-                <span class="font-mono text-[10px] uppercase text-[#B04318] tracking-wider">Pre-System Inconsistencies</span>
-              </div>
-
-              <div class="min-h-56 flex items-center justify-center p-8 text-center bg-card">
-                <div class="max-w-lg space-y-2">
-                  <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image pending · confidentiality review</div>
-                  <p class="text-sm font-medium text-foreground">Real product screenshots are withheld pending review. A sanitized or synthetic version of the button audit will replace this.</p>
+          <figure class="border border-border bg-card overflow-hidden">
+            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between gap-4">
+              <span class="font-mono text-xs uppercase text-muted-foreground tracking-wider">Fig 2. Token Architecture</span>
+              <span class="font-mono text-xs uppercase text-[#B04318] tracking-wider">ITCSS methodology</span>
+            </div>
+            <div class="p-8 flex flex-col items-center gap-2">
+              <div class="w-[84%] border border-border bg-background px-5 py-3 space-y-1">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="font-mono text-xs text-muted-foreground">PRIMITIVE TOKENS</div>
+                  <div class="font-mono text-xs text-muted-foreground/60 uppercase tracking-widest">Settings</div>
                 </div>
+                <div class="font-mono text-xs text-[#B04318]">Base values</div>
+                <div class="font-mono text-xs text-muted-foreground/70">blue.600</div>
               </div>
-
-              <div class="bg-muted/10 px-4 py-3 border-t border-border">
-                <p class="font-mono text-xs text-muted-foreground leading-relaxed">Sample from UI audit showing distinct button patterns across the Penlink suite, illustrating the lack of shared constraints and increased cognitive load.</p>
+              <div class="flex flex-col items-center"><div class="w-px h-3 bg-border"></div><div class="font-mono text-xs text-muted-foreground/50">↓</div></div>
+              <div class="w-[62%] border border-border bg-background px-5 py-3 space-y-1">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="font-mono text-xs text-muted-foreground">SEMANTIC TOKENS</div>
+                  <div class="font-mono text-xs text-muted-foreground/60 uppercase tracking-widest">Elements</div>
+                </div>
+                <div class="font-mono text-xs text-[#B04318]">Contextual meaning</div>
+                <div class="font-mono text-xs text-muted-foreground/70">bg.selected</div>
+              </div>
+              <div class="flex flex-col items-center"><div class="w-px h-3 bg-border"></div><div class="font-mono text-xs text-muted-foreground/50">↓</div></div>
+              <div class="w-[44%] border border-border bg-background px-5 py-3 space-y-1">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="font-mono text-xs text-muted-foreground">COMPONENT TOKENS</div>
+                  <div class="font-mono text-xs text-muted-foreground/60 uppercase tracking-widest">Components</div>
+                </div>
+                <div class="font-mono text-xs text-[#B04318]">Specific usage</div>
+                <div class="font-mono text-xs text-muted-foreground/70 break-all">button.primary.bg.normal</div>
               </div>
             </div>
-          </div>
-        </div>
+            <figcaption class="bg-muted/10 px-4 py-3 border-t border-border font-mono text-xs text-muted-foreground leading-relaxed">Base values became shared meaning, then component-level implementation across Figma and Angular.</figcaption>
+          </figure>
 
-        <!-- 02 How It Evolved -->
-        <div class="space-y-6 scroll-mt-32" id="evolution">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <article class="border border-border bg-card p-6 space-y-4">
+              <h3 class="font-semibold text-foreground">Behavior built in</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">Components standardized implementation contracts as well as appearance.</p>
+              <ul class="space-y-2">
+                @for (item of behavioralFoundations; track item) {
+                  <li class="flex gap-3 text-sm text-muted-foreground leading-relaxed"><span class="text-[#B04318] shrink-0">→</span><span>{{ item }}</span></li>
+                }
+              </ul>
+            </article>
+            <article class="border border-border bg-card p-6 space-y-4">
+              <h3 class="font-semibold text-foreground">Accessibility as infrastructure</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">Angular CDK foundations placed accessibility inside shared components rather than adding it screen by screen.</p>
+              <ul class="space-y-2">
+                @for (item of accessibilityFoundations; track item) {
+                  <li class="flex gap-3 text-sm text-muted-foreground leading-relaxed"><span class="text-[#B04318] shrink-0">→</span><span>{{ item }}</span></li>
+                }
+              </ul>
+            </article>
+          </div>
+
+          <div class="border border-border bg-card min-h-56 flex items-center justify-center p-8 text-center">
+            <div class="max-w-lg space-y-2">
+              <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Image pending · confidentiality review</div>
+              <p class="text-sm font-medium text-foreground"><span class="font-semibold">System definition:</span> Pair Figma variables with a documented component showing anatomy, states, accessibility guidance, usage guidance, and its production Angular API.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 Product Needs -->
+        <section class="space-y-6 scroll-mt-32" id="product-needs">
           <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
-            <span class="font-mono text-[11px] text-[#7A2C10]">02.</span>
-            How It Evolved
+            <span class="font-mono text-xs text-[#7A2C10]">03.</span>
+            Product Needs Shaped the System
           </h2>
           <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>The system began as a “glow-up” and redesign of Penlink’s flagship product, PLX Desktop, around the time of the merger. At the time, it was called the Penlink Design System, or PLDS. That redesign became the desktop mode in Figma.</p>
-            <p>For web, the same design language was softened and rounded to better suit the platform. Desktop and web became distinct Figma modes within one system. Mobile was always a future goal for Helios and remained a consideration in architectural decisions.</p>
+            <p>Helios did not develop separately from product work. PLX Web was already in feature development, so interim Angular components kept delivery moving while exposing the states, inputs, and behaviors the supported system needed.</p>
+            <p>Those requirements informed official Helios components that were completed, merged, versioned, and published. Product teams could then repoint to the supported implementation rather than rework active features.</p>
+            <p>Early Tangles onboarding after its Angular 21 upgrade surfaced localization and right-to-left requirements. Those constraints strengthened the foundation before wider adoption. Desktop used the same Figma variables, although translating them into XAML remained manual because the UX team did not own that markup.</p>
+            <p>Feature work also revealed reusable patterns for timelines, filtering, notifications, data visualization, and geographic mapping. Those patterns could return to Helios instead of remaining one-off solutions.</p>
           </div>
 
-          <!-- Evolution strip -->
-          <div class="flex flex-col md:flex-row md:items-stretch gap-2">
-            @for (stage of evolutionStages; track stage.label; let last = $last; let i = $index) {
-              <div class="flex-1 border border-border bg-card px-4 py-3 flex flex-col justify-start">
-                <div class="font-mono text-[10px] text-muted-foreground/60 mb-1">{{ i + 1 }} / {{ evolutionStages.length }}</div>
-                <div class="text-sm font-medium text-foreground">{{ stage.label }}</div>
-                <div class="font-mono text-[9px] mt-auto pt-4 leading-snug" [style.color]="i >= 2 ? '#B04318' : '#5C5248'">{{ stage.sub }}</div>
-              </div>
-              @if (!last) {
-                <div class="hidden md:flex items-center justify-center text-muted-foreground/40 font-mono text-sm">→</div>
-              }
-            }
+          <div class="grid sm:grid-cols-2 gap-3">
+            <article class="border border-border bg-card p-5 space-y-2">
+              <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Figma</div>
+              <p class="text-sm text-muted-foreground leading-relaxed">Defined shared intent, modes, states, and system constraints.</p>
+            </article>
+            <article class="border border-border bg-card p-5 space-y-2">
+              <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Angular</div>
+              <p class="text-sm text-muted-foreground leading-relaxed">Tested decisions against APIs, accessibility, responsive behavior, i18n, and RTL.</p>
+            </article>
+            <article class="border border-border bg-card p-5 space-y-2">
+              <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Products</div>
+              <p class="text-sm text-muted-foreground leading-relaxed">Proved the system in real workflows and returned new requirements.</p>
+            </article>
           </div>
 
-          <div class="text-muted-foreground leading-relaxed">
-            <div class="space-y-4">
-              <p>PLX Web was already in feature development before Helios v1 was ready. To keep work moving, its developers used AI to create interim Angular components in the Helios library and refined them during design reviews. The components were temporary, but the product requirements they revealed were not. Those requirements informed the official Helios components that replaced them, each one completed, merged into main, and published so the product team could repoint to the supported version.</p>
-              <p>Tangles had just completed its upgrade to Angular 21, removing the known blocker to adopting Helios. The first step was verifying RTL support and translation, both critical requirements for the existing product suite. The base structure was in place, but the Tangles front-end developer’s deeper expertise and product requirements would shape that area of Helios.</p>
-              <div class="flow-root">
-                <blockquote class="md:float-right w-full md:w-5/12 md:ml-10 mb-2 pt-1 text-left text-[#B04318]">
-                  <p class="text-lg md:text-xl font-semibold italic leading-snug" style="font-family: 'Roboto Condensed', 'Inter', sans-serif;">“Each problem could be solved once, then shared across products.”</p>
-                </blockquote>
-                <p>This was the shared system working as intended. Tangles could contribute RTL and translation requirements that would benefit PLX Web. In return, new capabilities and improved feature UX developed for PLX Web could become available to Tangles through Helios. Each problem could be solved once, then shared across products.</p>
-              </div>
-              <p>Desktop followed a different path. It adopted the Helios Figma variables, but translating those decisions into XAML remained manual because the UX team did not own or manage the XAML markup.</p>
-            </div>
-          </div>
+          <blockquote class="border-l-2 border-[#B04318] bg-[#F7F1ED] px-6 py-5">
+            <p class="text-lg font-semibold text-foreground leading-snug">Production code became research: product constraints improved Helios, and Helios returned those lessons as shared infrastructure.</p>
+          </blockquote>
 
           <div class="border border-border bg-card min-h-64 flex items-center justify-center p-8 text-center">
             <div class="max-w-lg space-y-2">
-              <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image pending · confidentiality review</div>
-              <p class="text-sm font-medium text-foreground"><span class="font-semibold">Product evolution:</span> An approved PLX Desktop redesign beside the softened web mode and its implementation in PLX Web. Confidentiality-safe fallback: a sanitized or synthetic component shown in desktop and web Figma modes beside its web Angular implementation.</p>
+              <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Image pending · confidentiality review</div>
+              <p class="text-sm font-medium text-foreground"><span class="font-semibold">Design verified in code:</span> Show one behaviorally rich component from Figma definition to Angular implementation to its use in PLX Web, annotated with the product requirement carried across each step.</p>
             </div>
           </div>
-        </div>
+        </section>
 
-        <!-- 03 System Foundations & Tokens -->
-        <div class="space-y-6 scroll-mt-32" id="foundations">
+        <!-- 04 Governance & Adoption -->
+        <section class="space-y-6 scroll-mt-32" id="adoption">
           <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
-            <span class="font-mono text-[11px] text-[#7A2C10]">03.</span>
-            Foundations & Tokens
+            <span class="font-mono text-xs text-[#7A2C10]">04.</span>
+            Making Adoption Visible
           </h2>
           <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>Once desktop and web became modes of the same system, their differences needed to be intentional and reusable. Typography, corner radius, color, spacing, and elevation could not be redefined component by component.</p>
-            <p>A layered token architecture turned those decisions into shared foundations. Primitive tokens defined the available values, semantic tokens described their meaning, and component tokens applied them consistently.</p>
-            <p>For web, my role connected both sides of the architecture, from the Figma variable structure and token model through the corresponding Angular implementation. This reduced duplicated decisions between design and code.</p>
+            <p>A component dashboard made adoption operational by connecting audits, live demos, playgrounds, documentation, readiness, publishing information, and product usage. Claude handled recurring repository scans, separating direct adoption candidates from similar implementations that needed design and API review.</p>
+            <p>When a product required behavior Helios did not yet support, non-breaking extensions enabled adoption without disrupting active feature work. The resulting system debt remained visible and prioritized in one place rather than disappearing into individual products.</p>
           </div>
 
-          <!-- Token Architecture Diagram (pure markup) -->
-          <div class="mt-8 border border-border bg-card overflow-hidden">
-            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
-              <span class="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">Fig 2. Token Architecture</span>
-              <span class="font-mono text-[10px] uppercase text-[#B04318] tracking-wider">ITCSS methodology</span>
+          <figure class="border border-border bg-card overflow-hidden">
+            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between gap-4">
+              <span class="font-mono text-xs uppercase text-muted-foreground tracking-wider">Fig 3. Adoption Path</span>
+              <span class="font-mono text-xs uppercase text-[#B04318] tracking-wider">Product → system → product</span>
             </div>
-
-            <div class="p-8 flex flex-col items-center gap-2">
-              <div class="w-[84%] border border-border bg-background px-5 py-3 space-y-1">
-                <div class="flex items-start justify-between">
-                  <div class="font-mono text-[10px] text-muted-foreground">PRIMITIVE TOKENS</div>
-                  <div class="font-mono text-[9px] text-muted-foreground/40 uppercase tracking-widest">Settings</div>
-                </div>
-                <div class="font-mono text-[10px] text-[#B04318]">Base Values</div>
-                <div class="font-mono text-[9px] text-muted-foreground/50">blue.600</div>
-              </div>
-              <div class="flex flex-col items-center">
-                <div class="w-px h-3 bg-border"></div>
-                <div class="font-mono text-[10px] text-muted-foreground/30 leading-none">↓</div>
-              </div>
-              <div class="w-[62%] border border-border bg-background px-5 py-3 space-y-1">
-                <div class="flex items-start justify-between">
-                  <div class="font-mono text-[10px] text-muted-foreground">SEMANTIC TOKENS</div>
-                  <div class="font-mono text-[9px] text-muted-foreground/40 uppercase tracking-widest">Elements</div>
-                </div>
-                <div class="font-mono text-[10px] text-[#B04318]">Contextual Meaning</div>
-                <div class="font-mono text-[9px] text-muted-foreground/50">bg.selected</div>
-              </div>
-              <div class="flex flex-col items-center">
-                <div class="w-px h-3 bg-border"></div>
-                <div class="font-mono text-[10px] text-muted-foreground/30 leading-none">↓</div>
-              </div>
-              <div class="w-[44%] border border-border bg-background px-5 py-3 space-y-1">
-                <div class="flex items-start justify-between">
-                  <div class="font-mono text-[10px] text-muted-foreground">COMPONENT TOKENS</div>
-                  <div class="font-mono text-[9px] text-muted-foreground/40 uppercase tracking-widest">Components</div>
-                </div>
-                <div class="font-mono text-[10px] text-[#B04318]">Specific Usage</div>
-                <div class="font-mono text-[9px] text-muted-foreground/50 break-all">button.primary.bg.normal</div>
-              </div>
-            </div>
-
-            <div class="bg-muted/10 px-4 py-3 border-t border-border">
-              <p class="font-mono text-xs text-muted-foreground leading-relaxed">A layered token architecture aligned to ITCSS, translating base values into meaning, and meaning into component-level implementation. <span class="text-[#7A2C10]/60">#harryrobertsfan</span></p>
-            </div>
-          </div>
-
-          <div class="border border-border bg-card min-h-56 flex items-center justify-center p-8 text-center">
-            <div class="max-w-lg space-y-2">
-              <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image pending · confidentiality review</div>
-              <p class="text-sm font-medium text-foreground"><span class="font-semibold">Token system in practice:</span> A real view of the Figma variable collections paired with the corresponding token source or a component consuming those tokens.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 04 Components & Patterns -->
-        <div class="space-y-6 scroll-mt-32" id="components">
-          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
-            <span class="font-mono text-[11px] text-[#7A2C10]">04.</span>
-            Components & Patterns
-          </h2>
-          <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>Individual components created consistency at the interface level, but products also shared larger workflow problems. Helios expanded to include reusable patterns that showed how components could work together across common investigative tasks.</p>
-            <p>PLX Web’s timeline bar was one example. After the product designer worked through the design for PLX Web, the plan was to build it in Angular as a reusable Helios component and pattern. That would make the same solution available to Tangles and other web products when future feature work called for it, instead of each team solving the same problem again.</p>
-          </div>
-
-          <!-- Fig 3. Timeline Bar -->
-          <div class="mt-8 border border-border bg-card overflow-hidden">
-            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
-              <span class="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">Fig 3. Timeline Bar</span>
-              <span class="font-mono text-[10px] uppercase text-[#B04318] tracking-wider">Reusable product pattern</span>
-            </div>
-            <div class="min-h-56 flex items-center justify-center p-8 text-center bg-card">
-              <div class="max-w-lg space-y-2">
-                <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image pending · confidentiality review</div>
-                <p class="text-sm font-medium text-foreground"><span class="font-semibold">Reusable timeline bar:</span> Real product screenshot withheld pending review; a sanitized or synthetic timeline-bar example will replace this.</p>
-              </div>
-            </div>
-            <div class="bg-muted/10 px-4 py-3 border-t border-border">
-              <p class="font-mono text-xs text-muted-foreground leading-relaxed">Designed for PLX Web and planned as a reusable Angular component and pattern in Helios.</p>
-            </div>
-          </div>
-
-          <!-- Fig 4. Shared Patterns -->
-          <div class="mt-8 border border-border bg-card overflow-hidden">
-            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
-              <span class="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">Fig 4. Shared Patterns</span>
-              <span class="font-mono text-[10px] uppercase text-[#B04318] tracking-wider">Reusable workflows</span>
-            </div>
-            <div class="min-h-56 flex items-center justify-center p-8 text-center bg-card">
-              <div class="max-w-lg space-y-2">
-                <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image pending · confidentiality review</div>
-                <p class="text-sm font-medium text-foreground"><span class="font-semibold">Shared investigative patterns:</span> Real product screenshots, including map and data views, are withheld pending review; sanitized or synthetic pattern examples will replace these.</p>
-              </div>
-            </div>
-            <div class="bg-muted/10 px-4 py-3 border-t border-border">
-              <p class="font-mono text-xs text-muted-foreground leading-relaxed">Standard patterns for data visualization, filtering, notifications, and geographic mapping used across investigative workflows.</p>
-            </div>
-          </div>
-
-          <div class="border border-border bg-card min-h-56 flex items-center justify-center p-8 text-center">
-            <div class="max-w-lg space-y-2">
-              <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image pending · confidentiality review</div>
-              <p class="text-sm font-medium text-foreground"><span class="font-semibold">Component documentation:</span> A Helios component detail page showing several layers together: anatomy, variants, states, accessibility guidance, usage guidance, and component inputs or API.</p>
-            </div>
-          </div>
-
-          <!-- Not just visual assets -->
-          <div class="pt-4 space-y-4 text-muted-foreground leading-relaxed">
-            <h3 class="text-base font-semibold text-foreground">Behavior built in</h3>
-            <p>Helios standardized how components worked, not only how they looked. Shared behavior gave product teams reliable foundations without requiring each team to solve the same interaction and implementation problems independently.</p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
-            @for (item of behavioralFoundations; track item) {
-              <div class="flex items-center gap-3 text-sm text-muted-foreground">
-                <span class="text-[#B04318] font-mono shrink-0">→</span>
-                <span>{{ item }}</span>
-              </div>
-            }
-          </div>
-
-          <!-- Accessibility as infrastructure -->
-          <div class="pt-6 space-y-4 text-muted-foreground leading-relaxed">
-            <h3 class="text-base font-semibold text-foreground">Accessibility as infrastructure</h3>
-            <p>Accessibility lived in the components themselves rather than being added screen by screen. Built on Angular CDK foundations, one improvement to a shared component could strengthen every product that consumed it.</p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
-            @for (item of accessibilityFoundations; track item) {
-              <div class="flex items-center gap-3 text-sm text-muted-foreground">
-                <span class="text-[#B04318] font-mono shrink-0">→</span>
-                <span>{{ item }}</span>
-              </div>
-            }
-          </div>
-        </div>
-
-        <!-- 05 Governance & Adoption -->
-        <div class="space-y-6 scroll-mt-32" id="governance">
-          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
-            <span class="font-mono text-[11px] text-[#7A2C10]">05.</span>
-            Governance & Adoption
-          </h2>
-          <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>The Helios site began as a component dashboard for the initial product audit. As the system grew, the dashboard grew with it. It showed where components already existed across products, what was being built in Helios, and where AI-assisted prototypes had pushed a component beyond its supported bounds.</p>
-            <p>When a prototype was flagged, the plan was for me to review it with the designer and determine whether the AI had changed the component unintentionally or exposed a valid feature requirement Helios needed to support. Each component already had an area of its own: audits, reviews, live demos, playgrounds, and dedicated documentation, keeping its full lifecycle connected in one place.</p>
-            <p>AI assistance started as an experiment in the system work and earned a durable role as it proved its value. Claude was directed to handle repeated manual processes (scanning, capturing, and organizing), turning them into the recurring workflows below.</p>
-            <h3 class="text-base font-semibold text-foreground">Adoption made visible</h3>
-            <p>The initial audit became the dashboard’s first recurring workflow. Working with Claude, I set up a scan across all product repositories that surfaced two kinds of matches within each component view: <span class="text-foreground font-medium">adoption candidates</span>, the same element already implemented in a product, ready to repoint to the published Helios version; and <span class="text-foreground font-medium">possible adoptions</span>, similar enough to investigate but needing review to see whether they could align with Helios or had different requirements.</p>
-            <div class="flow-root">
-              <blockquote class="md:float-right w-full md:w-5/12 md:ml-10 mb-2 pt-1 text-left text-[#B04318]">
-                <p class="text-lg md:text-xl font-semibold italic leading-snug" style="font-family: 'Roboto Condensed', 'Inter', sans-serif;">“The compromise was deliberate:<br>win adoption now, resolve the debt later.”</p>
-              </blockquote>
-              <p>When a product needed properties Helios did not yet support, those requirements were added through non-breaking extensions so the team could adopt without reworking active features. The compromise was deliberate: win adoption now, resolve the debt later. Better for one system to carry that debt visibly, documented and prioritized for system-level cleanup, than for each product to carry its own where no one could see it.</p>
-            </div>
-          </div>
-
-          <div class="border border-border bg-card min-h-72 flex items-center justify-center p-8 text-center">
-            <div class="max-w-lg space-y-2">
-              <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image pending · confidentiality review</div>
-              <p class="text-sm font-medium text-foreground"><span class="font-semibold">Helios component dashboard:</span> A wide screenshot showing adoption candidates, possible adoption candidates, product usage, lifecycle or readiness status, and publishing information.</p>
-            </div>
-          </div>
-
-          <!-- Adoption path (pure markup) -->
-          <div class="border border-border bg-card overflow-hidden">
-            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
-              <span class="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">Fig 5. Adoption Path</span>
-              <span class="font-mono text-[10px] uppercase text-[#B04318] tracking-wider">Product → System → Product</span>
-            </div>
-            <div class="px-8 py-10 flex flex-col items-center gap-0">
+            <div class="px-8 py-10 flex flex-col items-center">
               @for (step of adoptionSteps; track step.label; let last = $last) {
                 <div class="w-full max-w-md">
-                  <div class="border border-border bg-background px-4 py-3 flex items-baseline justify-between">
+                  <div class="border border-border bg-background px-4 py-3 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4">
                     <span class="text-sm font-medium text-foreground">{{ step.label }}</span>
-                    <span class="font-mono text-[10px] text-muted-foreground">{{ step.sub }}</span>
+                    <span class="font-mono text-xs text-muted-foreground">{{ step.sub }}</span>
                   </div>
                   @if (!last) {
-                    <div class="flex flex-col items-center py-1">
-                      <div class="w-px h-5 bg-border"></div>
-                      <svg width="12" height="7" viewBox="0 0 12 7" fill="none" class="text-muted-foreground">
-                        <path d="M6 7L0.803848 0.25L11.1962 0.25L6 7Z" fill="currentColor" />
-                      </svg>
-                    </div>
+                    <div class="flex flex-col items-center py-1"><div class="w-px h-5 bg-border"></div><span class="text-xs text-muted-foreground">▼</span></div>
                   }
                 </div>
               }
             </div>
-            <div class="bg-muted/10 px-4 py-3 border-t border-border">
-              <p class="font-mono text-xs text-muted-foreground leading-relaxed">The recurring scan made adoption opportunities visible for every component. Helios absorbed short-term complexity so teams could adopt with minimal disruption, while the resulting debt remained visible for deliberate cleanup.</p>
-            </div>
-          </div>
+            <figcaption class="bg-muted/10 px-4 py-3 border-t border-border font-mono text-xs text-muted-foreground leading-relaxed">Recurring scans made adoption opportunities and system debt visible while versioned releases gave product teams a supported path forward.</figcaption>
+          </figure>
 
-          <div class="space-y-4 text-muted-foreground leading-relaxed pt-2">
-            <p>Products were already consuming components built on the shared base. The next maturity goal was to move possible adoption candidates onto Helios. A system succeeds because products use it and development improves, not because the library is large.</p>
-          </div>
-
-          <div class="space-y-4 pt-2">
-            <h3 class="text-base font-semibold text-foreground">Weekly component review</h3>
-            <p class="text-muted-foreground leading-relaxed">Component review was already part of how our designers evaluated Figma components, and it lived in the UX meetings the team already held. Rather than stand up new meetings, I brought Helios into those existing sessions, pulling updates from current product work onto the system roadmap. Early critique and refinement stayed within UX, where the team shared the same design language. Each week, designers went deep on principles such as contrast, hierarchy, repetition, alignment, and proximity before resolved decisions moved into implementation.</p>
-            <p class="text-muted-foreground leading-relaxed">Some of these sessions were recorded, and Claude captured the discussion from those recordings so everyone could participate fully instead of stopping to take notes. It organized the critique into agreed actions and surfaced guidance that could be reused in the Helios documentation site.</p>
-            <div class="flow-root">
-              <blockquote class="md:float-right w-full md:w-5/12 md:ml-10 mb-2 pt-1 text-left text-[#B04318]">
-                <p class="text-lg md:text-xl font-semibold italic leading-snug" style="font-family: 'Roboto Condensed', 'Inter', sans-serif;">“The product started matching the mocks exactly.”</p>
-              </blockquote>
-              <p class="text-muted-foreground leading-relaxed">Resolved decisions were carried into the Figma and Angular component, then brought back to the UX team for final review. Keeping critique, implementation, and approval connected reduced translation between the Figma component and its coded behavior. The product started matching the mocks exactly, so designers could spend their time solving user problems instead of checking production alignment against the mock. Developers gained back time for other work too, and the value of the system was becoming visible to everyone.</p>
-            </div>
-
-            <div class="border border-border bg-card overflow-hidden !mt-10">
-              <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
-                <span class="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">Fig 6. Component Review Loop</span>
-                <span class="font-mono text-[10px] uppercase text-[#B04318] tracking-wider">Review → Refine → Approve</span>
-              </div>
-              <div class="px-6 py-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                @for (step of reviewSteps; track step.label) {
-                  <div class="border border-border bg-background px-4 py-3">
-                    <div class="text-sm font-medium text-foreground">{{ step.label }}</div>
-                    <div class="font-mono text-[10px] text-muted-foreground mt-1">{{ step.sub }}</div>
-                  </div>
-                }
-              </div>
-              <div class="bg-muted/10 px-4 py-3 border-t border-border">
-                <p class="font-mono text-xs text-muted-foreground leading-relaxed">Keeping review and implementation connected within UX reduced translation barriers while turning critique into reusable system documentation.</p>
-              </div>
-            </div>
-
-            <div class="border border-border bg-card min-h-64 flex items-center justify-center p-8 text-center">
-              <div class="max-w-lg space-y-2">
-                <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image pending · confidentiality review</div>
-                <p class="text-sm font-medium text-foreground"><span class="font-semibold">Weekly component review:</span> The Helios review tab showing components ready for critique or approval. If possible, pair it with a sanitized excerpt of the Claude-generated notes, action list, or resulting documentation.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Orbit -->
-          <div class="space-y-4">
-            <h3 class="text-base font-semibold text-foreground">Orbit: where contributions originated</h3>
-            <p class="text-muted-foreground leading-relaxed">Much of the feature work that fed Helios happened in Orbit, a separate workspace for AI-assisted prototyping and gathering product requirements. When that work revealed a reusable need, a component could move back into Helios as a contribution grounded in real product requirements.</p>
-          </div>
-        </div>
-
-        <!-- 06 Design, Verified in Code -->
-        <div class="space-y-6 scroll-mt-32" id="bridge">
-          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
-            <span class="font-mono text-[11px] text-[#7A2C10]">06.</span>
-            Design, Verified in Code
-          </h2>
           <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>Helios formed a two-way bridge between design and engineering, where product code surfaced the behaviors teams already relied on and Helios returned those behaviors as supported, reusable, production-ready components the whole suite could build on.</p>
-            <p>Each component was measured against the real implementations already living across the product repositories, the adoption and possible adoption candidates. That meant preserving required states and API behavior, meeting accessibility and keyboard expectations, supporting translation and RTL layouts, and remaining compatible with existing product workflows.</p>
-            <div class="flow-root">
-              <blockquote class="md:float-right w-full md:w-5/12 md:ml-10 mb-2 pt-1 text-left text-[#B04318]">
-                <p class="text-lg md:text-xl font-semibold italic leading-snug" style="font-family: 'Roboto Condensed', 'Inter', sans-serif;">“Production code became research.”</p>
-              </blockquote>
-              <p>Figma defined the shared intent, Angular tested whether it could survive real engineering constraints, and implementation in a product proved the system could carry the design all the way through. Production code became research.</p>
-            </div>
-
-            <p>Because those verified components matched real product work, teams built faster and more precisely. They were also more willing and able to adopt, since the debt stayed in Helios and a product only had to repoint and test. Products informed the system, and the system returned those lessons as shared infrastructure.</p>
-
-            <div class="border border-border bg-card min-h-72 flex items-center justify-center p-8 text-center">
-              <div class="max-w-lg space-y-2">
-                <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image pending · confidentiality review</div>
-                <p class="text-sm font-medium text-foreground"><span class="font-semibold">Design verified in code:</span> Show one behaviorally rich component as a sequence: Figma definition → coded Angular component → component running in a product. Enlarge the meaningful states and annotate the API, accessibility behavior, localization or RTL support, and product requirement carried across each step.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 07 Outcomes & Tradeoffs -->
-        <div class="space-y-6 scroll-mt-32" id="outcomes">
-          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
-            <span class="font-mono text-[11px] text-[#7A2C10]">07.</span>
-            Outcomes & Tradeoffs
-          </h2>
-          <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>The real outcome of Helios was not a component library but leverage: a four-person design team shaping the experience of a suite built by more than 150 engineers. Common interaction problems could be solved once, documented, and reused, letting design decisions reach far beyond what the UX team could touch directly.</p>
+            <h3 class="font-semibold text-foreground">Review without another meeting</h3>
+            <p>Helios component critique moved into the UX meetings the team already held. Designers evaluated components against shared design principles and the <a routerLink="/work/analysis-workflow" class="font-medium text-[#7A2C10] underline underline-offset-2 hover:text-[#B04318] transition-colors">investigative workflow research</a>, then used the resolved decisions to refine both the Figma components and production Angular code.</p>
+            <p>Recorded discussions allowed Claude to capture agreed actions and reusable documentation while the team stayed present in the critique. Components returned to UX for final approval after implementation, keeping Figma intent and coded behavior connected. Production began matching the mocks closely enough that designers could spend more time on user problems and developers could avoid repeated rework.</p>
           </div>
 
-          <div class="grid grid-cols-1 gap-3">
-            <div class="border-l-2 border-l-[#B04318] bg-[#F7F1ED] p-6 space-y-2">
-              <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Leverage</div>
-              <p class="text-base font-semibold text-foreground leading-relaxed">Four designers supported a suite built by more than 150 engineers. Helios extended design's reach far past what that team could cover on its own, giving a very small group outsized influence on how the whole ecosystem looked and behaved.</p>
+          <figure class="border border-border bg-card overflow-hidden">
+            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between gap-4">
+              <span class="font-mono text-xs uppercase text-muted-foreground tracking-wider">Fig 4. Component Review Loop</span>
+              <span class="font-mono text-xs uppercase text-[#B04318] tracking-wider">Review → refine → approve</span>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div class="border border-border bg-card p-4 space-y-2">
-                <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Shared infrastructure</div>
-                <p class="text-sm text-muted-foreground leading-relaxed">Established a common design foundation across products that had evolved independently, giving teams one language for tokens, components, patterns, and interaction decisions.</p>
-              </div>
-              <div class="border border-border bg-card p-4 space-y-2">
-                <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Less repeat work</div>
-                <p class="text-sm text-muted-foreground leading-relaxed">Turned recurring UI needs into reusable decisions instead of re-solving the same foundations. The 200+ tokens, 50+ components, and 20+ patterns are evidence of that infrastructure, not the outcome by themselves.</p>
-              </div>
-              <div class="border border-border bg-card p-4 space-y-2">
-                <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Library to foundation</div>
-                <p class="text-sm text-muted-foreground leading-relaxed">Helios grew from a component collection into infrastructure: design architecture, documentation, reusable patterns, implementation guidance, and a bridge toward production code.</p>
-              </div>
+            <div class="px-6 py-8 grid sm:grid-cols-2 gap-3">
+              @for (step of reviewSteps; track step.label) {
+                <div class="border border-border bg-background px-4 py-3">
+                  <div class="text-sm font-medium text-foreground">{{ step.label }}</div>
+                  <div class="font-mono text-xs text-muted-foreground mt-1">{{ step.sub }}</div>
+                </div>
+              }
             </div>
-          </div>
+            <figcaption class="bg-muted/10 px-4 py-3 border-t border-border font-mono text-xs text-muted-foreground leading-relaxed">Critique, implementation, approval, and documentation stayed connected rather than becoming separate handoffs.</figcaption>
+          </figure>
 
           <div class="border border-border bg-card min-h-56 flex items-center justify-center p-8 text-center">
             <div class="max-w-lg space-y-2">
-              <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image pending · confidentiality review</div>
-              <p class="text-sm font-medium text-foreground"><span class="font-semibold">Published library evidence:</span> Pair a tightly cropped release or published-package view with a product dependency consuming that Helios version. The evidence should connect publishing to use, without implying migration beyond what was verified.</p>
+              <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Image pending · confidentiality review</div>
+              <p class="text-sm font-medium text-foreground"><span class="font-semibold">Adoption evidence:</span> Show the component dashboard with product usage, adoption candidates, readiness, and publishing status alongside one product dependency consuming Helios.</p>
             </div>
+          </div>
+        </section>
+
+        <!-- 05 Outcomes & Tradeoffs -->
+        <section class="space-y-6 scroll-mt-32" id="outcomes">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <span class="font-mono text-xs text-[#7A2C10]">05.</span>
+            Outcomes & Tradeoffs
+          </h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>The demonstrated outcome was design-to-production continuity: seven PLX Web developers consumed Helios 1.2.0 to ship a customer-facing product from the same decisions defined in Figma.</p>
+            <p>The broader leverage was still developing. Helios created a supported path for a four-person design team to carry reusable decisions into a product organization of more than 150 engineers, with Tangles beginning the next onboarding effort.</p>
+          </div>
+
+          <div class="grid gap-3">
+            <article class="border border-border bg-card p-5 grid sm:grid-cols-[160px_1fr] gap-2 sm:gap-6 sm:items-baseline">
+              <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Shared decisions</div>
+              <p class="text-sm text-muted-foreground leading-relaxed">Desktop and web work gained one language for tokens, components, behavior, and interaction patterns.</p>
+            </article>
+            <article class="border border-border bg-card p-5 grid sm:grid-cols-[160px_1fr] gap-2 sm:gap-6 sm:items-baseline">
+              <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Less repeat work</div>
+              <p class="text-sm text-muted-foreground leading-relaxed">Recurring UI and accessibility needs became supported infrastructure instead of product-by-product fixes.</p>
+            </article>
+            <article class="border border-border bg-card p-5 grid sm:grid-cols-[160px_1fr] gap-2 sm:gap-6 sm:items-baseline">
+              <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">A working system</div>
+              <p class="text-sm text-muted-foreground leading-relaxed">PLX Web proved the release path in production while Tangles onboarding tested what wider adoption required.</p>
+            </article>
+            <article class="border border-border bg-card p-5 grid sm:grid-cols-[160px_1fr] gap-2 sm:gap-6 sm:items-baseline">
+              <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Better collaboration</div>
+              <p class="text-sm text-muted-foreground leading-relaxed">Working prototypes gave product, design, and engineering a shared artifact for building stakeholder support and clarifying product needs. In-house analysts and other users could walk through proposed workflows while the team refined the experience in real time.</p>
+            </article>
           </div>
 
           <div class="space-y-4 pt-2">
-            <h3 class="text-base font-semibold text-foreground">Tradeoffs</h3>
+            <h3 class="font-semibold text-foreground">Tradeoffs</h3>
             <div class="space-y-3">
-              <div class="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed">
-                <span class="text-[#B04318] font-mono mt-0.5 shrink-0">→</span>
-                <span><span class="text-foreground font-medium">Consistency vs. product-specific needs.</span> Shared primitives and patterns had to be standardized while leaving room for genuinely different workflows, especially across mature products with their own histories.</span>
-              </div>
-              <div class="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed">
-                <span class="text-[#B04318] font-mono mt-0.5 shrink-0">→</span>
-                <span><span class="text-foreground font-medium">Ideal architecture vs. incremental adoption.</span> Rebuilding everything around Helios was never an option with 150+ engineers mid-flight, so the system coexisted with legacy UI and was adopted progressively, accepting some temporary inconsistency in exchange for real adoption.</span>
-              </div>
-              <div class="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed">
-                <span class="text-[#B04318] font-mono mt-0.5 shrink-0">→</span>
-                <span><span class="text-foreground font-medium">Coverage vs. quality.</span> A four-person team could not systematize everything, so effort went to high-reuse foundations and patterns rather than a component for every possible interface.</span>
-              </div>
-              <div class="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed">
-                <span class="text-[#B04318] font-mono mt-0.5 shrink-0">→</span>
-                <span><span class="text-foreground font-medium">Central control vs. team autonomy.</span> Too much governance would make Helios a bottleneck; too little would let fragmentation return. The system needed enough structure to hold coherence without its owner approving every product decision.</span>
-              </div>
-              <div class="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed">
-                <span class="text-[#B04318] font-mono mt-0.5 shrink-0">→</span>
-                <span><span class="text-foreground font-medium">Automation vs. human judgment.</span> Structured design could automate repetitive translation to code, but product logic, accessibility, responsive behavior, and edge cases still needed people. The goal was leverage, not turning Figma into code unattended.</span>
-              </div>
+              <p class="flex gap-3 text-sm text-muted-foreground leading-relaxed"><span class="text-[#B04318] shrink-0">→</span><span><strong class="text-foreground font-medium">Consistency vs. product-specific needs.</strong> Shared foundations had to leave room for genuinely different investigative workflows.</span></p>
+              <p class="flex gap-3 text-sm text-muted-foreground leading-relaxed"><span class="text-[#B04318] shrink-0">→</span><span><strong class="text-foreground font-medium">Ideal architecture vs. incremental adoption.</strong> Rebuilding every product was not realistic with 150+ engineers actively shipping, so Helios coexisted with legacy UI.</span></p>
+              <p class="flex gap-3 text-sm text-muted-foreground leading-relaxed"><span class="text-[#B04318] shrink-0">→</span><span><strong class="text-foreground font-medium">Coverage vs. quality.</strong> The four-person team prioritized high-reuse foundations rather than systematizing every interface.</span></p>
+              <p class="flex gap-3 text-sm text-muted-foreground leading-relaxed"><span class="text-[#B04318] shrink-0">→</span><span><strong class="text-foreground font-medium">Control vs. team autonomy.</strong> Governance needed enough structure to preserve coherence without making Helios a bottleneck.</span></p>
+              <p class="flex gap-3 text-sm text-muted-foreground leading-relaxed"><span class="text-[#B04318] shrink-0">→</span><span><strong class="text-foreground font-medium">Automation vs. human judgment.</strong> Claude reduced repeated scanning and documentation work, while product logic, accessibility, responsive behavior, and edge cases remained human decisions.</span></p>
             </div>
           </div>
 
-          <div class="space-y-3 pt-4">
-            <h3 class="text-base font-semibold text-foreground">A Shared Way of Working</h3>
-            <p class="text-muted-foreground leading-relaxed">Helios changed more than the consistency of the interface. It gave designers and engineers a shared place to make decisions, test them against real product constraints, and carry what they learned across the suite. The system continued to evolve with the products it supported, but teams no longer had to solve the same problems alone.</p>
+          <div class="border-l-2 border-[#B04318] bg-[#F7F1ED] p-6 space-y-4">
+            <h3 class="font-semibold text-foreground">Still unresolved at transition</h3>
+            <ul class="space-y-3">
+              @for (item of constraints; track item) {
+                <li class="flex gap-3 text-sm text-muted-foreground leading-relaxed"><span class="text-[#B04318] shrink-0">→</span><span>{{ item }}</span></li>
+              }
+            </ul>
           </div>
 
-        </div>
+          <p class="text-xl font-semibold text-foreground leading-snug pt-2">The value of Helios was not the size of its library. It was the ability to make a design decision once, verify it in production code, and give many teams a supported foundation to build from.</p>
+        </section>
+      </main>
 
-      </div>
-
-      <!-- Right Column: TOC -->
-      <div class="lg:col-span-4 hidden lg:block lg:pl-6">
+      <!-- Table of Contents -->
+      <aside class="lg:col-span-4 hidden lg:block lg:pl-6">
         <div class="sticky top-24">
-          <div class="font-mono text-[10px] text-[#7A2C10] uppercase mb-4">Table of Contents</div>
-          <ul class="space-y-3 font-mono text-sm">
-            <li><a [routerLink]="[]" fragment="challenge" class="text-foreground hover:text-primary transition-colors">01. Why It Was Needed</a></li>
-            <li><a [routerLink]="[]" fragment="evolution" class="text-foreground hover:text-primary transition-colors">02. How It Evolved</a></li>
-            <li><a [routerLink]="[]" fragment="foundations" class="text-foreground hover:text-primary transition-colors">03. Foundations & Tokens</a></li>
-            <li><a [routerLink]="[]" fragment="components" class="text-foreground hover:text-primary transition-colors">04. Components & Patterns</a></li>
-            <li><a [routerLink]="[]" fragment="governance" class="text-foreground hover:text-primary transition-colors">05. Governance & Adoption</a></li>
-            <li><a [routerLink]="[]" fragment="bridge" class="text-foreground hover:text-primary transition-colors">06. Design, Verified in Code</a></li>
-            <li><a [routerLink]="[]" fragment="outcomes" class="text-foreground hover:text-primary transition-colors">07. Outcomes & Tradeoffs</a></li>
-          </ul>
+          <div class="font-mono text-xs text-[#7A2C10] uppercase mb-4">Table of Contents</div>
+          <ol class="space-y-3 font-mono text-sm">
+            <li><a [routerLink]="[]" fragment="problem" class="text-foreground hover:text-primary transition-colors">01. Organizational Problem</a></li>
+            <li><a [routerLink]="[]" fragment="system" class="text-foreground hover:text-primary transition-colors">02. Shared Foundation</a></li>
+            <li><a [routerLink]="[]" fragment="product-needs" class="text-foreground hover:text-primary transition-colors">03. Product Needs</a></li>
+            <li><a [routerLink]="[]" fragment="adoption" class="text-foreground hover:text-primary transition-colors">04. Adoption & Governance</a></li>
+            <li><a [routerLink]="[]" fragment="outcomes" class="text-foreground hover:text-primary transition-colors">05. Outcomes & Tradeoffs</a></li>
+          </ol>
         </div>
-      </div>
+      </aside>
     </div>
   </section>
 

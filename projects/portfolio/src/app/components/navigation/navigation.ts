@@ -102,11 +102,7 @@ export class Navigation {
 
   protected mobileBtnClass(): string {
     return this.isDark()
-      ? 'border-[#F2EEE9]/20 text-[#F2EEE9] hover:border-[#F2EEE9]'
-      : 'border-border text-foreground hover:border-foreground';
-  }
-
-  protected drawerBorderClass(): string {
-    return this.isDark() ? 'border-[#F2EEE9]/10' : 'border-border';
+      ? 'text-[#F2EEE9] hover:text-[#D06A3D]'
+      : 'text-foreground hover:text-[#B04318]';
   }
 }

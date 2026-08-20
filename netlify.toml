@@ -5,6 +5,18 @@
 [build.environment]
   NODE_VERSION = "22"
 
+[[edge_functions]]
+  function = "route-metadata"
+  path = "/"
+
+[[edge_functions]]
+  function = "route-metadata"
+  path = "/resume"
+
+[[edge_functions]]
+  function = "route-metadata"
+  path = "/work/*"
+
 # Angular is a single-page app: send all routes to index.html
 # so deep links (e.g. /work, /resume) and page refreshes work.
 [[redirects]]
