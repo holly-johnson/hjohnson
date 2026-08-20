@@ -5,10 +5,10 @@
         <div class="lg:col-span-8 space-y-5">
           <div class="space-y-1">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">Investigative Workflow Research</h1>
-            <p class="text-xl md:text-2xl font-semibold text-foreground leading-snug">Connecting the investigative journey from first contact through conviction.</p>
+            <p class="text-xl md:text-2xl font-semibold text-foreground leading-snug">Aligning design around the work, not just the interface.</p>
           </div>
           <p class="text-lg text-muted-foreground leading-relaxed">
-            As the product suite expanded, research mapped the broader investigative workflow so teams could reduce gaps between tools and design each product as part of one connected experience.
+            This research gives designers a shared understanding of how investigators collect, examine, connect, and communicate information. It guides decisions within each product and helps define what those products need to become, how far each should stretch, where each should stop, and how they should integrate with one another.
           </p>
         </div>
 
@@ -36,13 +36,13 @@
             A Fragmented Investigative Journey
           </h2>
           <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>Investigative workflows were clunky and separated. Users moved between different tools, data types, and product experiences as an investigation progressed, carrying context across those boundaries themselves.</p>
-            <p>As the product suite expanded, the opportunity was larger than improving an individual screen or feature. The team wanted to understand and support the full investigative journey—from first contact and initial information gathering through analysis, evidence development, and the work required to help secure a conviction.</p>
-            <p>The research mapped that broader workflow so product teams could see where each tool participated, where users encountered gaps, and how separate capabilities could contribute to a more connected experience.</p>
+            <p>Investigative workflows are clunky and separated. Users move between different tools, data types, and product experiences as an investigation progresses, carrying context across those boundaries themselves.</p>
+            <p>As the product suite continues to expand, the opportunity is larger than improving an individual screen or feature. The team needs to understand the full investigative journey, from first contact and initial information gathering through analysis, evidence development, reporting, and legal use.</p>
+            <p>Mapping that larger workflow creates a shared foundation for deciding what each product needs to support, where its responsibility should end, and how it should work with the rest of the suite.</p>
           </div>
 
           <blockquote class="border-l-2 border-l-[#B04318] bg-[#F7F1ED] px-6 py-5 text-foreground">
-            <p class="text-lg md:text-xl font-semibold leading-snug">The investigation was one continuous journey, even when the products supporting it were not.</p>
+            <p class="text-lg md:text-xl font-semibold leading-snug">The investigation is continuous, even when the products that support it are separate.</p>
           </blockquote>
         </section>
 
@@ -53,8 +53,8 @@
           </h2>
           <div class="space-y-4 text-muted-foreground leading-relaxed">
             <p>Contextual interviews and workflow mapping looked beyond individual screens to understand the work surrounding them: how an inquiry begins, how information is collected and examined, and how findings move toward reporting and legal use.</p>
-            <p>The resulting model connected six parts of the workflow—query, collect, analyze, map, visualize, and report—with the decisions, context, and handoffs users navigate between them.</p>
-            <p>This was not intended as a rigid sequence. Investigations loop, branch, and return to earlier questions as new information appears. The model gave designers a shared view of the whole journey while preserving that complexity.</p>
+            <p>The resulting model connects six parts of the workflow: query, collect, analyze, map, visualize, and report. Documentation runs through every stage, preserving the sources, trails, findings, and assumptions that make the work understandable.</p>
+            <p>This is not a rigid sequence. Investigations loop, branch, and return to earlier questions as new information appears. The model gives designers a shared view of the whole journey while preserving that complexity.</p>
           </div>
 
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -73,7 +73,7 @@
             <span class="font-mono text-[11px] text-[#7A2C10]">03.</span>
             What the Research Revealed
           </h2>
-          <p class="text-muted-foreground leading-relaxed">Looking across the workflow revealed needs that remained consistent even as the task, data, and product changed.</p>
+          <p class="text-muted-foreground leading-relaxed">Looking across the workflow reveals principles that hold true even as the question, information, and product change.</p>
 
           <div class="space-y-3">
             @for (finding of findings; track finding.title; let i = $index) {
@@ -89,14 +89,16 @@
         <section class="space-y-6 scroll-mt-32" id="decisions">
           <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
             <span class="font-mono text-[11px] text-[#7A2C10]">04.</span>
-            From Research to Design Decisions
+            Defining Product Direction
           </h2>
           <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>The research was not treated as a separate deliverable that ended when synthesis was complete. It became a reference point for design reviews, feature work, and decisions about how products could better support adjacent stages of the investigative journey.</p>
-            <p>Rather than asking only whether a screen looked consistent or met its immediate requirements, the team could ask whether it preserved analytical context, supported movement between overview and detail, and made relationships easier to examine without overstating what the data proved.</p>
+            <p>The research is not a deliverable that ended when synthesis was complete. It continues to guide what the products need to become.</p>
+            <p>Teams can evaluate more than the requirements of an individual feature. They can decide which parts of the workflow a product should own, how far it should stretch, where another product should take over, and what needs to pass between them.</p>
+            <p>The same foundation also guides interaction decisions within each product. Designers can evaluate whether a feature preserves sources and context, supports the right ways to examine information, and keeps findings understandable throughout the investigation.</p>
+            <p>Paired with the company’s UX principles, the workflow makes evaluating designs almost straightforward. The team can measure a decision against both the needs of the investigation and the standards for how the experience should work.</p>
           </div>
 
-          <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Selected examples of design influence</div>
+          <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Examples of strategic influence</div>
 
           <div class="grid sm:grid-cols-3 gap-4">
             @for (item of designInfluence; track item.title) {
@@ -109,8 +111,8 @@
 
           <div class="border border-border bg-card p-6">
             <div class="space-y-2">
-              <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Artifact pending · confidentiality review</div>
-              <p class="text-sm font-medium text-foreground"><span class="font-semibold">Research applied across Helios:</span> Pair a sanitized workflow map or research synthesis with examples of the shared patterns, component behavior, or product decisions it informed. The artifact should show the connection between evidence and system direction without exposing investigative data or proprietary product details.</p>
+              <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image pending · PenLink confidentiality review</div>
+              <p class="text-sm font-medium text-foreground"><span class="font-semibold">Workflow guiding product direction:</span> A sanitized version of the research map can show where products participate in the investigation, where their responsibilities overlap, and where information needs to pass between them.</p>
             </div>
           </div>
         </section>
@@ -118,16 +120,21 @@
         <section class="space-y-6 scroll-mt-32" id="ongoing">
           <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
             <span class="font-mono text-[11px] text-[#7A2C10]">05.</span>
-            Research Across the Suite
+            A Shared Guide for the Work
           </h2>
           <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>This was not a standalone product or a single shipped feature. Its value was in giving teams a shared view of the complete investigative journey while individual products continued to evolve.</p>
-            <p>Once designers aligned around that foundation, consistency became easier to maintain across products. New work could begin with an understanding of what came before, what needed to happen next, and how a decision fit into the larger workflow.</p>
+            <p>This is not a standalone product or a single shipped feature. It is the research foundation designers return to as individual products continue to evolve.</p>
+            <p>With the team aligned around the same understanding of investigative work, consistency is easier to maintain. New decisions can account for what came before, what needs to happen next, which product is responsible, and how the choice affects the larger workflow.</p>
           </div>
 
           <div class="bg-[#F7F1ED] border-l-2 border-[#B04318] p-6">
             <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10] mb-2">Relationship to Helios</div>
-            <p class="text-sm leading-relaxed"><a routerLink="/work/helios" class="font-semibold text-[#7A2C10] underline underline-offset-2 hover:text-[#B04318] transition-colors">Helios</a> was one way the research became actionable. The workflow model aligned designers around the experience; Helios helped carry recurring decisions into reusable patterns, components, documentation, and production code.</p>
+            <p class="text-sm leading-relaxed"><a routerLink="/work/helios" class="font-semibold text-[#7A2C10] underline underline-offset-2 hover:text-[#B04318] transition-colors">Helios</a> is one way the research becomes actionable. The workflow gives designers a shared understanding of the experience. Helios carries recurring design decisions into reusable patterns, components, documentation, and production code.</p>
+          </div>
+
+          <div class="space-y-3 pt-2">
+            <h3 class="text-base font-semibold text-foreground">The Lasting Value</h3>
+            <p class="text-muted-foreground leading-relaxed">The research gives the team a way to make decisions beyond the feature in front of them. It connects day-to-day design work to a larger product direction and helps the suite grow with clearer purpose, boundaries, and relationships.</p>
           </div>
         </section>
       </main>

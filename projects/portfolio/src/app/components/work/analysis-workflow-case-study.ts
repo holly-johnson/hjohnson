@@ -15,32 +15,33 @@ export class AnalysisWorkflowCaseStudy {
   ];
 
   protected readonly workflowStages = [
-    { title: 'Query', detail: 'Begin with a lead, question, person, event, or known piece of information.' },
-    { title: 'Collect', detail: 'Bring together relevant digital evidence, communications, open-source intelligence, and records.' },
-    { title: 'Analyze', detail: 'Narrow large datasets, examine activity, and identify information that warrants deeper investigation.' },
-    { title: 'Map', detail: 'Place people, events, and activity in geographic context to examine movement and proximity.' },
-    { title: 'Visualize', detail: 'Use timelines, relationships, and other representations to make complex information easier to understand.' },
-    { title: 'Report', detail: 'Communicate findings and preserve supporting context for review, presentation, and legal use.' },
+    { title: 'Query', detail: 'Document what was provided at the start of an investigation and where each piece of information came from.' },
+    { title: 'Collect', detail: 'Follow the available leads, recording what was found along with the branch, trail, and source that led to it.' },
+    { title: 'Analyze', detail: 'Filter, search, and sort information to identify patterns while documenting findings and assumptions.' },
+    { title: 'Map', detail: 'Place people, locations, events, and activity on a map to document geographic relationships and movement.' },
+    { title: 'Visualize', detail: 'Look at the same information in different ways because each representation can reveal something different.' },
+    { title: 'Report', detail: 'Bring the work together so it remains understandable to someone else, or to the same investigator years later.' },
   ];
 
   protected readonly findings = [
-    { title: 'Context must travel', detail: 'Analysts carry entities, time ranges, filters, and source information with them as they move between tools and levels of detail.' },
-    { title: 'Overview and evidence work together', detail: 'Summaries and visual relationships help analysts orient, but conclusions still depend on a clear path back to the underlying records.' },
-    { title: 'Questions change the level of detail', detail: 'Investigations move repeatedly between broad patterns and specific records as new information changes what the analyst needs to examine.' },
-    { title: 'Interpretation is not evidence', detail: 'Signals, analyst observations, and supported conclusions play different roles and need to remain distinguishable throughout the workflow.' },
+    { title: 'Documentation is continuous', detail: 'Sources, decisions, branches, findings, and assumptions need to be recorded throughout the investigation, not reconstructed at the end.' },
+    { title: 'Every finding needs a trail', detail: 'New information only remains useful when an investigator can trace where it came from and how one lead produced the next.' },
+    { title: 'The workflow loops and branches', detail: 'Analysis creates new questions that send investigators back to collect, query, compare, and document again.' },
+    { title: 'The view should follow the question', detail: 'Tables, maps, timelines, and relationship views reveal different aspects of the same information. No single representation works for every task.' },
+    { title: 'The work must remain understandable', detail: 'The final record needs to preserve enough context for another person, or the same investigator years later, to understand how the findings were reached.' },
   ];
 
   protected readonly designInfluence = [
-    { title: 'Navigation and state', detail: 'Evaluating whether filters, selections, and analytical context survive movement through the product.' },
-    { title: 'Data representations', detail: 'Choosing tables, timelines, maps, or relationship views based on the question each representation helps answer.' },
-    { title: 'Review and handoff', detail: 'Considering how observations remain connected to their source information for later review or reporting.' },
+    { title: 'Product scope', detail: 'Defining which parts of the investigative workflow each product should support and how far its responsibility should extend.' },
+    { title: 'Product boundaries', detail: 'Recognizing where a product should stop instead of adding capability that belongs elsewhere in the suite.' },
+    { title: 'Integration points', detail: 'Identifying where products need to share context, evidence, or actions so the larger workflow remains coherent.' },
   ];
 
   protected readonly toc = [
     { fragment: 'need', label: '01. Fragmented Journey' },
     { fragment: 'approach', label: '02. Workflow Map' },
     { fragment: 'principles', label: '03. Research Findings' },
-    { fragment: 'decisions', label: '04. Design Decisions' },
-    { fragment: 'ongoing', label: '05. Across the Suite' },
+    { fragment: 'decisions', label: '04. Product Direction' },
+    { fragment: 'ongoing', label: '05. Shared Guide' },
   ];
 }
