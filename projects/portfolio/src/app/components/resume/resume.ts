@@ -24,7 +24,10 @@ interface Honor {
 
 interface SocialLink {
   label: string;
+  /** Text shown to the reader. */
   url: string;
+  /** Actual link target (mailto: for email, https:// for web). */
+  href: string;
   icon: string;
 }
 
@@ -134,7 +137,7 @@ export class Resume {
   ];
 
   protected readonly links: SocialLink[] = [
-    { label: 'LinkedIn', url: 'linkedin.com/in/holly-johnson-27336129', icon: 'linkedin' },
-    { label: 'Email', url: 'hme2784@gmail.com', icon: 'mail' },
+    { label: 'LinkedIn', url: 'linkedin.com/in/holly-johnson-27336129', href: 'https://linkedin.com/in/holly-johnson-27336129', icon: 'linkedin' },
+    { label: 'Email', url: 'hme2784@gmail.com', href: 'mailto:hme2784@gmail.com', icon: 'mail' },
   ];
 }
