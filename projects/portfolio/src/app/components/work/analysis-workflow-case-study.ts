@@ -7,13 +7,6 @@ import { RouterLink } from '@angular/router';
   templateUrl: './analysis-workflow-case-study.html',
 })
 export class AnalysisWorkflowCaseStudy {
-  protected readonly projectDetails = [
-    { label: 'Timeline', value: '2023–2026' },
-    { label: 'Focus', value: 'End-to-end workflow · Product strategy · Cross-product alignment' },
-    { label: 'Role', value: 'Research · Synthesis · Product design' },
-    { label: 'Methods', value: 'Contextual interviews · Workflow mapping · Design evaluation' },
-  ];
-
   protected readonly workflowStages = [
     { title: 'Query', detail: 'Document what was provided at the start of an investigation and where each piece of information came from.' },
     { title: 'Collect', detail: 'Follow the available leads, recording what was found along with the branch, trail, and source that led to it.' },

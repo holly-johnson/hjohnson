@@ -17,23 +17,58 @@ interface Reference {
   domain: string;
 }
 
+interface EcosystemSite {
+  name: string;
+  url: string;
+  image: string;
+  largeImage?: boolean;
+  matchSystemColor?: boolean;
+}
+
 @Component({
   selector: 'app-nucleus-case-study',
   imports: [RouterLink],
   templateUrl: './nucleus-case-study.html',
 })
 export class NucleusCaseStudy {
-  // Fig 2. System Scale — ecosystem grid. The source Make file's image fills for
-  // these eight properties are broken/unresolved, so they render as labeled tiles.
-  protected readonly scaleSites: string[] = [
-    'Nebraska Research & Innovation Conference',
-    'Young Nebraska Scientists',
-    'Transfer Nebraska',
-    'Buffett Early Childhood Institute',
-    'Water for Food Global Institute',
-    'National Strategic Research Institute',
-    'University of Nebraska President',
-    'University of Nebraska System',
+  protected readonly scaleSites: EcosystemSite[] = [
+    {
+      name: 'National Strategic Research Institute',
+      url: 'https://nsri.nebraska.edu/',
+      image: '/assets/work/nucleus-ecosystem/nsri.png',
+    },
+    {
+      name: 'University of Nebraska System',
+      url: 'https://nebraska.edu/',
+      image: '/assets/work/nucleus-ecosystem/nu-system.svg',
+    },
+    {
+      name: 'Office of the President',
+      url: 'https://nebraska.edu/president/',
+      image: '/assets/work/nucleus-ecosystem/president-seal.svg',
+      largeImage: true,
+      matchSystemColor: true,
+    },
+    {
+      name: 'Young Nebraska Scientists',
+      url: 'https://yns.nebraska.edu/',
+      image: '/assets/work/nucleus-ecosystem/young-scientists.svg',
+    },
+    {
+      name: 'Transfer Nebraska',
+      url: 'https://transfer.nebraska.edu/',
+      image: '/assets/work/nucleus-ecosystem/transfer.svg',
+    },
+    {
+      name: 'Buffett Early Childhood Institute',
+      url: 'https://buffettinstitute.nebraska.edu/',
+      image: '/assets/work/nucleus-ecosystem/buffett.svg',
+    },
+    {
+      name: 'Daugherty Water for Food Global Institute',
+      url: 'https://waterforfood.nebraska.edu/',
+      image: '/assets/work/nucleus-ecosystem/water-for-food.svg',
+    },
   ];
 
   protected readonly archRows: ArchRow[] = [
