@@ -19,7 +19,7 @@ interface Project {
 })
 export class Home {
   protected readonly social = {
-    linkedin: 'https://www.linkedin.com/in/holly-johnson-27336129/',
+    linkedin: 'https://www.linkedin.com/in/holly-johnson-design/',
     email: 'mailto:hme2784@gmail.com',
   };
 
