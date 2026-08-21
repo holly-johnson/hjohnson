@@ -43,11 +43,11 @@ export class Resume {
       company: 'Penlink',
       period: 'Jan 2023 – Aug 2026',
       achievements: [
-        'Built the original Figma-based Penlink Design System (PLDS) and evolved it into Helios, a shared product foundation of design tokens, structured Figma architecture, and a published Angular library for building new web products and transitioning existing ones onto the system, that 4 designers scaled across 150+ engineers.',
-        'Architected a layered design token system (primitive → semantic → component) in Figma variables and SCSS, keeping design and front-end implementation in sync across 3 adopting products.',
-        'Built accessibility and internationalization into the component architecture: focus management, ARIA, and modal focus-trapping, plus localization and RTL support (i18n and CSS logical properties) for multi-language products. Fixes at the foundation improved every consuming product.',
-        'Led an experimental AI-assisted design-to-code workflow, directing Claude via MCP to turn structured design-system information (components, tokens, states) into Angular and to run recurring adoption and critique workflows, a next stage that structured system architecture made possible.',
-        'Drive UX design for complex intelligence platforms including investigative dashboards, alert systems, and geospatial analysis tools, grounded in analyst interviews and contextual research into investigative workflows.',
+        'Built the original Penlink Design System in Figma and evolved it into Helios: a shared foundation of design tokens, structured Figma architecture, and a published Angular library. A four-person design team used it to carry shared decisions across 150+ engineers.',
+        'Architected a layered token system (primitive → semantic → component) in Figma variables and SCSS, keeping design and front-end in sync across three adopting products.',
+        'Built accessibility and internationalization into the components themselves: WCAG focus management, ARIA, modal focus-trapping, localization, and RTL (i18n, CSS logical properties). Foundation-level fixes improved every consuming product.',
+        'Piloted applied AI in design-systems work: directed Claude through MCP to turn structured system information (components, tokens, states) into production Angular, and to run recurring adoption and critique scans that kept system debt visible and Figma intent tied to shipped code.',
+        'Drove UX for complex intelligence platforms (investigative dashboards, alerting, geospatial analysis), grounded in analyst interviews and contextual workflow research.',
       ],
     },
     {
