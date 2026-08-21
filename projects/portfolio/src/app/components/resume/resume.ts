@@ -46,6 +46,7 @@ export class Resume {
         'Built the original Penlink Design System in Figma and evolved it into Helios: a shared foundation of design tokens, structured Figma architecture, and a published Angular library. A four-person design team used it to carry shared decisions across 150+ engineers.',
         'Architected a layered token system (primitive → semantic → component) in Figma variables and SCSS, keeping design and front-end in sync across three adopting products.',
         'Built accessibility and internationalization into the components themselves: WCAG focus management, ARIA, modal focus-trapping, localization, and RTL (i18n, CSS logical properties). Foundation-level fixes improved every consuming product.',
+        "Established the system's governance: a contribution model, versioned releases, and a roadmap that let product teams adopt Helios incrementally without pausing active feature work.",
         'Piloted applied AI in design-systems work: directed Claude through MCP to turn structured system information (components, tokens, states) into production Angular, and to run recurring adoption and critique scans that kept system debt visible and Figma intent tied to shipped code.',
         'Drove UX for complex intelligence platforms (investigative dashboards, alerting, geospatial analysis), grounded in analyst interviews and contextual workflow research.',
       ],
