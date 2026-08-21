@@ -137,7 +137,7 @@ export class Resume {
   ];
 
   protected readonly links: SocialLink[] = [
-    { label: 'LinkedIn', url: 'linkedin.com/in/holly-johnson-27336129', href: 'https://linkedin.com/in/holly-johnson-27336129', icon: 'linkedin' },
+    { label: 'LinkedIn', url: 'linkedin.com/in/holly-johnson-design', href: 'https://www.linkedin.com/in/holly-johnson-design', icon: 'linkedin' },
     { label: 'Email', url: 'hme2784@gmail.com', href: 'mailto:hme2784@gmail.com', icon: 'mail' },
   ];
 }
