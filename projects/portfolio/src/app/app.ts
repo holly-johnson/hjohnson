@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, DestroyRef, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, DestroyRef, inject, isDevMode } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -15,11 +15,12 @@ interface RouteMeta {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navigation],
+  imports: [RouterOutlet, RouterLink, Navigation],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
+  protected readonly showFieldNotesPreview = isDevMode();
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
   private readonly meta = inject(Meta);
