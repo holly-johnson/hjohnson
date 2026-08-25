@@ -1,4 +1,7 @@
 import { Routes } from '@angular/router';
+import { isDevMode } from '@angular/core';
+
+import { fieldNotesRoutes } from './field-notes.routes';
 
 // Lazy-load standalone components with loadComponent to reduce initial bundle.
 //
@@ -29,6 +32,7 @@ export const routes: Routes = [
       },
     },
   },
+  ...(isDevMode() ? fieldNotesRoutes : []),
   {
     path: 'work/helios',
     loadComponent: () => import('./components/work/helios-case-study').then(m => m.HeliosCaseStudy),

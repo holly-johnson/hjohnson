@@ -1,0 +1,64 @@
+<main class="pt-28 md:pt-36 pb-24">
+  <header class="max-w-7xl mx-auto px-6 lg:px-12 pb-16 md:pb-24">
+    <div class="grid lg:grid-cols-12 gap-8 items-end">
+      <div class="lg:col-span-8">
+        <p class="font-mono text-xs uppercase tracking-[0.18em] text-primary mb-5">Notes + good reads</p>
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.02]">Field Notes</h1>
+      </div>
+      <p class="lg:col-span-4 text-lg text-muted-foreground leading-relaxed">
+        Working notes on design systems, product practice, and the ideas I keep returning to.
+      </p>
+    </div>
+  </header>
+
+  <section class="border-y border-border bg-[#171513] text-[#F2EEE9]">
+    <a routerLink="/field-notes/design-systems-are-relationships" class="group block max-w-7xl mx-auto px-6 lg:px-12 py-16 md:py-24">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-3">
+          <span class="font-mono text-[10px] uppercase tracking-[0.16em] text-[#D06A3D]">Latest note · 5 min</span>
+        </div>
+        <div class="lg:col-span-8 lg:col-start-5">
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight group-hover:text-[#D06A3D] transition-colors">Design systems are relationship work</h2>
+          <p class="mt-6 text-lg leading-relaxed text-[#C9C1B8] max-w-2xl">The library matters. But the real system lives in the conversations, decisions, and trust that make shared work possible.</p>
+          <span class="inline-flex items-center gap-3 mt-8 font-mono text-xs">Read the note <span class="text-[#D06A3D] transition-transform group-hover:translate-x-1">→</span></span>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 lg:px-12 py-20 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-3">
+        <p class="font-mono text-xs uppercase tracking-[0.18em] text-primary">Worth passing along</p>
+        <p class="mt-4 text-sm text-muted-foreground leading-relaxed">Articles and posts from other people that shifted my thinking or named something clearly.</p>
+      </div>
+      <div class="lg:col-span-8 lg:col-start-5 border-t border-border">
+        @for (item of reading; track item.url; let i = $index) {
+          <a [href]="item.url" target="_blank" rel="noopener noreferrer" class="group grid md:grid-cols-[4rem_1fr_auto] gap-4 md:gap-6 py-8 border-b border-border">
+            <span class="font-mono text-[10px] text-muted-foreground">0{{ i + 1 }}</span>
+            <div>
+              @if (item.image) {
+                <div class="mb-6 w-36 sm:w-44 bg-secondary/40 border border-border overflow-hidden flex items-center justify-center">
+                  <img
+                    [src]="item.image"
+                    [alt]="item.imageAlt ?? ''"
+                    loading="lazy"
+                    class="block w-full max-h-56 object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+              }
+              <div class="flex flex-wrap items-center gap-3 mb-3">
+                <span class="font-mono text-[10px] uppercase tracking-wider text-primary">{{ item.topic }}</span>
+                <span class="text-border">/</span>
+                <span class="text-xs text-muted-foreground">{{ item.author }}</span>
+              </div>
+              <h2 class="text-2xl font-bold group-hover:text-primary transition-colors">{{ item.title }}</h2>
+              <p class="mt-3 text-sm leading-relaxed text-muted-foreground max-w-2xl">{{ item.note }}</p>
+            </div>
+            <span class="font-mono text-xs text-muted-foreground md:text-right group-hover:text-primary">↗<span class="sr-only"> Opens {{ item.source }}</span></span>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+</main>

@@ -30,7 +30,9 @@
                 "input": "projects/portfolio/public"
               }
             ],
-            "styles": ["projects/portfolio/src/styles.css"]
+            "styles": [
+              "projects/portfolio/src/styles.css"
+            ]
           },
           "configurations": {
             "production": {
@@ -48,9 +50,14 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "projects/portfolio/src/app/field-notes.routes.ts",
+                  "with": "projects/portfolio/src/app/field-notes.routes.prod.ts"
+                }
+              ]
             },
-
             "development": {
               "optimization": false,
               "extractLicenses": false,
@@ -99,7 +106,9 @@
                 "input": "projects/cultivate/public"
               }
             ],
-            "styles": ["projects/cultivate/src/styles.scss"]
+            "styles": [
+              "projects/cultivate/src/styles.scss"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,7 +128,6 @@
               ],
               "outputHashing": "all"
             },
-
             "development": {
               "optimization": false,
               "extractLicenses": false,
