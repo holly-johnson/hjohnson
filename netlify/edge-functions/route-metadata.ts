@@ -9,27 +9,27 @@ interface RouteMetadata {
 
 const metadata: Record<string, RouteMetadata> = {
   "/": {
-    title: "Holly Johnson — Product Designer & Design Systems Lead",
+    title: "Holly Johnson · Product Designer & Design Systems Lead",
     description: "Product designer and design systems lead turning complex product needs into shared systems that connect design and production.",
     image: "/assets/social/home.png",
   },
   "/resume": {
-    title: "Resume — Holly Johnson",
+    title: "Resume · Holly Johnson",
     description: "Holly Johnson is a product designer and design systems lead experienced in complex product UX, production Angular systems, and multi-brand platforms.",
     image: "/assets/social/resume.png",
   },
   "/work/helios": {
-    title: "Helios Design System — Holly Johnson",
+    title: "Helios Design System · Holly Johnson",
     description: "How Holly Johnson built a Figma-to-Angular product foundation that helped four designers scale decisions across more than 150 engineers.",
     image: "/assets/social/helios.png",
   },
   "/work/analysis-workflow": {
-    title: "Investigative Workflow Research — Holly Johnson",
+    title: "Investigative Workflow Research · Holly Johnson",
     description: "Research mapping how investigators query, collect, analyze, connect, visualize, document, and report across fragmented product workflows.",
     image: "/assets/social/investigative-workflow.png",
   },
   "/work/nucleus": {
-    title: "NUcleus Design System — Holly Johnson",
+    title: "NUcleus Design System · Holly Johnson",
     description: "A reusable design and front-end system supporting nine university brands across more than 20 websites and applications.",
     image: "/assets/social/nucleus.png",
   },
