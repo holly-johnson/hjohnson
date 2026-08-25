@@ -1,30 +1,7 @@
 import { Routes } from '@angular/router';
 import { isDevMode } from '@angular/core';
 
-const fieldNotesRoutes: Routes = [
-  {
-    path: 'field-notes',
-    loadComponent: () => import('./components/journal/journal').then(m => m.Journal),
-    title: 'Field Notes · Holly Johnson',
-    data: {
-      meta: {
-        description: 'Notes on design systems, product practice, and a curated shelf of ideas worth passing along.',
-        image: '/assets/social/home.png',
-      },
-    },
-  },
-  {
-    path: 'field-notes/design-systems-are-relationships',
-    loadComponent: () => import('./components/journal/design-systems-are-relationships').then(m => m.DesignSystemsAreRelationships),
-    title: 'Design systems are relationship work · Holly Johnson',
-    data: {
-      meta: {
-        description: 'A field note on why the strongest design systems are built through trust, shared language, and continuous collaboration.',
-        image: '/assets/social/helios.png',
-      },
-    },
-  },
-];
+import { fieldNotesRoutes } from './field-notes.routes';
 
 // Lazy-load standalone components with loadComponent to reduce initial bundle.
 //
