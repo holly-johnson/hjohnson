@@ -178,9 +178,9 @@ foundation improves every product that consumes it.
 A design system only matters if products actually adopt it — and large enterprise products
 can't stop and rebuild. So Helios was built for **incremental adoption**:
 
-> **Helios shared package (npm) → product-controlled UI wrapper layer → product application → feature screens**
+> **Helios shared package (npm) → product application → feature screens**
 
-The wrapper layer lets each product map its own APIs, absorb breaking changes, and migrate
+[RETRACTED 2026-08-25: the product-controlled wrapper layer is not a verified fact. Holly does not know how products wrapped Helios. Do not use it in the case study.]
 gradually — so a Helios upgrade never forces an immediate rewrite everywhere. The same
 architecture supports standalone applications, not just the existing products. **Three
 products were adopting the system.**
@@ -319,7 +319,7 @@ architecture into production code.
 
 ## Decisions — RESOLVED (2026-08-13)
 - ✔ Role = **Senior UX Designer** (§00) — reconcile the live Penlink page to match at build time.
-- ✔ Governance §05 — all four items (package+wrapper, auditing & versioning, contribution/
+- ✔ Governance §05 — all four items (package adoption, auditing & versioning, contribution/
   review + docs, Orbit) stated as real/shipped, with calibrated wording. Orbit named.
 - ✔ MCP §07 — kept conceptual now; specifics slot held open.
 - ✔ Naming — OK to state the internal figures, name the specific products, name Orbit, and
