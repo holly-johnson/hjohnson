@@ -16,10 +16,10 @@
 
         <div class="grid lg:grid-cols-[1.15fr_2fr] border border-border">
           <div class="bg-[#171513] p-6 md:p-8 flex flex-col justify-between min-h-52">
-            <div class="font-mono text-xs uppercase tracking-wider text-[#D06A3D]">Production release</div>
+            <div class="font-mono text-xs uppercase tracking-wider text-[#D06A3D]">Production library</div>
             <div class="space-y-2 mt-10">
-              <div class="text-4xl md:text-5xl font-bold tracking-tight text-[#F2EEE9]">1.2.0</div>
-              <p class="text-sm leading-relaxed text-[#C9C1B8]">Released August 3, 2026</p>
+              <div class="text-4xl md:text-5xl font-bold tracking-tight text-[#F2EEE9]">Angular</div>
+              <p class="text-sm leading-relaxed text-[#C9C1B8]">Published component library with versioned, non-breaking releases, shipped to product teams in 2026</p>
             </div>
           </div>
 
@@ -49,7 +49,7 @@
   <!-- Main Content -->
   <section class="py-24">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-16">
-      <main class="lg:col-span-8 space-y-24">
+      <main class="lg:col-span-8 space-y-24 min-w-0">
 
         <!-- 01 Organizational Problem -->
         <section class="space-y-6 scroll-mt-32" id="problem">
@@ -152,12 +152,25 @@
             </article>
           </div>
 
-          <div class="border border-border bg-card min-h-56 flex items-center justify-center p-8 text-center">
-            <div class="max-w-lg space-y-2">
-              <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Under NDA · available to walk through on request</div>
-              <p class="text-sm font-medium text-foreground"><span class="font-semibold">System definition:</span> Each component pairs its Figma variables with documentation covering anatomy, states, accessibility guidance, usage guidance, and its production Angular API.</p>
+          <figure class="border border-border bg-card overflow-hidden">
+            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between gap-4">
+              <span class="font-mono text-xs uppercase text-muted-foreground tracking-wider">Fig 3. Shared Controls, Shared Rules</span>
+              <span class="font-mono text-xs uppercase text-[#B04318] tracking-wider text-right">One hierarchy across the suite</span>
             </div>
-          </div>
+            <div class="grid gap-px bg-border">
+              <div class="bg-card p-4 sm:p-5 space-y-3 min-w-0">
+                <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">The control set</div>
+                <p class="text-sm text-muted-foreground leading-relaxed">Buttons, menus, inputs, selection, chips, and overlays rendered together, so a change to a shared decision could be reviewed across every control at once.</p>
+                <div class="border border-border/50 bg-background overflow-x-auto"><img src="assets/work/helios-controls-gallery.png" alt="A gallery rendering every Helios control together: primary, secondary, CTA, and destructive buttons at medium, icon-only, and disabled; button menus; textbox, textarea, dropdown, and search inputs; checkbox, radio, and toggle selection states including mixed, focused, invalid, disabled, and read-only; chips; and popover and tooltip overlays." class="w-full h-auto min-w-[34rem]" loading="lazy" /></div>
+              </div>
+              <div class="bg-card p-4 sm:p-5 space-y-3 min-w-0">
+                <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Usage guidance</div>
+                <p class="text-sm text-muted-foreground leading-relaxed">Correct and incorrect use shown with the real component, including the microcopy rules that keep labels parallel across a menu.</p>
+                <div class="border border-border/50 bg-background overflow-x-auto"><img src="assets/work/helios-usage-guidance.png" alt="Paired do and don't examples rendered with live components: use tertiary for low-priority toolbar options rather than secondary everywhere; use icon-only where the icon is self-explanatory rather than a bare ellipsis; use a short noun or verb as a trigger label rather than a long instructional phrase; and keep menu item phrasing parallel." class="w-full h-auto min-w-[26rem]" loading="lazy" /></div>
+              </div>
+            </div>
+            <figcaption class="bg-muted/10 px-4 py-3 border-t border-border font-mono text-xs text-muted-foreground leading-relaxed">Hierarchy, microcopy, and spacing resolved once at the system level rather than per product. Guidance is demonstrated with the shipping component, so the examples cannot fall out of date with the code.</figcaption>
+          </figure>
         </section>
 
         <!-- 03 Product Needs -->
@@ -169,7 +182,7 @@
           <div class="space-y-4 text-muted-foreground leading-relaxed">
             <p>Helios did not develop separately from product work. PLX Web was already in feature development, so interim Angular components kept delivery moving while exposing the states, inputs, and behaviors the supported system needed.</p>
             <p>Those requirements informed official Helios components that were completed, merged, versioned, and published. Product teams could then repoint to the supported implementation rather than rework active features.</p>
-            <p>Early Tangles onboarding after its Angular 21 upgrade surfaced localization and right-to-left requirements. Those constraints strengthened the foundation before wider adoption. Desktop used the same Figma variables, although translating them into XAML remained manual because the UX team did not own that markup.</p>
+            <p>Early Tangles onboarding, following a major Angular upgrade, surfaced localization and right-to-left requirements. Those constraints strengthened the foundation before wider adoption. Desktop used the same Figma variables, although translating them into XAML remained manual because the UX team did not own that markup.</p>
             <p>Feature work also revealed reusable patterns for timelines, filtering, notifications, data visualization, and geographic mapping. Those patterns could return to Helios instead of remaining one-off solutions.</p>
           </div>
 
@@ -192,12 +205,35 @@
             <p class="text-lg font-semibold text-foreground leading-snug">Production code became research: product constraints improved Helios, and Helios returned those lessons as shared infrastructure.</p>
           </blockquote>
 
-          <div class="border border-border bg-card min-h-64 flex items-center justify-center p-8 text-center">
-            <div class="max-w-lg space-y-2">
-              <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Under NDA · available to walk through on request</div>
-              <p class="text-sm font-medium text-foreground"><span class="font-semibold">Design verified in code:</span> One behaviorally rich component traced from Figma definition to Angular implementation to its use in PLX Web, with the product requirement carried across each step.</p>
+          <figure class="border border-border bg-card overflow-hidden">
+            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between gap-4">
+              <span class="font-mono text-xs uppercase text-muted-foreground tracking-wider">Fig 4. One Component, End to End</span>
+              <span class="font-mono text-xs uppercase text-[#B04318] tracking-wider text-right">plds-button · Helios 1.1.1</span>
             </div>
-          </div>
+            <div class="grid gap-px bg-border">
+              <div class="bg-card p-4 sm:p-5 space-y-3 min-w-0">
+                <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Guidelines</div>
+                <p class="text-sm text-muted-foreground leading-relaxed">Fifteen sections on this page alone. Anatomy, hierarchy, badge, contrast, icons, microcopy, interactive states, labels and overflow, spacing, touch targets and responsive behavior, motion, and accessibility, each with worked examples.</p>
+                <div class="border border-border/50 bg-background overflow-x-auto"><img src="assets/work/helios-btn-guidelines.png" alt="Button guidelines page with an on-this-page rail listing fifteen sections: anatomy, when to use, badge, color contrast, icons, microcopy, interactive states, labels and overflow, spacing between buttons, touch targets and responsive, motion, accessibility, examples, use type for hierarchy, and label microcopy. Visible below are a labelled anatomy diagram, a when-to-use table for the five button types, and a contrast table reporting 4.59:1 AA for primary, 8.85:1 AAA for secondary, and 10.47:1 AAA for tertiary." class="w-full h-auto min-w-[30rem]" loading="lazy" /></div>
+              </div>
+              <div class="bg-card p-4 sm:p-5 space-y-3 min-w-0">
+                <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Demo</div>
+                <p class="text-sm text-muted-foreground leading-relaxed">Every input exercisable against the real component, generating copy-ready markup.</p>
+                <div class="border border-border/50 bg-background overflow-x-auto"><img src="assets/work/helios-btn-demo.png" alt="Interactive demo tab with controls for type, size, icon, label, badge, and state beside a live rendered button and the matching plds-button markup." class="w-full h-auto min-w-[30rem]" loading="lazy" /></div>
+              </div>
+              <div class="bg-card p-4 sm:p-5 space-y-3 min-w-0">
+                <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Code</div>
+                <p class="text-sm text-muted-foreground leading-relaxed">Props scanned from the source, with deprecations carrying their migration path.</p>
+                <div class="border border-border/50 bg-background overflow-x-auto"><img src="assets/work/helios-btn-code.png" alt="Code tab listing every component input with type, description, and default, including a deprecation note explaining that the transparent type is kept for published-contract parity and removed in a later generation." class="w-full h-auto min-w-[30rem]" loading="lazy" /></div>
+              </div>
+              <div class="bg-card p-4 sm:p-5 space-y-3 min-w-0">
+                <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Resources</div>
+                <p class="text-sm text-muted-foreground leading-relaxed">The same documentation served as machine-readable files for coding agents.</p>
+                <div class="border border-border/50 bg-background overflow-x-auto"><img src="assets/work/helios-btn-resources.png" alt="Resources tab linking the Figma reference, build log, and contract diff, plus a For AI agents section offering llms.txt, contracts.json, and migrations.json." class="w-full h-auto min-w-[30rem]" loading="lazy" /></div>
+              </div>
+            </div>
+            <figcaption class="bg-muted/10 px-4 py-3 border-t border-border font-mono text-xs text-muted-foreground leading-relaxed">The contrast ratios are measured from the live tokens and the props table is read from the component source, so the parts that usually go stale cannot drift from the code. The same six tabs carry across component pages.</figcaption>
+          </figure>
         </section>
 
         <!-- 04 Governance & Adoption -->
@@ -213,7 +249,7 @@
 
           <figure class="border border-border bg-card overflow-hidden">
             <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between gap-4">
-              <span class="font-mono text-xs uppercase text-muted-foreground tracking-wider">Fig 3. Adoption Path</span>
+              <span class="font-mono text-xs uppercase text-muted-foreground tracking-wider">Fig 5. Adoption Path</span>
               <span class="font-mono text-xs uppercase text-[#B04318] tracking-wider">Product → system → product</span>
             </div>
             <div class="px-8 py-10 flex flex-col items-center">
@@ -240,7 +276,7 @@
 
           <figure class="border border-border bg-card overflow-hidden">
             <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between gap-4">
-              <span class="font-mono text-xs uppercase text-muted-foreground tracking-wider">Fig 4. Component Review Loop</span>
+              <span class="font-mono text-xs uppercase text-muted-foreground tracking-wider">Fig 6. Component Review Loop</span>
               <span class="font-mono text-xs uppercase text-[#B04318] tracking-wider">Review → refine → approve</span>
             </div>
             <div class="px-6 py-8 grid sm:grid-cols-2 gap-3">
@@ -254,12 +290,25 @@
             <figcaption class="bg-muted/10 px-4 py-3 border-t border-border font-mono text-xs text-muted-foreground leading-relaxed">Critique, implementation, approval, and documentation stayed connected rather than becoming separate handoffs.</figcaption>
           </figure>
 
-          <div class="border border-border bg-card min-h-56 flex items-center justify-center p-8 text-center">
-            <div class="max-w-lg space-y-2">
-              <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Under NDA · available to walk through on request</div>
-              <p class="text-sm font-medium text-foreground"><span class="font-semibold">Adoption evidence:</span> A component dashboard tracking product usage, adoption candidates, readiness, and publishing status, alongside a product dependency consuming Helios.</p>
+          <figure class="border border-border bg-card overflow-hidden">
+            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between gap-4">
+              <span class="font-mono text-xs uppercase text-muted-foreground tracking-wider">Fig 7. Readiness and Usage in One Place</span>
+              <span class="font-mono text-xs uppercase text-[#B04318] tracking-wider text-right">Component dashboard</span>
             </div>
-          </div>
+            <div class="grid gap-px bg-border">
+              <div class="bg-card p-4 sm:p-5 space-y-3 min-w-0">
+                <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Readiness</div>
+                <p class="text-sm text-muted-foreground leading-relaxed">Every component graded on the same axes: publish state, contract, visual fidelity, accessibility, internationalization and RTL, interaction and state, and theming.</p>
+                <div class="border border-border/50 bg-background overflow-x-auto"><img src="assets/work/helios-readiness-matrix.png" alt="Readiness matrix listing components down the left and grading each across auto signals, publish state, contract, visual fidelity, accessibility, internationalization and RTL, interaction and state, and theming. Button, Button Menu, Checkbox, and List Group are marked shipped; Dropdown, Icon Close, and List Item show no checklist yet." class="w-full h-auto min-w-[36rem]" loading="lazy" /></div>
+              </div>
+              <div class="bg-card p-4 sm:p-5 space-y-3 min-w-0">
+                <div class="font-mono text-xs uppercase tracking-wider text-[#7A2C10]">Usage</div>
+                <p class="text-sm text-muted-foreground leading-relaxed">Usage counted by scanning the repository, so the components carrying the most weight were known rather than assumed.</p>
+                <div class="border border-border/50 bg-background overflow-x-auto"><img src="assets/work/helios-component-usage.png" alt="Bar chart of component usage led by plds-button at 273 render sites, then plds-checkbox at 61, plds-button-menu and plds-dropdown at 40 each, down to plds-navigation and plds-filter-panel at 9." class="w-full h-auto min-w-[32rem]" loading="lazy" /></div>
+              </div>
+            </div>
+            <figcaption class="bg-muted/10 px-4 py-3 border-t border-border font-mono text-xs text-muted-foreground leading-relaxed">Recurring scans populated the board, so readiness and usage were read off the repository rather than gathered by asking teams. The counts shown cover the design system's own prototyping workspace.</figcaption>
+          </figure>
         </section>
 
         <!-- 05 Outcomes & Tradeoffs -->
@@ -269,7 +318,7 @@
             Outcomes & Tradeoffs
           </h2>
           <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>The demonstrated outcome was design-to-production continuity: seven PLX Web developers consumed Helios 1.2.0 to ship a customer-facing product from the same decisions defined in Figma.</p>
+            <p>The demonstrated outcome was design-to-production continuity: a product team shipped a customer-facing release consuming the published Helios library, built from the same decisions defined in Figma.</p>
             <p>The broader leverage was still developing. Helios created a supported path for a four-person design team to carry reusable decisions into a product organization of more than 150 engineers, with Tangles beginning the next onboarding effort.</p>
           </div>
 
@@ -292,6 +341,16 @@
             </article>
           </div>
 
+          <figure class="border border-border bg-card overflow-hidden">
+            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between gap-4">
+              <span class="font-mono text-xs uppercase text-muted-foreground tracking-wider">Fig 8. Documentation Benchmark</span>
+              <span class="font-mono text-xs uppercase text-[#B04318] tracking-wider text-right">Self-scored · reviewed July 2026</span>
+            </div>
+            <div class="p-4 sm:p-5">
+              <div class="border border-border/50 bg-background overflow-x-auto"><img src="assets/work/helios-benchmark.png" alt="Benchmark table scoring the Helios button documentation against IBM Carbon, Google Material 3, and Shopify Polaris. Helios scores 11 axes full and 4 partial, Carbon 10 full and 3 partial, Material 3 10 full and 3 partial, Polaris 9 full and 4 partial. Helios is marked full on anatomy, hierarchy, states, API reference, do and don't examples, microcopy, interactive playground, and accessibility depth, and partial on touch target and responsive behaviour and on layout composition, both flagged as axes where Helios trails." class="w-full h-auto min-w-[34rem]" loading="lazy" /></div>
+            </div>
+            <figcaption class="bg-muted/10 px-4 py-3 border-t border-border font-mono text-xs text-muted-foreground leading-relaxed">An internal audit scoring the Helios button page against the public documentation of Carbon, Material 3, and Polaris, on the axes a mature component page is expected to cover. Self-scored rather than independent. The axes where Helios trailed were left visible so the gaps stayed on the roadmap instead of out of view.</figcaption>
+          </figure>
           <div class="space-y-4 pt-2">
             <h3 class="font-semibold text-foreground">Tradeoffs</h3>
             <div class="space-y-3">
