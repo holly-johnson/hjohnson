@@ -60,4 +60,11 @@ export class HeliosCaseStudy {
     'The canonical source of truth across Figma, code, and tokens was not fully resolved.',
     'Too much of the system’s knowledge and ownership remained concentrated in one person, a risk I had identified and was working to reduce.',
   ];
+
+  // §06, the two directions the work was heading when it stopped
+  protected readonly nextDirections: Step[] = [
+    { label: 'Toward implementation', sub: 'Designers and engineers were still translating the same structured decisions by hand. A system that already encoded those decisions was the natural place to reduce that translation.' },
+    { label: 'Toward exploration', sub: 'A prototype assembled from the real library stays honest about what the system supports, and anything built locally to finish an idea marks a gap worth carrying back as a contribution.' },
+  ];
+
 }

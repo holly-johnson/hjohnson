@@ -8,7 +8,7 @@
             <p class="text-xl md:text-2xl font-semibold text-foreground leading-snug">Aligning design around the work, not just the interface.</p>
           </div>
           <p class="text-lg text-muted-foreground leading-relaxed">
-            This research gives designers a shared understanding of how investigators collect, examine, connect, and communicate information. It guides decisions within each product and helps define what those products need to become, how far each should stretch, where each should stop, and how they should integrate with one another.
+            This research gives product management and UX a shared understanding of how investigators collect, examine, connect, and communicate information. It guides decisions within each product and helps define what those products need to become, how far each should stretch, where each should stop, and how they should integrate with one another.
           </p>
         </div>
 
@@ -75,7 +75,7 @@
           <div class="space-y-4 text-muted-foreground leading-relaxed">
             <p>Contextual interviews and workflow mapping looked beyond individual screens to understand the work surrounding them: how an inquiry begins, how information is collected and examined, and how findings move toward reporting and legal use.</p>
             <p>The resulting model connects six parts of the workflow: query, collect, analyze, map, visualize, and report. Documentation runs through every stage, preserving the sources, trails, findings, and assumptions that make the work understandable.</p>
-            <p>This is not a rigid sequence. Investigations loop, branch, and return to earlier questions as new information appears. The model gives designers a shared view of the whole journey while preserving that complexity.</p>
+            <p>This is not a rigid sequence. Investigations loop, branch, and return to earlier questions as new information appears. The model gives the team a shared view of the whole journey while preserving that complexity.</p>
           </div>
 
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -130,12 +130,57 @@
             }
           </div>
 
-          <div class="border border-border bg-card p-6">
-            <div class="space-y-2">
-              <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">Image pending · PenLink confidentiality review</div>
-              <p class="text-sm font-medium text-foreground"><span class="font-semibold">Workflow guiding product direction:</span> A sanitized version of the research map can show where products participate in the investigation, where their responsibilities overlap, and where information needs to pass between them.</p>
+          <figure class="border border-border bg-card overflow-hidden">
+            <div class="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between gap-4">
+              <span class="font-mono text-xs uppercase text-muted-foreground tracking-wider">Fig 1. Investigative Workflow Model</span>
+              <span class="font-mono text-xs uppercase text-[#B04318] tracking-wider text-right">Connected, documented, non-linear</span>
             </div>
-          </div>
+
+            <div class="@container px-5 py-8 sm:px-8">
+              <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10] mb-3">Sequence · query to report</div>
+
+              <ol class="grid gap-3 @min-[40rem]:grid-cols-6 @min-[40rem]:gap-x-4 @min-[40rem]:gap-y-0">
+                @for (stage of workflowStages; track stage.title; let i = $index; let last = $last) {
+                  <li class="flex flex-col">
+                    <div class="relative flex flex-col grow">
+                      <div class="border border-border bg-background px-3 py-3 grow flex flex-col gap-1">
+                        <span class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10]">0{{ i + 1 }}</span>
+                        <span class="text-sm font-semibold text-foreground leading-snug">{{ stage.title }}</span>
+                      </div>
+                      @if (!last) {
+                        <span aria-hidden="true" class="flex items-center justify-center py-1 text-xs text-[#B04318] @min-[40rem]:absolute @min-[40rem]:inset-y-0 @min-[40rem]:-right-4 @min-[40rem]:w-4 @min-[40rem]:py-0">
+                          <span class="@min-[40rem]:hidden">↓</span><span class="hidden @min-[40rem]:inline">→</span>
+                        </span>
+                      }
+                    </div>
+                    <span aria-hidden="true" class="hidden @min-[40rem]:block w-px h-5 mx-auto bg-[#B04318]"></span>
+                  </li>
+                }
+              </ol>
+
+              <div class="mt-4 @min-[40rem]:mt-0 border border-[#B04318] bg-[#F7F1ED] px-4 py-3 flex flex-col gap-1 @min-[40rem]:flex-row @min-[40rem]:items-baseline @min-[40rem]:gap-4">
+                <span class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10] shrink-0">Documentation · every stage</span>
+                <span class="text-sm text-muted-foreground leading-relaxed">Sources, trails, findings, and assumptions recorded throughout, not reconstructed at the end.</span>
+              </div>
+
+              <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10] mt-8 mb-3">Return paths</div>
+
+              <ul class="grid gap-2 @min-[40rem]:grid-cols-6 @min-[40rem]:gap-x-4 @min-[40rem]:gap-y-2">
+                <li class="border border-dashed border-[#B04318] bg-background px-3 py-2 flex items-baseline gap-2 @min-[40rem]:col-start-2 @min-[40rem]:col-end-4 @min-[40rem]:row-start-1">
+                  <span aria-hidden="true" class="font-mono text-xs text-[#B04318]">←</span>
+                  <span class="text-xs text-muted-foreground leading-relaxed"><span class="font-semibold text-foreground">Analyze returns to Collect.</span> New leads to follow.</span>
+                </li>
+                <li class="border border-dashed border-[#B04318] bg-background px-3 py-2 flex items-baseline gap-2 @min-[40rem]:col-start-1 @min-[40rem]:col-end-4 @min-[40rem]:row-start-2">
+                  <span aria-hidden="true" class="font-mono text-xs text-[#B04318]">←</span>
+                  <span class="text-xs text-muted-foreground leading-relaxed"><span class="font-semibold text-foreground">Analyze returns to Query.</span> New questions to ask.</span>
+                </li>
+              </ul>
+
+              <p class="text-xs text-muted-foreground leading-relaxed mt-3">Documented examples, not the only ones. Any stage can send the work back to an earlier question as new information appears.</p>
+            </div>
+
+            <figcaption class="bg-muted/10 px-4 py-3 border-t border-border font-mono text-xs text-muted-foreground leading-relaxed">The six stages connect end to end, documentation runs through all of them, and analysis routinely returns the work to earlier questions. The same model lets teams decide which parts of the workflow a product should support, where its responsibility should end, and what needs to pass between products.</figcaption>
+          </figure>
         </section>
 
         <section class="space-y-6 scroll-mt-32" id="ongoing">
@@ -144,13 +189,13 @@
             A Shared Guide for the Work
           </h2>
           <div class="space-y-4 text-muted-foreground leading-relaxed">
-            <p>This is not a standalone product or a single shipped feature. It is the research foundation designers return to as individual products continue to evolve.</p>
+            <p>This is not a standalone product or a single shipped feature. It is the research foundation the team returns to as individual products continue to evolve.</p>
             <p>With the team aligned around the same understanding of investigative work, consistency is easier to maintain. New decisions can account for what came before, what needs to happen next, which product is responsible, and how the choice affects the larger workflow.</p>
           </div>
 
           <div class="bg-[#F7F1ED] border-l-2 border-[#B04318] p-6">
             <div class="font-mono text-[10px] uppercase tracking-wider text-[#7A2C10] mb-2">Relationship to Helios</div>
-            <p class="text-sm leading-relaxed"><a routerLink="/work/helios" class="font-semibold text-[#7A2C10] underline underline-offset-2 hover:text-[#B04318] transition-colors">Helios</a> is one way the research becomes actionable. The workflow gives designers a shared understanding of the experience. Helios carries recurring design decisions into reusable patterns, components, documentation, and production code.</p>
+            <p class="text-sm leading-relaxed"><a routerLink="/work/helios" class="font-semibold text-[#7A2C10] underline underline-offset-2 hover:text-[#B04318] transition-colors">Helios</a> is one way the research becomes actionable. The workflow gives the team a shared understanding of the experience. Helios carries recurring design decisions into reusable patterns, components, documentation, and production code.</p>
           </div>
 
           <div class="space-y-3 pt-2">

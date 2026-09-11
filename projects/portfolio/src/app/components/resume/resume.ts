@@ -56,7 +56,7 @@ export class Resume {
       company: 'University of Nebraska System – Office of the President',
       period: 'Apr 2022 – Jan 2023',
       achievements: [
-        "Transitioned the NUcleus design system into the university's brand and marketing organization following an institutional restructure.",
+        "Continued NUcleus design-system work, including standards, components, and support for the teams building on it, after a system-wide restructure moved the role from Information Technology Services into the Office of the President.",
         'Partnered with communications, marketing, product, and engineering teams across campuses to align brand standards with the design system and digital platforms.',
         'Created reusable marketing templates and digital assets that enabled internal teams to produce materials in-house and reduced reliance on external contractors.',
       ],
@@ -65,7 +65,7 @@ export class Resume {
       title: 'Lead Web Designer / Developer',
       company: 'University of Nebraska System – Information Technology Services',
       period: 'May 2018 – Apr 2022',
-      note: 'Product Owner, NUcleus Design System',
+      note: 'Owned NUcleus end to end: vision, roadmap, standards, and adoption',
       achievements: [
         'Created and led the NUcleus design system from the ground up, defining the vision, roadmap, and governance model supporting 9 university brands and 20+ website and application implementations.',
         "Designed and implemented the system's design token architecture (primitive, semantic, and component layers) using Figma variables and SCSS, ensuring consistency between design and front-end implementation.",

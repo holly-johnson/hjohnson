@@ -35,7 +35,7 @@ export class NucleusCaseStudy {
     {
       name: 'National Strategic Research Institute',
       url: 'https://nsri.nebraska.edu/',
-      image: '/assets/work/nucleus-ecosystem/nsri.png',
+      image: '/assets/work/nucleus-ecosystem/nsri.webp',
     },
     {
       name: 'University of Nebraska System',

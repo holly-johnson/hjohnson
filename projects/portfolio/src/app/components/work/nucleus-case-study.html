@@ -80,19 +80,19 @@
             </div>
             <div class="grid grid-cols-2 gap-px bg-border">
               <div class="col-span-2 bg-card">
-                <img src="assets/work/nucleus-website.png" alt="University of Nebraska website" class="w-full block" />
+                <img src="assets/work/nucleus-website.webp" alt="University of Nebraska website" class="w-full block" loading="lazy" decoding="async" width="901" height="388" />
               </div>
               <div class="bg-card">
-                <img src="assets/work/nucleus-road-ahead.png" alt="The Road Ahead Starts Right Here campaign" class="w-full block" />
+                <img src="assets/work/nucleus-road-ahead.webp" alt="The Road Ahead Starts Right Here campaign" class="w-full block" loading="lazy" decoding="async" width="462" height="229" />
               </div>
               <div class="bg-card">
-                <img src="assets/work/nucleus-access.png" alt="Access & Affordability component" class="w-full block" />
+                <img src="assets/work/nucleus-access.webp" alt="Access & Affordability component" class="w-full block" loading="lazy" decoding="async" width="438" height="158" />
               </div>
               <div class="col-span-2 bg-card">
-                <img src="assets/work/nucleus-quote.png" alt="Student testimonial banner" class="w-full block" />
+                <img src="assets/work/nucleus-quote.webp" alt="Student testimonial banner" class="w-full block" loading="lazy" decoding="async" width="567" height="182" />
               </div>
               <div class="col-span-2 bg-card">
-                <img src="assets/work/nucleus-brand-colors.png" alt="University of Nebraska brand color palette" class="w-full block" />
+                <img src="assets/work/nucleus-brand-colors.webp" alt="University of Nebraska brand color palette" class="w-full block" loading="lazy" decoding="async" width="737" height="308" />
               </div>
             </div>
             <div class="bg-muted/10 px-4 py-3 border-t border-border">
@@ -137,6 +137,8 @@
                       [class.max-h-16]="site.largeImage"
                       [class.max-h-12]="!site.largeImage"
                       [class.brightness-0]="site.matchSystemColor"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div class="flex items-start justify-between gap-3 p-3">
@@ -256,31 +258,31 @@
                 </div>
                 <div class="bg-[#F7F6F4] p-2 space-y-1.5">
                   <div class="overflow-hidden">
-                    <img src="assets/work/nucleus-never-stop.png" alt="NU Advance: Never Stop Learning" class="w-full block" />
+                    <img src="assets/work/nucleus-never-stop.webp" alt="NU Advance: Never Stop Learning" class="w-full block" loading="lazy" decoding="async" width="750" height="271" />
                   </div>
                   <div class="overflow-hidden space-y-1.5">
-                    <img src="assets/work/nucleus-masterclasses.png" alt="Masterclasses banner" class="w-full block" />
-                    <img src="assets/work/nucleus-credentials.png" alt="Credentials banner" class="w-full block" />
+                    <img src="assets/work/nucleus-masterclasses.webp" alt="Masterclasses banner" class="w-full block" loading="lazy" decoding="async" width="750" height="149" />
+                    <img src="assets/work/nucleus-credentials.webp" alt="Credentials banner" class="w-full block" loading="lazy" decoding="async" width="750" height="149" />
                   </div>
                   <div class="overflow-hidden">
-                    <img src="assets/work/nucleus-scholarship.png" alt="No One Ever Won a Scholarship for Doubting Themselves: student stats" class="w-full block" />
+                    <img src="assets/work/nucleus-scholarship.webp" alt="No One Ever Won a Scholarship for Doubting Themselves: student stats" class="w-full block" loading="lazy" decoding="async" width="750" height="350" />
                   </div>
                   <div class="overflow-hidden">
-                    <img src="assets/work/nucleus-stats.png" alt="350+ undergrad majors, 80% financial aid stats banner" class="w-full block" />
+                    <img src="assets/work/nucleus-stats.webp" alt="350+ undergrad majors, 80% financial aid stats banner" class="w-full block" loading="lazy" decoding="async" width="750" height="173" />
                   </div>
                   <div class="flex gap-1.5 items-stretch">
                     <div class="w-1/2 flex-shrink-0 overflow-hidden">
-                      <img src="assets/work/nucleus-unl.png" alt="University of Nebraska – Lincoln" class="w-full block" />
+                      <img src="assets/work/nucleus-unl.webp" alt="University of Nebraska – Lincoln" class="w-full block" loading="lazy" decoding="async" width="1154" height="768" />
                     </div>
                     <div class="flex-1 overflow-hidden">
-                      <img src="assets/work/nucleus-course-card.png" alt="Applied Science course card" class="block h-full w-auto" />
+                      <img src="assets/work/nucleus-course-card.webp" alt="Applied Science course card" class="block h-full w-auto" loading="lazy" decoding="async" width="178" height="223" />
                     </div>
                   </div>
                   <div class="overflow-hidden">
-                    <img src="assets/work/nucleus-testimonial.png" alt="April Shaw student testimonial" class="w-full block" />
+                    <img src="assets/work/nucleus-testimonial.webp" alt="April Shaw student testimonial" class="w-full block" loading="lazy" decoding="async" width="1500" height="386" />
                   </div>
                   <div class="overflow-hidden">
-                    <img src="assets/work/nucleus-online-exp.png" alt="Your Online Experience at NU" class="w-full block" />
+                    <img src="assets/work/nucleus-online-exp.webp" alt="Your Online Experience at NU" class="w-full block" loading="lazy" decoding="async" width="1600" height="663" />
                   </div>
                 </div>
                 <div class="bg-muted/10 px-4 py-3 border-t border-border">
@@ -390,7 +392,7 @@
               [title]="ref.label"
               class="inline-flex items-center gap-1.5 border border-border bg-card px-2.5 py-1.5 hover:border-primary/50 hover:bg-primary/5 transition-colors group"
             >
-              <img [src]="favicon(ref.domain)" alt="" width="12" height="12" class="opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+              <img [src]="favicon(ref.domain)" alt="" width="12" height="12" class="opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0" loading="lazy" decoding="async" />
               <span class="font-mono text-[10px] text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap">{{ ref.domain }}</span>
             </a>
           }
