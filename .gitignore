@@ -45,6 +45,7 @@ Thumbs.db
 
 # Local agent instructions
 CLAUDE.md
+AGENTS.md
 
 # Local source archive (originals stay recoverable from git history)
 _archive/
