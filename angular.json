@@ -53,8 +53,12 @@
               "outputHashing": "all",
               "fileReplacements": [
                 {
-                  "replace": "projects/portfolio/src/app/field-notes.routes.ts",
-                  "with": "projects/portfolio/src/app/field-notes.routes.prod.ts"
+                  "replace": "projects/portfolio/src/app/unpublished.routes.ts",
+                  "with": "projects/portfolio/src/app/unpublished.routes.prod.ts"
+                },
+                {
+                  "replace": "projects/portfolio/src/app/unpublished.content.ts",
+                  "with": "projects/portfolio/src/app/unpublished.content.prod.ts"
                 }
               ]
             },

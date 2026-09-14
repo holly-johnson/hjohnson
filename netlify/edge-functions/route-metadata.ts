@@ -33,16 +33,6 @@ const metadata: Record<string, RouteMetadata> = {
     description: "A reusable design and front-end system supporting nine university brands across more than 20 websites and applications.",
     image: "/assets/social/nucleus.png",
   },
-  "/work/theorem": {
-    title: "Theorem · Holly Johnson",
-    description: "Rebuilding a decades-old learning management system for the University of Nebraska High School, and the application patterns that became NUcleus for Apps.",
-    image: "/assets/social/nucleus.png",
-  },
-  "/work/nebraska-edu": {
-    title: "Nebraska.edu · Holly Johnson",
-    description: "The repeatable engagement that turned NUcleus into websites: information architecture, content maps, wireframes, Sitecore build, and client training.",
-    image: "/assets/social/nucleus.png",
-  },
 };
 
 const aliases: Record<string, string> = {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { showUnpublished as unpublishedVisible } from '../../unpublished.content';
 
 interface ArchRow {
   label: string;
@@ -31,6 +32,9 @@ interface EcosystemSite {
   templateUrl: './nucleus-case-study.html',
 })
 export class NucleusCaseStudy {
+  /** Theorem is not ready to publish; its route is dev-only. See unpublished.content.ts. */
+  protected readonly showUnpublished = unpublishedVisible;
+
   protected readonly scaleSites: EcosystemSite[] = [
     {
       name: 'National Strategic Research Institute',

@@ -1,15 +1,4 @@
 <div class="min-h-screen bg-background">
   <app-navigation />
   <router-outlet />
-  @if (showFieldNotesPreview) {
-    <footer class="border-t border-border bg-background">
-      <div class="max-w-6xl mx-auto px-6 lg:px-12 py-8 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
-        <span class="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">Holly Johnson · Product Designer</span>
-        <a routerLink="/field-notes" class="group inline-flex items-center gap-2 self-start font-mono text-xs text-muted-foreground hover:text-primary transition-colors">
-          Field Notes
-          <span class="transition-transform group-hover:translate-x-0.5">→</span>
-        </a>
-      </div>
-    </footer>
-  }
 </div>

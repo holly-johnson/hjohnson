@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
-import { isDevMode } from '@angular/core';
-
-import { fieldNotesRoutes } from './field-notes.routes';
+import { unpublishedRoutes } from './unpublished.routes';
 
 // Lazy-load standalone components with loadComponent to reduce initial bundle.
 //
@@ -32,18 +30,6 @@ export const routes: Routes = [
       },
     },
   },
-  {
-    path: 'about',
-    loadComponent: () => import('./components/about/about').then(m => m.About),
-    title: 'About · Holly Johnson',
-    data: {
-      meta: {
-        description: 'About Holly Johnson, product designer and design systems lead.',
-        image: '/assets/social/home.png',
-      },
-    },
-  },
-  ...(isDevMode() ? fieldNotesRoutes : []),
   {
     path: 'work/helios',
     loadComponent: () => import('./components/work/helios-case-study').then(m => m.HeliosCaseStudy),
@@ -78,31 +64,11 @@ export const routes: Routes = [
       },
     },
   },
-  {
-    path: 'work/theorem',
-    loadComponent: () => import('./components/work/theorem-case-study').then(m => m.TheoremCaseStudy),
-    title: 'Theorem · Holly Johnson',
-    data: {
-      meta: {
-        description: 'Rebuilding a decades-old learning management system for the University of Nebraska High School, and the application patterns that became NUcleus for Apps.',
-        image: '/assets/social/nucleus.png',
-      },
-    },
-  },
-  {
-    path: 'work/nebraska-edu',
-    loadComponent: () => import('./components/work/nebraska-edu-case-study').then(m => m.NebraskaEduCaseStudy),
-    title: 'Nebraska.edu · Holly Johnson',
-    data: {
-      meta: {
-        description: 'The repeatable engagement that turned NUcleus into websites: information architecture, content maps, wireframes, Sitecore build, and client training.',
-        image: '/assets/social/nucleus.png',
-      },
-    },
-  },
   // Orbit — case-study scaffold (WIP). Route retired until the case study is finished so the
   // draft placeholders can't surface via a shared or guessed URL. Component file kept in place.
   { path: 'work/ai-design', redirectTo: 'work/helios', pathMatch: 'full' },
+  // Not ready to publish. Dev-only; see unpublished.routes.ts.
+  ...unpublishedRoutes,
   {
     path: '**',
     loadComponent: () => import('./components/not-found/not-found').then(m => m.NotFound),

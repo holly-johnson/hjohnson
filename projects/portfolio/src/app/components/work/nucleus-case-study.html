@@ -311,7 +311,7 @@
           </div>
           <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
             <p>Websites were only half the University's digital estate. The other half was applications: contact and event management, data access, a learning management system. In 2017 the University of Nebraska brand had never been used inside one of them.</p>
-            <p>A website component and an application component answer to different constraints. A page section is composed once and read. A datatable is operated, in long sessions, by someone whose job depends on it. So NUcleus split into two implementations of one brand, and the application half was proven inside a real product first. The patterns came out of <a routerLink="/work/theorem" class="font-semibold text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">Theorem</a>, then were generalized.</p>
+            <p>A website component and an application component answer to different constraints. A page section is composed once and read. A datatable is operated, in long sessions, by someone whose job depends on it. So NUcleus split into two implementations of one brand, and the application half was proven inside a real product first. The patterns came out of @if (showUnpublished) {<a routerLink="/work/theorem" class="font-semibold text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">Theorem</a>} @else {Theorem}, then were generalized.</p>
             <p>The front-end architecture had to stay implementation-agnostic. University applications were built on different stacks, so the system defined the pattern and the markup while leaving each team free to render it in their own framework.</p>
             <p>Every component shipped with its code, its options, its accessibility requirements, implementation notes, and a version history. A component that is not documented to that level is a suggestion, not a system.</p>
           </div>
@@ -484,10 +484,12 @@
         <div class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">Previous Project</div>
         <div class="font-serif text-xl font-normal text-foreground transition-colors group-hover:text-primary">Investigative Workflow Research</div>
       </a>
-      <a routerLink="/work/theorem" class="group space-y-1 block text-right">
-        <div class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">Next Project</div>
-        <div class="font-serif text-xl font-normal text-foreground transition-colors group-hover:text-primary">Theorem</div>
-      </a>
+      @if (showUnpublished) {
+        <a routerLink="/work/theorem" class="group space-y-1 block text-right">
+          <div class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">Next Project</div>
+          <div class="font-serif text-xl font-normal text-foreground transition-colors group-hover:text-primary">Theorem</div>
+        </a>
+      }
     </div>
   </section>
 </div>
