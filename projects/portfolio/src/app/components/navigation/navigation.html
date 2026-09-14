@@ -1,78 +1,69 @@
-<nav
-  class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300"
-  [class]="navClass()"
->
-  <div class="max-w-7xl mx-auto px-6 lg:px-12">
-    <div class="flex items-center justify-between py-4">
+<!-- 1b editorial header: serif wordmark left, quiet text links right. -->
+<header class="sticky top-0 z-50 bg-background">
+  <div class="mx-auto flex max-w-6xl items-baseline justify-between px-6 py-7 lg:px-12" [class]="navClass()">
 
-      <!-- ── Logo ─────────────────────────────────────────────── -->
-      <a routerLink="/" class="flex items-center gap-3 group">
-        <div
-          class="w-8 h-8 flex items-center justify-center transition-colors group-hover:bg-[#B04318]"
-          [class]="logoBoxClass()"
-        >
-          <span
-            class="text-sm font-bold font-mono transition-colors group-hover:text-[#F2EEE9]"
-            [class]="logoInitialsClass()"
-          >HJ</span>
-        </div>
-        <div class="hidden sm:block">
-          <span
-            class="text-sm font-semibold leading-none transition-colors"
-            [class]="logoNameClass()"
-          >Holly Johnson</span>
-        </div>
-      </a>
+    <a routerLink="/" class="font-serif text-[17px] tracking-[-0.01em] text-foreground">Holly Johnson</a>
 
-      <!-- ── Desktop links ────────────────────────────────────── -->
-      <div class="hidden md:flex items-center gap-6">
-        @for (link of links; track link.label) {
+    <!-- ── Desktop links ────────────────────────────────────── -->
+    <nav class="hidden items-baseline gap-7 text-sm md:flex" aria-label="Primary">
+      @for (link of links; track link.path + link.label) {
+        <a
+          [routerLink]="link.path"
+          [fragment]="link.fragment"
+          [class]="linkClass(link)"
+        >{{ link.label }}</a>
+      }
+      <button
+        type="button"
+        (click)="theme.cycle()"
+        class="inline-flex h-6 w-6 items-center justify-center self-center text-muted-foreground transition-colors hover:text-foreground"
+        [attr.aria-label]="'Theme: ' + theme.preference() + '. Change theme.'"
+      >
+        @if (theme.resolvedTheme() === 'dark') {
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
+        } @else {
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" /></svg>
+        }
+      </button>
+    </nav>
+
+    <!-- ── Mobile menu button ───────────────────────────────── -->
+    <button
+      type="button"
+      class="md:hidden"
+      [class]="mobileBtnClass()"
+      (click)="mobileMenuOpen.set(!mobileMenuOpen())"
+      [attr.aria-expanded]="mobileMenuOpen()"
+      aria-label="Toggle menu"
+    >
+      @if (mobileMenuOpen()) {
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+      } @else {
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+      }
+    </button>
+  </div>
+
+  <!-- ── Mobile menu ──────────────────────────────────────────── -->
+  @if (mobileMenuOpen()) {
+    <div class="border-t border-border bg-background md:hidden">
+      <div class="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-5">
+        @for (link of links; track link.path + link.label) {
           <a
             [routerLink]="link.path"
             [fragment]="link.fragment"
-            class="px-3 py-2.5 text-sm transition-colors"
+            (click)="mobileMenuOpen.set(false)"
+            class="py-2 text-base"
             [class]="linkClass(link)"
           >{{ link.label }}</a>
         }
+        <button
+          type="button"
+          (click)="theme.cycle()"
+          class="mt-1 self-start py-2 text-base text-muted-foreground transition-colors hover:text-foreground"
+          [attr.aria-label]="'Theme: ' + theme.preference() + '. Change theme.'"
+        >Theme</button>
       </div>
-
-      <!-- ── Mobile menu button ───────────────────────────────── -->
-      <button
-        type="button"
-        (click)="toggleMobile()"
-        class="md:hidden w-8 h-8 flex items-center justify-center transition-colors"
-        [class]="mobileBtnClass()"
-        [attr.aria-label]="mobileMenuOpen() ? 'Close menu' : 'Open menu'"
-        [attr.aria-expanded]="mobileMenuOpen()"
-        aria-controls="mobile-navigation"
-      >
-        @if (mobileMenuOpen()) {
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 6 6 18" /><path d="m6 6 12 12" />
-          </svg>
-        } @else {
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="18" y2="18" />
-          </svg>
-        }
-      </button>
     </div>
-
-    <!-- ── Mobile drawer ─────────────────────────────────────── -->
-    @if (mobileMenuOpen()) {
-      <div id="mobile-navigation" class="md:hidden py-4">
-        <div class="flex flex-col gap-1">
-          @for (link of links; track link.label) {
-            <a
-              [routerLink]="link.path"
-              [fragment]="link.fragment"
-              (click)="mobileMenuOpen.set(false)"
-              class="px-3 py-2.5 text-sm transition-colors"
-              [class]="linkClass(link)"
-            >{{ link.label }}</a>
-          }
-        </div>
-      </div>
-    }
-  </div>
-</nav>
+  }
+</header>

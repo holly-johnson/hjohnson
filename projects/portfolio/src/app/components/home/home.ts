@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { availability } from '../../availability';
 
 interface ProjectFigure {
   src: string;
@@ -9,22 +10,30 @@ interface ProjectFigure {
   height: number;
 }
 
+/** The ROLE / YEAR / OUTCOME column beside the flagship case study. */
+interface FactRow {
+  label: string;
+  value: string;
+  /** Renders in the accent colour, for the one fact worth landing on. */
+  accent?: boolean;
+}
+
 interface Project {
   id: string;
+  /** Two-digit index shown in the work list. */
+  num: string;
   title: string;
   discipline: string[];
   description: string;
   impact: string;
   link: string;
-  /** Case study is fully built; unfinished ones render as non-clickable cards. */
-  ready: boolean;
-  /**
-   * Card artwork. Absent where the case study has no publishable capture yet, in
-   * which case the card falls back to the markup stage diagram below.
-   */
+  /** One line for the work list. */
+  blurb: string;
+  /** Mono label at the end of the work-list row. */
+  tag: string;
+  facts?: FactRow[];
+  /** A real product shot. Unset falls back to the drawn system placeholder. */
   figure?: ProjectFigure;
-  /** Fallback for cards without a figure: workflow stages drawn in markup. */
-  stages?: string[];
 }
 
 @Component({
@@ -33,52 +42,77 @@ interface Project {
   templateUrl: './home.html',
 })
 export class Home {
+  protected readonly availability = availability;
+
   protected readonly social = {
     linkedin: 'https://www.linkedin.com/in/holly-johnson-design/',
     email: 'mailto:hme2784@gmail.com',
   };
 
-  // Helios card — aligned to the built /work/helios case study (role, impact).
   protected readonly projects: Project[] = [
     {
       id: '1',
+      num: '01',
       title: 'Helios',
       discipline: ['Design Systems', 'Product Platforms', 'Design Engineering', 'Applied AI'],
       description: 'A design system and product foundation connecting design architecture, coded components, documentation, distribution, and real product implementation.',
-      impact: 'Built Helios from the ground up, from the first Figma foundations and token architecture to a published Angular component library, with Claude woven into everything from how products adopt components to how design decisions get captured.',
+      impact: 'Built from the first Figma foundations and token architecture through to a published Angular component library. Four designers supported more than 150 engineers, so the system had to carry decisions the team could not review screen by screen.',
+      blurb: 'Figma foundations through to the published Angular library products shipped on.',
+      tag: 'DESIGN SYSTEM',
       link: '/work/helios',
-      ready: true,
-      figure: {
-        src: 'assets/work/helios-anatomy.webp',
-        width: 815,
-        height: 235,
-        alt: 'The anatomy figure from the Helios button documentation: a button with four numbered callouts, keyed to a legend naming the leading icon, the label, the notification badge, and the container.',
-      },
+      facts: [
+        { label: 'ROLE', value: 'Senior UX Designer' },
+        { label: 'YEAR', value: '2023–2026' },
+        { label: 'OUTCOME', value: 'Design pulled into production, not handed to it', accent: true },
+      ],
     },
     {
       id: '2',
+      num: '02',
       title: 'Investigative Workflow Research',
       discipline: ['UX Research', 'Workflow Mapping', 'Product Strategy'],
       description: 'Contextual research mapping how investigators collect, examine, connect, and communicate information across a suite of separate tools.',
-      impact: 'Turned a fragmented, tool-by-tool journey into a shared model of the end-to-end workflow, giving the team one foundation for deciding what each product should own, where it should stop, and how the products connect.',
+      impact: 'Turned a fragmented, tool-by-tool journey into a shared model of the end-to-end workflow.',
+      blurb: 'One model of the end-to-end workflow, in place of a tool-by-tool journey.',
+      tag: 'RESEARCH',
       link: '/work/analysis-workflow',
-      ready: true,
-      stages: ['Collect', 'Examine', 'Connect', 'Communicate'],
     },
     {
       id: '3',
+      num: '03',
       title: 'NUcleus Design System',
       discipline: ['Design Systems', 'Platform Strategy', 'Front-End Integration'],
       description: 'A shared design and front-end system supporting 9 university brands and more than 20 websites and applications.',
-      impact: 'Built the reusable front-end foundation first, then implemented it in the NU CMS. The same front-end has since been carried into a different CMS, allowing the system to outlast its original platform.',
+      impact: 'Built the reusable front-end foundation first, then implemented it in the NU CMS.',
+      blurb: 'Nine university brands on one front-end foundation that outlasted its CMS.',
+      tag: 'PLATFORM',
       link: '/work/nucleus',
-      ready: true,
-      figure: {
-        src: 'assets/work/nucleus-scholarship.webp',
-        width: 750,
-        height: 350,
-        alt: 'A NUcleus stat layout on an NU platform page: a red feature panel for 3,318 Regent Scholars beside a grid of figures for states, international students, countries, honors programs, graduate students, and Fulbright scholars.',
-      },
+    },
+    {
+      id: '4',
+      num: '04',
+      title: 'Theorem',
+      discipline: ['Product Design', 'UX Research', 'Front-End Development'],
+      description: 'A learning management system rebuilt for the University of Nebraska High School, serving students, teachers, instructional designers, customer service, and administrators.',
+      impact: 'Analytics on the legacy application showed almost no traffic on paths stakeholders had called essential, which reset the requirements around the actual work.',
+      blurb: 'Five kinds of user, one application, requirements rebuilt on evidence.',
+      tag: 'PRODUCT',
+      link: '/work/theorem',
+    },
+    {
+      id: '5',
+      num: '05',
+      title: 'Nebraska.edu',
+      discipline: ['Information Architecture', 'Content Strategy', 'Design Systems in Practice'],
+      description: 'The repeatable engagement that turned NUcleus into websites for departments and institutes across the University of Nebraska System.',
+      impact: 'Architecture, content maps, and wireframes through to a Sitecore build and client training, so marketing staff ran their own sites afterward.',
+      blurb: 'The practice that put a design system to work, one client at a time.',
+      tag: 'PRACTICE',
+      link: '/work/nebraska-edu',
     },
   ];
+
+  /** Everything below the flagship in the work list. */
+  protected readonly supporting = this.projects.filter(p => p.id !== '1');
+  protected readonly flagship = this.projects[0];
 }

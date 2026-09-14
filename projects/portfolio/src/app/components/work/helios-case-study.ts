@@ -18,9 +18,9 @@ interface Step {
 export class HeliosCaseStudy {
   // §02, components encoded behavior and contracts, not just appearance
   protected readonly behavioralFoundations: string[] = [
-    'Consistent field structure, validation, and feedback',
+    'Consistent fields, validation, and feedback',
     'Predictable component inputs and states',
-    'Reusable navigation, popup, and page foundations',
+    'Navigation, popup, and page foundations',
     'Shared state-management patterns',
     'Internationalization and RTL layout support',
     'Compatibility with existing product requirements',
@@ -41,19 +41,19 @@ export class HeliosCaseStudy {
     { label: 'Recurring repository scan', sub: 'Claude across all products' },
     { label: 'Classify matches', sub: 'adoption or possible adoption' },
     { label: 'Review product requirements', sub: 'align or extend Helios' },
-    { label: 'Track system debt', sub: 'plan later cleanup' },
+  ];
+
+  // Review forks: debt is recorded when it exists, the release path continues regardless.
+  protected readonly adoptionDebt: Step = {
+    label: 'Track system debt',
+    sub: 'intentional contract choice',
+  };
+
+  protected readonly adoptionRelease: Step[] = [
     { label: 'Publish the Helios version', sub: 'merge and release' },
     { label: 'Product repoints', sub: 'consume the supported component' },
   ];
 
-  protected readonly reviewSteps: Step[] = [
-    { label: 'Figma component', sub: 'ready for UX critique' },
-    { label: 'Helios review tab', sub: 'review stays within UX' },
-    { label: 'Claude review synthesis', sub: 'decisions captured from recording' },
-    { label: 'Resolved decisions', sub: 'tasks plus documentation' },
-    { label: 'Direct implementation', sub: 'no design retranslation' },
-    { label: 'Final review', sub: 'component returns for approval' },
-  ];
 
   // §05, constraints and open problems
   protected readonly constraints: string[] = [

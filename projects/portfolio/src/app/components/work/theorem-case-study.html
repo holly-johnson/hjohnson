@@ -1,0 +1,277 @@
+<div class="bg-background min-h-screen">
+
+  <!-- Hero -->
+  <section>
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+      <div class="py-20">
+
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-16">
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">Product &middot; 2017&ndash;2022</span>
+            <h1 class="mt-5 font-serif text-[40px] font-normal leading-[1.05] tracking-[-0.02em] text-foreground md:text-[60px]">Theorem</h1>
+            <p class="mt-3 text-[22px] leading-[1.3] text-foreground">A learning system rebuilt around how the work is actually done.</p>
+            <p class="mt-6 max-w-[64ch] text-[17px] leading-[1.7] text-muted-foreground">
+              The University of Nebraska High School teaches a college-prep curriculum entirely online. Its learning management system was decades old and difficult to use. Theorem replaced it, serving students, teachers, instructional designers, customer service, and administrators from one application. I led the experience strategy and design, and built the front end.
+            </p>
+          </div>
+
+          <div class="border-l border-border pl-7">
+            <dl class="flex flex-col gap-5">
+              <div>
+                <dt class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">Client</dt>
+                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">University of Nebraska High School</dd>
+              </div>
+              <div>
+                <dt class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">Role</dt>
+                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">Experience strategy, product design, front-end development</dd>
+              </div>
+              <div>
+                <dt class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">Users</dt>
+                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">Five groups, each with a separate portal</dd>
+              </div>
+              <div>
+                <dt class="font-mono text-[10px] uppercase tracking-[0.1em] text-muted-foreground">Built with</dt>
+                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">HTML, SCSS, prototypes handed to engineering</dd>
+              </div>
+            </dl>
+
+            <div class="mt-9 flex flex-col gap-5">
+              <div>
+                <div class="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Outcome</div>
+                <p class="mt-1.5 text-sm leading-relaxed text-foreground">The patterns built here became NUcleus for Apps.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-24">
+    <div class="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[minmax(0,1fr)_230px] lg:px-12">
+      <main class="flex min-w-0 flex-col gap-[72px]">
+
+        <!-- 01 -->
+        <section class="space-y-6 scroll-mt-32" id="challenge">
+          <div class="mb-6 flex items-baseline gap-4">
+            <span class="font-mono text-[11px] tracking-[0.14em] text-primary">01</span>
+            <h2 class="font-serif text-[30px] font-normal leading-[1.15] text-foreground">A Decades-Old System</h2>
+            <span class="h-px flex-1 bg-border"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>The school ran on MyWayCool, an application that had accumulated decades of features and no coherent experience. Everything the school did passed through it. Instructional designers authored courses in it. Students worked through those courses in it. Teachers graded in it, and reached students about deadlines and news through it. Parents checked progress in it. Administrators managed records in it.</p>
+            <p>One system carried five different jobs, and served none of them well.</p>
+            <p>The driver behind the rebuild was straightforward: increase student success. Every decision had to answer to that.</p>
+          </div>
+
+          <figure class="border border-border bg-card">
+            <div class="flex items-center justify-between gap-4 border-b border-border bg-secondary px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 1. Theorem sign-in</span>
+              <span class="shrink-0 text-right text-primary">Shipped</span>
+            </div>
+            <div class="bg-secondary p-6">
+              <img src="assets/work/theorem/login.webp" alt="Theorem sign-in screen beside a University of Nebraska High School help panel" class="w-full block" loading="lazy" decoding="async" width="1600" height="798" />
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-[11px] leading-[1.6] text-muted-foreground">Theorem carried its own product identity while staying inside University of Nebraska brand standards.</figcaption>
+          </figure>
+        </section>
+
+        <!-- 02 -->
+        <section class="space-y-6 scroll-mt-32" id="discovery">
+          <div class="mb-6 flex items-baseline gap-4">
+            <span class="font-mono text-[11px] tracking-[0.14em] text-primary">02</span>
+            <h2 class="font-serif text-[30px] font-normal leading-[1.15] text-foreground">Discovery</h2>
+            <span class="h-px flex-1 bg-border"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>Discovery began in 2017, with the product owner, stakeholders, engineers, and one designer in the room. The first task was to name who the application actually served.</p>
+            <p>Surveys went out. Each type of administrative user walked through the existing application while describing their process, which surfaced needs and clarified requirements at the same time. That material fed journey maps and card sorting sessions run with stakeholders, and those sessions decided what phase one would contain.</p>
+            <p>Moodboards and low-fidelity sketches of the product architecture followed, revised as the picture kept changing.</p>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            @for (group of userGroups; track group.name) {
+              <article class="border border-border bg-card p-6">
+                <h3 class="font-semibold mb-2">{{ group.name }}</h3>
+                <p class="text-sm text-muted-foreground leading-relaxed">{{ group.need }}</p>
+              </article>
+            }
+          </div>
+
+          <figure class="border border-border bg-card">
+            <div class="flex items-center justify-between gap-4 border-b border-border bg-secondary px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 2. Direction</span>
+              <span class="shrink-0 text-right text-primary">2017</span>
+            </div>
+            <div class="grid gap-px bg-border sm:grid-cols-2">
+              <div class="bg-secondary p-6 flex items-center justify-center">
+                <img src="assets/work/theorem/moodboard-1.webp" alt="Moodboard exploring type, color, and layout direction" class="w-full block" loading="lazy" decoding="async" width="590" height="584" />
+              </div>
+              <div class="bg-secondary p-6 flex items-center justify-center">
+                <img src="assets/work/theorem/moodboard-2.webp" alt="Second moodboard page exploring interface direction" class="w-full block" loading="lazy" decoding="async" width="793" height="612" />
+              </div>
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-[11px] leading-[1.6] text-muted-foreground">Moodboards set the visual direction before any screen was drawn.</figcaption>
+          </figure>
+        </section>
+
+        <!-- 03 -->
+        <section class="space-y-6 scroll-mt-32" id="research">
+          <div class="mb-6 flex items-baseline gap-4">
+            <span class="font-mono text-[11px] tracking-[0.14em] text-primary">03</span>
+            <h2 class="font-serif text-[30px] font-normal leading-[1.15] text-foreground">Research</h2>
+            <span class="h-px flex-1 bg-border"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>Canvas and Moodle were reviewed alongside the product owner, engineers, and stakeholders, feature by feature, to separate what belonged in the first release from what could wait. Alongside that, research into learning management best practice, online learning styles, and conversations with as many students as possible.</p>
+            <p>The stakeholder requirements did not sit right. They read like descriptions of the old system rather than descriptions of the business.</p>
+            <p>Engineers instrumented the paths in the existing application to test that. The data showed almost no activity on several of the paths stakeholders had described as essential. Rather than present that as a contradiction, the next round of client sessions used open-ended questions and direct observation of the actual workflow. The user path was then rebuilt around what the work required.</p>
+          </div>
+
+          <blockquote class="border-l-2 border-l-primary bg-secondary px-6 py-5 text-foreground">
+            <p class="text-lg md:text-xl font-semibold leading-snug">The requirements described the old software, not the work it was meant to support.</p>
+          </blockquote>
+        </section>
+
+        <!-- 04 -->
+        <section class="space-y-6 scroll-mt-32" id="analysis">
+          <div class="mb-6 flex items-baseline gap-4">
+            <span class="font-mono text-[11px] tracking-[0.14em] text-primary">04</span>
+            <h2 class="font-serif text-[30px] font-normal leading-[1.15] text-foreground">Analysis</h2>
+            <span class="h-px flex-1 bg-border"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>Personas came out of the research, and each one got a storyboard of its experience. The storyboards made the missing features visible, because a gap in a story is easier to see than a gap in a requirements list.</p>
+            <p>Those storyboards then became the reference for writing product requirements, organized by user portal rather than by feature. Each group of users got an application shaped around its own work.</p>
+          </div>
+
+          <figure class="border border-border bg-card">
+            <div class="flex items-center justify-between gap-4 border-b border-border bg-secondary px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 3. Structure on the wall</span>
+              <span class="shrink-0 text-right text-primary">Working sessions</span>
+            </div>
+            <div class="bg-secondary p-6">
+              <img src="assets/work/theorem/courses-whiteboard.webp" alt="Whiteboard working through the structure of the courses area" class="w-full block" loading="lazy" decoding="async" width="1200" height="1307" />
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-[11px] leading-[1.6] text-muted-foreground">Course structure worked out with engineers, in the room, before anything was built.</figcaption>
+          </figure>
+        </section>
+
+        <!-- 05 -->
+        <section class="space-y-6 scroll-mt-32" id="design">
+          <div class="mb-6 flex items-baseline gap-4">
+            <span class="font-mono text-[11px] tracking-[0.14em] text-primary">05</span>
+            <h2 class="font-serif text-[30px] font-normal leading-[1.15] text-foreground">Design and Build</h2>
+            <span class="h-px flex-1 bg-border"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>Early sketches went straight into brainstorming sessions with the engineering team. Working through a broad range of solutions together meant design met development early, which ruled options out fast and surfaced opportunities that neither discipline would have found alone.</p>
+            <p>Wireframes established the basic structure, key elements, and navigation. Once the team agreed on them, prototyping began on the structure of the application itself. Engineers implemented those prototypes as components in the application stack, and design, experience, and functionality testing followed.</p>
+            <p>As more designers joined, I moved into creative and art direction alongside the design work.</p>
+          </div>
+
+          <figure class="border border-border bg-card">
+            <div class="flex items-center justify-between gap-4 border-b border-border bg-secondary px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 4. Sketch to shipped</span>
+              <span class="shrink-0 text-right text-primary">Course introduction</span>
+            </div>
+            <div class="grid gap-px bg-border lg:grid-cols-2">
+              <div class="bg-secondary p-6 flex items-center justify-center">
+                <img src="assets/work/theorem/course-intro.webp" alt="Pencil sketch of a course introduction page with objectives, resources, and assignments" class="w-full block" loading="lazy" decoding="async" width="1400" height="1017" />
+              </div>
+              <div class="bg-secondary p-6 flex items-center justify-center">
+                <img src="assets/work/theorem/course-view.webp" alt="Shipped course view with unit outline, welcome banner, and course objectives" class="w-full block" loading="lazy" decoding="async" width="1600" height="792" />
+              </div>
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-[11px] leading-[1.6] text-muted-foreground">The course introduction, sketched and then shipped. Objectives, resources, and assignments kept the positions they were given on paper.</figcaption>
+          </figure>
+
+          <figure class="border border-border bg-card">
+            <div class="flex items-center justify-between gap-4 border-b border-border bg-secondary px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 5. Navigation and lesson content</span>
+              <span class="shrink-0 text-right text-primary">Student portal</span>
+            </div>
+            <div class="grid gap-px bg-border lg:grid-cols-[300px_minmax(0,1fr)]">
+              <div class="bg-secondary p-6 flex items-center justify-center">
+                <img src="assets/work/theorem/course-outline.webp" alt="Course outline navigation showing units, lessons, and evaluations" class="w-full block" loading="lazy" decoding="async" width="830" height="1282" />
+              </div>
+              <div class="bg-secondary p-6 flex items-center justify-center">
+                <img src="assets/work/theorem/lesson.webp" alt="Lesson page with the course outline open beside the lesson content" class="w-full block" loading="lazy" decoding="async" width="1600" height="792" />
+              </div>
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-[11px] leading-[1.6] text-muted-foreground">The outline stays open beside the lesson, so a student always knows where they are in the course and what comes next.</figcaption>
+          </figure>
+
+          <figure class="border border-border bg-card">
+            <div class="flex items-center justify-between gap-4 border-b border-border bg-secondary px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 6. Early wireframes</span>
+              <span class="shrink-0 text-right text-primary">Whiteboard</span>
+            </div>
+            <div class="bg-secondary p-6">
+              <img src="assets/work/theorem/whiteboard-wireframes.webp" alt="Three whiteboard wireframes showing courses list, unit view, and lesson view" class="w-full block" loading="lazy" decoding="async" width="1500" height="512" />
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-[11px] leading-[1.6] text-muted-foreground">Three states of the same navigation model, drawn in one session.</figcaption>
+          </figure>
+        </section>
+
+        <!-- 06 -->
+        <section class="space-y-6 scroll-mt-32" id="system">
+          <div class="mb-6 flex items-baseline gap-4">
+            <span class="font-mono text-[11px] tracking-[0.14em] text-primary">06</span>
+            <h2 class="font-serif text-[30px] font-normal leading-[1.15] text-foreground">What It Became</h2>
+            <span class="h-px flex-1 bg-border"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>The prototypes built for Theorem were the first time the University of Nebraska brand had been applied inside an application. Nothing existed to reuse, so the patterns had to be invented here: a card for a course, a table dense enough for administrative work, a way to move between roles.</p>
+            <p>Those patterns were general enough to survive their first product. They became NUcleus for Apps, and other University applications were built on them.</p>
+            <p>The sequence matters more than the artifact. A product problem produced the system, not the other way around. Every component in it had already proven itself in something real before it was offered to anyone else.</p>
+          </div>
+
+          <figure class="border border-border bg-card">
+            <div class="flex items-center justify-between gap-4 border-b border-border bg-secondary px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 7. The original card</span>
+              <span class="shrink-0 text-right text-primary">Sketch</span>
+            </div>
+            <div class="bg-secondary p-6">
+              <img src="assets/work/theorem/card-sketch.webp" alt="Original sketch of the course card that became a NUcleus for Apps component" class="w-full block" loading="lazy" decoding="async" width="1200" height="1095" />
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-[11px] leading-[1.6] text-muted-foreground">The course card, sketched for Theorem and later documented as a shared component.</figcaption>
+          </figure>
+
+          <div class="bg-secondary border-l-2 border-primary p-6">
+            <div class="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-2">Relationship to NUcleus</div>
+            <p class="text-sm leading-relaxed">The application patterns proven in Theorem became <a routerLink="/work/nucleus" fragment="apps" class="font-semibold text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">NUcleus for Apps</a>, the branded foundation other University of Nebraska applications were built on.</p>
+          </div>
+        </section>
+      </main>
+
+      <!-- TOC -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-24">
+          <div class="mb-4 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">Contents</div>
+          <ol class="space-y-3 font-mono text-xs">
+            @for (item of toc; track item.fragment) {
+              <li><a [routerLink]="[]" [fragment]="item.fragment" class="text-foreground hover:text-primary transition-colors">{{ item.label }}</a></li>
+            }
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Project sequence footer -->
+  <section class="border-t border-border bg-secondary">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16 flex justify-between items-center">
+      <a routerLink="/work/nucleus" class="group space-y-1 block">
+        <div class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">Previous Project</div>
+        <div class="font-serif text-xl font-normal text-foreground transition-colors group-hover:text-primary">NUcleus Design System</div>
+      </a>
+      <a routerLink="/work/nebraska-edu" class="group space-y-1 block text-right">
+        <div class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">Next Project</div>
+        <div class="font-serif text-xl font-normal text-foreground transition-colors group-hover:text-primary">Nebraska.edu</div>
+      </a>
+    </div>
+  </section>
+</div>

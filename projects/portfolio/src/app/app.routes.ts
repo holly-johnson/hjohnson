@@ -32,6 +32,17 @@ export const routes: Routes = [
       },
     },
   },
+  {
+    path: 'about',
+    loadComponent: () => import('./components/about/about').then(m => m.About),
+    title: 'About · Holly Johnson',
+    data: {
+      meta: {
+        description: 'About Holly Johnson, product designer and design systems lead.',
+        image: '/assets/social/home.png',
+      },
+    },
+  },
   ...(isDevMode() ? fieldNotesRoutes : []),
   {
     path: 'work/helios',
@@ -63,6 +74,28 @@ export const routes: Routes = [
     data: {
       meta: {
         description: 'A reusable design and front-end system supporting nine university brands across more than 20 websites and applications.',
+        image: '/assets/social/nucleus.png',
+      },
+    },
+  },
+  {
+    path: 'work/theorem',
+    loadComponent: () => import('./components/work/theorem-case-study').then(m => m.TheoremCaseStudy),
+    title: 'Theorem · Holly Johnson',
+    data: {
+      meta: {
+        description: 'Rebuilding a decades-old learning management system for the University of Nebraska High School, and the application patterns that became NUcleus for Apps.',
+        image: '/assets/social/nucleus.png',
+      },
+    },
+  },
+  {
+    path: 'work/nebraska-edu',
+    loadComponent: () => import('./components/work/nebraska-edu-case-study').then(m => m.NebraskaEduCaseStudy),
+    title: 'Nebraska.edu · Holly Johnson',
+    data: {
+      meta: {
+        description: 'The repeatable engagement that turned NUcleus into websites: information architecture, content maps, wireframes, Sitecore build, and client training.',
         image: '/assets/social/nucleus.png',
       },
     },

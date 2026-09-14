@@ -3,6 +3,41 @@ import { TestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 import { ResourceLoader } from '@angular/compiler';
 
+// jsdom ships no matchMedia, so anything reading prefers-color-scheme throws on
+// construction. ThemeService does, and Navigation injects it, so without this the
+// whole app fails to render under test. Defaults to light with inert listeners.
+if (typeof window !== 'undefined' && !window.matchMedia) {
+  window.matchMedia = ((query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    addListener: () => {},
+    removeListener: () => {},
+    dispatchEvent: () => false,
+  })) as unknown as typeof window.matchMedia;
+}
+
+// Same story for localStorage, which jsdom leaves undefined on an opaque origin.
+// An in-memory stand-in keeps the saved-preference read from throwing.
+if (typeof window !== 'undefined' && !window.localStorage) {
+  const store = new Map<string, string>();
+  Object.defineProperty(window, 'localStorage', {
+    configurable: true,
+    value: {
+      getItem: (key: string) => (store.has(key) ? store.get(key)! : null),
+      setItem: (key: string, value: string) => void store.set(key, String(value)),
+      removeItem: (key: string) => void store.delete(key),
+      clear: () => store.clear(),
+      key: (i: number) => [...store.keys()][i] ?? null,
+      get length() {
+        return store.size;
+      },
+    },
+  });
+}
+
 // Initialize the Angular testing environment
 TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
 

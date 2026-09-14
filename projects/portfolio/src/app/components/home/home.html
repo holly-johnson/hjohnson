@@ -1,290 +1,258 @@
 <div>
+
   <!-- ── Hero ──────────────────────────────────────────────────── -->
-  <section class="min-h-screen flex items-center relative bg-[#171513] pt-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-
-        <!-- Left content -->
-        <div class="space-y-8">
-          <div class="space-y-6">
-            <div class="invisible inline-flex items-center gap-2 px-3 py-1.5 border border-[#3D2A1E] font-mono text-xs" style="background: #2A1E18" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #D06A3D">
-                <path d="m4 17 6-6-6-6" /><path d="M12 19h8" />
-              </svg>
-              <span style="color: #D06A3D">open to senior design roles</span>
-            </div>
-
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-[#F2EEE9]">
-              Bringing clarity to <span class="text-[#B04318]">complex</span> products
-            </h1>
-
-            <p class="text-lg max-w-xl leading-relaxed" style="color: #C9C1B8">
-              Design systems and product design for complex tools, built so decisions hold up long after they're made.
-            </p>
-          </div>
-
-          <div class="flex flex-wrap gap-3">
-            <a
-              routerLink="/"
-              fragment="work"
-              class="inline-flex items-center gap-2 px-6 py-3 bg-[#B04318] text-[#F2EEE9] hover:bg-[#913615] transition-colors font-medium border border-[#913615]"
-            >
-              View Work
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
-            <a
-              routerLink="/resume"
-              class="inline-flex items-center gap-2 px-6 py-3 border border-[#F2EEE9]/30 text-[#F2EEE9] hover:bg-[#F2EEE9] hover:text-[#171513] transition-colors font-medium"
-            >
-              Resume
-            </a>
-          </div>
-
-          <div class="flex gap-4">
-            <a
-              [href]="social.linkedin"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="w-10 h-10 border border-[#F2EEE9]/20 text-[#F2EEE9] flex items-center justify-center hover:border-[#F2EEE9] hover:bg-[#F2EEE9] hover:text-[#171513] transition-all"
-              aria-label="LinkedIn"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" />
-              </svg>
-            </a>
-            <a
-              [href]="social.email"
-              class="w-10 h-10 border border-[#F2EEE9]/20 text-[#F2EEE9] flex items-center justify-center hover:border-[#F2EEE9] hover:bg-[#F2EEE9] hover:text-[#171513] transition-all"
-              aria-label="Email"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right — Half Figma / Half VS Code graphic. Stacks below lg rather than hiding,
-             so the mobile hero is not wall-to-wall type. -->
-        <div class="relative w-full h-auto lg:h-[400px]" style="opacity: 0.85">
-          <div class="lg:absolute lg:inset-0 border border-border bg-card flex flex-col lg:flex-row overflow-hidden shadow-sm">
-
-            <!-- Left: Design (Figma) -->
-            <div class="w-full lg:w-1/2 h-[200px] lg:h-auto border-b lg:border-b-0 lg:border-r border-border relative bg-[#F7F6F4] dark:bg-zinc-900 flex flex-col">
-              <div class="h-10 border-b border-border bg-card flex items-center px-4 gap-4">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-foreground">
-                  <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
-                </svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-muted-foreground">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                </svg>
-                <div class="w-px h-4 bg-border mx-1"></div>
-                <div class="text-[11px] text-muted-foreground font-sans font-medium flex items-center gap-1.5">
-                  <span class="text-[#D06A3D]">❖</span> Button
-                </div>
-              </div>
-
-              <div class="flex-1 relative flex items-center justify-center overflow-hidden bg-[#E8E4DE] dark:bg-zinc-800/50">
-                <div class="w-48 h-32 bg-card border border-border/50 shadow-sm relative flex items-center justify-center">
-                  <div class="absolute -top-5 left-0 text-[10px] text-[#D06A3D] font-sans font-medium flex items-center gap-1">
-                    ❖ Button
-                  </div>
-                  <div class="relative z-10">
-                    <div class="absolute -top-[34px] left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none">
-                      <div class="text-[9px] text-background bg-[#D06A3D] px-1 rounded-[2px] mb-0.5 font-mono">34</div>
-                      <div class="h-[20px] w-px bg-[#D06A3D]"></div>
-                    </div>
-                    <div class="absolute top-1/2 -left-[42px] -translate-y-1/2 flex items-center pointer-events-none">
-                      <div class="text-[9px] text-background bg-[#D06A3D] px-1 rounded-[2px] mr-0.5 font-mono">42</div>
-                      <div class="w-[24px] h-px bg-[#D06A3D]"></div>
-                    </div>
-                    <div class="ring-1 ring-[#D06A3D] relative flex items-center justify-center px-6 py-2.5 bg-foreground text-background font-sans font-medium text-sm shadow-sm">
-                      <div class="absolute -top-[3px] -left-[3px] w-1.5 h-1.5 bg-background border border-[#D06A3D]"></div>
-                      <div class="absolute -top-[3px] -right-[3px] w-1.5 h-1.5 bg-background border border-[#D06A3D]"></div>
-                      <div class="absolute -bottom-[3px] -left-[3px] w-1.5 h-1.5 bg-background border border-[#D06A3D]"></div>
-                      <div class="absolute -bottom-[3px] -right-[3px] w-1.5 h-1.5 bg-background border border-[#D06A3D]"></div>
-                      System UI
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right: Code (VS Code) -->
-            <div class="w-full lg:w-1/2 h-[210px] lg:h-auto flex flex-col font-mono text-[10px] lg:text-xs text-zinc-300" style="background: #201C15">
-              <div class="h-10 flex items-center border-b border-zinc-800" style="background: #27231A">
-                <div class="px-4 h-full flex items-center border-t border-[#D06A3D] text-zinc-100 text-[11px]" style="background: #201C15">
-                  Button.tsx
-                </div>
-                <div class="px-4 h-full flex items-center text-zinc-500 text-[11px]">
-                  tokens.css
-                </div>
-              </div>
-
-              <div class="flex-1 p-4 flex gap-4 overflow-hidden">
-                <div class="flex flex-col text-zinc-700 text-right select-none">
-                  <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
-                </div>
-                <div class="flex flex-col whitespace-pre tracking-tight">
-                  <div><span class="text-zinc-500">import</span> &#123;&nbsp;<span class="text-zinc-200">styled</span>&nbsp;&#125; <span class="text-zinc-500">from</span> <span class="text-[#D06A3D]">'&#64;ds/core'</span>;</div>
-                  <br />
-                  <div><span class="text-zinc-500">export const</span> <span class="text-zinc-100 font-semibold">Button</span> = () <span class="text-zinc-500">=&gt;</span> (</div>
-                  <div>&nbsp;&nbsp;<span class="text-zinc-500">&lt;</span><span class="text-zinc-200">button</span></div>
-                  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-zinc-400">className</span>=<span class="text-[#D06A3D]">"btn-primary"</span></div>
-                  <div>&nbsp;&nbsp;<span class="text-zinc-500">&gt;</span></div>
-                  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-zinc-300">System UI</span></div>
-                  <div>&nbsp;&nbsp;<span class="text-zinc-500">&lt;/</span><span class="text-zinc-200">button</span><span class="text-zinc-500">&gt;</span></div>
-                  <div>);</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Center sync badge. Hidden when the panels stack, where it would land on the editor tab bar. -->
-            <div class="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full border border-zinc-700 shadow-md z-20" style="background: #27231A">
-              <div class="text-[#D06A3D] flex items-center justify-center">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m17 2 4 4-4 4" /><path d="M3 11v-1a4 4 0 0 1 4-4h14" /><path d="m7 22-4-4 4-4" /><path d="M21 13v1a4 4 0 0 1-4 4H3" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Selected Work ─────────────────────────────────────────── -->
-  <section id="work" class="py-32 md:py-44">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <h2 class="sr-only">Selected Work</h2>
-
-      <!-- Flagship project -->
-      @for (project of projects; track project.id) {
-        @if (project.id === '1') {
-          <a [routerLink]="project.link" class="group block">
-
-            <div class="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.16em] text-primary mb-8">
-              <span>01</span>
-              <span class="w-8 h-px bg-primary/40"></span>
-              <span>Flagship case study</span>
-            </div>
-
-            <h3 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.02] text-foreground group-hover:text-primary transition-colors">
-              {{ project.title }}
-            </h3>
-
-            <p class="mt-10 text-xl md:text-2xl leading-[1.5] text-muted-foreground max-w-3xl">
-              {{ project.description }}
-            </p>
-
-            @if (project.figure; as fig) {
-              <div class="mt-20 md:mt-28 bg-secondary/50 px-8 py-12 md:px-16 md:py-20">
-                <img
-                  [src]="fig.src"
-                  [alt]="fig.alt"
-                  [width]="fig.width"
-                  [height]="fig.height"
-                  class="w-full h-auto block max-w-3xl mx-auto"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            }
-
-            <div class="mt-20 md:mt-28 grid lg:grid-cols-12 gap-10 lg:gap-16">
-              <p class="lg:col-span-7 text-base md:text-lg leading-relaxed text-foreground">{{ project.impact }}</p>
-              <div class="lg:col-span-5">
-                <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                  @for (disc of project.discipline; track disc) {
-                    <span>{{ disc }}</span>
-                  }
-                </div>
-                <div class="mt-10 inline-flex items-center gap-3 font-medium text-foreground">
-                  Explore Helios
-                  <span class="text-primary transition-transform group-hover:translate-x-1">→</span>
-                </div>
-              </div>
-            </div>
+  <section class="mx-auto max-w-6xl px-6 pb-20 pt-16 lg:px-12 lg:pb-24 lg:pt-20">
+    <div class="flex flex-col gap-7">
+      <h1 class="max-w-[22ch] font-serif text-4xl font-normal leading-[1.14] tracking-[-0.02em] text-foreground md:text-5xl lg:text-[3.5rem]">
+        I work on the seam between design and engineering.
+      </h1>
+      <p class="max-w-[62ch] text-base leading-[1.65] text-[#3A3733] dark:text-muted-foreground md:text-lg">
+        Product designer who writes the code too. Design systems, component libraries, and the conventions that let a team ship the same thing twice.
+        @if (availability.open) {
+          <br />
+          <a [href]="social.email"
+             class="text-primary border-b border-primary/40 pb-px transition-colors hover:border-primary">
+            {{ availability.line }} &#8594;
           </a>
         }
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Selected work ─────────────────────────────────────────── -->
+  <section id="work" class="mx-auto max-w-6xl px-6 pb-24 lg:px-12">
+
+    <div class="mb-8 flex items-baseline gap-4">
+      <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">Selected work</h2>
+      <span class="h-px flex-1 bg-border"></span>
+    </div>
+
+    <!-- Flagship -->
+    <div class="flex flex-col gap-10 pb-16">
+      @if (flagship.figure; as fig) {
+        <a [routerLink]="flagship.link" class="block bg-secondary px-8 py-12 md:px-16 md:py-20">
+          <img
+            [src]="fig.src"
+            [alt]="fig.alt"
+            [width]="fig.width"
+            [height]="fig.height"
+            class="mx-auto block h-auto w-full max-w-3xl"
+            decoding="async"
+          />
+        </a>
+      } @else {
+        <!--
+          Placeholder with intent: the system drawn as shape, not documented in a
+          screenshot. Fixed palette, Helios blue rather than the site green, so it
+          reads as a product rather than as this page. Swap a real product shot into
+          `figure` on the flagship and this branch retires itself.
+        -->
+        <a
+          [routerLink]="flagship.link"
+          [attr.aria-label]="flagship.title + ', read the full case study'"
+          class="block bg-[#EFECE4] p-4 md:p-7"
+        >
+          <div aria-hidden="true" class="grid grid-cols-12 gap-2.5 md:gap-3.5">
+
+            <!-- Application frame -->
+            <div class="col-span-12 flex h-[168px] border border-[#E0DBD2] bg-white md:col-span-7">
+              <div class="flex w-10 flex-col gap-2 bg-[#1F242B] px-2 pt-3 md:w-14 md:px-3">
+                <span class="h-1.5 w-full bg-[#4179C6]"></span>
+                <span class="h-1.5 w-2/3 bg-[#3F4650]"></span>
+                <span class="h-1.5 w-2/3 bg-[#3F4650]"></span>
+                <span class="h-1.5 w-1/2 bg-[#3F4650]"></span>
+              </div>
+              <div class="flex min-w-0 flex-1 flex-col">
+                <div class="flex h-7 shrink-0 items-center gap-1.5 border-b border-[#E7E9ED] px-3">
+                  <span class="h-2 w-10 bg-[#D3D7DE]"></span>
+                  <span class="h-2 w-6 bg-[#E7E9ED]"></span>
+                  <span class="ml-auto h-2.5 w-8 bg-[#1D4F91]"></span>
+                </div>
+                <div class="grid min-h-0 flex-1 grid-cols-2">
+                  <div class="flex flex-col gap-2 border-r border-[#EEF0F3] p-3">
+                    <span class="h-1.5 w-full bg-[#D3D7DE]"></span>
+                    <span class="h-1.5 w-11/12 bg-[#E7E9ED]"></span>
+                    <span class="h-1.5 w-full bg-[#E7E9ED]"></span>
+                    <span class="h-1.5 w-3/4 bg-[#E7E9ED]"></span>
+                    <span class="mt-1 h-1.5 w-2/3 bg-[#9FBFE8]"></span>
+                  </div>
+                  <div class="flex items-end gap-1.5 p-3">
+                    <span class="h-6 flex-1 bg-[#C9DCF3]"></span>
+                    <span class="h-10 flex-1 bg-[#9FBFE8]"></span>
+                    <span class="h-16 flex-1 bg-[#4179C6]"></span>
+                    <span class="h-8 flex-1 bg-[#6E9CDA]"></span>
+                    <span class="h-12 flex-1 bg-[#1D4F91]"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ramp, controls, inputs -->
+            <div class="col-span-12 flex flex-col gap-[7px] md:col-span-5">
+              <div class="flex h-[46px] gap-[3px]">
+                <span class="flex-1 bg-[#EAF1FA]"></span>
+                <span class="flex-1 bg-[#C9DCF3]"></span>
+                <span class="flex-1 bg-[#9FBFE8]"></span>
+                <span class="flex-1 bg-[#6E9CDA]"></span>
+                <span class="flex-1 bg-[#4179C6]"></span>
+                <span class="flex-1 bg-[#2F6AB5]"></span>
+                <span class="flex-1 bg-[#1D4F91]"></span>
+                <span class="flex-1 bg-[#143A6B]"></span>
+                <span class="flex-1 bg-[#0C2545]"></span>
+              </div>
+
+              <div class="grid h-[52px] grid-cols-2 gap-[7px]">
+                <div class="flex flex-col justify-center gap-2 border border-[#E0DBD2] bg-white px-3">
+                  <span class="h-3.5 w-16 bg-[#1D4F91]"></span>
+                  <span class="h-3.5 w-16 border border-[#1D4F91]"></span>
+                </div>
+                <div class="flex flex-col justify-center gap-2 border border-[#E0DBD2] bg-white px-3">
+                  <span class="flex h-3 w-6 items-center justify-end bg-[#4179C6] px-px">
+                    <span class="h-2.5 w-2.5 bg-white"></span>
+                  </span>
+                  <span class="flex items-center gap-1.5">
+                    <span class="h-2.5 w-2.5 bg-[#4179C6]"></span>
+                    <span class="h-2.5 w-2.5 border border-[#C7CAD1]"></span>
+                    <span class="h-2.5 w-2.5 border border-[#C7CAD1]"></span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="grid h-[56px] grid-cols-2 gap-[7px]">
+                <div class="flex flex-col justify-center gap-2 border border-[#E0DBD2] bg-white px-3">
+                  <span class="h-1.5 w-8 bg-[#C7CAD1]"></span>
+                  <span class="h-5 w-full border border-[#D3D7DE]"></span>
+                </div>
+                <div class="flex flex-col justify-center gap-2 border border-[#E0DBD2] bg-white px-3">
+                  <span class="h-1.5 w-8 bg-[#C7CAD1]"></span>
+                  <span class="h-5 w-full border border-[#4179C6]"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- List -->
+            <div class="col-span-6 flex h-[86px] flex-col justify-center gap-2.5 border border-[#E0DBD2] bg-white px-3 md:col-span-3">
+              @for (row of [0, 1, 2, 3]; track row) {
+                <span class="flex items-center gap-2">
+                  <span class="h-2.5 w-2.5 shrink-0 bg-[#E7E9ED]"></span>
+                  <span class="h-1.5 flex-1 bg-[#EEF0F3]"></span>
+                </span>
+              }
+            </div>
+
+            <!-- Type ramp -->
+            <div class="col-span-6 flex h-[86px] flex-col justify-center gap-2 border border-[#E0DBD2] bg-white px-3 md:col-span-2">
+              <span class="h-3.5 w-full bg-[#3F4650]"></span>
+              <span class="h-2.5 w-4/5 bg-[#646B77]"></span>
+              <span class="h-2 w-3/5 bg-[#9AA0AB]"></span>
+              <span class="h-1.5 w-2/5 bg-[#C7CAD1]"></span>
+            </div>
+
+            <!-- Chips -->
+            <div class="col-span-6 flex h-[86px] flex-wrap content-center items-center gap-2 border border-[#E0DBD2] bg-white px-3 md:col-span-4">
+              <span class="h-4 w-12 rounded-full bg-[#EAF1FA]"></span>
+              <span class="h-4 w-16 rounded-full bg-[#C9DCF3]"></span>
+              <span class="h-4 w-10 rounded-full bg-[#9FBFE8]"></span>
+              <span class="h-4 w-14 rounded-full bg-[#EEF0F3]"></span>
+              <span class="h-4 w-11 rounded-full bg-[#4179C6]"></span>
+              <span class="h-4 w-16 rounded-full bg-[#EEF0F3]"></span>
+            </div>
+
+            <!-- Spacing scale -->
+            <div class="col-span-6 flex h-[86px] flex-col justify-center gap-2 border border-[#E0DBD2] bg-white px-3 md:col-span-3">
+              <span class="h-1.5 w-2 bg-[#1D4F91]"></span>
+              <span class="h-1.5 w-4 bg-[#2F6AB5]"></span>
+              <span class="h-1.5 w-8 bg-[#4179C6]"></span>
+              <span class="h-1.5 w-14 bg-[#6E9CDA]"></span>
+              <span class="h-1.5 w-24 bg-[#9FBFE8]"></span>
+            </div>
+
+          </div>
+        </a>
       }
 
-      <!-- Supporting projects -->
-      <div class="grid md:grid-cols-2 gap-20 md:gap-16 lg:gap-24 mt-40 md:mt-56">
-        @for (project of projects; track project.id) {
-          @if (project.id !== '1') {
-            <a [routerLink]="project.link" class="group block">
-
-              <div class="bg-secondary/50 aspect-[16/10] flex items-center justify-center px-4 sm:px-7 md:px-10">
-              @if (project.figure; as fig) {
-                <img
-                  [src]="fig.src"
-                  [alt]="fig.alt"
-                  [width]="fig.width"
-                  [height]="fig.height"
-                  class="w-full h-auto block"
-                  loading="lazy"
-                  decoding="async"
-                />
-              } @else if (project.stages; as stages) {
-                <div class="flex items-stretch gap-2 w-full">
-                  @for (stage of stages; track stage; let last = $last) {
-                    <div class="flex-1 min-w-0 border border-border px-1 sm:px-1.5 py-6 flex items-center justify-center text-center">
-                      <span class="font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-muted-foreground leading-tight break-words">{{ stage }}</span>
-                    </div>
-                    @if (!last) {
-                      <span class="text-primary text-xs shrink-0 self-center" aria-hidden="true">→</span>
-                    }
-                  }
-                </div>
-              }
-              </div>
-
-              <h3 class="mt-14 text-3xl md:text-4xl font-bold text-foreground group-hover:text-primary transition-colors leading-[1.1]">
-                {{ project.title }}
-              </h3>
-
-              <p class="mt-6 text-base leading-relaxed text-muted-foreground">{{ project.description }}</p>
-
-              <p class="mt-6 text-base leading-relaxed text-foreground">{{ project.impact }}</p>
-
-              <div class="mt-10 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                @for (disc of project.discipline; track disc) {
-                  <span>{{ disc }}</span>
-                }
-              </div>
-
-              <div class="mt-10 inline-flex items-center gap-2 font-medium text-foreground">
-                View case study
-                <span class="text-primary transition-transform group-hover:translate-x-1">→</span>
-              </div>
-            </a>
+      <div class="grid gap-8 md:grid-cols-[200px_minmax(0,1fr)] md:gap-14">
+        <dl class="flex flex-col gap-3.5 font-mono text-[11px] leading-[1.7] text-muted-foreground">
+          @for (fact of flagship.facts; track fact.label) {
+            <div>
+              <dt>{{ fact.label }}</dt>
+              <dd [class]="fact.accent ? 'text-primary' : 'text-foreground'">{{ fact.value }}</dd>
+            </div>
           }
-        }
+        </dl>
+
+        <div class="flex flex-col gap-3">
+          <span class="font-mono text-[11px] uppercase tracking-[0.08em] text-muted-foreground">{{ flagship.tag }}</span>
+          <h3 class="-mt-1 mb-0.5 font-serif text-3xl font-normal leading-[1.1] md:text-[2.375rem]">{{ flagship.title }}</h3>
+          <p class="max-w-[46ch] text-lg leading-[1.55] text-foreground md:text-xl">{{ flagship.description }}</p>
+          <p class="max-w-[62ch] text-base leading-[1.7] text-muted-foreground">{{ flagship.impact }}</p>
+          <a [routerLink]="flagship.link" class="mt-1.5 self-start border-b border-primary/40 pb-0.5 text-[15px] text-primary transition-colors hover:border-primary">
+            Read the full case study &#8594;
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- The rest of the work, as rows -->
+    @for (project of supporting; track project.id) {
+      <a
+        [routerLink]="project.link"
+        class="grid items-baseline gap-x-9 gap-y-2 border-t border-border px-2 py-7 text-foreground transition-colors hover:bg-secondary md:grid-cols-[minmax(0,1fr)_300px_160px]"
+      >
+        <span class="font-serif text-2xl font-normal md:text-[1.75rem]">{{ project.title }}</span>
+        <span class="text-[15px] leading-[1.55] text-muted-foreground">{{ project.blurb }}</span>
+        <span class="font-mono text-[11px] uppercase tracking-[0.08em] text-muted-foreground md:text-right">{{ project.tag }}</span>
+      </a>
+    }
+  </section>
+
+  <!-- ── About ─────────────────────────────────────────────────── -->
+  <section class="border-t border-border bg-secondary text-foreground">
+    <div class="mx-auto max-w-6xl px-6 py-16 lg:px-12 lg:py-20">
+      <div class="flex max-w-3xl flex-col gap-4">
+        <span class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">About</span>
+        <p class="font-serif text-xl leading-[1.4] md:text-[1.625rem]">
+          <!-- TODO: the short version of how you got here, in your own voice. -->
+          Law first, then code, then design systems. The same instinct each time: make the record hold its shape.
+        </p>
+        <p class="text-base leading-[1.7] text-muted-foreground">
+          <!-- TODO: the kind of team you work best on, and the problems you want next. -->
+          Most of that has been investigative software, where a finding has to survive scrutiny years later. Next, work on the accountability side of that rather than the capability side.
+        </p>
+        <div class="mt-3 flex flex-wrap gap-x-8 gap-y-3 font-mono text-[11px] uppercase tracking-[0.1em]">
+          <a routerLink="/about" class="border-b border-primary/40 pb-1 text-primary transition-colors hover:border-primary">More about me &#8594;</a>
+          <a routerLink="/resume" class="border-b border-primary/40 pb-1 text-primary transition-colors hover:border-primary">Resume &#8594;</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── CTA ───────────────────────────────────────────────────── -->
-  <section class="py-32 bg-[#171513]">
-    <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-[#F2EEE9]">
-        Let's work together
-      </h2>
-      <p class="text-lg mb-12 max-w-2xl mx-auto" style="color: #C9C1B8">
-        Open to senior product design roles with teams solving complex problems and building products meant to scale, especially mission-led work where clearer, more trustworthy systems can strengthen public institutions and democracy.
-      </p>
-      <a
-        [href]="social.email"
-        class="inline-flex items-center gap-2 px-8 py-4 bg-[#B04318] text-[#F2EEE9] hover:bg-[#913615] transition-colors font-medium border border-[#913615]"
-      >
-        Get in Touch
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-        </svg>
-      </a>
+  <!-- ── Contact ───────────────────────────────────────────────── -->
+  <section class="mx-auto max-w-6xl px-6 py-20 lg:px-12">
+    <div class="grid gap-10 md:grid-cols-[minmax(0,1fr)_400px] md:items-center md:gap-16">
+      <div class="flex flex-col gap-3.5">
+        <h2 class="font-serif text-3xl font-normal leading-[1.12] text-foreground md:text-[2.5rem]">Hiring for a senior design role?</h2>
+        <p class="text-[17px] leading-[1.6] text-muted-foreground">
+          Tell me what's broken. I'll tell you honestly whether I'm the right person for it.
+        </p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a [href]="social.email" class="inline-flex items-center justify-center bg-primary px-6 py-3.5 text-[15px] text-primary-foreground transition-opacity hover:opacity-90">
+          hme2784&#64;gmail.com
+        </a>
+        <a [href]="social.linkedin" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border border-input px-6 py-3.5 text-[15px] text-foreground transition-colors hover:border-foreground">
+          LinkedIn
+        </a>
+      </div>
     </div>
   </section>
+
+  <!-- ── Footer ────────────────────────────────────────────────── -->
+  <footer class="border-t border-border">
+    <div class="mx-auto flex max-w-6xl justify-between px-6 py-6 font-mono text-[11px] text-muted-foreground lg:px-12">
+      <span>Holly Johnson · 2026</span>
+      <span>hollyjohnson.design</span>
+    </div>
+  </footer>
+
 </div>

@@ -3,78 +3,81 @@
    (src/styles/{fonts,tailwind,theme}.css). Tailwind v4 + tokens.
    ───────────────────────────────────────────────────────────── */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500;600&family=Roboto+Condensed:ital,wght@1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500;600&family=Roboto+Condensed:ital,wght@1,600;1,700&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
 /* Font families exposed as Tailwind's font-sans / font-mono utilities */
 @theme {
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Libre Caslon Text', Georgia, 'Times New Roman', serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 :root {
   --font-size: 16px;
-  --background: #FBFBFA;
-  --foreground: #1C1917;
-  --card: #FEFEFD;
-  --card-foreground: #1C1917;
-  --popover: #FCFBF9;
-  --popover-foreground: #1C1917;
-  --primary: #B04318;
-  --primary-foreground: #F2EEE9;
-  --secondary: #EDE9E3;
-  --secondary-foreground: #1C1917;
-  --muted: #EDE9E3;
-  --muted-foreground: #5C5248;
-  --accent: #B04318;
-  --accent-foreground: #F2EEE9;
+  --background: #FAF8F4;
+  --foreground: #141412;
+  --card: #FFFFFF;
+  --card-foreground: #141412;
+  --popover: #FFFFFF;
+  --popover-foreground: #141412;
+  --primary: #2F6B4F;
+  --primary-foreground: #FAF8F4;
+  --secondary: #F2EFE8;
+  --secondary-foreground: #141412;
+  --muted: #F2EFE8;
+  --muted-foreground: #5E5A54;
+  --accent: #2F6B4F;
+  --accent-foreground: #FAF8F4;
   --destructive: #ef4444;
-  --destructive-foreground: #F2EEE9;
-  --border: #E6E0D8;
-  --input: transparent;
-  --input-background: #FCFBF9;
-  --switch-background: #E6E0D8;
+  --destructive-foreground: #FAF8F4;
+  --border: #E0DCD4;
+  --input: #D5D0C7;
+  --input-background: #FFFFFF;
+  --switch-background: #E0DCD4;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #B04318;
-  --chart-1: #B04318;
+  --ring: #2F6B4F;
+  --chart-1: #2F6B4F;
   --chart-2: #3b82f6;
   --chart-3: #8b5cf6;
   --chart-4: #10b981;
   --chart-5: #ec4899;
   --radius: 0.5rem;
-  --sidebar: #F7F6F4;
-  --sidebar-foreground: #1C1917;
-  --sidebar-primary: #B04318;
-  --sidebar-primary-foreground: #F2EEE9;
-  --sidebar-accent: #EDE9E3;
-  --sidebar-accent-foreground: #1C1917;
-  --sidebar-border: #E6E0D8;
-  --sidebar-ring: #B04318;
+  --sidebar: #F2EFE8;
+  --sidebar-foreground: #141412;
+  --sidebar-primary: #2F6B4F;
+  --sidebar-primary-foreground: #FAF8F4;
+  --sidebar-accent: #F2EFE8;
+  --sidebar-accent-foreground: #141412;
+  --sidebar-border: #E0DCD4;
+  --sidebar-ring: #2F6B4F;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: #1C1A17;
+  --foreground: #FAF8F4;
+  --card: #232019;
+  --card-foreground: #FAF8F4;
+  --popover: #1E1C1A;
+  --popover-foreground: #FAF8F4;
+  --primary: #8FC4A8;
+  --primary-foreground: #141412;
+  --secondary: #232019;
+  --secondary-foreground: #FAF8F4;
+  --muted: #232019;
+  --muted-foreground: #B5B0A8;
+  --accent: #8FC4A8;
+  --accent-foreground: #141412;
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  --border: #2A2824;
+  --input: #3A3733;
+  --input-background: #1E1C1A;
+  --switch-background: #2A2824;
+  --ring: #8FC4A8;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --chart-1: oklch(0.488 0.243 264.376);
@@ -82,14 +85,14 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar: #1E1C1A;
+  --sidebar-foreground: #FAF8F4;
+  --sidebar-primary: #8FC4A8;
+  --sidebar-primary-foreground: #141412;
+  --sidebar-accent: #1E1C1A;
+  --sidebar-accent-foreground: #FAF8F4;
+  --sidebar-border: #2A2824;
+  --sidebar-ring: #8FC4A8;
 }
 
 @theme inline {
@@ -140,7 +143,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
   html {
@@ -148,7 +151,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter Tight', 'Inter', sans-serif;
   }
 
   h1 {

@@ -46,6 +46,8 @@ Thumbs.db
 # Local agent instructions
 CLAUDE.md
 AGENTS.md
+# Byte-identical mirror of .claude/skills, which is tracked
+.agents/
 
 # Local source archive (originals stay recoverable from git history)
 _archive/

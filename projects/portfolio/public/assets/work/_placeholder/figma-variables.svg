@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Synthetic placeholder of a variables panel">
+<rect width="1600" height="900" fill="#FFFFFF"/>
+<rect width="1600" height="52" fill="#F5F6F7"/>
+<line x1="0" y1="52" x2="1600" y2="52" stroke="#E1E4E8"/>
+<text x="24" y="33" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" fill="#1F2328">Variables</text>
+<rect x="1556" y="16" width="20" height="20" rx="3" fill="#DDE1E5"/>
+<rect x="0" y="52" width="300" height="848" fill="#FAFBFC"/>
+<line x1="300" y1="52" x2="300" y2="900" stroke="#E1E4E8"/>
+<text x="24" y="86" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="10.5" letter-spacing="1.2" fill="#8A9199">COLLECTIONS</text>
+<rect x="12" y="92" width="276" height="30" rx="4" fill="#E8EEF7"/>
+<text x="24" y="112" font-family="Inter, system-ui, sans-serif" font-size="13.5" font-weight="600" fill="#1F5FA8">Primitive</text>
+<text x="260" y="112" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" fill="#9AA2AA">86</text>
+<text x="24" y="150" font-family="Inter, system-ui, sans-serif" font-size="13.5" font-weight="400" fill="#414A53">Semantic</text>
+<text x="260" y="150" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" fill="#9AA2AA">74</text>
+<text x="24" y="188" font-family="Inter, system-ui, sans-serif" font-size="13.5" font-weight="400" fill="#414A53">Component</text>
+<text x="260" y="188" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="11" fill="#9AA2AA">52</text>
+<text x="24" y="240" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="10.5" letter-spacing="1.2" fill="#8A9199">GROUPS</text>
+<rect x="24" y="255" width="11" height="11" rx="2" fill="none" stroke="#B6BDC4"/>
+<text x="46" y="264" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#414A53">color</text>
+<rect x="24" y="287" width="11" height="11" rx="2" fill="none" stroke="#B6BDC4"/>
+<text x="46" y="296" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#414A53">space</text>
+<rect x="24" y="319" width="11" height="11" rx="2" fill="none" stroke="#B6BDC4"/>
+<text x="46" y="328" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#414A53">radius</text>
+<rect x="24" y="351" width="11" height="11" rx="2" fill="none" stroke="#B6BDC4"/>
+<text x="46" y="360" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#414A53">typography</text>
+<rect x="24" y="383" width="11" height="11" rx="2" fill="none" stroke="#B6BDC4"/>
+<text x="46" y="392" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#414A53">elevation</text>
+<rect x="24" y="415" width="11" height="11" rx="2" fill="none" stroke="#B6BDC4"/>
+<text x="46" y="424" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#414A53">motion</text>
+<rect x="300" y="52" width="1300" height="46" fill="#FFFFFF"/>
+<line x1="300" y1="98" x2="1600" y2="98" stroke="#E1E4E8"/>
+<text x="324" y="81" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="10.5" letter-spacing="1.2" fill="#8A9199">MODES</text>
+<rect x="384" y="63" width="96" height="26" rx="4" fill="#1F5FA8" opacity="0.10"/>
+<text x="396" y="81" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#1F5FA8">Desktop</text>
+<text x="500" y="81" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="400" fill="#6B747D">Web</text>
+<rect x="300" y="98" width="1300" height="38" fill="#FAFBFC"/>
+<line x1="300" y1="136" x2="1600" y2="136" stroke="#E1E4E8"/>
+<text x="324" y="122" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="10.5" letter-spacing="1.2" fill="#8A9199">NAME</text>
+<text x="860" y="122" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="10.5" letter-spacing="1.2" fill="#8A9199">DESKTOP</text>
+<text x="1160" y="122" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="10.5" letter-spacing="1.2" fill="#8A9199">WEB</text>
+<line x1="300" y1="176" x2="1600" y2="176" stroke="#EFF1F3"/>
+<rect x="324" y="148" width="16" height="16" rx="3" fill="#B04318" stroke="#D4D9DE"/>
+<text x="352" y="161" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">color.base.orange.600</text>
+<rect x="860" y="148" width="16" height="16" rx="3" fill="#B04318" stroke="#D4D9DE"/>
+<text x="886" y="161" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#B04318</text>
+<rect x="1160" y="148" width="16" height="16" rx="3" fill="#B04318" stroke="#D4D9DE"/>
+<text x="1186" y="161" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#B04318</text>
+<rect x="300" y="176" width="1300" height="40" fill="#FCFDFE"/>
+<line x1="300" y1="216" x2="1600" y2="216" stroke="#EFF1F3"/>
+<rect x="324" y="188" width="16" height="16" rx="3" fill="#D06A3D" stroke="#D4D9DE"/>
+<text x="352" y="201" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">color.base.orange.400</text>
+<rect x="860" y="188" width="16" height="16" rx="3" fill="#D06A3D" stroke="#D4D9DE"/>
+<text x="886" y="201" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#D06A3D</text>
+<rect x="1160" y="188" width="16" height="16" rx="3" fill="#D06A3D" stroke="#D4D9DE"/>
+<text x="1186" y="201" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#D06A3D</text>
+<line x1="300" y1="256" x2="1600" y2="256" stroke="#EFF1F3"/>
+<rect x="324" y="228" width="16" height="16" rx="3" fill="#7A2C10" stroke="#D4D9DE"/>
+<text x="352" y="241" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">color.base.rust.700</text>
+<rect x="860" y="228" width="16" height="16" rx="3" fill="#7A2C10" stroke="#D4D9DE"/>
+<text x="886" y="241" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#7A2C10</text>
+<rect x="1160" y="228" width="16" height="16" rx="3" fill="#7A2C10" stroke="#D4D9DE"/>
+<text x="1186" y="241" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#7A2C10</text>
+<rect x="300" y="256" width="1300" height="40" fill="#FCFDFE"/>
+<line x1="300" y1="296" x2="1600" y2="296" stroke="#EFF1F3"/>
+<rect x="324" y="268" width="16" height="16" rx="3" fill="#171513" stroke="#D4D9DE"/>
+<text x="352" y="281" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">color.base.ink.900</text>
+<rect x="860" y="268" width="16" height="16" rx="3" fill="#171513" stroke="#D4D9DE"/>
+<text x="886" y="281" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#171513</text>
+<rect x="1160" y="268" width="16" height="16" rx="3" fill="#171513" stroke="#D4D9DE"/>
+<text x="1186" y="281" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#171513</text>
+<line x1="300" y1="336" x2="1600" y2="336" stroke="#EFF1F3"/>
+<rect x="324" y="308" width="16" height="16" rx="3" fill="#FCFBF9" stroke="#D4D9DE"/>
+<text x="352" y="321" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">color.base.cream.50</text>
+<rect x="860" y="308" width="16" height="16" rx="3" fill="#FCFBF9" stroke="#D4D9DE"/>
+<text x="886" y="321" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#FCFBF9</text>
+<rect x="1160" y="308" width="16" height="16" rx="3" fill="#FCFBF9" stroke="#D4D9DE"/>
+<text x="1186" y="321" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#FCFBF9</text>
+<rect x="300" y="336" width="1300" height="40" fill="#FCFDFE"/>
+<line x1="300" y1="376" x2="1600" y2="376" stroke="#EFF1F3"/>
+<rect x="324" y="348" width="16" height="16" rx="3" fill="#F7F6F4" stroke="#D4D9DE"/>
+<text x="352" y="361" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">color.base.cream.100</text>
+<rect x="860" y="348" width="16" height="16" rx="3" fill="#F7F6F4" stroke="#D4D9DE"/>
+<text x="886" y="361" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#F7F6F4</text>
+<rect x="1160" y="348" width="16" height="16" rx="3" fill="#F7F6F4" stroke="#D4D9DE"/>
+<text x="1186" y="361" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#F7F6F4</text>
+<line x1="300" y1="416" x2="1600" y2="416" stroke="#EFF1F3"/>
+<rect x="324" y="388" width="16" height="16" rx="3" fill="#8C8279" stroke="#D4D9DE"/>
+<text x="352" y="401" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">color.base.neutral.400</text>
+<rect x="860" y="388" width="16" height="16" rx="3" fill="#8C8279" stroke="#D4D9DE"/>
+<text x="886" y="401" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#8C8279</text>
+<rect x="1160" y="388" width="16" height="16" rx="3" fill="#8C8279" stroke="#D4D9DE"/>
+<text x="1186" y="401" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#8C8279</text>
+<rect x="300" y="416" width="1300" height="40" fill="#FCFDFE"/>
+<line x1="300" y1="456" x2="1600" y2="456" stroke="#EFF1F3"/>
+<rect x="324" y="428" width="16" height="16" rx="3" fill="#E2DDD6" stroke="#D4D9DE"/>
+<text x="352" y="441" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">color.base.neutral.200</text>
+<rect x="860" y="428" width="16" height="16" rx="3" fill="#E2DDD6" stroke="#D4D9DE"/>
+<text x="886" y="441" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#E2DDD6</text>
+<rect x="1160" y="428" width="16" height="16" rx="3" fill="#E2DDD6" stroke="#D4D9DE"/>
+<text x="1186" y="441" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">#E2DDD6</text>
+<line x1="300" y1="496" x2="1600" y2="496" stroke="#EFF1F3"/>
+<text x="324" y="481" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">space.100</text>
+<text x="860" y="481" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">4</text>
+<text x="1160" y="481" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">4</text>
+<rect x="300" y="496" width="1300" height="40" fill="#FCFDFE"/>
+<line x1="300" y1="536" x2="1600" y2="536" stroke="#EFF1F3"/>
+<text x="324" y="521" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">space.200</text>
+<text x="860" y="521" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">8</text>
+<text x="1160" y="521" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">8</text>
+<line x1="300" y1="576" x2="1600" y2="576" stroke="#EFF1F3"/>
+<text x="324" y="561" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">space.400</text>
+<text x="860" y="561" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">16</text>
+<text x="1160" y="561" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">16</text>
+<rect x="300" y="576" width="1300" height="40" fill="#FCFDFE"/>
+<line x1="300" y1="616" x2="1600" y2="616" stroke="#EFF1F3"/>
+<text x="324" y="601" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">space.600</text>
+<text x="860" y="601" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">24</text>
+<text x="1160" y="601" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">24</text>
+<line x1="300" y1="656" x2="1600" y2="656" stroke="#EFF1F3"/>
+<text x="324" y="641" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">radius.sm</text>
+<text x="860" y="641" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">2</text>
+<text x="1160" y="641" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">2</text>
+<rect x="300" y="656" width="1300" height="40" fill="#FCFDFE"/>
+<line x1="300" y1="696" x2="1600" y2="696" stroke="#EFF1F3"/>
+<text x="324" y="681" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">radius.md</text>
+<text x="860" y="681" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">4</text>
+<text x="1160" y="681" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">4</text>
+<line x1="300" y1="736" x2="1600" y2="736" stroke="#EFF1F3"/>
+<text x="324" y="721" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12.5" fill="#2B3238">radius.lg</text>
+<text x="860" y="721" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">8</text>
+<text x="1160" y="721" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#6B747D">8</text>
+</svg>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Icon } from '../shared/icon';
 
 interface Job {
   title: string;
@@ -8,12 +7,6 @@ interface Job {
   period: string;
   note?: string;
   achievements: string[];
-}
-
-interface ApproachItem {
-  label: string;
-  icon: string;
-  description: string;
 }
 
 interface Honor {
@@ -28,12 +21,11 @@ interface SocialLink {
   url: string;
   /** Actual link target (mailto: for email, https:// for web). */
   href: string;
-  icon: string;
 }
 
 @Component({
   selector: 'app-resume',
-  imports: [RouterLink, Icon],
+  imports: [RouterLink],
   templateUrl: './resume.html',
 })
 export class Resume {
@@ -121,15 +113,6 @@ export class Resume {
     },
   ];
 
-  protected readonly approach: ApproachItem[] = [
-    { label: 'Systems First', icon: 'grid-3x3', description: 'Products scale when they are built from coherent systems rather than isolated features.' },
-    { label: 'Clarity Over Complexity', icon: 'target', description: 'Design should organize complex tools so people can focus on the work that matters.' },
-    { label: 'Design That Ships', icon: 'rocket', description: 'Strong design connects directly to implementation through shared components and engineering collaboration.' },
-    { label: 'Better Together', icon: 'users', description: 'The best solutions emerge when designers, engineers, and domain experts shape them collectively.' },
-    { label: 'Design the Foundation', icon: 'layers', description: 'Thoughtful systems and components create the structure teams rely on as products grow.' },
-    { label: 'Evolving the Craft', icon: 'trending-up', description: 'As AI and new tooling reshape how software is built, design systems must evolve to support faster and more flexible creation.' },
-  ];
-
   protected readonly leadership: Honor[] = [
     { role: 'Me, Myself & Design Director', org: 'AIGA Nebraska', year: '2018' },
     { role: 'Me, Myself & Design Co-Chair', org: 'AIGA Nebraska', year: '2017' },
@@ -138,7 +121,7 @@ export class Resume {
   ];
 
   protected readonly links: SocialLink[] = [
-    { label: 'LinkedIn', url: 'linkedin.com/in/holly-johnson-design', href: 'https://www.linkedin.com/in/holly-johnson-design', icon: 'linkedin' },
-    { label: 'Email', url: 'hme2784@gmail.com', href: 'mailto:hme2784@gmail.com', icon: 'mail' },
+    { label: 'LinkedIn', url: 'linkedin.com/in/holly-johnson-design', href: 'https://www.linkedin.com/in/holly-johnson-design' },
+    { label: 'Email', url: 'hme2784@gmail.com', href: 'mailto:hme2784@gmail.com' },
   ];
 }

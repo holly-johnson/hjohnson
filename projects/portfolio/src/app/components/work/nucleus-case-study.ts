@@ -95,7 +95,15 @@ export class NucleusCaseStudy {
     { label: 'Transfer Nebraska', url: 'https://transfer.nebraska.edu/', domain: 'transfer.nebraska.edu' },
   ];
 
-  protected readonly technologies: string[] = ['Figma', 'HTML', 'SCSS', 'Handlebars', 'NU CMS'];
+  /** What each documentation entry in NUcleus for Apps had to carry before a component counted as released. */
+  protected readonly appsDocSections: string[] = ['Code', 'Options', 'Accessibility', 'Implementation notes', 'Versions', 'Related components'];
+
+  /** Applications built on NUcleus for Apps. */
+  protected readonly appsAdopters: Outcome[] = [
+    { category: 'Theorem', stat: 'University of Nebraska High School' },
+    { category: 'NU Contacts', stat: 'University of Nebraska System' },
+    { category: 'NU Data Access', stat: 'University of Nebraska System' },
+  ];
 
   protected favicon(domain: string): string {
     return `https://www.google.com/s2/favicons?domain=${domain}&sz=16`;
