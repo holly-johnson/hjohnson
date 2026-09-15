@@ -84,6 +84,6 @@ export class About {
 
   protected readonly links: SocialLink[] = [
     { label: 'LinkedIn', url: 'linkedin.com/in/holly-johnson-design', href: 'https://www.linkedin.com/in/holly-johnson-design' },
-    { label: 'Email', url: 'hme2784@gmail.com', href: 'mailto:hme2784@gmail.com' },
+    { label: 'Email', url: 'info@hjohnsondesign.com', href: 'mailto:info@hjohnsondesign.com' },
   ];
 }
