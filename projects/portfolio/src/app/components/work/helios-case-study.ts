@@ -39,14 +39,14 @@ export class HeliosCaseStudy {
   // §04, incremental adoption pipeline
   protected readonly adoptionSteps: Step[] = [
     { label: 'Recurring repository scan', sub: 'Claude across all products' },
-    { label: 'Classify matches', sub: 'adoption or possible adoption' },
+    { label: 'Classify matches', sub: 'direct candidate or needs review' },
     { label: 'Review product requirements', sub: 'align or extend Helios' },
   ];
 
   // Review forks: debt is recorded when it exists, the release path continues regardless.
   protected readonly adoptionDebt: Step = {
     label: 'Track system debt',
-    sub: 'intentional contract choice',
+    sub: 'the system carries it, not the product',
   };
 
   protected readonly adoptionRelease: Step[] = [
@@ -57,14 +57,10 @@ export class HeliosCaseStudy {
 
   // §05, constraints and open problems
   protected readonly constraints: string[] = [
-    'The canonical source of truth across Figma, code, and tokens was not fully resolved.',
-    'Too much of the system’s knowledge and ownership remained concentrated in one person, a risk I had identified and was working to reduce.',
+    'The canonical source of truth across Figma, code, and tokens was not fully resolved, in part because the team did not have the Figma license tier that would have automated it.',
+    'Figma Code Connect, which would have handed developers the real Helios implementation in Dev Mode instead of a generic snippet, was scoped but never set up.',
+    'Too much of the system’s knowledge and ownership remained concentrated in one person. That was a known risk, and reducing it was already underway.',
   ];
 
-  // §06, the two directions the work was heading when it stopped
-  protected readonly nextDirections: Step[] = [
-    { label: 'Toward implementation', sub: 'Designers and engineers were still translating the same structured decisions by hand. A system that already encoded those decisions was the natural place to reduce that translation.' },
-    { label: 'Toward exploration', sub: 'A prototype assembled from the real library stays honest about what the system supports, and anything built locally to finish an idea marks a gap worth carrying back as a contribution.' },
-  ];
 
 }

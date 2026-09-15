@@ -54,30 +54,44 @@
   --sidebar-accent-foreground: #141412;
   --sidebar-border: #E0DCD4;
   --sidebar-ring: #2F6B4F;
+
+  /* Figure and diagram tokens. Plates hold light product captures, so they are
+     pinned to the same value in both themes. */
+  --plate: #FFFFFF;
+  --plate-line: #E0DCD4;
+  --fg-soft: #3A3733;
+  --primary-hover: #245740;
+  --primary-line: rgba(47, 107, 79, 0.4);
+  --surface-2: #F4F1EA;
+  --surface-3: #EEEBE3;
+  --ink-2: #4A463F;
+  --ink-3: #8A867F;
+  --ink-4: #75706A;
+  --ink-5: #353838;
 }
 
 .dark {
-  --background: #1C1A17;
-  --foreground: #FAF8F4;
-  --card: #232019;
-  --card-foreground: #FAF8F4;
-  --popover: #1E1C1A;
-  --popover-foreground: #FAF8F4;
-  --primary: #8FC4A8;
-  --primary-foreground: #141412;
-  --secondary: #232019;
-  --secondary-foreground: #FAF8F4;
-  --muted: #232019;
-  --muted-foreground: #B5B0A8;
-  --accent: #8FC4A8;
-  --accent-foreground: #141412;
+  --background: #151515;
+  --foreground: #F4F3F1;
+  --card: #1E1E1E;
+  --card-foreground: #F4F3F1;
+  --popover: #1A1A1A;
+  --popover-foreground: #F4F3F1;
+  --primary: #4E9B72;
+  --primary-foreground: #0E1A13;
+  --secondary: #1E1E1E;
+  --secondary-foreground: #F4F3F1;
+  --muted: #1E1E1E;
+  --muted-foreground: #A3A19D;
+  --accent: #4E9B72;
+  --accent-foreground: #0E1A13;
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: #2A2824;
-  --input: #3A3733;
-  --input-background: #1E1C1A;
-  --switch-background: #2A2824;
-  --ring: #8FC4A8;
+  --border: #2A2A2A;
+  --input: #3A3A3A;
+  --input-background: #1A1A1A;
+  --switch-background: #2A2A2A;
+  --ring: #4E9B72;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --chart-1: oklch(0.488 0.243 264.376);
@@ -85,14 +99,27 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: #1E1C1A;
-  --sidebar-foreground: #FAF8F4;
-  --sidebar-primary: #8FC4A8;
-  --sidebar-primary-foreground: #141412;
-  --sidebar-accent: #1E1C1A;
-  --sidebar-accent-foreground: #FAF8F4;
-  --sidebar-border: #2A2824;
-  --sidebar-ring: #8FC4A8;
+  --sidebar: #1A1A1A;
+  --sidebar-foreground: #F4F3F1;
+  --sidebar-primary: #4E9B72;
+  --sidebar-primary-foreground: #0E1A13;
+  --sidebar-accent: #1A1A1A;
+  --sidebar-accent-foreground: #F4F3F1;
+  --sidebar-border: #2A2A2A;
+  --sidebar-ring: #4E9B72;
+
+  /* --plate and --plate-line deliberately do not change: see :root. */
+  --plate: #FFFFFF;
+  --plate-line: #E0DCD4;
+  --fg-soft: #CBCAC7;
+  --primary-hover: #63B187;
+  --primary-line: rgba(78, 155, 114, 0.45);
+  --surface-2: #1B1B1B;
+  --surface-3: #202020;
+  --ink-2: #BFBDB8;
+  --ink-3: #8F8C87;
+  --ink-4: #A09C96;
+  --ink-5: #C8C8C8;
 }
 
 @theme inline {
@@ -134,6 +161,17 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-plate: var(--plate);
+  --color-plate-line: var(--plate-line);
+  --color-fg-soft: var(--fg-soft);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-line: var(--primary-line);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-ink-4: var(--ink-4);
+  --color-ink-5: var(--ink-5);
 }
 
 @layer base {

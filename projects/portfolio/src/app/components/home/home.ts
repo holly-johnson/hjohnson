@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import type { Project } from '../../project.model';
-import { unpublishedProjects } from '../../unpublished.content';
+import { showUnpublished as unpublishedVisible, unpublishedProjects } from '../../unpublished.content';
 import { availability } from '../../availability';
 
 
@@ -14,6 +14,9 @@ import { availability } from '../../availability';
 })
 export class Home {
   protected readonly availability = availability;
+
+  /** The About page is not ready to publish. See unpublished.content.ts. */
+  protected readonly showUnpublished = unpublishedVisible;
 
   protected readonly social = {
     linkedin: 'https://www.linkedin.com/in/holly-johnson-design/',

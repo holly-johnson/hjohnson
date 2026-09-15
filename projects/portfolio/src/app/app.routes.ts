@@ -64,9 +64,18 @@ export const routes: Routes = [
       },
     },
   },
-  // Orbit — case-study scaffold (WIP). Route retired until the case study is finished so the
-  // draft placeholders can't surface via a shared or guessed URL. Component file kept in place.
-  { path: 'work/ai-design', redirectTo: 'work/helios', pathMatch: 'full' },
+  {
+    path: 'work/orbit',
+    loadComponent: () => import('./components/work/orbit-case-study').then(m => m.OrbitCaseStudy),
+    title: 'Orbit · Holly Johnson',
+    data: {
+      meta: {
+        description: 'Orbit, the workspace Penlink started building to prototype features with Claude from the published Helios component library.',
+        image: '/assets/social/helios.png',
+      },
+    },
+  },
+  { path: 'work/ai-design', redirectTo: 'work/orbit', pathMatch: 'full' },
   // Not ready to publish. Dev-only; see unpublished.routes.ts.
   ...unpublishedRoutes,
   {

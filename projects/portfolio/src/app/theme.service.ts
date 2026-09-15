@@ -49,6 +49,6 @@ export class ThemeService {
     this.document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
 
     const meta = this.document.head.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
-    meta?.setAttribute('content', dark ? '#141412' : '#FAF8F4');
+    meta?.setAttribute('content', dark ? '#151515' : '#FAF8F4');
   }
 }
