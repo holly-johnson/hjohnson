@@ -69,6 +69,29 @@
   --ink-4: #75706A;
   --ink-5: #353838;
   --sketch: #E4E0D8;
+
+  /* The homepage illustration depicts a product UI. It is markup, not a capture,
+     so it themes: panel, line, greys, rail, inks, and a blue ramp that inverts. */
+  --mat: #EFECE4;
+  --ui-panel: #FFFFFF;
+  --ui-line: #E0DBD2;
+  --ui-f1: #E7E9ED;
+  --ui-f2: #EEF0F3;
+  --ui-f3: #D3D7DE;
+  --ui-f4: #C7CAD1;
+  --ui-rail: #1F242B;
+  --ui-ink1: #3F4650;
+  --ui-ink2: #646B77;
+  --ui-ink3: #9AA0AB;
+  --b1: #EAF1FA;
+  --b2: #C9DCF3;
+  --b3: #9FBFE8;
+  --b4: #6E9CDA;
+  --b5: #4179C6;
+  --b6: #2F6AB5;
+  --b7: #1D4F91;
+  --b8: #143A6B;
+  --b9: #0C2545;
 }
 
 .dark {
@@ -122,6 +145,28 @@
   --ink-4: #A09C96;
   --ink-5: #C8C8C8;
   --sketch: #313131;
+
+  /* The blue ramp runs the other way in dark: b1 is darkest, b9 lightest. */
+  --mat: #1E1E1E;
+  --ui-panel: #1A1A1A;
+  --ui-line: #2E2E2E;
+  --ui-f1: #333333;
+  --ui-f2: #272727;
+  --ui-f3: #3D3D3D;
+  --ui-f4: #4A4A4A;
+  --ui-rail: #0E0E0E;
+  --ui-ink1: #C9C9C9;
+  --ui-ink2: #9A9A9A;
+  --ui-ink3: #6E6E6E;
+  --b1: #16263C;
+  --b2: #1E3A5C;
+  --b3: #2B537F;
+  --b4: #3E6FA8;
+  --b5: #5A8FD0;
+  --b6: #6B9BD8;
+  --b7: #7FA9DE;
+  --b8: #93B9E6;
+  --b9: #A8C8EE;
 }
 
 @theme inline {
@@ -175,6 +220,26 @@
   --color-ink-4: var(--ink-4);
   --color-ink-5: var(--ink-5);
   --color-sketch: var(--sketch);
+  --color-mat: var(--mat);
+  --color-ui-panel: var(--ui-panel);
+  --color-ui-line: var(--ui-line);
+  --color-ui-f1: var(--ui-f1);
+  --color-ui-f2: var(--ui-f2);
+  --color-ui-f3: var(--ui-f3);
+  --color-ui-f4: var(--ui-f4);
+  --color-ui-rail: var(--ui-rail);
+  --color-ui-ink1: var(--ui-ink1);
+  --color-ui-ink2: var(--ui-ink2);
+  --color-ui-ink3: var(--ui-ink3);
+  --color-b1: var(--b1);
+  --color-b2: var(--b2);
+  --color-b3: var(--b3);
+  --color-b4: var(--b4);
+  --color-b5: var(--b5);
+  --color-b6: var(--b6);
+  --color-b7: var(--b7);
+  --color-b8: var(--b8);
+  --color-b9: var(--b9);
 }
 
 @layer base {
