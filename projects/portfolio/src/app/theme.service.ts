@@ -35,9 +35,12 @@ export class ThemeService {
     });
   }
 
-  cycle(): void {
-    const current = this.preferenceState();
-    const next: ThemePreference = current === 'system' ? 'light' : current === 'light' ? 'dark' : 'system';
+  /**
+   * Light and dark only. The system preference still decides the first visit,
+   * but once someone picks a side the toggle stays binary: two states, two icons.
+   */
+  toggle(): void {
+    const next: ThemePreference = this.resolvedTheme() === 'dark' ? 'light' : 'dark';
     this.preferenceState.set(next);
     window.localStorage.setItem('portfolio-theme', next);
     this.applyTheme();

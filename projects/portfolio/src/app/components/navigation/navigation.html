@@ -15,9 +15,9 @@
       }
       <button
         type="button"
-        (click)="theme.cycle()"
+        (click)="theme.toggle()"
         class="inline-flex h-6 w-6 items-center justify-center self-center text-muted-foreground transition-colors hover:text-foreground"
-        [attr.aria-label]="'Theme: ' + theme.preference() + '. Change theme.'"
+        [attr.aria-label]="theme.resolvedTheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
       >
         @if (theme.resolvedTheme() === 'dark') {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
@@ -59,10 +59,10 @@
         }
         <button
           type="button"
-          (click)="theme.cycle()"
+          (click)="theme.toggle()"
           class="mt-1 self-start py-2 text-base text-muted-foreground transition-colors hover:text-foreground"
-          [attr.aria-label]="'Theme: ' + theme.preference() + '. Change theme.'"
-        >Theme</button>
+          [attr.aria-label]="theme.resolvedTheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+        >{{ theme.resolvedTheme() === 'dark' ? 'Light mode' : 'Dark mode' }}</button>
       </div>
     </div>
   }
