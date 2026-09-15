@@ -37,5 +37,13 @@ export default async (request: Request, context: Context) => {
   // The body length changed, and a stale content-length truncates the response.
   headers.delete("content-length");
 
-  return new Response(html, { status: response.status, statusText: response.statusText, headers });
+  // The SPA redirect serves index.html for every URL with `status = 200`, so a
+  // page that renders "Not Found" still claims to be fine — which is the textbook
+  // soft 404. The body is correct either way; only the status was lying.
+  //
+  // Narrowed to 200 on purpose: if the origin already failed with a 4xx or 5xx,
+  // that status is the truthful one and overwriting it would hide a real error.
+  const status = !indexable && response.status === 200 ? 404 : response.status;
+
+  return new Response(html, { status, statusText: response.statusText, headers });
 };
