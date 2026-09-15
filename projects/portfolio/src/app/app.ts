@@ -8,7 +8,6 @@ import { filter } from 'rxjs';
 import { Navigation } from './components/navigation/navigation';
 import type { RouteMeta } from '../seo/route-seo';
 import { pageFor, siteMetadata } from '../seo/site-metadata';
-import { serializeStructuredData, structuredDataFor } from '../seo/structured-data';
 
 @Component({
   selector: 'app-root',
@@ -60,32 +59,15 @@ export class App {
     this.meta.updateTag({ name: 'twitter:image', content: imageUrl });
     this.meta.updateTag({ name: 'robots', content: routeMeta.noIndex ? 'noindex, nofollow' : 'index, follow' });
     this.setCanonical(canonicalUrl);
-    this.setStructuredData(path);
   }
 
-  /**
-   * Keep the JSON-LD graph pointing at the page being viewed.
-   *
-   * The edge function already wrote the right graph into the HTML for the first
-   * URL loaded. This is for what happens after: an in-app navigation never goes
-   * back to the server, so without it a crawler that does run JavaScript would
-   * read the home page's graph on a case study.
-   */
-  private setStructuredData(path: string): void {
-    const page = pageFor(path);
-    const existing = this.document.head.querySelector<HTMLScriptElement>('script[type="application/ld+json"]');
-
-    // Nothing accurate to say about a page that is not published.
-    if (!page) {
-      existing?.remove();
-      return;
-    }
-
-    const script = existing ?? this.document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = serializeStructuredData(structuredDataFor(page));
-    if (!existing) this.document.head.appendChild(script);
-  }
+  // The JSON-LD graph is written once, by the Netlify edge function, and is not
+  // rewritten on in-app navigation. Building it here too would mean maintaining
+  // the same graph in two runtimes that cannot share a module (see lib/seo.ts),
+  // and it would buy almost nothing: a crawler fetches each URL directly and
+  // gets that page's graph from the edge. Only a crawler that loaded the home
+  // page and then clicked through with JavaScript would notice, which is not how
+  // any of them work.
 
   private setCanonical(href: string): void {
     let canonical = this.document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');

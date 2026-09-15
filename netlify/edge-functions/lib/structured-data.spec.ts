@@ -1,5 +1,4 @@
-import { PERSON_ID, serializeStructuredData, structuredDataFor } from './structured-data';
-import { pageFor, siteMetadata } from './site-metadata';
+import { PERSON_ID, pageFor, serializeStructuredData, siteMetadata, structuredDataFor } from './seo.ts';
 
 function graphFor(path: string): Record<string, unknown>[] {
   const page = pageFor(path);

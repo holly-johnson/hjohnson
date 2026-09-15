@@ -1,8 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { JSDOM } from 'jsdom';
-import { escapeAttribute, injectPageMetadata } from './inject-metadata';
-import { siteMetadata } from './site-metadata';
+import { escapeAttribute, injectPageMetadata, siteMetadata } from './seo.ts';
 
 /**
  * The real template, not a fixture. The whole job of this module is to rewrite

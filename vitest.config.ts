@@ -61,7 +61,7 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: 'vitest.setup.ts',
-    include: ['projects/**/*.spec.ts', 'projects/**/*.test.ts'],
+    include: ['projects/**/*.spec.ts', 'projects/**/*.test.ts', 'netlify/**/*.spec.ts'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'lcov'],
