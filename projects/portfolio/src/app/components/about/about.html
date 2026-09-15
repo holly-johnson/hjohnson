@@ -3,8 +3,8 @@
 
     <!-- ── Header ────────────────────────────────────────────────── -->
     <header class="pb-4 pt-16">
-      <span class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">About</span>
-      <h1 class="mt-5 font-serif text-[52px] font-normal leading-[1.1] tracking-[-0.02em] text-foreground">Holly Johnson</h1>
+      <span class="font-mono text-[12px] uppercase tracking-[0.14em] text-muted-foreground">About</span>
+      <h1 class="mt-5 font-serif text-[68px] font-normal leading-[1.1] tracking-[-0.02em] text-foreground">Holly Johnson</h1>
       <p class="mt-1 text-lg text-muted-foreground">Product Designer · Design Systems Lead</p>
       <p class="mt-6 max-w-[62ch] text-lg leading-[1.65] text-fg-soft">{{ lede }}</p>
     </header>
@@ -13,7 +13,7 @@
       <section class="border-t border-border py-10">
         <div class="grid gap-x-14 gap-y-4 md:grid-cols-[200px_minmax(0,1fr)]">
 
-          <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">{{ section.label }}</h2>
+          <h2 class="font-mono text-[12px] uppercase tracking-[0.14em] text-muted-foreground">{{ section.label }}</h2>
 
           <div>
             <h3 class="font-serif text-2xl font-normal leading-[1.2] text-foreground">{{ section.heading }}</h3>
@@ -26,7 +26,7 @@
               </div>
             } @else {
               <div class="mt-5 border border-dashed border-border px-4 py-6">
-                <span class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">// to write</span>
+                <span class="font-mono text-[12px] uppercase tracking-[0.14em] text-muted-foreground">// to write</span>
               </div>
             }
           </div>
@@ -38,7 +38,7 @@
     <!-- ── Get in touch ──────────────────────────────────────────── -->
     <section class="border-t border-border py-10 pb-20">
       <div class="grid gap-x-14 gap-y-4 md:grid-cols-[200px_minmax(0,1fr)]">
-        <h2 class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">Get in touch</h2>
+        <h2 class="font-mono text-[12px] uppercase tracking-[0.14em] text-muted-foreground">Get in touch</h2>
 
         <div>
           @if (availability.open) {
@@ -53,12 +53,12 @@
                 [href]="link.href"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="break-all font-mono text-[11px] leading-[1.7] text-muted-foreground transition-colors hover:text-foreground"
+                class="break-all font-mono text-[12px] leading-[1.7] text-muted-foreground transition-colors hover:text-foreground"
               >{{ link.url }}</a>
             }
           </div>
 
-          <a routerLink="/" fragment="work" class="mt-8 inline-flex items-center gap-2 border border-input px-6 py-3.5 text-[15px] text-foreground transition-colors hover:border-foreground">
+          <a routerLink="/" fragment="work" class="mt-8 inline-flex items-center gap-2 border border-input px-6 py-3.5 text-[17px] text-foreground transition-colors hover:border-foreground">
             See the work
             <span aria-hidden="true">&#8594;</span>
           </a>
@@ -70,7 +70,7 @@
 
   <!-- ── Footer ────────────────────────────────────────────────── -->
   <footer class="border-t border-border">
-    <div class="mx-auto flex max-w-6xl justify-between px-6 py-6 font-mono text-[11px] text-muted-foreground lg:px-12">
+    <div class="mx-auto flex max-w-6xl justify-between px-6 py-6 font-mono text-[12px] text-muted-foreground lg:px-12">
       <span>Holly Johnson · 2026</span>
       <span>hollyjohnson.design</span>
     </div>

@@ -15,7 +15,7 @@
     <a routerLink="/field-notes/design-systems-are-relationships" class="group block max-w-6xl mx-auto px-6 lg:px-12 py-16 md:py-24">
       <div class="grid lg:grid-cols-12 gap-8">
         <div class="lg:col-span-3">
-          <span class="font-mono text-[10px] uppercase tracking-[0.16em] text-primary">Latest note · 5 min</span>
+          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-primary">Latest note · 5 min</span>
         </div>
         <div class="lg:col-span-8 lg:col-start-5">
           <h2 class="font-serif text-3xl font-normal leading-tight transition-colors group-hover:text-primary md:text-5xl">Design systems are relationship work</h2>
@@ -35,7 +35,7 @@
       <div class="lg:col-span-8 lg:col-start-5 border-t border-border">
         @for (item of reading; track item.url; let i = $index) {
           <a [href]="item.url" target="_blank" rel="noopener noreferrer" class="group grid md:grid-cols-[4rem_1fr_auto] gap-4 md:gap-6 py-8 border-b border-border">
-            <span class="font-mono text-[10px] text-muted-foreground">0{{ i + 1 }}</span>
+            <span class="font-mono text-[11px] text-muted-foreground">0{{ i + 1 }}</span>
             <div>
               @if (item.image) {
                 <div class="mb-6 w-36 sm:w-44 bg-secondary/40 border border-border overflow-hidden flex items-center justify-center">
@@ -48,7 +48,7 @@
                 </div>
               }
               <div class="flex flex-wrap items-center gap-3 mb-3">
-                <span class="font-mono text-[10px] uppercase tracking-wider text-primary">{{ item.topic }}</span>
+                <span class="font-mono text-[11px] uppercase tracking-wider text-primary">{{ item.topic }}</span>
                 <span class="text-border">/</span>
                 <span class="text-xs text-muted-foreground">{{ item.author }}</span>
               </div>
