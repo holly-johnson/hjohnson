@@ -6,12 +6,9 @@ import { Meta } from '@angular/platform-browser';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs';
 import { Navigation } from './components/navigation/navigation';
-
-interface RouteMeta {
-  description: string;
-  image: string;
-  noIndex?: boolean;
-}
+import type { RouteMeta } from '../seo/route-seo';
+import { pageFor, siteMetadata } from '../seo/site-metadata';
+import { serializeStructuredData, structuredDataFor } from '../seo/structured-data';
 
 @Component({
   selector: 'app-root',
@@ -39,15 +36,17 @@ export class App {
     const routeMeta = snapshot.data['meta'] as RouteMeta | undefined;
     if (!routeMeta) return;
 
-    const origin = this.document.location?.origin ?? '';
+    // Absolute URLs name the production site rather than wherever this happens to
+    // be running, so a canonical never points at localhost or a deploy preview.
+    const origin = siteMetadata.origin;
     const path = url.split(/[?#]/)[0] || '/';
     const canonicalUrl = `${origin}${path}`;
     const imageUrl = `${origin}${routeMeta.image}`;
     const pageTitle = snapshot.title ?? this.document.title;
 
     this.meta.updateTag({ name: 'description', content: routeMeta.description });
-    this.meta.updateTag({ property: 'og:type', content: 'website' });
-    this.meta.updateTag({ property: 'og:site_name', content: 'Holly Johnson' });
+    this.meta.updateTag({ property: 'og:type', content: pageFor(path)?.kind === 'case-study' ? 'article' : 'profile' });
+    this.meta.updateTag({ property: 'og:site_name', content: siteMetadata.siteName });
     this.meta.updateTag({ property: 'og:title', content: pageTitle });
     this.meta.updateTag({ property: 'og:description', content: routeMeta.description });
     this.meta.updateTag({ property: 'og:url', content: canonicalUrl });
@@ -61,6 +60,31 @@ export class App {
     this.meta.updateTag({ name: 'twitter:image', content: imageUrl });
     this.meta.updateTag({ name: 'robots', content: routeMeta.noIndex ? 'noindex, nofollow' : 'index, follow' });
     this.setCanonical(canonicalUrl);
+    this.setStructuredData(path);
+  }
+
+  /**
+   * Keep the JSON-LD graph pointing at the page being viewed.
+   *
+   * The edge function already wrote the right graph into the HTML for the first
+   * URL loaded. This is for what happens after: an in-app navigation never goes
+   * back to the server, so without it a crawler that does run JavaScript would
+   * read the home page's graph on a case study.
+   */
+  private setStructuredData(path: string): void {
+    const page = pageFor(path);
+    const existing = this.document.head.querySelector<HTMLScriptElement>('script[type="application/ld+json"]');
+
+    // Nothing accurate to say about a page that is not published.
+    if (!page) {
+      existing?.remove();
+      return;
+    }
+
+    const script = existing ?? this.document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = serializeStructuredData(structuredDataFor(page));
+    if (!existing) this.document.head.appendChild(script);
   }
 
   private setCanonical(href: string): void {

@@ -16,9 +16,16 @@ import { Routes } from '@angular/router';
  *   - `home.ts` drops the unpublished projects from Selected Work
  *   - `nucleus-case-study.html` drops its Next Project footer link to Theorem
  *
- * To publish one of these, move its block into `app.routes.ts`, add it back to
- * `netlify/edge-functions/route-metadata.ts`, and remove the matching `isDevMode()`
- * gate at the call sites above.
+ * These routes carry their own metadata rather than calling `seoFor()`, because
+ * they are deliberately absent from `seo/site-metadata.json` — that file is the
+ * list of published pages, and it is what the sitemap is generated from. An
+ * unfinished page does not belong in a sitemap.
+ *
+ * To publish one of these: add its entry to `seo/site-metadata.json`, move its
+ * block into `app.routes.ts` replacing the inline metadata with `seoFor('/path')`,
+ * and remove the matching `isDevMode()` gate at the call sites above. The edge
+ * function needs no change — it reads the same file. `seo/consistency.spec.ts`
+ * fails if any of those get out of step.
  */
 export const unpublishedRoutes: Routes = [
   {

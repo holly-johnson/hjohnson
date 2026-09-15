@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { seoFor } from '../seo/route-seo';
+import { siteMetadata } from '../seo/site-metadata';
 import { unpublishedRoutes } from './unpublished.routes';
 
 // Lazy-load standalone components with loadComponent to reduce initial bundle.
@@ -11,69 +13,33 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./components/home/home').then(m => m.Home),
-    title: 'Holly Johnson · Product Designer & Design Systems Lead',
-    data: {
-      meta: {
-        description: 'Product designer and design systems lead turning complex product needs into shared systems that connect design and production.',
-        image: '/assets/social/home.png',
-      },
-    },
+    ...seoFor('/'),
   },
   {
     path: 'resume',
     loadComponent: () => import('./components/resume/resume').then(m => m.Resume),
-    title: 'Resume · Holly Johnson',
-    data: {
-      meta: {
-        description: 'Holly Johnson is a product designer and design systems lead experienced in complex product UX, production Angular systems, and multi-brand platforms.',
-        image: '/assets/social/resume.png',
-      },
-    },
+    ...seoFor('/resume'),
   },
   {
     path: 'work/helios',
     loadComponent: () => import('./components/work/helios-case-study').then(m => m.HeliosCaseStudy),
-    title: 'Helios Design System · Holly Johnson',
-    data: {
-      meta: {
-        description: 'How Holly Johnson built a Figma-to-Angular product foundation that helped four designers scale decisions across more than 150 engineers.',
-        image: '/assets/social/helios.png',
-      },
-    },
+    ...seoFor('/work/helios'),
   },
   { path: 'work/penlink', redirectTo: 'work/helios', pathMatch: 'full' },
   {
     path: 'work/analysis-workflow',
     loadComponent: () => import('./components/work/analysis-workflow-case-study').then(m => m.AnalysisWorkflowCaseStudy),
-    title: 'Investigative Workflow Research · Holly Johnson',
-    data: {
-      meta: {
-        description: 'Research mapping how investigators query, collect, analyze, connect, visualize, document, and report across fragmented product workflows.',
-        image: '/assets/social/investigative-workflow.png',
-      },
-    },
+    ...seoFor('/work/analysis-workflow'),
   },
   {
     path: 'work/nucleus',
     loadComponent: () => import('./components/work/nucleus-case-study').then(m => m.NucleusCaseStudy),
-    title: 'NUcleus Design System · Holly Johnson',
-    data: {
-      meta: {
-        description: 'A reusable design and front-end system supporting nine university brands across more than 20 websites and applications.',
-        image: '/assets/social/nucleus.png',
-      },
-    },
+    ...seoFor('/work/nucleus'),
   },
   {
     path: 'work/orbit',
     loadComponent: () => import('./components/work/orbit-case-study').then(m => m.OrbitCaseStudy),
-    title: 'Orbit · Holly Johnson',
-    data: {
-      meta: {
-        description: 'Orbit, the workspace Penlink started building to prototype features with Claude from the published Helios component library.',
-        image: '/assets/social/helios.png',
-      },
-    },
+    ...seoFor('/work/orbit'),
   },
   { path: 'work/ai-design', redirectTo: 'work/orbit', pathMatch: 'full' },
   // Not ready to publish. Dev-only; see unpublished.routes.ts.
@@ -81,7 +47,7 @@ export const routes: Routes = [
   {
     path: '**',
     loadComponent: () => import('./components/not-found/not-found').then(m => m.NotFound),
-    title: 'Not Found · Holly Johnson',
-    data: { meta: { description: 'The requested page could not be found.', image: '/assets/social/home.png', noIndex: true } },
+    title: siteMetadata.notFound.title,
+    data: { meta: { ...siteMetadata.notFound, noIndex: true } },
   },
 ];

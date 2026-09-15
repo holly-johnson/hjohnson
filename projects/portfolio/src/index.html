@@ -20,16 +20,19 @@
     <meta name="author" content="Holly Johnson" />
     <meta name="theme-color" content="#171513" />
 
-    <!-- Route-specific values are set in Angular and injected at Netlify's edge for social crawlers. -->
-    <meta property="og:type" content="website" />
+    <!-- The home page's values, and the fallback for every other route. Angular
+         replaces them on navigation and the Netlify edge function replaces them in
+         the served HTML, so these are what a crawler sees only if both are skipped.
+         Absolute URLs on purpose: relative ones are rejected by most card parsers. -->
+    <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Holly Johnson" />
     <meta property="og:title" content="Holly Johnson · Product Designer &amp; Design Systems Lead" />
     <meta
       property="og:description"
       content="Product designer and design systems lead turning complex product needs into shared systems that connect design and production."
     />
-    <meta property="og:url" content="/" />
-    <meta property="og:image" content="/assets/social/home.png" />
+    <meta property="og:url" content="https://hollyjohnson.design/" />
+    <meta property="og:image" content="https://hollyjohnson.design/assets/social/home.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Holly Johnson · Product Designer &amp; Design Systems Lead" />
@@ -41,7 +44,27 @@
       name="twitter:description"
       content="Product designer and design systems lead turning complex product needs into shared systems that connect design and production."
     />
-    <meta name="twitter:image" content="/assets/social/home.png" />
+    <meta name="twitter:image" content="https://hollyjohnson.design/assets/social/home.png" />
+
+    <!-- Who this is, in the form search engines and AI assistants actually read.
+         `sameAs` is the claim that this site and that LinkedIn profile are one
+         person rather than two strangers with the same name.
+
+         Deliberately the short version. The edge function replaces this with the
+         full graph for whichever route was requested (see seo/structured-data.ts);
+         this is only the floor, and index.html.spec.ts keeps it honest against
+         seo/site-metadata.json. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://hollyjohnson.design/#person",
+        "name": "Holly Johnson",
+        "jobTitle": "Product Designer & Design Systems Lead",
+        "url": "https://hollyjohnson.design/",
+        "sameAs": ["https://www.linkedin.com/in/holly-johnson-design"]
+      }
+    </script>
   </head>
   <body>
     <app-root></app-root>
