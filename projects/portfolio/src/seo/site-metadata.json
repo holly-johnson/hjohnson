@@ -1,0 +1,86 @@
+{
+  "origin": "https://hollyjohnson.design",
+  "siteName": "Holly Johnson",
+  "person": {
+    "name": "Holly Johnson",
+    "jobTitle": "Product Designer & Design Systems Lead",
+    "description": "Product designer and design systems lead who builds the Figma architecture, the design tokens, and the production component library behind it.",
+    "email": "hme2784@gmail.com",
+    "image": "/assets/social/home.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/holly-johnson-design"
+    ],
+    "knowsAbout": [
+      "Design systems",
+      "Design tokens",
+      "Component libraries",
+      "Figma variables",
+      "Design system governance",
+      "Design engineering",
+      "Product design",
+      "UX design",
+      "UX research",
+      "Accessibility",
+      "WCAG",
+      "ARIA",
+      "Internationalization",
+      "Angular",
+      "TypeScript",
+      "SCSS",
+      "Enterprise software"
+    ]
+  },
+  "pages": [
+    {
+      "path": "/",
+      "kind": "profile",
+      "title": "Holly Johnson \u00b7 Product Designer & Design Systems Lead",
+      "description": "Product designer and design systems lead turning complex product needs into shared systems that connect design and production.",
+      "image": "/assets/social/home.png"
+    },
+    {
+      "path": "/resume",
+      "kind": "profile",
+      "title": "Resume \u00b7 Holly Johnson",
+      "description": "Holly Johnson is a product designer and design systems lead experienced in complex product UX, production Angular systems, and multi-brand platforms.",
+      "image": "/assets/social/resume.png"
+    },
+    {
+      "path": "/work/helios",
+      "kind": "case-study",
+      "title": "Helios Design System \u00b7 Holly Johnson",
+      "description": "How Holly Johnson built a Figma-to-Angular product foundation that helped four designers scale decisions across more than 150 engineers.",
+      "image": "/assets/social/helios.png"
+    },
+    {
+      "path": "/work/analysis-workflow",
+      "kind": "case-study",
+      "title": "Investigative Workflow Research \u00b7 Holly Johnson",
+      "description": "Research mapping how investigators query, collect, analyze, connect, visualize, document, and report across fragmented product workflows.",
+      "image": "/assets/social/investigative-workflow.png"
+    },
+    {
+      "path": "/work/nucleus",
+      "kind": "case-study",
+      "title": "NUcleus Design System \u00b7 Holly Johnson",
+      "description": "A reusable design and front-end system supporting nine university brands across more than 20 websites and applications.",
+      "image": "/assets/social/nucleus.png"
+    },
+    {
+      "path": "/work/orbit",
+      "kind": "case-study",
+      "title": "Orbit \u00b7 Holly Johnson",
+      "description": "Orbit, the workspace Penlink started building to prototype features with Claude from the published Helios component library.",
+      "image": "/assets/social/helios.png"
+    }
+  ],
+  "aliases": {
+    "/work/penlink": "/work/helios",
+    "/work/ai-design": "/work/orbit"
+  },
+  "notFound": {
+    "title": "Not Found \u00b7 Holly Johnson",
+    "description": "The requested page could not be found.",
+    "image": "/assets/social/home.png"
+  }
+}

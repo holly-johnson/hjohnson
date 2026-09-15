@@ -6,12 +6,8 @@ import { Meta } from '@angular/platform-browser';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs';
 import { Navigation } from './components/navigation/navigation';
-
-interface RouteMeta {
-  description: string;
-  image: string;
-  noIndex?: boolean;
-}
+import type { RouteMeta } from '../seo/route-seo';
+import { pageFor, siteMetadata } from '../seo/site-metadata';
 
 @Component({
   selector: 'app-root',
@@ -39,15 +35,17 @@ export class App {
     const routeMeta = snapshot.data['meta'] as RouteMeta | undefined;
     if (!routeMeta) return;
 
-    const origin = this.document.location?.origin ?? '';
+    // Absolute URLs name the production site rather than wherever this happens to
+    // be running, so a canonical never points at localhost or a deploy preview.
+    const origin = siteMetadata.origin;
     const path = url.split(/[?#]/)[0] || '/';
     const canonicalUrl = `${origin}${path}`;
     const imageUrl = `${origin}${routeMeta.image}`;
     const pageTitle = snapshot.title ?? this.document.title;
 
     this.meta.updateTag({ name: 'description', content: routeMeta.description });
-    this.meta.updateTag({ property: 'og:type', content: 'website' });
-    this.meta.updateTag({ property: 'og:site_name', content: 'Holly Johnson' });
+    this.meta.updateTag({ property: 'og:type', content: pageFor(path)?.kind === 'case-study' ? 'article' : 'profile' });
+    this.meta.updateTag({ property: 'og:site_name', content: siteMetadata.siteName });
     this.meta.updateTag({ property: 'og:title', content: pageTitle });
     this.meta.updateTag({ property: 'og:description', content: routeMeta.description });
     this.meta.updateTag({ property: 'og:url', content: canonicalUrl });
@@ -62,6 +60,14 @@ export class App {
     this.meta.updateTag({ name: 'robots', content: routeMeta.noIndex ? 'noindex, nofollow' : 'index, follow' });
     this.setCanonical(canonicalUrl);
   }
+
+  // The JSON-LD graph is written once, by the Netlify edge function, and is not
+  // rewritten on in-app navigation. Building it here too would mean maintaining
+  // the same graph in two runtimes that cannot share a module (see lib/seo.ts),
+  // and it would buy almost nothing: a crawler fetches each URL directly and
+  // gets that page's graph from the edge. Only a crawler that loaded the home
+  // page and then clicked through with JavaScript would notice, which is not how
+  // any of them work.
 
   private setCanonical(href: string): void {
     let canonical = this.document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');

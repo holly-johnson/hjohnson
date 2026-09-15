@@ -1,21 +1,37 @@
 [build]
-  command = "npx ng build portfolio --configuration production"
+  # Goes through the npm script so the sitemap and robots.txt are regenerated
+  # from site-metadata.json on every deploy, rather than only when someone
+  # remembers to run the generator by hand.
+  command = "npm run build:portfolio"
   publish = "dist/portfolio/browser"
 
 [build.environment]
   NODE_VERSION = "22"
 
+# Runs on every document request, not on a list of routes. Unknown URLs are the
+# ones that most need it: without this they are served the home page's title and
+# description under a URL that renders a 404, which search engines index as a
+# duplicate of the home page. Static files are excluded so the function is not
+# invoked for assets it would immediately pass through.
 [[edge_functions]]
   function = "route-metadata"
-  path = "/"
-
-[[edge_functions]]
-  function = "route-metadata"
-  path = "/resume"
-
-[[edge_functions]]
-  function = "route-metadata"
-  path = "/work/*"
+  path = "/*"
+  excludedPath = [
+    "/assets/*",
+    "/*.js",
+    "/*.css",
+    "/*.map",
+    "/*.json",
+    "/*.txt",
+    "/*.xml",
+    "/*.ico",
+    "/*.svg",
+    "/*.png",
+    "/*.jpg",
+    "/*.webp",
+    "/*.woff2",
+    "/*.pdf",
+  ]
 
 # Angular is a single-page app: send all routes to index.html
 # so deep links (e.g. /work, /resume) and page refreshes work.
