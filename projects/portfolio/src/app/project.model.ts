@@ -7,7 +7,7 @@ export interface ProjectFigure {
   height: number;
 }
 
-/** The ROLE / YEAR / OUTCOME column beside the flagship case study. */
+/** The mono metadata rail beside a Selected Work entry. */
 export interface FactRow {
   label: string;
   value: string;
@@ -24,11 +24,11 @@ export interface Project {
   description: string;
   impact: string;
   link: string;
-  /** One line for the work list. */
-  blurb: string;
-  /** Mono label at the end of the work-list row. */
+  /** Mono kicker above the entry title. */
   tag: string;
-  facts?: FactRow[];
+  /** Text of the entry's one link, without the arrow. */
+  linkLabel: string;
+  facts: FactRow[];
   /** A real product shot. Unset falls back to the drawn system placeholder. */
   figure?: ProjectFigure;
 }

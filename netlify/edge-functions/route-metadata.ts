@@ -33,11 +33,16 @@ const metadata: Record<string, RouteMetadata> = {
     description: "A reusable design and front-end system supporting nine university brands across more than 20 websites and applications.",
     image: "/assets/social/nucleus.png",
   },
+  "/work/orbit": {
+    title: "Orbit · Holly Johnson",
+    description: "Orbit, the workspace Penlink started building to prototype features with Claude from the published Helios component library.",
+    image: "/assets/social/helios.png",
+  },
 };
 
 const aliases: Record<string, string> = {
   "/work/penlink": "/work/helios",
-  "/work/ai-design": "/work/helios",
+  "/work/ai-design": "/work/orbit",
 };
 
 function escapeAttribute(value: string): string {

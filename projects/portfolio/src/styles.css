@@ -34,6 +34,24 @@
   --text-4xl--line-height: 1.1;
   --text-5xl: 56px;
   --text-5xl--line-height: 1.05;
+
+  /* Named steps for the sizes the t-shirt scale does not cover. Reach for these instead
+     of an arbitrary text-[Npx]: a size written inline is a size the next step-up misses,
+     which is how the scale forked the last time. Deliberately no paired line-height, so
+     a step only ever sets font-size and the template's own leading-* still governs. */
+  --text-caption: 11px;    /* label under a hero stat number; Helios and NUcleus only */
+  --text-label-sm: 12px;   /* mono label, small: rail terms, diagram captions */
+  --text-label: 12px;      /* mono label: section labels, kickers, footers */
+  --text-label-lg: 13px;   /* mono label, large: case-study chrome, contents rail */
+  --text-dense: 17px;      /* resume body: a denser document than an article */
+  --text-wordmark: 18px;   /* the nav wordmark; its own role, so a body step never drags it */
+  --text-lead: 19px;       /* lead paragraph under a page or section heading */
+  --text-feature: 22px;    /* pull quote, prev/next project name */
+  --text-hero: 26px;       /* hero subhead, one line under the page H1 */
+  --text-name: 32px;       /* home work-row title */
+  --text-statement: 30px;  /* serif statement paragraph: home About block, case-study pull-out */
+  --text-cta: 48px;        /* home contact heading */
+  --text-display: 68px;    /* page H1 */
 }
 
 :root {

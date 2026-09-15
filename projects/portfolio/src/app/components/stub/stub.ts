@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   template: `
     <section class="min-h-screen flex items-center justify-center bg-background pt-20 px-6">
       <div class="max-w-md text-center">
-        <div class="font-mono text-xs text-[#7A2C10] mb-3">// coming soon</div>
+        <div class="font-mono text-label-lg text-[#7A2C10] mb-3">// coming soon</div>
         <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">
           Case study in progress
         </h1>

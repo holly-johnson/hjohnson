@@ -21,9 +21,10 @@ export const unpublishedProjects: Project[] = [
     discipline: ['Product Design', 'UX Research', 'Front-End Development'],
     description: 'A learning management system rebuilt for the University of Nebraska High School, serving students, teachers, instructional designers, customer service, and administrators.',
     impact: 'Analytics on the legacy application showed almost no traffic on paths stakeholders had called essential, which reset the requirements around the actual work.',
-    blurb: 'Five kinds of user, one application, requirements rebuilt on evidence.',
     tag: 'PRODUCT',
     link: '/work/theorem',
+    linkLabel: 'Read the case study',
+    facts: [{ label: 'ROLE', value: 'Lead Web Designer / Developer' }],
   },
   {
     id: '5',
@@ -32,9 +33,10 @@ export const unpublishedProjects: Project[] = [
     discipline: ['Information Architecture', 'Content Strategy', 'Design Systems in Practice'],
     description: 'The repeatable engagement that turned NUcleus into websites for departments and institutes across the University of Nebraska System.',
     impact: 'Architecture, content maps, and wireframes through to a Sitecore build and client training, so marketing staff ran their own sites afterward.',
-    blurb: 'The practice that put a design system to work, one client at a time.',
     tag: 'PRACTICE',
     link: '/work/nebraska-edu',
+    linkLabel: 'Read the case study',
+    facts: [{ label: 'ROLE', value: 'Lead Web Designer / Developer' }],
   },
 ];
 

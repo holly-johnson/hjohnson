@@ -31,13 +31,13 @@ export class Home {
       discipline: ['Design Systems', 'Product Platforms', 'Design Engineering', 'Applied AI'],
       description: 'A design system and product foundation connecting design architecture, coded components, documentation, distribution, and real product implementation.',
       impact: 'Built from the first Figma foundations and token architecture through to a published Angular component library. Four designers supported more than 150 engineers, so the system had to carry decisions the team could not review screen by screen.',
-      blurb: 'Figma foundations through to the published Angular library products shipped on.',
       tag: 'DESIGN SYSTEM',
       link: '/work/helios',
+      linkLabel: 'Read the full case study',
       facts: [
         { label: 'ROLE', value: 'Senior UX Designer' },
         { label: 'YEAR', value: '2023–2026' },
-        { label: 'OUTCOME', value: 'Design pulled into production, not handed to it', accent: true },
+        { label: 'OUTCOME', value: 'Figma decisions shipped as Angular components', accent: true },
       ],
     },
     {
@@ -47,9 +47,10 @@ export class Home {
       discipline: ['UX Research', 'Workflow Mapping', 'Product Strategy'],
       description: 'Contextual research mapping how investigators collect, examine, connect, and communicate information across a suite of separate tools.',
       impact: 'Turned a fragmented, tool-by-tool journey into a shared model of the end-to-end workflow.',
-      blurb: 'One model of the end-to-end workflow, in place of a tool-by-tool journey.',
       tag: 'RESEARCH',
       link: '/work/analysis-workflow',
+      linkLabel: 'Read the research',
+      facts: [{ label: 'ROLE', value: 'Senior UX Designer' }],
     },
     {
       id: '3',
@@ -58,9 +59,10 @@ export class Home {
       discipline: ['Design Systems', 'Platform Strategy', 'Front-End Integration'],
       description: 'A shared design and front-end system supporting 9 university brands and more than 20 websites and applications.',
       impact: 'Built the reusable front-end foundation first, then implemented it in the NU CMS.',
-      blurb: 'Nine university brands on one front-end foundation that outlasted its CMS.',
-      tag: 'PLATFORM',
+      tag: 'DESIGN SYSTEM',
       link: '/work/nucleus',
+      linkLabel: 'Read the case study',
+      facts: [{ label: 'ROLE', value: 'Digital Design System Specialist' }],
     },
   ];
 
