@@ -333,9 +333,9 @@
         <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Previous Project</div>
         <div class="font-serif text-feature font-normal text-foreground transition-colors group-hover:text-primary">NUcleus</div>
       </a>
-      <a routerLink="/work/nebraska-edu" class="group space-y-1 block text-right">
+      <a [routerLink]="nextProject.link" class="group space-y-1 block text-right">
         <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Next Project</div>
-        <div class="font-serif text-feature font-normal text-foreground transition-colors group-hover:text-primary">Nebraska.edu</div>
+        <div class="font-serif text-feature font-normal text-foreground transition-colors group-hover:text-primary">{{ nextProject.label }}</div>
       </a>
     </div>
   </section>

@@ -7,4 +7,7 @@ import type { Project } from './project.model';
  */
 export const showUnpublished = false;
 
+/** Nebraska.edu is not published, so Theorem wraps the reader back to the flagship. */
+export const theoremNextProject = { link: '/work/helios', label: 'Helios' };
+
 export const unpublishedProjects: Project[] = [];

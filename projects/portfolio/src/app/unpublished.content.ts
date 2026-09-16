@@ -13,6 +13,14 @@ import type { Project } from './project.model';
  */
 export const showUnpublished = true;
 
+/**
+ * Where Theorem's "Next Project" points. Theorem is last in the published sequence, so
+ * Nebraska.edu only follows it while that case study is unpublished. Defined here rather
+ * than with an `@if` in the template because a template branch still ships the unpublished
+ * name inside the compiled output; only the file swap keeps it out.
+ */
+export const theoremNextProject = { link: '/work/nebraska-edu', label: 'Nebraska.edu' };
+
 export const unpublishedProjects: Project[] = [
   {
     id: '5',
