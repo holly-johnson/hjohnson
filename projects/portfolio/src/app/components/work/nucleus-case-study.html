@@ -82,7 +82,7 @@
           <div class="border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">Fig 1. UI Audit</span>
-              <span class="text-right text-primary">2017 Era</span>
+              <span class="text-right text-foreground">2017 Era</span>
             </div>
             <div class="grid grid-cols-1 gap-px bg-border sm:grid-cols-2">
               <div class="bg-secondary p-4 sm:col-span-2 sm:p-6">
@@ -125,7 +125,7 @@
           <div class="border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">Fig 2. System Scale</span>
-              <span class="text-right text-primary">Ecosystem</span>
+              <span class="text-right text-foreground">Ecosystem</span>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4">
               @for (site of scaleSites; track site) {
@@ -181,7 +181,7 @@
           <div class="border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">NUcleus System Architecture</span>
-              <span class="text-right text-primary">System Overview</span>
+              <span class="text-right text-foreground">System Overview</span>
             </div>
 
             <div class="bg-secondary px-8 py-10 flex flex-col items-center gap-0">
@@ -263,7 +263,7 @@
               <div class="border border-border bg-card">
                 <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
                   <span class="text-muted-foreground">Fig 4. Component output</span>
-                  <span class="text-right text-primary">NU Platform</span>
+                  <span class="text-right text-foreground">NU Platform</span>
                 </div>
                 <div class="bg-secondary p-2 space-y-1.5">
                   <div class="overflow-hidden">
@@ -311,7 +311,7 @@
           </div>
           <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
             <p>Websites were only half the University's digital estate. The other half was applications: contact and event management, data access, a learning management system. In 2017 the University of Nebraska brand had never been used inside one of them.</p>
-            <p>A website component and an application component answer to different constraints. A page section is composed once and read. A datatable is operated, in long sessions, by someone whose job depends on it. So NUcleus split into two implementations of one brand, and the application half was proven inside a real product first. The patterns came out of @if (showUnpublished) {<a routerLink="/work/theorem" class="font-semibold text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">Theorem</a>} @else {Theorem}, then were generalized.</p>
+            <p>A website component and an application component answer to different constraints. A page section is composed once and read. A datatable is operated, in long sessions, by someone whose job depends on it. So NUcleus split into two implementations of one brand, and the application half was proven inside a real product first. The patterns came out of <a routerLink="/work/theorem" class="font-semibold text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">Theorem</a>, then were generalized.</p>
             <p>The front-end architecture had to stay implementation-agnostic. University applications were built on different stacks, so the system defined the pattern and the markup while leaving each team free to render it in their own framework.</p>
             <p>Every component shipped with its code, its options, its accessibility requirements, implementation notes, and a version history. A component that is not documented to that level is a suggestion, not a system.</p>
           </div>
@@ -319,7 +319,7 @@
           <figure class="border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">Fig 5. Component documentation</span>
-              <span class="shrink-0 text-right text-primary">NUcleus for Apps</span>
+              <span class="shrink-0 text-right text-foreground">NUcleus for Apps</span>
             </div>
             <div class="bg-secondary p-4 sm:p-6">
               <img src="assets/work/nucleus-apps/docs-datatable.webp" alt="NUcleus for Apps documentation for the Datatable component, showing version, description, an example, and a contents list" class="box-border block h-auto w-full border border-plate-line bg-plate p-4 sm:p-7" loading="lazy" decoding="async" width="1600" height="798" />
@@ -339,7 +339,7 @@
           <figure class="border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">Fig 6. Components in use</span>
-              <span class="shrink-0 text-right text-primary">Cards &amp; role switching</span>
+              <span class="shrink-0 text-right text-foreground">Cards &amp; role switching</span>
             </div>
             <div class="bg-secondary p-2 space-y-1.5">
               <img src="assets/work/nucleus-apps/course-cards.webp" alt="Course card component shown in several states, with placeholder course data" class="w-full block" loading="lazy" decoding="async" width="1600" height="798" />
@@ -484,12 +484,10 @@
         <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Previous Project</div>
         <div class="font-serif text-feature font-normal text-foreground transition-colors group-hover:text-primary">Investigative Workflow Research</div>
       </a>
-      @if (showUnpublished) {
-        <a routerLink="/work/theorem" class="group space-y-1 block text-right">
-          <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Next Project</div>
-          <div class="font-serif text-feature font-normal text-foreground transition-colors group-hover:text-primary">Theorem</div>
-        </a>
-      }
+      <a routerLink="/work/theorem" class="group space-y-1 block text-right">
+        <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Next Project</div>
+        <div class="font-serif text-feature font-normal text-foreground transition-colors group-hover:text-primary">Theorem</div>
+      </a>
     </div>
   </section>
 </div>

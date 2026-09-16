@@ -55,7 +55,7 @@ export class Home {
     {
       id: '3',
       num: '03',
-      title: 'NUcleus Design System',
+      title: 'NUcleus',
       discipline: ['Design Systems', 'Platform Strategy', 'Front-End Integration'],
       description: 'A shared design and front-end system supporting 9 university brands and more than 20 websites and applications.',
       impact: 'Built the reusable front-end foundation first, then implemented it in the NU CMS.',
@@ -63,6 +63,21 @@ export class Home {
       link: '/work/nucleus',
       linkLabel: 'Read the case study',
       facts: [{ label: 'ROLE', value: 'Digital Design System Specialist' }],
+    },
+    {
+      id: '4',
+      num: '04',
+      title: 'Theorem',
+      discipline: ['Product Design', 'UX Research', 'Front-End Development'],
+      description: 'A learning management system rebuilt for the University of Nebraska High School, serving students, teachers, customer service, administrators and instructional designers.',
+      impact: 'Analytics on the legacy application showed almost no traffic on paths stakeholders had called essential, which reset the requirements around the actual work.',
+      tag: 'PRODUCT',
+      link: '/work/theorem',
+      linkLabel: 'Read the case study',
+      facts: [
+        { label: 'ROLE', value: 'Lead Web Designer / Developer' },
+        { label: 'OUTCOME', value: 'Student success drove every decision, replacing a decades-old system' },
+      ],
     },
   ];
 

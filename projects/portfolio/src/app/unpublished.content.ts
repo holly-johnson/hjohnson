@@ -15,18 +15,6 @@ export const showUnpublished = true;
 
 export const unpublishedProjects: Project[] = [
   {
-    id: '4',
-    num: '04',
-    title: 'Theorem',
-    discipline: ['Product Design', 'UX Research', 'Front-End Development'],
-    description: 'A learning management system rebuilt for the University of Nebraska High School, serving students, teachers, instructional designers, customer service, and administrators.',
-    impact: 'Analytics on the legacy application showed almost no traffic on paths stakeholders had called essential, which reset the requirements around the actual work.',
-    tag: 'PRODUCT',
-    link: '/work/theorem',
-    linkLabel: 'Read the case study',
-    facts: [{ label: 'ROLE', value: 'Lead Web Designer / Developer' }],
-  },
-  {
     id: '5',
     num: '05',
     title: 'Nebraska.edu',

@@ -73,6 +73,13 @@ export const siteMetadata = {
       "image": "/assets/social/nucleus.png"
     },
     {
+      "path": "/work/theorem",
+      "kind": "case-study",
+      "title": "Theorem · Holly Johnson",
+      "description": "Rebuilding a decades-old learning management system for the University of Nebraska High School, and the application patterns that became NUcleus for Apps.",
+      "image": "/assets/social/nucleus.png"
+    },
+    {
       "path": "/work/orbit",
       "kind": "case-study",
       "title": "Orbit · Holly Johnson",

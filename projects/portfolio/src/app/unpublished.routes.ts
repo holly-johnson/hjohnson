@@ -14,7 +14,6 @@ import { Routes } from '@angular/router';
  * `isDevMode()` and reference this comment:
  *   - `navigation.ts` drops the About link
  *   - `home.ts` drops the unpublished projects from Selected Work
- *   - `nucleus-case-study.html` drops its Next Project footer link to Theorem
  *
  * These routes carry their own metadata rather than calling `seoFor()`, because
  * they are deliberately absent from `seo/site-metadata.json` — that file is the
@@ -36,18 +35,6 @@ export const unpublishedRoutes: Routes = [
       meta: {
         description: 'About Holly Johnson, product designer and design systems lead.',
         image: '/assets/social/home.png',
-        noIndex: true,
-      },
-    },
-  },
-  {
-    path: 'work/theorem',
-    loadComponent: () => import('./components/work/theorem-case-study').then(m => m.TheoremCaseStudy),
-    title: 'Theorem · Holly Johnson',
-    data: {
-      meta: {
-        description: 'Rebuilding a decades-old learning management system for the University of Nebraska High School, and the application patterns that became NUcleus for Apps.',
-        image: '/assets/social/nucleus.png',
         noIndex: true,
       },
     },

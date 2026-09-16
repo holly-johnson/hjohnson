@@ -37,6 +37,11 @@ export const routes: Routes = [
     ...seoFor('/work/nucleus'),
   },
   {
+    path: 'work/theorem',
+    loadComponent: () => import('./components/work/theorem-case-study').then(m => m.TheoremCaseStudy),
+    ...seoFor('/work/theorem'),
+  },
+  {
     path: 'work/orbit',
     loadComponent: () => import('./components/work/orbit-case-study').then(m => m.OrbitCaseStudy),
     ...seoFor('/work/orbit'),

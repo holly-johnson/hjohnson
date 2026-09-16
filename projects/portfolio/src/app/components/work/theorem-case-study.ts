@@ -7,6 +7,7 @@ interface TocItem {
 }
 
 interface UserGroup {
+  num: string;
   name: string;
   need: string;
 }
@@ -17,21 +18,23 @@ interface UserGroup {
   templateUrl: './theorem-case-study.html',
 })
 export class TheoremCaseStudy {
-  /** The five groups the application had to serve, from the 2017 discovery work. */
+  /** Who the application served. Five groups came out of 2017 discovery; parents were added after phase one. */
   protected readonly userGroups: UserGroup[] = [
-    { name: 'Students', need: 'Move through a course, track progress, and know what comes next.' },
-    { name: 'Teachers', need: 'Grade work and reach students about notifications and news.' },
-    { name: 'Instructional designers', need: 'Author and publish course content.' },
-    { name: 'Customer service', need: 'Answer account and enrollment questions.' },
-    { name: 'Administrators', need: 'Oversee courses, accounts, and records across the school.' },
+    { num: '01', name: 'Students', need: 'Move through a course, track progress and know what comes next.' },
+    { num: '02', name: 'Teachers', need: 'Grade work and reach students about notifications and news.' },
+    { num: '03', name: 'Customer service', need: 'Answer account and enrollment questions.' },
+    { num: '04', name: 'Administrators', need: 'Oversee courses, accounts and records across the school.' },
+    { num: '05', name: 'Instructional designers', need: 'Author and publish course content.' },
+    { num: '06', name: 'Parents & Guardians', need: 'Stay up to date with their child’s learning.' },
   ];
 
+  /** Rail labels are trimmed to fit the 230px contents column on one line; the headings themselves are longer. */
   protected readonly toc: TocItem[] = [
-    { fragment: 'challenge', label: '01. A Decades-Old System' },
-    { fragment: 'discovery', label: '02. Discovery' },
-    { fragment: 'research', label: '03. Research' },
-    { fragment: 'analysis', label: '04. Analysis' },
-    { fragment: 'design', label: '05. Design and Build' },
-    { fragment: 'system', label: '06. What It Became' },
+    { fragment: 'challenge', label: '01. One System, Five Jobs' },
+    { fragment: 'discovery', label: '02. Who It Actually Served' },
+    { fragment: 'research', label: '03. Testing the Requirements' },
+    { fragment: 'analysis', label: '04. Storyboards to Portals' },
+    { fragment: 'design', label: '05. Design Met Development' },
+    { fragment: 'system', label: '06. What Survived' },
   ];
 }
