@@ -24,7 +24,7 @@ export class Journal {
       author: 'Zander Whitehurst',
       source: 'LinkedIn',
       url: 'https://lnkd.in/p/gAdBCFWE',
-      note: 'A sharp visual argument for why faster interface production does not replace product judgment, context, or the work of solving the right problem.',
+      note: 'A sharp visual argument for why faster interface production does not replace product judgment, context or the work of solving the right problem.',
       topic: 'AI + design',
       image: 'https://media.licdn.com/dms/image/v2/D4E22AQFO8EwyHrOYjA/feedshare-shrink_800/B4EaAP1vp.IkAc-/0/1786972142575?e=2147483647&v=beta&t=0UK-HS3Wfgyh-sFMSyOwXEGDlTpXD2IWbK5QvYoGLJs',
       imageAlt: 'Editorial graphic about the distinction between generating a user interface and doing the work of design',
@@ -42,7 +42,7 @@ export class Journal {
       author: 'Maggie Appleton',
       source: 'maggieappleton.com',
       url: 'https://maggieappleton.com/ai-dark-forest',
-      note: 'A thoughtful look at trust, identity, and what human-made work means in an internet full of generated content.',
+      note: 'A thoughtful look at trust, identity and what human-made work means in an internet full of generated content.',
       topic: 'AI + culture',
     },
     {

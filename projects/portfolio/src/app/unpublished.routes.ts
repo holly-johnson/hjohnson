@@ -45,7 +45,7 @@ export const unpublishedRoutes: Routes = [
     title: 'Nebraska.edu · Holly Johnson',
     data: {
       meta: {
-        description: 'The repeatable engagement that turned NUcleus into websites: information architecture, content maps, wireframes, Sitecore build, and client training.',
+        description: 'The repeatable engagement that turned NUcleus into websites: information architecture, content maps, wireframes, Sitecore build and client training.',
         image: '/assets/social/nucleus.png',
         noIndex: true,
       },
@@ -57,7 +57,7 @@ export const unpublishedRoutes: Routes = [
     title: 'Field Notes · Holly Johnson',
     data: {
       meta: {
-        description: 'Notes on design systems, product practice, and a curated shelf of ideas worth passing along.',
+        description: 'Notes on design systems, product practice and a curated shelf of ideas worth passing along.',
         image: '/assets/social/home.png',
         noIndex: true,
       },
@@ -69,7 +69,7 @@ export const unpublishedRoutes: Routes = [
     title: 'Design systems are relationship work · Holly Johnson',
     data: {
       meta: {
-        description: 'A field note on why the strongest design systems are built through trust, shared language, and continuous collaboration.',
+        description: 'A field note on why the strongest design systems are built through trust, shared language and continuous collaboration.',
         image: '/assets/social/helios.png',
         noIndex: true,
       },

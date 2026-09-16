@@ -18,9 +18,9 @@ interface Step {
 export class HeliosCaseStudy {
   // §02, components encoded behavior and contracts, not just appearance
   protected readonly behavioralFoundations: string[] = [
-    'Consistent fields, validation, and feedback',
+    'Consistent fields, validation and feedback',
     'Predictable component inputs and states',
-    'Navigation, popup, and page foundations',
+    'Navigation, popup and page foundations',
     'Shared state-management patterns',
     'Internationalization and RTL layout support',
     'Compatibility with existing product requirements',
@@ -57,9 +57,9 @@ export class HeliosCaseStudy {
 
   // §05, constraints and open problems
   protected readonly constraints: string[] = [
-    'The canonical source of truth across Figma, code, and tokens was not fully resolved, in part because the team did not have the Figma license tier that would have automated it.',
+    'The canonical source of truth across Figma, code and tokens was not fully resolved, in part because the team did not have the Figma license tier that would have automated it.',
     'Figma Code Connect, which would have handed developers the real Helios implementation in Dev Mode instead of a generic snippet, was scoped but never set up.',
-    'Too much of the system’s knowledge and ownership remained concentrated in one person. That was a known risk, and reducing it was already underway.',
+    'Too much of the system’s knowledge and ownership remained concentrated in one person. That was a known risk and reducing it was already underway.',
   ];
 
 

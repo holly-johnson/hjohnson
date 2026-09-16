@@ -20,7 +20,7 @@ export const unpublishedProjects: Project[] = [
     title: 'Nebraska.edu',
     discipline: ['Information Architecture', 'Content Strategy', 'Design Systems in Practice'],
     description: 'The repeatable engagement that turned NUcleus into websites for departments and institutes across the University of Nebraska System.',
-    impact: 'Architecture, content maps, and wireframes through to a Sitecore build and client training, so marketing staff ran their own sites afterward.',
+    impact: 'Architecture, content maps and wireframes through to a Sitecore build and client training, so marketing staff ran their own sites afterward.',
     tag: 'PRACTICE',
     link: '/work/nebraska-edu',
     linkLabel: 'Read the case study',

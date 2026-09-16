@@ -35,11 +35,11 @@ export class Resume {
       company: 'Penlink',
       period: 'Jan 2023 – Aug 2026',
       achievements: [
-        'Built the original Penlink Design System in Figma and evolved it into Helios: a shared foundation of design tokens, structured Figma architecture, and a published Angular library. A four-person design team used it to carry shared decisions across 150+ engineers.',
+        'Built the original Penlink Design System in Figma and evolved it into Helios: a shared foundation of design tokens, structured Figma architecture and a published Angular library. A four-person design team used it to carry shared decisions across 150+ engineers.',
         'Architected a layered token system (primitive → semantic → component) in Figma variables and SCSS, keeping design and front-end in sync across three adopting products.',
-        'Built accessibility and internationalization into the components themselves: WCAG focus management, ARIA, modal focus-trapping, localization, and RTL (i18n, CSS logical properties). Foundation-level fixes improved every consuming product.',
-        "Established the system's governance: a contribution model, versioned releases, and a roadmap that let product teams adopt Helios incrementally without pausing active feature work.",
-        'Piloted applied AI in design-systems work: directed Claude through MCP to turn structured system information (components, tokens, states) into production Angular, and to run recurring adoption and critique scans that kept system debt visible and Figma intent tied to shipped code.',
+        'Built accessibility and internationalization into the components themselves: WCAG focus management, ARIA, modal focus-trapping, localization and RTL (i18n, CSS logical properties). Foundation-level fixes improved every consuming product.',
+        "Established the system's governance: a contribution model, versioned releases and a roadmap that let product teams adopt Helios incrementally without pausing active feature work.",
+        'Piloted applied AI in design-systems work: directed Claude through MCP to turn structured system information (components, tokens, states) into production Angular and to run recurring adoption and critique scans that kept system debt visible and Figma intent tied to shipped code.',
         'Drove UX for complex intelligence platforms (investigative dashboards, alerting, geospatial analysis), grounded in analyst interviews and contextual workflow research.',
       ],
     },
@@ -48,8 +48,8 @@ export class Resume {
       company: 'University of Nebraska System – Office of the President',
       period: 'Apr 2022 – Jan 2023',
       achievements: [
-        "Continued NUcleus design-system work, including standards, components, and support for the teams building on it, after a system-wide restructure moved the role from Information Technology Services into the Office of the President.",
-        'Partnered with communications, marketing, product, and engineering teams across campuses to align brand standards with the design system and digital platforms.',
+        "Continued NUcleus design-system work, including standards, components and support for the teams building on it, after a system-wide restructure moved the role from Information Technology Services into the Office of the President.",
+        'Partnered with communications, marketing, product and engineering teams across campuses to align brand standards with the design system and digital platforms.',
         'Created reusable marketing templates and digital assets that enabled internal teams to produce materials in-house and reduced reliance on external contractors.',
       ],
     },
@@ -57,13 +57,13 @@ export class Resume {
       title: 'Lead Web Designer / Developer',
       company: 'University of Nebraska System – Information Technology Services',
       period: 'May 2018 – Apr 2022',
-      note: 'Owned NUcleus end to end: vision, roadmap, standards, and adoption',
+      note: 'Owned NUcleus end to end: vision, roadmap, standards and adoption',
       achievements: [
-        'Created and led the NUcleus design system from the ground up, defining the vision, roadmap, and governance model supporting 9 university brands and 20+ website and application implementations.',
-        "Designed and implemented the system's design token architecture (primitive, semantic, and component layers) using Figma variables and SCSS, ensuring consistency between design and front-end implementation.",
-        "Established reusable UI components, interaction patterns, and system standards that unified the university's digital ecosystem.",
+        'Created and led the NUcleus design system from the ground up, defining the vision, roadmap and governance model supporting 9 university brands and 20+ website and application implementations.',
+        "Designed and implemented the system's design token architecture (primitive, semantic and component layers) using Figma variables and SCSS, ensuring consistency between design and front-end implementation.",
+        "Established reusable UI components, interaction patterns and system standards that unified the university's digital ecosystem.",
         'Reviewed 300+ feature implementations to ensure alignment with system standards and intended user experience.',
-        'Collaborated with product managers, designers, and engineers to prioritize system enhancements and drive adoption across teams.',
+        'Collaborated with product managers, designers and engineers to prioritize system enhancements and drive adoption across teams.',
       ],
     },
     {
@@ -71,8 +71,8 @@ export class Resume {
       company: 'University of Nebraska System – Information Technology Services',
       period: 'Aug 2017 – May 2018',
       achievements: [
-        'Designed websites, applications, and communications platforms in collaboration with product managers and engineers.',
-        'Created user journeys, information architecture, and wireframes to support product development.',
+        'Designed websites, applications and communications platforms in collaboration with product managers and engineers.',
+        'Created user journeys, information architecture and wireframes to support product development.',
       ],
     },
   ];
@@ -83,8 +83,8 @@ export class Resume {
       company: 'Southeast Community College, Graphic Design & Continuing Education',
       period: 'Apr 2017 – 2023',
       achievements: [
-        'Taught courses in Adobe Illustrator, web design, and HTML/CSS development.',
-        'Guided students through agile workflows, portfolio development, and real-world client projects.',
+        'Taught courses in Adobe Illustrator, web design and HTML/CSS development.',
+        'Guided students through agile workflows, portfolio development and real-world client projects.',
       ],
     },
     {
@@ -92,7 +92,7 @@ export class Resume {
       company: 'Firespring',
       period: 'Mar 2017 – Aug 2017',
       achievements: [
-        'Designed digital products and campaigns in collaboration with UX designers, engineers, and clients.',
+        'Designed digital products and campaigns in collaboration with UX designers, engineers and clients.',
       ],
     },
     {
@@ -100,7 +100,7 @@ export class Resume {
       company: 'Self-Employed',
       period: 'Jan 2014 – Jan 2019',
       achievements: [
-        'Designed and developed websites, branding systems, and digital media for clients across multiple industries.',
+        'Designed and developed websites, branding systems and digital media for clients across multiple industries.',
       ],
     },
     {
@@ -108,7 +108,7 @@ export class Resume {
       company: 'Nebraska Department of Education',
       period: 'Nov 2012 – Mar 2017',
       achievements: [
-        'Designed digital media, publications, and websites supporting statewide early childhood initiatives.',
+        'Designed digital media, publications and websites supporting statewide early childhood initiatives.',
       ],
     },
   ];

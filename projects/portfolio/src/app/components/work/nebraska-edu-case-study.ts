@@ -27,7 +27,7 @@ export class NebraskaEduCaseStudy {
   protected readonly stages: Stage[] = [
     {
       title: 'Kickoff',
-      detail: 'Stakeholders, project managers, content creators, designers, and developers in one room. The questions asked here become the creative brief.',
+      detail: 'Stakeholders, project managers, content creators, designers and developers in one room. The questions asked here become the creative brief.',
     },
     {
       title: 'Information architecture',

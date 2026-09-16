@@ -80,7 +80,7 @@ export class NucleusCaseStudy {
   protected readonly outputLabels: string[] = ['Departments', 'Institutes', 'Programs', 'Online High School'];
 
   protected readonly outcomes: Outcome[] = [
-    { category: 'Reach', stat: 'Websites across University departments, institutes, and programs' },
+    { category: 'Reach', stat: 'Websites across University departments, institutes and programs' },
     { category: 'Efficiency', stat: 'Reusable front-end patterns implemented as CMS components' },
     { category: 'Cost', stat: 'Reduced reliance on external development' },
     { category: 'Stewardship', stat: 'More efficient use of public funding' },

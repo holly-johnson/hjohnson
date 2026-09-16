@@ -11,7 +11,7 @@
             <h1 class="mt-5 font-serif text-4xl font-normal leading-[1.05] tracking-[-0.02em] text-foreground md:text-display">Helios</h1>
             <p class="mt-3 text-hero leading-[1.3] text-foreground">Design decisions, shipped as code.</p>
             <p class="mt-6 max-w-[64ch] text-lead leading-[1.7] text-muted-foreground">
-              Analysts moved between Penlink's investigative products during a single investigation, and the products did not behave as one suite. Helios gave them a shared foundation across Figma and production Angular. Serving as design system architect and Angular developer, I built its production components for PLX Web and led an incremental adoption strategy without pausing product development.
+              Analysts moved between Penlink's investigative products during a single investigation. The products did not behave as one suite. Helios gave them a shared foundation across Figma and production Angular. Serving as design system architect and Angular developer, I built its production components for PLX Web and led an incremental adoption strategy without pausing product development.
             </p>
           </div>
 
@@ -91,12 +91,12 @@
             <span class="h-px flex-1 bg-border"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
-            <p>Penlink’s investigative products had evolved independently, each with its own visual language, interaction patterns, and engineering history. Growth through acquisition brought in products that were never designed to sit together.</p>
-            <p>Four designers worked across a product organization of more than 150 engineers. Consistency could not depend on reviewing every screen manually, and product development could not pause while a system was built.</p>
+            <p>Penlink’s investigative products had evolved independently, each with its own visual language, interaction patterns and engineering history. Growth through acquisition brought in products that were never designed to sit together.</p>
+            <p>Four designers worked across a product organization of more than 150 engineers. Consistency could not depend on reviewing every screen manually. Product development could not pause while a system was built.</p>
             <p>The problem was how to make them feel familial without rebuilding them. The infrastructure had to be replaced without disturbing the product. Workflows customers already relied on had to keep working exactly as they were.</p>
           </div>
 
-          <figure class="mt-12 border border-border bg-card">
+          <figure class="border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">Fig 1. UI Component Audit</span>
               <span class="text-right text-foreground">Pre-system inconsistencies</span>
@@ -123,13 +123,13 @@
             <span class="h-px flex-1 bg-border"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
-            <p>Helios began as the Penlink Design System during a redesign of PLX Desktop, then expanded into distinct desktop and web modes within one Figma architecture. The original name survives in the code. Components carry a plds- prefix, and the migration to helios- was still in progress.</p>
-            <p>Shared decisions could vary by mode without being redefined component by component. The architecture had to be flexible enough for real differences, and firm enough to keep them exceptions.</p>
-            <p>Holding that balance took more than a component library. Structured Figma libraries connected to a production Angular library. That connection carried tokens, components, reusable product patterns, documentation, accessibility behavior, internationalization, and contribution workflows. The layered token model translated primitive values into semantic meaning, then into component-level implementation. Figma variables and the SCSS files stayed aligned.</p>
-            <p>No existing tool would keep that alignment. Figma’s variable sync sat behind a plan tier the team did not have, and a third-party token tool was not funded. I created a skill that pulled the published variables through MCP and updated the token files, so the process ran the same way every time.</p>
+            <p>Helios began as the Penlink Design System during a redesign of PLX Desktop, then expanded into distinct desktop and web modes within one Figma architecture. The original name survives in the code. Components carry a plds- prefix. The migration to helios- was still in progress.</p>
+            <p>Shared decisions could vary by mode without being redefined component by component. The architecture had to be flexible enough for real differences and firm enough to keep them exceptions.</p>
+            <p>Holding that balance took more than a component library. Structured Figma libraries connected to a production Angular library. That connection carried tokens, components, reusable product patterns, documentation, accessibility behavior, internationalization and contribution workflows. The layered token model translated primitive values into semantic meaning, then into component-level implementation. Figma variables and the SCSS files stayed aligned.</p>
+            <p>No existing tool would keep that alignment. Figma’s variable sync sat behind a plan tier the team did not have and a third-party token tool was not funded. I created a skill that pulled the published variables through MCP and updated the token files, so the process ran the same way every time.</p>
           </div>
 
-          <figure class="mt-12 border border-border bg-card">
+          <figure class="border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">Fig 2. Token Architecture</span>
               <span class="text-right text-foreground">ITCSS methodology</span>
@@ -202,7 +202,7 @@
             </article>
           </div>
 
-          <figure class="mt-12 border border-border bg-card">
+          <figure class="border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">Fig 3. Shared Controls, Shared Rules</span>
               <span class="text-right text-foreground">One hierarchy across the suite</span>
@@ -210,8 +210,8 @@
             <div class="grid gap-px bg-border">
               <div class="min-w-0 space-y-4 bg-secondary p-6">
                 <div class="border-l-2 border-primary pl-3 font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">The control set</div>
-                <p class="text-sm text-muted-foreground leading-relaxed">Buttons, menus, inputs, selection, chips, and overlays rendered together, so a change to a shared decision could be reviewed across every control at once.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-controls-gallery-crop.png" alt="A gallery rendering every Helios control together: primary, secondary, CTA, and destructive buttons at medium, icon-only, and disabled; button menus; textbox, textarea, dropdown, and search inputs; checkbox, radio, and toggle selection states including mixed, focused, invalid, disabled, and read-only; chips; and popover and tooltip overlays." class="block h-auto w-full min-w-[34rem]" loading="lazy" decoding="async" width="1016" height="780" /></div>
+                <p class="text-sm text-muted-foreground leading-relaxed">Buttons, menus, inputs, selection, chips and overlays rendered together, so a change to a shared decision could be reviewed across every control at once.</p>
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-controls-gallery-crop.png" alt="A gallery rendering every Helios control together: primary, secondary, CTA and destructive buttons at medium, icon-only and disabled; button menus; textbox, textarea, dropdown and search inputs; checkbox, radio and toggle selection states including mixed, focused, invalid, disabled and read-only; chips; and popover and tooltip overlays." class="block h-auto w-full min-w-[34rem]" loading="lazy" decoding="async" width="1016" height="780" /></div>
               </div>
               <div class="min-w-0 space-y-4 bg-secondary p-6">
                 <div class="border-l-2 border-primary pl-3 font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Usage guidance</div>
@@ -225,7 +225,7 @@
                 </div>
               </div>
             </div>
-            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">Hierarchy, microcopy, and spacing resolved once at the system level rather than per product. Guidance is demonstrated with the shipping component, so the examples cannot fall out of date with the code.</figcaption>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">Hierarchy, microcopy and spacing resolved once at the system level rather than per product. Guidance is demonstrated with the shipping component, so the examples cannot fall out of date with the code.</figcaption>
           </figure>
         </section>
 
@@ -237,19 +237,19 @@
             <span class="h-px flex-1 bg-border"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
-            <p>Helios did not develop separately from product work. PLX Web was already in feature development, so interim Angular components kept delivery moving while exposing the states, inputs, and behaviors the supported system needed.</p>
-            <p>Those requirements informed official Helios components that were completed, merged, versioned, and published. Product teams could then repoint to the supported implementation rather than rework active features.</p>
+            <p>Helios did not develop separately from product work. PLX Web was already in feature development, so interim Angular components kept delivery moving while exposing the states, inputs and behaviors the supported system needed.</p>
+            <p>Those requirements informed official Helios components that were completed, merged, versioned and published. Product teams could then repoint to the supported implementation rather than rework active features.</p>
             <p>Preparing Tangles for onboarding, following a major Angular upgrade, surfaced localization and right-to-left requirements. Meeting them before the team adopted meant the foundation was ready when they arrived. Desktop used the same Figma variables, although translating them into XAML remained manual because the UX team did not own that markup.</p>
-            <p>Feature work also revealed reusable patterns for timelines, filtering, notifications, data visualization, and geographic mapping. Those patterns could return to Helios instead of remaining one-off solutions.</p>
+            <p>Feature work also revealed reusable patterns for timelines, filtering, notifications, data visualization and geographic mapping. Those patterns could return to Helios instead of remaining one-off solutions.</p>
           </div>
 
-          <figure class="mt-12 border border-border bg-card">
+          <figure class="border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">Fig 4. The Loop</span>
               <span class="text-right text-foreground">Figma, Angular, products</span>
             </div>
             <div class="flex justify-center bg-secondary p-6">
-              <svg viewBox="0 0 480 445" class="w-full max-w-[30rem] mx-auto h-auto block" role="img" aria-label="Figma, Angular, and products arranged in a continuous cycle, each feeding the next.">
+              <svg viewBox="0 0 480 445" class="w-full max-w-[30rem] mx-auto h-auto block" role="img" aria-label="Figma, Angular and products arranged in a continuous cycle, each feeding the next.">
                 <defs>
                   <marker id="helios-loop-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
                     <path d="M0 0 L10 5 L0 10 Z" fill="var(--primary)" />
@@ -277,14 +277,14 @@
               <div class="space-y-1"><dt class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Angular</dt><dd class="text-sm text-muted-foreground leading-relaxed">APIs, accessibility, responsive, i18n, RTL.</dd></div>
               <div class="space-y-1"><dt class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Products</dt><dd class="text-sm text-muted-foreground leading-relaxed">Real workflows, new requirements.</dd></div>
             </dl>
-            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">Each surface fed the next, and product requirements returned to Figma rather than stopping at the product.</figcaption>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">Each surface fed the next and product requirements returned to Figma rather than stopping at the product.</figcaption>
           </figure>
 
           <blockquote class="border-l-2 border-primary bg-secondary px-6 py-5">
-            <p class="font-serif text-xl font-normal leading-[1.4] text-foreground">Production code became research: product constraints improved Helios, and Helios returned those lessons as shared infrastructure.</p>
+            <p class="font-serif text-xl font-normal leading-[1.4] text-foreground">Production code became research: product constraints improved Helios and Helios returned those lessons as shared infrastructure.</p>
           </blockquote>
 
-          <figure class="mt-12 border border-border bg-card">
+          <figure class="border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">Fig 5. One Component, End to End</span>
               <span class="text-right text-foreground">plds-button</span>
@@ -292,40 +292,40 @@
             <div class="grid gap-px bg-border">
               <div class="min-w-0 space-y-3 bg-secondary p-6">
                 <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Guidelines</div>
-                <p class="text-sm text-muted-foreground leading-relaxed">Fifteen sections when a component needs all of them, as the button does. Anatomy, hierarchy, badge, contrast, icons, microcopy, interactive states, labels and overflow, spacing, touch targets and responsive behavior, motion, and accessibility are among them. Each one carries worked examples.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-btn-guidelines.webp" alt="Button guidelines page with an on-this-page rail listing fifteen sections: anatomy, when to use, badge, color contrast, icons, microcopy, interactive states, labels and overflow, spacing between buttons, touch targets and responsive, motion, accessibility, examples, use type for hierarchy, and label microcopy. Visible below are a labelled anatomy diagram, a when-to-use table for the five button types, and a contrast table reporting 4.59:1 AA for primary, 8.85:1 AAA for secondary, and 10.47:1 AAA for tertiary." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="1014" height="1028" /></div>
+                <p class="text-sm text-muted-foreground leading-relaxed">Fifteen sections when a component needs all of them, as the button does. Anatomy, hierarchy, badge, contrast, icons, microcopy, interactive states, labels and overflow, spacing, touch targets and responsive behavior, motion and accessibility are among them. Each one carries worked examples.</p>
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-btn-guidelines.webp" alt="Button guidelines page with an on-this-page rail listing fifteen sections: anatomy, when to use, badge, color contrast, icons, microcopy, interactive states, labels and overflow, spacing between buttons, touch targets and responsive, motion, accessibility, examples, use type for hierarchy and label microcopy. Visible below are a labelled anatomy diagram, a when-to-use table for the five button types and a contrast table reporting 4.59:1 AA for primary, 8.85:1 AAA for secondary and 10.47:1 AAA for tertiary." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="1014" height="1028" /></div>
               </div>
               <div class="min-w-0 space-y-3 bg-secondary p-6">
                 <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Demo</div>
                 <p class="text-sm text-muted-foreground leading-relaxed">Every input exercisable against the real component. Output is copy-ready markup.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-btn-demo.webp" alt="Interactive demo tab with controls for type, size, icon, label, badge, and state beside a live rendered button and the matching plds-button markup." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="799" height="770" /></div>
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-btn-demo.webp" alt="Interactive demo tab with controls for type, size, icon, label, badge and state beside a live rendered button and the matching plds-button markup." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="799" height="770" /></div>
               </div>
               <div class="min-w-0 space-y-3 bg-secondary p-6">
                 <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Code</div>
                 <p class="text-sm text-muted-foreground leading-relaxed">Props scanned from the source. Deprecations carry their migration path.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-btn-code.webp" alt="Code tab listing every component input with type, description, and default, including a deprecation note explaining that the transparent type is kept for published-contract parity and removed in a later generation." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="1014" height="878" /></div>
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-btn-code.webp" alt="Code tab listing every component input with type, description and default, including a deprecation note explaining that the transparent type is kept for published-contract parity and removed in a later generation." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="1014" height="878" /></div>
               </div>
               <div class="min-w-0 space-y-3 bg-secondary p-6">
                 <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Resources</div>
                 <p class="text-sm text-muted-foreground leading-relaxed">The same documentation served as machine-readable files for coding agents.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-btn-resources.webp" alt="Resources tab linking the Figma reference, build log, and contract diff, plus a For AI agents section offering llms.txt, contracts.json, and migrations.json." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="739" height="580" /></div>
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-btn-resources.webp" alt="Resources tab linking the Figma reference, build log and contract diff, plus a For AI agents section offering llms.txt, contracts.json and migrations.json." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="739" height="580" /></div>
               </div>
             </div>
             <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">What a component looked like once the loop had run. Contrast ratios were measured from the live tokens. The props table was read from the component source, so the parts that usually go stale could not drift from it. The same six tabs carried across component pages.</figcaption>
           </figure>
           <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
-            <p>The open question was whether the documentation itself was robust, not just the system behind it. Benchmarking answered it: reading what the leading systems publish for a single component, then deciding which of those expectations Helios should adopt. Carbon, Material 3, and Polaris set the reference, and comparing against them turned a vague sense of incompleteness into a list the team could act on.</p>
+            <p>The open question was whether the documentation itself was robust, not just the system behind it. Benchmarking answered it: reading what the leading systems publish for a single component, then deciding which of those expectations Helios should adopt. Carbon, Material 3 and Polaris set the reference and comparing against them turned a vague sense of incompleteness into a list the team could act on.</p>
           </div>
 
-          <figure class="mt-12 border border-border bg-card">
+          <figure class="border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">Fig 6. Documentation Benchmark</span>
               <span class="text-right text-foreground">Self-scored · reviewed July 2026</span>
             </div>
             <div class="bg-secondary p-6">
-              <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-benchmark.webp" alt="Benchmark table for the Helios button documentation, scored against the public documentation of IBM Carbon, Google Material 3, and Shopify Polaris on the axes a mature component page is expected to cover. Helios is marked full on anatomy, hierarchy, states, API reference, do and don't examples, microcopy, interactive playground, and accessibility depth, and partial on touch target and responsive behavior and on layout composition, both flagged as axes where Helios trails. Totals: Helios 11 axes full and 4 partial, Carbon 10 full and 3 partial, Material 3 10 full and 3 partial, Polaris 9 full and 4 partial." class="w-full h-auto min-w-[34rem]" loading="lazy" decoding="async" width="1009" height="812" /></div>
+              <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-benchmark.webp" alt="Benchmark table for the Helios button documentation, scored against the public documentation of IBM Carbon, Google Material 3 and Shopify Polaris on the axes a mature component page is expected to cover. Helios is marked full on anatomy, hierarchy, states, API reference, do and don't examples, microcopy, interactive playground and accessibility depth and partial on touch target and responsive behavior and on layout composition, both flagged as axes where Helios trails. Totals: Helios 11 axes full and 4 partial, Carbon 10 full and 3 partial, Material 3 10 full and 3 partial, Polaris 9 full and 4 partial." class="w-full h-auto min-w-[34rem]" loading="lazy" decoding="async" width="1009" height="812" /></div>
             </div>
-            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">An internal audit scoring the Helios button page against the public documentation of Carbon, Material 3, and Polaris, on the axes a mature component page is expected to cover. The axes where Helios trailed were left visible, so the gaps stayed on the roadmap.</figcaption>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">An internal audit scoring the Helios button page against the public documentation of Carbon, Material 3 and Polaris, on the axes a mature component page is expected to cover. The axes where Helios trailed were left visible, so the gaps stayed on the roadmap.</figcaption>
           </figure>
 
         </section>
@@ -338,11 +338,11 @@
             <span class="h-px flex-1 bg-border"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
-            <p>A component dashboard gathered audits, live demos, playgrounds, documentation, readiness, publishing information, and product usage in one place. Adoption became something the team could track instead of estimate. Claude handled recurring repository scans. Those scans separated direct adoption candidates from similar implementations that needed design and API review.</p>
-            <p>When a product required behavior Helios did not yet support, the component contract gained properties so the product could adopt without a breaking change. The debt stayed in the system rather than disappearing into individual products. Paying it down was the system's work, and no product team carried that weight.</p>
+            <p>A component dashboard gathered audits, live demos, playgrounds, documentation, readiness, publishing information and product usage in one place. Adoption became something the team could track instead of estimate. Claude handled recurring repository scans. Those scans separated direct adoption candidates from similar implementations that needed design and API review.</p>
+            <p>When a product required behavior Helios did not yet support, the component contract gained properties so the product could adopt without a breaking change. The debt stayed in the system rather than disappearing into individual products. Paying it down was the system's work and no product team carried that weight.</p>
           </div>
 
-          <figure class="mt-12 border border-border bg-card">
+          <figure class="border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">Fig 7. Adoption Path</span>
               <span class="text-right text-foreground">Product → system → product</span>
@@ -393,7 +393,7 @@
             <p>Designers evaluated components against shared design principles and the <a routerLink="/work/analysis-workflow" class="text-primary underline underline-offset-2 transition-colors hover:text-foreground">investigative workflow research</a>, then used the resolved decisions to refine both the Figma components and production Angular code. Recorded discussions allowed Claude to capture agreed actions and reusable documentation while the team stayed present in the critique. Components returned to UX for final approval after implementation. That kept Figma intent and coded behavior connected.</p>
           </div>
 
-          <figure class="mt-12 border border-border bg-card">
+          <figure class="border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">Fig 8. Readiness and Usage in One Place</span>
               <span class="text-right text-foreground">Component dashboard</span>
@@ -401,8 +401,8 @@
             <div class="grid gap-px bg-border">
               <div class="min-w-0 space-y-3 bg-secondary p-6">
                 <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Readiness</div>
-                <p class="text-sm text-muted-foreground leading-relaxed">Every component graded on the same axes: publish state, contract, visual fidelity, accessibility, internationalization and RTL, interaction and state, and theming.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-readiness-matrix.webp" alt="Readiness matrix listing components down the left and grading each across auto signals, publish state, contract, visual fidelity, accessibility, internationalization and RTL, interaction and state, and theming. Button, Button Menu, Checkbox, and List Group are marked shipped; Dropdown, Icon Close, and List Item show no checklist yet." class="w-full h-auto min-w-[36rem]" loading="lazy" decoding="async" width="1013" height="974" /></div>
+                <p class="text-sm text-muted-foreground leading-relaxed">Every component graded on the same axes: publish state, contract, visual fidelity, accessibility, internationalization and RTL, interaction and state and theming.</p>
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-readiness-matrix.webp" alt="Readiness matrix listing components down the left and grading each across auto signals, publish state, contract, visual fidelity, accessibility, internationalization and RTL, interaction and state and theming. Button, Button Menu, Checkbox and List Group are marked shipped; Dropdown, Icon Close and List Item show no checklist yet." class="w-full h-auto min-w-[36rem]" loading="lazy" decoding="async" width="1013" height="974" /></div>
               </div>
               <div class="min-w-0 space-y-3 bg-secondary p-6">
                 <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Usage</div>
@@ -425,9 +425,9 @@
             <p>Before Helios, engineers rebuilt the same components in every product. Matching an implementation to its design took days of design feedback per feature. The loop between design and engineering stayed clogged. Features shipped at whatever quality the remaining time allowed.</p>
             <p>Afterward, that refinement happened once in a meeting that already existed. Designers stopped re-explaining the same design to developers and spent that time on the next user problem. Developers got that time back for backend work, not two pixels of padding and a wrong border color.</p>
             <p>The system also gave the team a shared way to describe what a product needed to do, so requirements moved into prototype review instead of being written up separately.</p>
-            <p>The system was new enough that reach was the result worth reporting: a decision made in a UX critique arrived in production intact. A product team shipped a customer-facing release consuming the published Helios library, and those components carried the same decisions defined in Figma.</p>
-            <p>Working prototypes gave product, design, and engineering a shared artifact for building stakeholder support and clarifying product needs. In-house analysts and other users could walk through proposed workflows while the team refined the experience in real time.</p>
-            <p>The wider payoff was still ahead. Helios gave a four-person design team a supported path to carry reusable decisions across the product organization. Tangles was next, and the preparation was already underway.</p>
+            <p>The system was new enough that reach was the result worth reporting: a decision made in a UX critique arrived in production intact. A product team shipped a customer-facing release consuming the published Helios library. Those components carried the same decisions defined in Figma.</p>
+            <p>Working prototypes gave product, design and engineering a shared artifact for building stakeholder support and clarifying product needs. In-house analysts and other users could walk through proposed workflows while the team refined the experience in real time.</p>
+            <p>The wider payoff was still ahead. Helios gave a four-person design team a supported path to carry reusable decisions across the product organization. Tangles was next. The preparation was already underway.</p>
           </div>
 
           <div class="space-y-4 pt-2">
@@ -437,7 +437,7 @@
               <p class="flex gap-3 text-sm text-muted-foreground leading-relaxed"><span class="shrink-0 text-primary">→</span><span><strong class="text-foreground font-medium">A clean system vs. incremental adoption.</strong> Rebuilding every product was not realistic with 150+ engineers actively shipping, so Helios coexisted with legacy UI.</span></p>
               <p class="flex gap-3 text-sm text-muted-foreground leading-relaxed"><span class="shrink-0 text-primary">→</span><span><strong class="text-foreground font-medium">Coverage vs. quality.</strong> The four-person team prioritized high-reuse foundations rather than systematizing every interface.</span></p>
               <p class="flex gap-3 text-sm text-muted-foreground leading-relaxed"><span class="shrink-0 text-primary">→</span><span><strong class="text-foreground font-medium">Control vs. team autonomy.</strong> Governance needed enough structure to preserve coherence without making Helios a bottleneck.</span></p>
-              <p class="flex gap-3 text-sm text-muted-foreground leading-relaxed"><span class="shrink-0 text-primary">→</span><span><strong class="text-foreground font-medium">Automation vs. human judgment.</strong> Claude reduced repeated scanning and documentation work, while product logic, accessibility, responsive behavior, and edge cases remained human decisions.</span></p>
+              <p class="flex gap-3 text-sm text-muted-foreground leading-relaxed"><span class="shrink-0 text-primary">→</span><span><strong class="text-foreground font-medium">Automation vs. human judgment.</strong> Claude reduced repeated scanning and documentation work, while product logic, accessibility, responsive behavior and edge cases remained human decisions.</span></p>
             </div>
           </div>
 
@@ -450,7 +450,7 @@
             </ul>
           </div>
 
-          <p class="pt-2 font-serif text-statement font-normal leading-[1.3] text-foreground">The value of Helios was not the size of its library. It was the ability to make a design decision once, verify it in production code, and give many teams a supported foundation to build from.</p>
+          <p class="pt-2 font-serif text-statement font-normal leading-[1.3] text-foreground">The value of Helios was not the size of its library. It was the ability to make a design decision once, verify it in production code and give many teams a supported foundation to build from.</p>
         </section>
 
         <section class="space-y-6 scroll-mt-32" id="next">
@@ -460,11 +460,11 @@
             <span class="h-px flex-1 bg-border"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
-            <p>Helios answered a question about duplication between products. Working on it raised another one: if the system already defines the components, tokens, states, and contracts, how much else can be built directly from it?</p>
-            <p>Orbit was the attempt to answer that. A separate workspace for working through a feature with Claude as a partner across the whole effort rather than one session at a time, with the work saved between sessions so nothing had to be re-explained, and a prototype as the output.</p>
-            <p>The point was what the prototype was made of. Assembled from published Helios components, it can only do what the system actually supports, so it cannot promise behavior that does not exist. When someone had to build something locally to finish an idea, that marked a gap in the system, and it came back as a contribution. Prototypes could draw on Helios directly or on local components made while exploring, which kept the difference between the two visible.</p>
+            <p>Helios answered a question about duplication between products. Working on it raised another one: if the system already defines the components, tokens, states and contracts, how much else can be built directly from it?</p>
+            <p>Orbit was the attempt to answer that. A separate workspace for working through a feature with Claude as a partner across the whole effort rather than one session at a time, with the work saved between sessions so nothing had to be re-explained and a prototype as the output.</p>
+            <p>The point was what the prototype was made of. Assembled from published Helios components, it can only do what the system actually supports, so it cannot promise behavior that does not exist. When someone had to build something locally to finish an idea, that marked a gap in the system. It came back as a contribution. Prototypes could draw on Helios directly or on local components made while exploring, which kept the difference between the two visible.</p>
             <p>We started building it. It did not ship.</p>
-            <p>It is recorded here because the direction is the part worth keeping. A design system earns its cost when a decision made once keeps paying out, and this was an attempt to find how much further that could go. A fuller write-up of <a routerLink="/work/orbit" class="text-primary underline underline-offset-2 transition-colors hover:text-foreground">Orbit</a> is coming soon.</p>
+            <p>It is recorded here because the direction is the part worth keeping. A design system earns its cost when a decision made once keeps paying out. This was an attempt to find how much further that could go. A fuller write-up of <a routerLink="/work/orbit" class="text-primary underline underline-offset-2 transition-colors hover:text-foreground">Orbit</a> is coming soon.</p>
           </div>
         </section>
 
