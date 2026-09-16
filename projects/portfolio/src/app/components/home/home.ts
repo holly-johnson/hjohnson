@@ -35,9 +35,9 @@ export class Home {
       link: '/work/helios',
       linkLabel: 'Read the full case study',
       facts: [
-        { label: 'ROLE', value: 'Senior UX Designer' },
+        { label: 'ROLE', value: 'Design system architecture, design tokens, accessibility, governance' },
         { label: 'YEAR', value: '2023–2026' },
-        { label: 'OUTCOME', value: 'Figma decisions shipped as Angular components', accent: true },
+        { label: 'OUTCOME', value: 'Figma decisions shipped as Angular components' },
       ],
     },
     {
@@ -50,7 +50,7 @@ export class Home {
       tag: 'RESEARCH',
       link: '/work/analysis-workflow',
       linkLabel: 'Read the research',
-      facts: [{ label: 'ROLE', value: 'Senior UX Designer' }],
+      facts: [{ label: 'OUTCOME', value: 'One shared picture of the work, in front of every team that touches it' }],
     },
     {
       id: '3',
@@ -62,7 +62,7 @@ export class Home {
       tag: 'DESIGN SYSTEM',
       link: '/work/nucleus',
       linkLabel: 'Read the case study',
-      facts: [{ label: 'ROLE', value: 'Digital Design System Specialist' }],
+      facts: [{ label: 'OUTCOME', value: 'The CMS and team changed. The foundation didn’t.' }],
     },
     {
       id: '4',
@@ -71,13 +71,10 @@ export class Home {
       discipline: ['Product Design', 'UX Research', 'Front-End Development'],
       description: 'A learning management system rebuilt for the University of Nebraska High School, serving students, teachers, customer service, administrators and instructional designers.',
       impact: 'Analytics on the legacy application showed almost no traffic on paths stakeholders had called essential, which reset the requirements around the actual work.',
-      tag: 'PRODUCT',
+      tag: 'PRODUCT DESIGN',
       link: '/work/theorem',
       linkLabel: 'Read the case study',
-      facts: [
-        { label: 'ROLE', value: 'Lead Web Designer / Developer' },
-        { label: 'OUTCOME', value: 'Student success drove every decision, replacing a decades-old system' },
-      ],
+      facts: [{ label: 'OUTCOME', value: 'Student success drove every decision, replacing a decades-old system' }],
     },
   ];
 
