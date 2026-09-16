@@ -51,3 +51,8 @@ AGENTS.md
 
 # Local source archive (originals stay recoverable from git history)
 _archive/
+
+# Claude Design prototypes and the handoff notes that go with them. Local only: this
+# repo is public, and DIFF-*.md carries working notes on positioning and on which
+# pages are still unpublished. See design-baseline/README.md for the procedure.
+design-baseline/
