@@ -30,59 +30,89 @@ export class About {
   // The h1 carries the through-line, so the lede picks up where it lands rather
   // than restating it. The title line under the name carries the role label.
   protected readonly lede = [
-    'I didn’t take a particularly straight path to product design.',
-    'The work is finding the system inside a complicated problem, then building enough structure to make it hold.',
-    'Then staying long enough to see what it does to the teams who inherit it.',
-  ].join(' ');
+    'I’ve always loved learning, solving problems and finding ways to help the people around me.',
+    'For a long time, I thought law would be how I did that. I was fascinated by it, but I also saw it as a way to serve my community and take some responsibility for how the systems around me work.',
+    'Then I started learning the web.',
+    'Yes, with Adobe Dreamweaver.',
+    'But learning the web was never really about learning the web. It gave me a way to solve problems I already cared about. How could this be easier for someone? How could we get people the information they needed? How could technology help an organization serve them better?',
+    'The tools changed as I learned more. The questions really haven’t.',
+  ];
 
   protected readonly sections: AboutSection[] = [
     {
       num: '01',
-      heading: 'How I got here',
+      heading: 'The website that changed my career',
       body: [
-        'Law came first. Then code. Then UX. Eventually, design systems gave a name to the kind of work I’d already been gravitating toward: understanding complicated things, finding the connections between them and creating enough structure to make the whole thing work better.',
-        'A lot of my career has been spent designing investigative software. These are complex products with complex users, enormous amounts of information and workflows where context matters. I learned to get comfortable not knowing the answer right away. Ask questions. Follow the workflow. Talk to the people who know it best. Understand why something works the way it does before deciding how it should work.',
-        'That way of thinking has stuck.',
+        'My first career was in the Legal and Enforcement Division of the Nebraska Liquor Control Commission. I prepared cases for the Assistant Attorney General and coordinated background investigations with the Nebraska State Patrol. I was on a pre-law track and expected law to be the work.',
+        'Accessibility entered the picture there as law first. I learned about Section 508 and the ADA before I knew much about design or code.',
+        'Then the agency redesigned its public website.',
+        'I got involved, started learning how the web worked and discovered that design and code gave me another way to solve the kinds of problems I already cared about. We also consulted with the Nebraska Commission for the Blind and Visually Impaired about how blind people actually used our websites. It made accessibility tangible in a way reading the requirements couldn’t.',
+        'That website changed the direction of my career.',
+        'Design and code arrived together, and they’ve stayed together ever since.',
       ],
     },
     {
       num: '02',
-      heading: 'I tend to find the system inside the problem.',
+      heading: 'Complex products need more than good screens.',
       body: [
-        'Give me a messy workflow, a collection of products that have grown apart or five teams solving versions of the same problem. I immediately want to understand how the pieces relate.',
-        'That instinct is what pulled me toward design systems.',
-        'What started as noticing inconsistencies in interfaces became much bigger questions about how teams build products together. How do design decisions make it into code? Where does intent get lost? What should be shared and what genuinely needs to be different? How do you create consistency without making every product the same?',
-        'The components matter. The relationships around them matter more.',
-        'My best work tends to happen in that space between design and engineering, where understanding both sides can turn a good idea into something teams can actually build, use and evolve.',
+        'What followed was years of building for the web, including six years teaching web design and front-end development while working in the field myself. My work stayed close to public service through government and education, while the problems I was solving grew from websites into increasingly complex products.',
+        'Eventually, that brought me back surprisingly close to where I started: law, investigations and evidence, this time through software.',
+        'Investigative products brought enormous amounts of information, specialized users and workflows where context matters. You can’t understand that kind of work from a requirements document alone.',
+        'Ask questions. Follow the workflow. Sit with the people doing the work. Understand why something works the way it does before deciding how it should work.',
+        'That’s still how I approach complex products today.',
       ],
     },
     {
       num: '03',
-      heading: 'The part after launch matters to me.',
+      heading: 'Sometimes the system is the problem.',
       body: [
-        'Building the foundation is satisfying. Seeing what happens to it is even more interesting.',
-        'Did people adopt it? Did it solve the problem we thought it would? What broke when the next product came along? What did we learn from the first version that changes the second? Does the thing we built still make sense when three teams become thirty?',
-        'I want those answers.',
-        'I want enough ownership to see the consequences of the decisions I helped make and enough runway to do something with what we learn.',
+        'Give me a collection of products that have grown apart or five teams solving versions of the same problem, and I want to understand how the pieces relate.',
+        'That’s what pulled me toward design systems.',
+        'What started as inconsistencies in interfaces quickly became bigger questions about how teams build software together. How do design decisions make it into code? Where does intent get lost? What should be shared and what genuinely needs to be different? How do you create consistency without making every product the same?',
+        'That’s also where all those years of code became useful in a different way.',
+        'My best work tends to happen in the space between design and engineering, where product thinking, design and implementation meet. Components and tokens are part of that work, but the goal is bigger: creating a foundation that helps teams build better products together.',
       ],
     },
     {
       num: '04',
-      heading: 'Accessibility started as law, not craft.',
+      heading: 'The part after launch matters.',
       body: [
-        'It arrived as something to study on a pre-law track, before design or code entered the picture.',
-        'Then it became practice. The state website work began with it rather than adding it afterward. Six years of teaching web design and front-end development meant teaching it too.',
-        'Now it lives in the components. Focus management, ARIA, modal focus-trapping, localization and right-to-left support, built into shared infrastructure so a foundation-level fix reaches every product consuming it. Screen by screen is the expensive way to do it.',
+        'Building something is only the beginning.',
+        'Did people adopt it? Did it actually make their work easier? What broke when the next product came along? What did we learn from the first version that should change the second? Does something built for three teams still work for thirty?',
+        'I want those answers.',
+        'I want enough ownership to see the consequences of the decisions I helped make and enough runway to do something with what we learn.',
+        'The next version is usually more interesting to me than the first.',
       ],
     },
     {
       num: '05',
-      heading: 'There’s a person outside the product work, too.',
+      heading: 'Accessibility has been there from the beginning.',
       body: [
-        'I’m based in Lincoln, Nebraska, where life includes my husband, two kids, a garden that is always becoming some new experiment and a habit of getting involved when something in my community catches my attention.',
-        'That curiosity follows me pretty much everywhere. I like understanding how things work, why they work that way and whether there might be a better way to do them.',
-        'Sometimes that means digging into a product architecture. Sometimes it means organizing people around a community problem. Sometimes it means standing in my garden wondering why a cucumber has decided to take over an entire raised bed.',
-        'Apparently, I have a type.',
+        'Accessibility is one of the few threads that reaches all the way back to my first career.',
+        'It started with law. Then it became something I had to understand as a person building for the web. Later, I taught it. Product design brought it into increasingly complex experiences, and design systems gave me a way to address it at scale.',
+        'Today, focus management, semantic structure, ARIA, keyboard behavior, localization and right-to-left support can be built into shared foundations instead of solved again on every screen.',
+        'A foundation-level improvement can reach every product that inherits it.',
+        'That’s the kind of scale I like.',
+      ],
+    },
+    {
+      num: '06',
+      heading: 'It still comes back to people.',
+      body: [
+        'Better technology can make a team faster. It can make an organization more efficient. It can help people find information, understand something complicated or spend less time fighting with the software they need to do their jobs.',
+        'In government and education, those improvements reach even further. Better software can help public institutions make better use of limited resources and be more responsible with the time and money people have entrusted to them.',
+        'That mattered to me before I knew how to build any of it.',
+        'It still does.',
+      ],
+    },
+    {
+      num: '07',
+      heading: 'Outside the product work',
+      body: [
+        'I’m based in Lincoln, Nebraska, with my husband, two kids and a garden that is always becoming some new experiment.',
+        'The question-asking doesn’t stop when I close my laptop. When something catches my attention, I tend to want to understand it and, usually, do something with what I learn.',
+        'Sometimes that means getting involved in my community. Sometimes it means starting a new project. Sometimes it means standing in my garden debating whether I should, once again, give the tomatoes more square footage.',
+        'Apparently, curiosity is a permanent condition.',
       ],
     },
   ];
