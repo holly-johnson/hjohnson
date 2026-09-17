@@ -30,8 +30,9 @@ export class About {
   // The h1 carries the through-line, so the lede picks up where it lands rather
   // than restating it. The title line under the name carries the role label.
   protected readonly lede = [
-    'The same instinct each time: make the record hold its shape.',
-    'Most of that work has been investigative software: platforms where a finding has to carry its sources with it and still hold up years later.',
+    'I didn’t take a particularly straight path to product design.',
+    'The work is finding the system inside a complicated problem, then building enough structure to make it hold.',
+    'Then staying long enough to see what it does to the teams who inherit it.',
   ].join(' ');
 
   protected readonly sections: AboutSection[] = [
@@ -39,45 +40,49 @@ export class About {
       num: '01',
       heading: 'How I got here',
       body: [
-        'Law came first. Legal Assistant in the Legal and Enforcement Division of the Nebraska Liquor Control Commission, preparing cases for the Assistant Attorney General and coordinating applicant background investigations, while on a pre-law track.',
-        'Then in 2011 the agency redesigned its public website. That redesign redirected everything. Design and code arrived together rather than in sequence, which is why the titles that followed usually carried both words.',
-        'Communications design at the Nebraska Department of Education came next. Then more than five years at the University of Nebraska System, as Web Designer / Developer and then Lead. NUcleus started there. Penlink followed, where the investigative products and Helios were the work.',
+        'Law came first. Then code. Then UX. Eventually, design systems gave a name to the kind of work I’d already been gravitating toward: understanding complicated things, finding the connections between them and creating enough structure to make the whole thing work better.',
+        'A lot of my career has been spent designing investigative software. These are complex products with complex users, enormous amounts of information and workflows where context matters. I learned to get comfortable not knowing the answer right away. Ask questions. Follow the workflow. Talk to the people who know it best. Understand why something works the way it does before deciding how it should work.',
+        'That way of thinking has stuck.',
       ],
     },
     {
       num: '02',
-      heading: 'What the work has in common',
+      heading: 'I tend to find the system inside the problem.',
       body: [
-        'Law, history, investigative software, design systems. Four subjects, one instinct applied four times.',
-        'The instinct is the durable record. A decision, a finding or a standard that still means the same thing years later, under challenge, after the people who made it have moved on.',
-        'Investigative work makes that literal. A finding has to carry its sources and its reasoning, because someone will question it long after the analyst closed the case. A design system makes it structural. Encode a decision once, so the next team inherits it instead of reinterpreting it.',
+        'Give me a messy workflow, a collection of products that have grown apart or five teams solving versions of the same problem. I immediately want to understand how the pieces relate.',
+        'That instinct is what pulled me toward design systems.',
+        'What started as noticing inconsistencies in interfaces became much bigger questions about how teams build products together. How do design decisions make it into code? Where does intent get lost? What should be shared and what genuinely needs to be different? How do you create consistency without making every product the same?',
+        'The components matter. The relationships around them matter more.',
+        'My best work tends to happen in that space between design and engineering, where understanding both sides can turn a good idea into something teams can actually build, use and evolve.',
       ],
     },
     {
       num: '03',
-      heading: 'How I work',
+      heading: 'The part after launch matters to me.',
       body: [
-        'Designer and developer, both, from the start. Design decisions get tested against the code that has to carry them. The handoff is short because there is less to hand off.',
-        'The favorite part of the job is partnering with a leader who has a direction, then turning it into something a team can actually build. Figma architecture and token systems sit on one side. Production Angular and SCSS sit on the other. Governance holds the middle: a contribution model, versioned releases and a roadmap teams can adopt without pausing feature work.',
-        'AI belongs in that toolkit the way any other tool does. At Penlink that meant directing Claude through MCP to turn structured system information into production Angular. The same setup ran recurring adoption scans, so system debt stayed visible rather than buried. Onboarding other designers onto it had to wait until enough of the system existed in code to prototype against. Half the design team had started working that way by the time I left.',
+        'Building the foundation is satisfying. Seeing what happens to it is even more interesting.',
+        'Did people adopt it? Did it solve the problem we thought it would? What broke when the next product came along? What did we learn from the first version that changes the second? Does the thing we built still make sense when three teams become thirty?',
+        'I want those answers.',
+        'I want enough ownership to see the consequences of the decisions I helped make and enough runway to do something with what we learn.',
       ],
     },
     {
       num: '04',
-      heading: 'Where accessibility started',
+      heading: 'Accessibility started as law, not craft.',
       body: [
-        'Accessibility arrived as law, not as craft. It was something to study on a pre-law track, before design or code entered the picture.',
+        'It arrived as something to study on a pre-law track, before design or code entered the picture.',
         'Then it became practice. The state website work began with it rather than adding it afterward. Six years of teaching web design and front-end development meant teaching it too.',
         'Now it lives in the components. Focus management, ARIA, modal focus-trapping, localization and right-to-left support, built into shared infrastructure so a foundation-level fix reaches every product consuming it. Screen by screen is the expensive way to do it.',
       ],
     },
     {
       num: '05',
-      heading: 'Outside the work',
+      heading: 'There’s a person outside the product work, too.',
       body: [
-        'History is still there. So is the law that started all of it. Heather Cox Richardson and Jack Smith testimony for fun. That interest never went anywhere. It just stopped being the career.',
-        'Gardening. And a collection of crystals and gems that keeps growing.',
-        "Mostly, though, time with my kids. They're the best of it.",
+        'I’m based in Lincoln, Nebraska, where life includes my husband, two kids, a garden that is always becoming some new experiment and a habit of getting involved when something in my community catches my attention.',
+        'That curiosity follows me pretty much everywhere. I like understanding how things work, why they work that way and whether there might be a better way to do them.',
+        'Sometimes that means digging into a product architecture. Sometimes it means organizing people around a community problem. Sometimes it means standing in my garden wondering why a cucumber has decided to take over an entire raised bed.',
+        'Apparently, I have a type.',
       ],
     },
   ];
