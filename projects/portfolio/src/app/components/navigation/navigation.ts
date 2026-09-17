@@ -3,7 +3,6 @@ import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs';
 import { ThemeService } from '../../theme.service';
-import { showUnpublished } from '../../unpublished.content';
 
 interface NavLink {
   path: string;
@@ -26,10 +25,9 @@ export class Navigation {
   protected readonly scrolled = signal(false);
   protected readonly url = signal(this.router.url);
 
-  // About is not ready to publish, so its route is dev-only. See unpublished.routes.ts.
   protected readonly links: NavLink[] = [
     { path: '/', fragment: 'work', label: 'Work', match: '/#work' },
-    ...(showUnpublished ? [{ path: '/about', label: 'About', match: '/about' }] : []),
+    { path: '/about', label: 'About', match: '/about' },
     { path: '/resume', label: 'Resume', match: '/resume' },
   ];
 

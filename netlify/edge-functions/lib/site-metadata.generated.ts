@@ -45,6 +45,13 @@ export const siteMetadata = {
       "image": "/assets/social/home.png"
     },
     {
+      "path": "/about",
+      "kind": "profile",
+      "title": "About · Holly Johnson",
+      "description": "How Holly Johnson went from preparing cases in a state law enforcement division to leading design systems, and why accessibility and public service run through all of it.",
+      "image": "/assets/social/home.png"
+    },
+    {
       "path": "/resume",
       "kind": "profile",
       "title": "Resume · Holly Johnson",

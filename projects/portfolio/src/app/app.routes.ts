@@ -16,6 +16,11 @@ export const routes: Routes = [
     ...seoFor('/'),
   },
   {
+    path: 'about',
+    loadComponent: () => import('./components/about/about').then(m => m.About),
+    ...seoFor('/about'),
+  },
+  {
     path: 'resume',
     loadComponent: () => import('./components/resume/resume').then(m => m.Resume),
     ...seoFor('/resume'),

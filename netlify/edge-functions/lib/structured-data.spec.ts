@@ -46,7 +46,7 @@ describe('structuredDataFor', () => {
   });
 
   it('describes only published pages', () => {
-    expect(pageFor('/about')).toBeUndefined();
+    expect(pageFor('/field-notes')).toBeUndefined();
   });
 });
 

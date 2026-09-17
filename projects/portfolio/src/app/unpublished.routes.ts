@@ -11,8 +11,7 @@ import { Routes } from '@angular/router';
  *
  * Anything listed here must also be hidden from whatever links to it, or production
  * gets a dead link to a page that no longer exists. Those call sites gate on
- * `isDevMode()` and reference this comment:
- *   - `navigation.ts` drops the About link
+ * `showUnpublished` and reference this comment:
  *   - `home.ts` drops the unpublished projects from Selected Work
  *
  * These routes carry their own metadata rather than calling `seoFor()`, because
@@ -22,23 +21,11 @@ import { Routes } from '@angular/router';
  *
  * To publish one of these: add its entry to `seo/site-metadata.json`, move its
  * block into `app.routes.ts` replacing the inline metadata with `seoFor('/path')`,
- * and remove the matching `isDevMode()` gate at the call sites above. The edge
+ * and remove the matching `showUnpublished` gate at the call sites above. The edge
  * function needs no change — it reads the same file. `seo/consistency.spec.ts`
  * fails if any of those get out of step.
  */
 export const unpublishedRoutes: Routes = [
-  {
-    path: 'about',
-    loadComponent: () => import('./components/about/about').then(m => m.About),
-    title: 'About · Holly Johnson',
-    data: {
-      meta: {
-        description: 'About Holly Johnson, product designer and design systems lead.',
-        image: '/assets/social/home.png',
-        noIndex: true,
-      },
-    },
-  },
   {
     path: 'work/nebraska-edu',
     loadComponent: () => import('./components/work/nebraska-edu-case-study').then(m => m.NebraskaEduCaseStudy),

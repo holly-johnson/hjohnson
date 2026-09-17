@@ -75,7 +75,7 @@ describe('pageFor', () => {
   });
 
   it('returns nothing for an unpublished URL', () => {
-    expect(pageFor('/about')).toBeUndefined();
+    expect(pageFor('/field-notes')).toBeUndefined();
     expect(pageFor('/work/does-not-exist')).toBeUndefined();
   });
 });

@@ -64,8 +64,8 @@ describe('generated sitemap', () => {
     for (const from of Object.keys(siteMetadata.aliases)) {
       expect(sitemap).not.toContain(`<loc>${siteMetadata.origin}${from}</loc>`);
     }
-    expect(sitemap).not.toContain('/about');
     expect(sitemap).not.toContain('/field-notes');
+    expect(sitemap).not.toContain('/work/nebraska-edu');
   });
 });
 
