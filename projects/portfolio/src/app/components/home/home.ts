@@ -20,7 +20,7 @@ export class Home {
 
   protected readonly social = {
     linkedin: 'https://www.linkedin.com/in/holly-johnson-design/',
-    email: 'mailto:hme2784@gmail.com',
+    email: 'mailto:info@hjohnsondesign.com',
   };
 
   protected readonly projects: Project[] = [
