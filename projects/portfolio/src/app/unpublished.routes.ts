@@ -10,9 +10,10 @@ import { Routes } from '@angular/router';
  * not enough: the lazy chunks still shipped as static files anyone could fetch.
  *
  * Anything listed here must also be hidden from whatever links to it, or production
- * gets a dead link to a page that no longer exists. Those call sites gate on
- * `showUnpublished` and reference this comment:
- *   - `home.ts` drops the unpublished projects from Selected Work
+ * gets a dead link to a page that no longer exists. Right now the only such link is
+ * Nebraska.edu in Selected Work, and `home.ts` drops it by spreading
+ * `unpublishedProjects`, which the prod file swap empties. The `showUnpublished` flag
+ * in that same file is the tool for a link that has no list to hide inside.
  *
  * These routes carry their own metadata rather than calling `seoFor()`, because
  * they are deliberately absent from `seo/site-metadata.json` — that file is the
@@ -21,7 +22,7 @@ import { Routes } from '@angular/router';
  *
  * To publish one of these: add its entry to `seo/site-metadata.json`, move its
  * block into `app.routes.ts` replacing the inline metadata with `seoFor('/path')`,
- * and remove the matching `showUnpublished` gate at the call sites above. The edge
+ * and remove whatever hides its links at the call sites above. The edge
  * function needs no change — it reads the same file. `seo/consistency.spec.ts`
  * fails if any of those get out of step.
  */
