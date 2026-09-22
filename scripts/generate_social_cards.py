@@ -33,12 +33,14 @@ from PIL import Image, ImageDraw, ImageFont
 WIDTH, HEIGHT = 1200, 630
 MARGIN = 80
 
-# From projects/portfolio/src/styles.css, light theme. There is no orange here.
-BACKGROUND = "#FAF8F4"
-FOREGROUND = "#141412"
-MUTED = "#5E5A54"
-BORDER = "#E0DCD4"
-PRIMARY = "#2F6B4F"
+# From projects/portfolio/src/styles.css, the .dark theme. There is no orange
+# here. A share image cannot respond to the reader's theme, so this is a fixed
+# choice: the cards are the site at night.
+BACKGROUND = "#151515"
+FOREGROUND = "#F4F3F1"
+MUTED = "#A3A19D"
+BORDER = "#2A2A2A"
+PRIMARY = "#4E9B72"
 
 # Type steps, straight from styles.css. The name is the token name.
 TEXT_CAPTION = 11
