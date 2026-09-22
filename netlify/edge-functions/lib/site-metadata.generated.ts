@@ -40,8 +40,8 @@ export const siteMetadata = {
     {
       "path": "/",
       "kind": "profile",
-      "title": "Holly Johnson · Product Designer & Design Systems Lead",
-      "description": "Product designer and design systems lead turning complex product needs into shared systems that connect design and production.",
+      "title": "Holly Johnson · Product design, design systems and AI-assisted tooling",
+      "description": "Product design and design systems: Theorem, Helios and NUcleus. Design tokens, component libraries and the AI tooling built alongside them.",
       "image": "/assets/social/home.png?v=2"
     },
     {
