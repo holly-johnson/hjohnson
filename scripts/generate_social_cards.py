@@ -1,145 +1,301 @@
-"""Generate deterministic 1200x630 Open Graph cards for the portfolio."""
+"""Generate the 1200x630 Open Graph cards.
+
+A card is a promise about the page behind it, so these are built from the site's
+own tokens and the page's own hero copy: mono kicker, serif title, one-line
+subhead, hairline rule, mono footer. Nothing here is written for the card. If a
+page's hero changes, change it here too and re-run.
+
+    python3 scripts/generate_social_cards.py
+
+Fonts are the real ones the site loads, cached in scripts/.fonts on first run
+(git-ignored). Rendering with Arial instead is what made the previous set look
+like a different website.
+"""
+
+from __future__ import annotations
 
 from pathlib import Path
+from urllib.request import Request, urlopen
+import re
 
 from PIL import Image, ImageDraw, ImageFont
 
 
 WIDTH, HEIGHT = 1200, 630
-INK = "#171513"
-PAPER = "#F2EEE9"
-MUTED = "#C9C1B8"
-ACCENT = "#B04318"
-RUST = "#7A2C10"
-FONT_REGULAR = "/System/Library/Fonts/Supplemental/Arial.ttf"
-FONT_BOLD = "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
-FONT_MONO = "/System/Library/Fonts/Menlo.ttc"
-OUTPUT = Path(__file__).parents[1] / "projects/portfolio/public/assets/social"
+MARGIN = 80
+
+# From projects/portfolio/src/styles.css, light theme. There is no orange here.
+BACKGROUND = "#FAF8F4"
+FOREGROUND = "#141412"
+MUTED = "#5E5A54"
+BORDER = "#E0DCD4"
+PRIMARY = "#2F6B4F"
+
+ROOT = Path(__file__).parents[1]
+FONT_DIR = Path(__file__).parent / ".fonts"
+OUTPUT = ROOT / "projects/portfolio/public/assets/social"
+
+# Google Fonts serves TrueType to a user agent too old to know about woff2.
+FONT_UA = (
+    "Mozilla/5.0 (Linux; U; Android 4.0.3; en-us; Galaxy Nexus Build/IML74K) "
+    "AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"
+)
+FONTS = {
+    "LibreCaslonText-Regular": ("Libre Caslon Text", 400),
+    "InterTight-Regular": ("Inter Tight", 400),
+    "JetBrainsMono-Regular": ("JetBrains Mono", 400),
+}
 
 
-def font(path: str, size: int) -> ImageFont.FreeTypeFont:
-    return ImageFont.truetype(path, size)
+def fetch(url: str) -> bytes:
+    return urlopen(Request(url, headers={"User-Agent": FONT_UA}), timeout=30).read()
 
 
-def base(dark: bool = False) -> tuple[Image.Image, ImageDraw.ImageDraw]:
-    image = Image.new("RGB", (WIDTH, HEIGHT), INK if dark else PAPER)
-    return image, ImageDraw.Draw(image)
+def ensure_fonts() -> None:
+    FONT_DIR.mkdir(parents=True, exist_ok=True)
+    for name, (family, weight) in FONTS.items():
+        target = FONT_DIR / f"{name}.ttf"
+        if target.exists():
+            continue
+        css = fetch(
+            f"https://fonts.googleapis.com/css2?family={family.replace(' ', '+')}:wght@{weight}"
+        ).decode()
+        match = re.search(r"https://fonts\.gstatic\.com/[^)]+", css)
+        if not match:
+            raise SystemExit(f"Could not resolve a TrueType URL for {family} {weight}")
+        target.write_bytes(fetch(match.group(0)))
+        print(f"cached {target.name}")
 
 
-def brand(draw: ImageDraw.ImageDraw, dark: bool = False) -> None:
-    fg = PAPER if dark else INK
-    box = PAPER if dark else INK
-    initials = INK if dark else PAPER
-    draw.rectangle((64, 56, 112, 104), fill=box)
-    draw.text((76, 68), "HJ", fill=initials, font=font(FONT_MONO, 16))
-    draw.text((128, 68), "Holly Johnson", fill=fg, font=font(FONT_BOLD, 20))
+def font(name: str, size: int) -> ImageFont.FreeTypeFont:
+    return ImageFont.truetype(str(FONT_DIR / f"{name}.ttf"), size)
 
 
-def footer(draw: ImageDraw.ImageDraw, label: str, dark: bool = False) -> None:
-    color = MUTED if dark else "#655E57"
-    draw.text((64, 560), label.upper(), fill=color, font=font(FONT_MONO, 14))
+def serif(size: int) -> ImageFont.FreeTypeFont:
+    return font("LibreCaslonText-Regular", size)
 
 
-def title(draw: ImageDraw.ImageDraw, lines: list[str], subtitle: str, dark: bool = False) -> None:
-    fg = PAPER if dark else INK
-    y = 205
-    for line in lines:
-        draw.text((64, y), line, fill=fg, font=font(FONT_BOLD, 66))
-        y += 72
-    draw.text((68, y + 18), subtitle, fill=MUTED if dark else "#5C5248", font=font(FONT_REGULAR, 25))
+def sans(size: int) -> ImageFont.FreeTypeFont:
+    return font("InterTight-Regular", size)
 
 
-def save(image: Image.Image, name: str) -> None:
+def mono(size: int) -> ImageFont.FreeTypeFont:
+    return font("JetBrainsMono-Regular", size)
+
+
+def tracked(
+    draw: ImageDraw.ImageDraw,
+    xy: tuple[int, int],
+    text: str,
+    fill: str,
+    typeface: ImageFont.FreeTypeFont,
+    tracking: float,
+    anchor_right: int | None = None,
+) -> None:
+    """Draw text with letter-spacing, which Pillow has no setting for.
+
+    The site's mono labels carry tracking-[0.08em] to tracking-[0.14em]; without
+    it they read as code rather than as a label.
+    """
+    x, y = xy
+    if anchor_right is not None:
+        width = sum(typeface.getlength(ch) + tracking for ch in text) - tracking
+        x = anchor_right - int(width)
+    for ch in text:
+        draw.text((x, y), ch, fill=fill, font=typeface)
+        x += typeface.getlength(ch) + tracking
+
+
+def wrap(text: str, typeface: ImageFont.FreeTypeFont, width: int) -> list[str]:
+    lines: list[str] = []
+    line = ""
+    for word in text.split():
+        candidate = f"{line} {word}".strip()
+        if typeface.getlength(candidate) <= width or not line:
+            line = candidate
+        else:
+            lines.append(line)
+            line = word
+    if line:
+        lines.append(line)
+    return lines
+
+
+RAIL_X = 844
+RAIL_RULE_X = 812
+RAIL_WIDTH = WIDTH - MARGIN - RAIL_X
+
+
+def stats_rail(draw: ImageDraw.ImageDraw, stats: list[tuple[str, str]]) -> None:
+    """The case-study hero's stat block, stacked one per row.
+
+    The page sets these two-up. A card is read at thumbnail size and some
+    captions run to two words, so they are stacked here and the caption sits
+    beside the number rather than under it.
+    """
+    caption_x = RAIL_X + 84
+    for index, (value, label) in enumerate(stats):
+        y = 240 + index * 57
+        draw.text((RAIL_X, y), value, fill=FOREGROUND, font=serif(30))
+        tracked(draw, (caption_x, y + 14), label.upper(), MUTED, mono(11), 1.3)
+
+
+def terms_rail(draw: ImageDraw.ImageDraw, terms: list[tuple[str, str]]) -> None:
+    """The research hero's rail: mono term, sans definition beneath."""
+    y = 236
+    for term, definition in terms:
+        tracked(draw, (RAIL_X, y), term.upper(), MUTED, mono(12), 1.4)
+        for line in wrap(definition, sans(18), RAIL_WIDTH):
+            y += 26
+            draw.text((RAIL_X, y), line, fill=FOREGROUND, font=sans(18))
+        y += 52
+
+
+def card(
+    name: str,
+    kicker: str,
+    title: list[str],
+    subhead: str,
+    footer: str,
+    title_size: int = 62,
+    stats: list[tuple[str, str]] | None = None,
+    terms: list[tuple[str, str]] | None = None,
+    wordmark: bool = True,
+) -> None:
+    image = Image.new("RGB", (WIDTH, HEIGHT), BACKGROUND)
+    draw = ImageDraw.Draw(image)
+
+    has_rail = bool(stats or terms)
+    column = (RAIL_RULE_X - 36 - MARGIN) if has_rail else (WIDTH - 2 * MARGIN)
+
+    # Wordmark, the same serif lockup the site's nav uses. The resume card's
+    # title is already her name, and the card should not say it twice.
+    if wordmark:
+        draw.text((MARGIN, 60), "Holly Johnson", fill=FOREGROUND, font=serif(25))
+
+    tracked(draw, (MARGIN, 236), kicker.upper(), MUTED, mono(15), 2.1)
+
+    y = 276
+    for line in title:
+        if serif(title_size).getlength(line) > column:
+            raise SystemExit(f"{name}: title line does not fit the column: {line!r}")
+        draw.text((MARGIN, y), line, fill=FOREGROUND, font=serif(title_size))
+        y += title_size + 14
+
+    for line in wrap(subhead, sans(25), column):
+        y += 40
+        draw.text((MARGIN, y - 26), line, fill=FOREGROUND, font=sans(25))
+
+    if y > 500:
+        raise SystemExit(f"{name}: the text block runs into the footer rule")
+
+    if has_rail:
+        # The hero rail's border-l, at the same hairline weight as the footer rule.
+        draw.line((RAIL_RULE_X, 232, RAIL_RULE_X, 470), fill=BORDER, width=1)
+    if stats:
+        stats_rail(draw, stats)
+    if terms:
+        terms_rail(draw, terms)
+
+    # Mono label over a hairline rule, the site's section-label convention.
+    draw.line((MARGIN, 522, WIDTH - MARGIN, 522), fill=BORDER, width=1)
+    tracked(draw, (MARGIN, 548), footer.upper(), MUTED, mono(14), 1.9)
+    tracked(
+        draw,
+        (0, 548),
+        "hollyjohnson.design",
+        PRIMARY,
+        mono(14),
+        1.9,
+        anchor_right=WIDTH - MARGIN,
+    )
+
     OUTPUT.mkdir(parents=True, exist_ok=True)
     image.save(OUTPUT / name, "PNG", optimize=True)
+    print(f"wrote {name}")
 
 
-def home() -> None:
-    image, draw = base(dark=True)
-    brand(draw, dark=True)
-    title(draw, ["Clarity for", "complex products"], "Systems that connect design, engineering, and product.", dark=True)
-    # Design-to-code motif.
-    draw.rectangle((828, 170, 1136, 462), outline="#655E57", width=2)
-    draw.line((982, 170, 982, 462), fill="#655E57", width=2)
-    for y in (225, 285, 345, 405):
-        draw.line((858, y, 948, y), fill=ACCENT, width=5)
-        draw.line((1016, y, 1100, y), fill="#857C74", width=3)
-    draw.ellipse((963, 296, 1001, 334), fill=INK, outline=ACCENT, width=2)
-    draw.text((973, 303), "↔", fill=ACCENT, font=font(FONT_REGULAR, 18))
-    footer(draw, "Product designer · Design systems lead", dark=True)
-    save(image, "home.png")
-
-
-def helios() -> None:
-    image, draw = base()
-    brand(draw)
-    title(draw, ["Helios"], "Design decisions, shipped as code.")
-    # Layered system architecture.
-    labels = ["TOKENS", "COMPONENTS", "PATTERNS", "PRODUCTS"]
-    widths = [270, 230, 190, 150]
-    for i, (label, width) in enumerate(zip(labels, widths)):
-        x = 1080 - width
-        y = 168 + i * 82
-        draw.rectangle((x, y, 1136, y + 52), outline=ACCENT if i == 3 else "#B7AFA6", width=2)
-        draw.text((x + 16, y + 17), label, fill=RUST, font=font(FONT_MONO, 13))
-    draw.line((1002, 220, 1002, 414), fill=ACCENT, width=2)
-    footer(draw, "Figma architecture → production Angular")
-    save(image, "helios.png")
-
-
-def investigative() -> None:
-    image, draw = base()
-    brand(draw)
-    title(draw, ["Investigative", "Workflow Research"], "Aligning design around the work, not just the interface.")
-    # A looping, branching workflow.
-    nodes = [(850, 185), (1030, 185), (940, 305), (850, 425), (1030, 425)]
-    edges = [(0, 1), (1, 2), (2, 3), (2, 4), (3, 0), (4, 1)]
-    for a, b in edges:
-        draw.line((*nodes[a], *nodes[b]), fill="#B7AFA6", width=3)
-    for index, (x, y) in enumerate(nodes, start=1):
-        draw.ellipse((x - 27, y - 27, x + 27, y + 27), fill=PAPER, outline=ACCENT, width=3)
-        draw.text((x - 7, y - 10), str(index), fill=RUST, font=font(FONT_MONO, 15))
-    draw.line((816, 500, 1080, 500), fill=ACCENT, width=5)
-    draw.text((816, 516), "DOCUMENTATION PERSISTS", fill=RUST, font=font(FONT_MONO, 12))
-    footer(draw, "Query · collect · analyze · map · visualize · report")
-    save(image, "investigative-workflow.png")
-
-
-def nucleus() -> None:
-    image, draw = base()
-    brand(draw)
-    title(draw, ["NUcleus", "Design System"], "One system, many institutional identities.")
-    colors = ["#7A2C10", "#B04318", "#D06A3D", "#171513", "#655E57", "#857C74", "#A49B92", "#C9C1B8", "#E2DDD7"]
-    for index, color in enumerate(colors):
-        col, row = index % 3, index // 3
-        x, y = 830 + col * 98, 185 + row * 98
-        draw.rectangle((x, y, x + 70, y + 70), fill=color)
-    draw.rectangle((812, 167, 1112, 467), outline=INK, width=2)
-    footer(draw, "9 brands · 20+ implementations · one front-end foundation")
-    save(image, "nucleus.png")
-
-
-def resume() -> None:
-    image, draw = base(dark=True)
-    brand(draw, dark=True)
-    title(draw, ["Holly Johnson"], "Product Designer · Design Systems Lead", dark=True)
-    draw.text((68, 390), "COMPLEX PRODUCT UX", fill=ACCENT, font=font(FONT_MONO, 15))
-    draw.text((68, 425), "DESIGN SYSTEMS", fill=ACCENT, font=font(FONT_MONO, 15))
-    draw.text((68, 460), "PRODUCTION IMPLEMENTATION", fill=ACCENT, font=font(FONT_MONO, 15))
-    # System-to-production motif.
-    for index, label in enumerate(("DESIGN", "SYSTEM", "CODE")):
-        x = 820 + index * 108
-        draw.rectangle((x, 260, x + 88, 348), outline="#655E57", width=2)
-        draw.text((x + 14, 296), label, fill=PAPER, font=font(FONT_MONO, 11))
-        if index < 2:
-            draw.line((x + 88, 304, x + 108, 304), fill=ACCENT, width=3)
-    footer(draw, "Lincoln, Nebraska", dark=True)
-    save(image, "resume.png")
+# Copy is lifted from each page's hero. Do not write new lines here.
+CARDS = [
+    dict(
+        name="home.png",
+        kicker="Product designer · Design systems lead",
+        title=["I work on the seam between", "design and engineering."],
+        subhead="Product designer who writes the code too.",
+        footer="Portfolio",
+    ),
+    dict(
+        name="helios.png",
+        kicker="Design system · 2023–2026",
+        title=["Helios"],
+        subhead="Design decisions, shipped as code.",
+        footer="Case study",
+        stats=[
+            ("150+", "engineers"),
+            ("200+", "tokens"),
+            ("50+", "components"),
+            ("20+", "patterns"),
+        ],
+    ),
+    dict(
+        name="investigative-workflow.png",
+        kicker="Research · 2023–2026",
+        title=["Investigative", "Workflow Research"],
+        subhead="Aligning design around the work, not just the interface.",
+        footer="Case study",
+        terms=[
+            ("Method", "Contextual interviews and workflow mapping"),
+            ("Outcome", "One end-to-end view of investigative work"),
+        ],
+    ),
+    dict(
+        name="nucleus.png",
+        kicker="Platform · 2017–present",
+        title=["NUcleus", "Design System"],
+        subhead="One system, many institutional identities.",
+        footer="Case study",
+        stats=[
+            ("9", "university brands"),
+            ("20+", "implementations"),
+            ("300+", "features reviewed"),
+            ("8+", "years in use"),
+        ],
+    ),
+    dict(
+        name="theorem.png",
+        kicker="Product design · 2017–2022",
+        title=["Theorem"],
+        subhead="A learning management system rebuilt around how the work is actually done.",
+        footer="Case study",
+    ),
+    dict(
+        name="orbit.png",
+        kicker="AI workspace · 2026",
+        title=["Orbit"],
+        subhead="Prototyping with Claude as a partner, building from the real Helios library.",
+        footer="Case study",
+    ),
+    dict(
+        name="about.png",
+        kicker="About",
+        title=["Helping government, education and", "communities serve people better."],
+        subhead="Holly Johnson · Senior Product Designer & Design Systems Lead",
+        footer="Portfolio",
+        title_size=52,
+        wordmark=False,
+    ),
+    dict(
+        name="resume.png",
+        kicker="Resume",
+        title=["Holly Johnson"],
+        subhead="Product Designer · Design Systems Lead",
+        footer="Lincoln, Nebraska",
+        wordmark=False,
+    ),
+]
 
 
 if __name__ == "__main__":
-    home()
-    helios()
-    investigative()
-    nucleus()
-    resume()
+    ensure_fonts()
+    for spec in CARDS:
+        card(**spec)

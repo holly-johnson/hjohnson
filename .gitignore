@@ -56,3 +56,4 @@ _archive/
 # repo is public, and DIFF-*.md carries working notes on positioning and on which
 # pages are still unpublished. See design-baseline/README.md for the procedure.
 design-baseline/
+scripts/.fonts/

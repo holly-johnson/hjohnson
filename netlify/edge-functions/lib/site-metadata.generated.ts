@@ -49,7 +49,7 @@ export const siteMetadata = {
       "kind": "profile",
       "title": "About · Holly Johnson",
       "description": "How Holly Johnson went from preparing cases in a state law enforcement division to leading design systems, and why accessibility and public service run through all of it.",
-      "image": "/assets/social/home.png"
+      "image": "/assets/social/about.png"
     },
     {
       "path": "/resume",
@@ -84,14 +84,14 @@ export const siteMetadata = {
       "kind": "case-study",
       "title": "Theorem · Holly Johnson",
       "description": "Rebuilding a decades-old learning management system for the University of Nebraska High School, and the application patterns that became NUcleus for Apps.",
-      "image": "/assets/social/nucleus.png"
+      "image": "/assets/social/theorem.png"
     },
     {
       "path": "/work/orbit",
       "kind": "case-study",
       "title": "Orbit · Holly Johnson",
       "description": "Orbit, the workspace Penlink started building to prototype features with Claude from the published Helios component library.",
-      "image": "/assets/social/helios.png"
+      "image": "/assets/social/orbit.png"
     }
   ],
   "aliases": {
