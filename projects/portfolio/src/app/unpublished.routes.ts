@@ -34,7 +34,7 @@ export const unpublishedRoutes: Routes = [
     data: {
       meta: {
         description: 'The repeatable engagement that turned NUcleus into websites: information architecture, content maps, wireframes, Sitecore build and client training.',
-        image: '/assets/social/nucleus.png',
+        image: '/assets/social/nucleus.png?v=2',
         noIndex: true,
       },
     },
@@ -46,7 +46,7 @@ export const unpublishedRoutes: Routes = [
     data: {
       meta: {
         description: 'Notes on design systems, product practice and a curated shelf of ideas worth passing along.',
-        image: '/assets/social/home.png',
+        image: '/assets/social/home.png?v=2',
         noIndex: true,
       },
     },
@@ -58,7 +58,7 @@ export const unpublishedRoutes: Routes = [
     data: {
       meta: {
         description: 'A field note on why the strongest design systems are built through trust, shared language and continuous collaboration.',
-        image: '/assets/social/helios.png',
+        image: '/assets/social/helios.png?v=2',
         noIndex: true,
       },
     },

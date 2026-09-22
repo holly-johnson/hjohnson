@@ -12,7 +12,7 @@ export const siteMetadata = {
     "jobTitle": "Product Designer & Design Systems Lead",
     "description": "Product designer and design systems lead who builds the Figma architecture, the design tokens, and the production component library behind it.",
     "email": "hme2784@gmail.com",
-    "image": "/assets/social/home.png",
+    "image": "/assets/social/home.png?v=2",
     "sameAs": [
       "https://www.linkedin.com/in/holly-johnson-design"
     ],
@@ -42,56 +42,56 @@ export const siteMetadata = {
       "kind": "profile",
       "title": "Holly Johnson · Product Designer & Design Systems Lead",
       "description": "Product designer and design systems lead turning complex product needs into shared systems that connect design and production.",
-      "image": "/assets/social/home.png"
+      "image": "/assets/social/home.png?v=2"
     },
     {
       "path": "/about",
       "kind": "profile",
       "title": "About · Holly Johnson",
       "description": "How Holly Johnson went from preparing cases in a state law enforcement division to leading design systems, and why accessibility and public service run through all of it.",
-      "image": "/assets/social/about.png"
+      "image": "/assets/social/about.png?v=2"
     },
     {
       "path": "/resume",
       "kind": "profile",
       "title": "Resume · Holly Johnson",
       "description": "Holly Johnson is a product designer and design systems lead experienced in complex product UX, production Angular systems, and multi-brand platforms.",
-      "image": "/assets/social/resume.png"
+      "image": "/assets/social/resume.png?v=2"
     },
     {
       "path": "/work/helios",
       "kind": "case-study",
       "title": "Helios Design System · Holly Johnson",
       "description": "How Holly Johnson built a Figma-to-Angular product foundation that helped four designers scale decisions across more than 150 engineers.",
-      "image": "/assets/social/helios.png"
+      "image": "/assets/social/helios.png?v=2"
     },
     {
       "path": "/work/analysis-workflow",
       "kind": "case-study",
       "title": "Investigative Workflow Research · Holly Johnson",
       "description": "Research mapping how investigators query, collect, analyze, connect, visualize, document, and report across fragmented product workflows.",
-      "image": "/assets/social/investigative-workflow.png"
+      "image": "/assets/social/investigative-workflow.png?v=2"
     },
     {
       "path": "/work/nucleus",
       "kind": "case-study",
       "title": "NUcleus Design System · Holly Johnson",
       "description": "A reusable design and front-end system supporting nine university brands across more than 20 websites and applications.",
-      "image": "/assets/social/nucleus.png"
+      "image": "/assets/social/nucleus.png?v=2"
     },
     {
       "path": "/work/theorem",
       "kind": "case-study",
       "title": "Theorem · Holly Johnson",
       "description": "Rebuilding a decades-old learning management system for the University of Nebraska High School, and the application patterns that became NUcleus for Apps.",
-      "image": "/assets/social/theorem.png"
+      "image": "/assets/social/theorem.png?v=2"
     },
     {
       "path": "/work/orbit",
       "kind": "case-study",
       "title": "Orbit · Holly Johnson",
       "description": "Orbit, the workspace Penlink started building to prototype features with Claude from the published Helios component library.",
-      "image": "/assets/social/orbit.png"
+      "image": "/assets/social/orbit.png?v=2"
     }
   ],
   "aliases": {
@@ -101,6 +101,6 @@ export const siteMetadata = {
   "notFound": {
     "title": "Not Found · Holly Johnson",
     "description": "The requested page could not be found.",
-    "image": "/assets/social/home.png"
+    "image": "/assets/social/home.png?v=2"
   }
 } as const;

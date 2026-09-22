@@ -22,7 +22,10 @@ describe('site metadata', () => {
 
   it('points every page at a social card that exists', () => {
     for (const page of [...siteMetadata.pages, siteMetadata.notFound]) {
-      expect(existsSync(join(publicDir, page.image)), page.image).toBe(true);
+      // The image carries a ?v= cache key, since a scraper that has already
+      // fetched a URL will not fetch it again when only the bytes change.
+      const file = page.image.split('?')[0];
+      expect(existsSync(join(publicDir, file)), page.image).toBe(true);
     }
   });
 
