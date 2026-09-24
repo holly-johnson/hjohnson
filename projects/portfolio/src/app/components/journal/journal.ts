@@ -50,7 +50,7 @@ export class Journal {
       author: 'Amy Hupe',
       source: 'amyhupe.co.uk',
       url: 'https://amyhupe.co.uk/articles/design-systems-are-for-people/',
-      note: 'A useful reminder that a design system succeeds through the people and relationships around it—not the library alone.',
+      note: 'A useful reminder that a design system succeeds through the people and relationships around it, not the library alone.',
       topic: 'Design systems',
     },
   ];

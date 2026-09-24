@@ -28,9 +28,11 @@
     </nav>
 
     <!-- ── Mobile menu button ───────────────────────────────── -->
+    <!-- h-6 w-6 keeps the hit area at the 24x24 WCAG 2.2 AA minimum (2.5.8); the
+         icon itself is 22px, so the target is the button, not the glyph. -->
     <button
       type="button"
-      class="md:hidden"
+      class="inline-flex h-6 w-6 items-center justify-center md:hidden"
       [class]="mobileBtnClass()"
       (click)="mobileMenuOpen.set(!mobileMenuOpen())"
       [attr.aria-expanded]="mobileMenuOpen()"

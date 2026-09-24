@@ -81,7 +81,7 @@
   <!-- Main Content -->
   <section class="pt-10 pb-24">
     <div class="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[minmax(0,1fr)_230px] lg:px-12">
-      <main class="flex min-w-0 flex-col gap-[72px]">
+      <div class="flex min-w-0 flex-col gap-[72px]">
 
         <!-- 01 Organizational Problem -->
         <section class="space-y-6 scroll-mt-32" id="problem">
@@ -125,7 +125,7 @@
           <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
             <p>Helios began as the Penlink Design System during a redesign of PLX Desktop, then expanded into distinct desktop and web modes within one Figma architecture. The original name survives in the code. Components carry a plds- prefix. The migration to helios- was still in progress.</p>
             <p>Shared decisions could vary by mode without being redefined component by component. The architecture had to be flexible enough for real differences and firm enough to keep them exceptions.</p>
-            <p>Holding that balance took more than a component library. Structured Figma libraries connected to a production Angular library. That connection carried tokens, components, reusable product patterns, documentation, accessibility behavior, internationalization and contribution workflows. The layered token model translated primitive values into semantic meaning, then into component-level implementation. Figma variables and the SCSS files stayed aligned.</p>
+            <p>Holding that balance took more than a component library. Structured Figma libraries connected to a production Angular library. I wrote that library and published it as a versioned package. Three products consumed it. That connection carried tokens, components, reusable product patterns, documentation, accessibility behavior, internationalization and contribution workflows. The layered token model translated primitive values into semantic meaning, then into component-level implementation. Figma variables and the SCSS files stayed aligned.</p>
             <p>No existing tool would keep that alignment. Figma’s variable sync sat behind a plan tier the team did not have and a third-party token tool was not funded. I created a skill that pulled the published variables through MCP and updated the token files, so the process ran the same way every time.</p>
           </div>
 
@@ -211,12 +211,12 @@
               <div class="min-w-0 space-y-4 bg-secondary p-6">
                 <div class="border-l-2 border-primary pl-3 font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">The control set</div>
                 <p class="text-sm text-muted-foreground leading-relaxed">Buttons, menus, inputs, selection, chips and overlays rendered together, so a change to a shared decision could be reviewed across every control at once.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-controls-gallery-crop.png" alt="A gallery rendering every Helios control together: primary, secondary, CTA and destructive buttons at medium, icon-only and disabled; button menus; textbox, textarea, dropdown and search inputs; checkbox, radio and toggle selection states including mixed, focused, invalid, disabled and read-only; chips; and popover and tooltip overlays." class="block h-auto w-full min-w-[34rem]" loading="lazy" decoding="async" width="1016" height="780" /></div>
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7" tabindex="0" role="group" aria-label="The control set, horizontally scrollable"><img src="assets/work/helios-controls-gallery-crop.png" alt="A gallery rendering every Helios control together: primary, secondary, CTA and destructive buttons at medium, icon-only and disabled; button menus; textbox, textarea, dropdown and search inputs; checkbox, radio and toggle selection states including mixed, focused, invalid, disabled and read-only; chips; and popover and tooltip overlays." class="block h-auto w-full min-w-[34rem]" loading="lazy" decoding="async" width="1016" height="780" /></div>
               </div>
               <div class="min-w-0 space-y-4 bg-secondary p-6">
                 <div class="border-l-2 border-primary pl-3 font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Usage guidance</div>
                 <p class="text-sm text-muted-foreground leading-relaxed">Correct and incorrect use shown with the real component, plus microcopy rules for parallel labels.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7">
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7" tabindex="0" role="group" aria-label="Usage guidance, horizontally scrollable">
                   <div class="min-w-[26rem]">
                     <!-- Pinned: this heading sits on the white plate with the capture, so it cannot invert. -->
                     <h4 class="mb-[30px] font-['Inter'] text-xl font-bold text-[#353838]">Button Usage</h4>
@@ -293,22 +293,22 @@
               <div class="min-w-0 space-y-3 bg-secondary p-6">
                 <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Guidelines</div>
                 <p class="text-sm text-muted-foreground leading-relaxed">Fifteen sections when a component needs all of them, as the button does. Anatomy, hierarchy, badge, contrast, icons, microcopy, interactive states, labels and overflow, spacing, touch targets and responsive behavior, motion and accessibility are among them. Each one carries worked examples.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-btn-guidelines.webp" alt="Button guidelines page with an on-this-page rail listing fifteen sections: anatomy, when to use, badge, color contrast, icons, microcopy, interactive states, labels and overflow, spacing between buttons, touch targets and responsive, motion, accessibility, examples, use type for hierarchy and label microcopy. Visible below are a labelled anatomy diagram, a when-to-use table for the five button types and a contrast table reporting 4.59:1 AA for primary, 8.85:1 AAA for secondary and 10.47:1 AAA for tertiary." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="1014" height="1028" /></div>
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7" tabindex="0" role="group" aria-label="Button guidelines, horizontally scrollable"><img src="assets/work/helios-btn-guidelines.webp" alt="Button guidelines page with an on-this-page rail listing fifteen sections: anatomy, when to use, badge, color contrast, icons, microcopy, interactive states, labels and overflow, spacing between buttons, touch targets and responsive, motion, accessibility, examples, use type for hierarchy and label microcopy. Visible below are a labelled anatomy diagram, a when-to-use table for the five button types and a contrast table reporting 4.59:1 AA for primary, 8.85:1 AAA for secondary and 10.47:1 AAA for tertiary." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="1014" height="1028" /></div>
               </div>
               <div class="min-w-0 space-y-3 bg-secondary p-6">
                 <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Demo</div>
                 <p class="text-sm text-muted-foreground leading-relaxed">Every input exercisable against the real component. Output is copy-ready markup.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-btn-demo.webp" alt="Interactive demo tab with controls for type, size, icon, label, badge and state beside a live rendered button and the matching plds-button markup." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="799" height="770" /></div>
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7" tabindex="0" role="group" aria-label="Button interactive demo, horizontally scrollable"><img src="assets/work/helios-btn-demo.webp" alt="Interactive demo tab with controls for type, size, icon, label, badge and state beside a live rendered button and the matching plds-button markup." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="799" height="770" /></div>
               </div>
               <div class="min-w-0 space-y-3 bg-secondary p-6">
                 <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Code</div>
                 <p class="text-sm text-muted-foreground leading-relaxed">Props scanned from the source. Deprecations carry their migration path.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-btn-code.webp" alt="Code tab listing every component input with type, description and default, including a deprecation note explaining that the transparent type is kept for published-contract parity and removed in a later generation." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="1014" height="878" /></div>
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7" tabindex="0" role="group" aria-label="Button code reference, horizontally scrollable"><img src="assets/work/helios-btn-code.webp" alt="Code tab listing every component input with type, description and default, including a deprecation note explaining that the transparent type is kept for published-contract parity and removed in a later generation." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="1014" height="878" /></div>
               </div>
               <div class="min-w-0 space-y-3 bg-secondary p-6">
                 <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Resources</div>
                 <p class="text-sm text-muted-foreground leading-relaxed">The same documentation served as machine-readable files for coding agents.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-btn-resources.webp" alt="Resources tab linking the Figma reference, build log and contract diff, plus a For AI agents section offering llms.txt, contracts.json and migrations.json." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="739" height="580" /></div>
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7" tabindex="0" role="group" aria-label="Button resources, horizontally scrollable"><img src="assets/work/helios-btn-resources.webp" alt="Resources tab linking the Figma reference, build log and contract diff, plus a For AI agents section offering llms.txt, contracts.json and migrations.json." class="w-full h-auto min-w-[30rem]" loading="lazy" decoding="async" width="739" height="580" /></div>
               </div>
             </div>
             <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">What a component looked like once the loop had run. Contrast ratios were measured from the live tokens. The props table was read from the component source, so the parts that usually go stale could not drift from it. The same six tabs carried across component pages.</figcaption>
@@ -323,7 +323,7 @@
               <span class="text-right text-foreground">Self-scored · reviewed July 2026</span>
             </div>
             <div class="bg-secondary p-6">
-              <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-benchmark.webp" alt="Benchmark table for the Helios button documentation, scored against the public documentation of IBM Carbon, Google Material 3 and Shopify Polaris on the axes a mature component page is expected to cover. Helios is marked full on anatomy, hierarchy, states, API reference, do and don't examples, microcopy, interactive playground and accessibility depth and partial on touch target and responsive behavior and on layout composition, both flagged as axes where Helios trails. Totals: Helios 11 axes full and 4 partial, Carbon 10 full and 3 partial, Material 3 10 full and 3 partial, Polaris 9 full and 4 partial." class="w-full h-auto min-w-[34rem]" loading="lazy" decoding="async" width="1009" height="812" /></div>
+              <div class="overflow-x-auto border border-plate-line bg-plate p-7" tabindex="0" role="group" aria-label="Documentation benchmark, horizontally scrollable"><img src="assets/work/helios-benchmark.webp" alt="Benchmark table for the Helios button documentation, scored against the public documentation of IBM Carbon, Google Material 3 and Shopify Polaris on the axes a mature component page is expected to cover. Helios is marked full on anatomy, hierarchy, states, API reference, do and don't examples, microcopy, interactive playground and accessibility depth and partial on touch target and responsive behavior and on layout composition, both flagged as axes where Helios trails. Totals: Helios 11 axes full and 4 partial, Carbon 10 full and 3 partial, Material 3 10 full and 3 partial, Polaris 9 full and 4 partial." class="w-full h-auto min-w-[34rem]" loading="lazy" decoding="async" width="1009" height="812" /></div>
             </div>
             <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">An internal audit scoring the Helios button page against the public documentation of Carbon, Material 3 and Polaris, on the axes a mature component page is expected to cover. The axes where Helios trailed were left visible, so the gaps stayed on the roadmap.</figcaption>
           </figure>
@@ -402,12 +402,12 @@
               <div class="min-w-0 space-y-3 bg-secondary p-6">
                 <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Readiness</div>
                 <p class="text-sm text-muted-foreground leading-relaxed">Every component graded on the same axes: publish state, contract, visual fidelity, accessibility, internationalization and RTL, interaction and state and theming.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-readiness-matrix.webp" alt="Readiness matrix listing components down the left and grading each across auto signals, publish state, contract, visual fidelity, accessibility, internationalization and RTL, interaction and state and theming. Button, Button Menu, Checkbox and List Group are marked shipped; Dropdown, Icon Close and List Item show no checklist yet." class="w-full h-auto min-w-[36rem]" loading="lazy" decoding="async" width="1013" height="974" /></div>
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7" tabindex="0" role="group" aria-label="Component readiness matrix, horizontally scrollable"><img src="assets/work/helios-readiness-matrix.webp" alt="Readiness matrix listing components down the left and grading each across auto signals, publish state, contract, visual fidelity, accessibility, internationalization and RTL, interaction and state and theming. Button, Button Menu, Checkbox and List Group are marked shipped; Dropdown, Icon Close and List Item show no checklist yet." class="w-full h-auto min-w-[36rem]" loading="lazy" decoding="async" width="1013" height="974" /></div>
               </div>
               <div class="min-w-0 space-y-3 bg-secondary p-6">
                 <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Usage</div>
                 <p class="text-sm text-muted-foreground leading-relaxed">Usage counted by scanning the repository. The components carrying the most weight were known rather than assumed.</p>
-                <div class="overflow-x-auto border border-plate-line bg-plate p-7"><img src="assets/work/helios-component-usage.webp" alt="Bar chart of component usage led by plds-button at 273 render sites, then plds-checkbox at 61, plds-button-menu and plds-dropdown at 40 each, down to plds-navigation and plds-filter-panel at 9." class="w-full h-auto min-w-[32rem]" loading="lazy" decoding="async" width="1000" height="566" /></div>
+                <div class="overflow-x-auto border border-plate-line bg-plate p-7" tabindex="0" role="group" aria-label="Component usage chart, horizontally scrollable"><img src="assets/work/helios-component-usage.webp" alt="Bar chart of component usage led by plds-button at 273 render sites, then plds-checkbox at 61, plds-button-menu and plds-dropdown at 40 each, down to plds-navigation and plds-filter-panel at 9." class="w-full h-auto min-w-[32rem]" loading="lazy" decoding="async" width="1000" height="566" /></div>
               </div>
             </div>
             <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">Recurring scans populated the board, so readiness and usage were read off the repository rather than gathered by asking teams. The counts shown cover the design system's own prototyping workspace.</figcaption>
@@ -468,7 +468,7 @@
           </div>
         </section>
 
-      </main>
+      </div>
 
       <!-- Table of Contents -->
       <aside class="hidden lg:block">

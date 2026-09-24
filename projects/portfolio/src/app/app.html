@@ -1,4 +1,17 @@
 <div class="min-h-screen bg-background">
+  <!-- First tab stop on every page. Hidden until focused; see `.skip-link` in styles.css. -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <app-navigation />
-  <router-outlet />
+  <!--
+    The one `main` landmark for the whole site. It lives here rather than in each page
+    so every route gets exactly one, and so the page H1 is always inside it. On the
+    case studies the H1 sits in a full-bleed hero above the two-column grid, which is
+    why a per-page `main` around the prose column left the title outside the landmark
+    and made "skip to main content" skip the title.
+
+    tabindex="-1" lets the skip link move focus here; it is not a tab stop itself.
+  -->
+  <main id="main-content" tabindex="-1">
+    <router-outlet />
+  </main>
 </div>

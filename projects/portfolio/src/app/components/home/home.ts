@@ -29,7 +29,7 @@ export class Home {
       link: '/work/helios',
       linkLabel: 'Read the full case study',
       facts: [
-        { label: 'ROLE', value: 'Design system architecture, design tokens, accessibility, governance' },
+        { label: 'ROLE', value: 'System and token architecture, Angular component library, accessibility, governance' },
         { label: 'YEAR', value: '2023–2026' },
         { label: 'OUTCOME', value: 'Figma decisions shipped as Angular components' },
       ],

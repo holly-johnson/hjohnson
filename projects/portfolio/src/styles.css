@@ -344,3 +344,72 @@
     line-height: 1.5;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   Accessibility affordances
+   ───────────────────────────────────────────────────────────── */
+
+@layer base {
+  /*
+    Skip link. First tab stop in `app.html`, off-screen until it takes focus, so
+    a keyboard user is not required to tab the wordmark, four nav links and the
+    theme toggle again on every route. Styled as a mono label on the green accent
+    to match the rest of the site chrome rather than as a browser default.
+  */
+  .skip-link {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transform: translateY(-120%);
+    padding: 0.75rem 1.25rem;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    font-family: var(--font-mono);
+    font-size: var(--text-label-lg);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  /*
+    The skip link's target. Moving focus to a container is what makes the skip
+    actually land for a screen reader, but the container is not interactive, so
+    it gets no ring of its own.
+  */
+  #main-content:focus {
+    outline: none;
+  }
+
+  /*
+    A focus ring that is visible on both themes. The base `*` rule sets
+    `outline-ring/50`, which is the green accent at half opacity: legible on
+    cream, thin against near-black. Keyboard focus gets the full-strength token
+    and an offset so the ring clears the element it belongs to. Pointer focus is
+    left alone, which is what `:focus-visible` is for.
+  */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  /*
+    Honour the OS "reduce motion" setting. The site has no decorative animation
+    by design, so this only governs the colour, transform and opacity
+    transitions on links and the theme toggle. Near-zero rather than `none`
+    keeps transition-end handlers firing if one is ever added.
+  */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
