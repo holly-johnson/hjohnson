@@ -59,6 +59,7 @@ export class HeliosCaseStudy {
   protected readonly constraints: string[] = [
     'The canonical source of truth across Figma, code and tokens was not fully resolved, in part because the team did not have the Figma license tier that would have automated it.',
     'Figma Code Connect, which would have handed developers the real Helios implementation in Dev Mode instead of a generic snippet, was scoped but never set up.',
+    'The Figma architecture carried desktop and web modes. A mobile mode and its variables were still to be added, so PenPoint and TanglesGo had nothing to adopt yet.',
     'Too much of the system’s knowledge and ownership remained concentrated in one person. That was a known risk and reducing it was already underway.',
   ];
 

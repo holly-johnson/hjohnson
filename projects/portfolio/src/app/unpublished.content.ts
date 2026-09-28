@@ -23,8 +23,8 @@ export const theoremNextProject = { link: '/work/nebraska-edu', label: 'Nebraska
 
 export const unpublishedProjects: Project[] = [
   {
-    id: '5',
-    num: '05',
+    id: '6',
+    num: '06',
     title: 'Nebraska.edu',
     discipline: ['Information Architecture', 'Content Strategy', 'Design Systems in Practice'],
     description: 'The repeatable engagement that turned NUcleus into websites for departments and institutes across the University of Nebraska System.',

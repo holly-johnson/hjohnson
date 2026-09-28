@@ -6,12 +6,13 @@ import { Meta } from '@angular/platform-browser';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs';
 import { Navigation } from './components/navigation/navigation';
+import { SiteFooter } from './components/shared/site-footer';
 import type { RouteMeta } from '../seo/route-seo';
 import { pageFor, siteMetadata } from '../seo/site-metadata';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navigation],
+  imports: [RouterOutlet, Navigation, SiteFooter],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

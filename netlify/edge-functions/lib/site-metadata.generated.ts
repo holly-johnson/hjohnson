@@ -90,7 +90,7 @@ export const siteMetadata = {
       "path": "/work/orbit",
       "kind": "case-study",
       "title": "Orbit · Holly Johnson",
-      "description": "Orbit, the workspace Penlink started building to prototype features with Claude from the published Helios component library.",
+      "description": "Orbit, the internal workspace built at Penlink to hold a feature's whole context and prototype it from the published Helios component library.",
       "image": "/assets/social/orbit.png?v=2"
     }
   ],

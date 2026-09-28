@@ -7,25 +7,22 @@
 
         <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-16">
           <div>
-            <span class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">AI workspace &middot; 2026</span>
+            <span class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Internal AI tooling &middot; 2025&ndash;2026</span>
             <h1 class="mt-5 font-serif text-4xl font-normal leading-[1.05] tracking-[-0.02em] text-foreground md:text-display">Orbit</h1>
-            <p class="mt-3 text-hero leading-[1.3] text-foreground">Prototyping with Claude as a partner, building from the real Helios library.</p>
+            <p class="mt-3 text-hero leading-[1.3] text-foreground">One place to hold a feature, and a working prototype at the end of it.</p>
 
             <div class="mt-6 max-w-[64ch] space-y-4 text-lead leading-[1.7] text-muted-foreground">
-              <p>A separate workspace for working through a feature with Claude as a partner across the whole effort rather than one session at a time, with the work saved between sessions so nothing had to be re-explained and a prototype as the output.</p>
-              <p>The point was what the prototype was made of. Assembled from published <a routerLink="/work/helios" class="text-primary underline underline-offset-2 transition-colors hover:text-foreground">Helios</a> components, it can only do what the system actually supports, so it cannot promise behavior that does not exist. When someone had to build something locally to finish an idea, that marked a gap in the system. It came back as a contribution.</p>
-            </div>
-
-            <!-- The work did not ship, so this page states that plainly rather than implying a case study is pending. -->
-            <div class="mt-10 border-t border-border pt-8">
-              <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-primary">Coming soon</div>
-              <p class="mt-3 max-w-[64ch] text-lead leading-[1.7] text-muted-foreground">Orbit did not ship, so the case study is about a direction rather than a result. I am working out how much of it is mine to publish. In the meantime, the reasoning behind it sits in the last section of the Helios case study.</p>
-              <a routerLink="/work/helios" fragment="next" class="mt-5 inline-block border-b border-primary/40 pb-0.5 text-dense text-primary transition-colors hover:border-primary">Read that section &#8594;</a>
+              <p>Designers at Penlink opened features with no requirements. Training learned what shipped when it shipped. Orbit was the workspace built to close that distance. A mission held everything known about a feature, Claude worked that feature alongside whoever opened it, and the output was a prototype assembled from the published <a routerLink="/work/helios" class="text-primary underline underline-offset-2 transition-colors hover:text-foreground">Helios</a> library.</p>
+              <p>Because the prototype was built from real components, it could not promise behavior the system did not have. The whole design team used it on real features.</p>
             </div>
           </div>
 
           <div class="border-l border-border pl-7">
             <dl class="flex flex-col gap-5">
+              <div>
+                <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Role</dt>
+                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">DesignOps, AI tooling, prototyping infrastructure</dd>
+              </div>
               <div>
                 <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Premise</dt>
                 <dd class="mt-1.5 text-sm leading-relaxed text-foreground">Prototype with the real library, not mockups</dd>
@@ -35,14 +32,261 @@
                 <dd class="mt-1.5 text-sm leading-relaxed text-foreground">A working prototype, plus the gaps it exposed</dd>
               </div>
               <div>
+                <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Built alongside</dt>
+                <dd class="mt-1.5 text-sm leading-relaxed text-muted-foreground">Helios, which supplied every component it could reach</dd>
+              </div>
+              <div>
                 <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Status</dt>
-                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">Started, did not ship</dd>
+                <dd class="mt-1.5 text-sm leading-relaxed text-muted-foreground">In use by the design team at departure</dd>
               </div>
             </dl>
           </div>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="pt-10 pb-24">
+    <div class="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[minmax(0,1fr)_230px] lg:px-12">
+      <div class="flex min-w-0 flex-col gap-[72px]">
+
+        <!-- 01 The Problem -->
+        <section class="space-y-6 scroll-mt-32" id="problem">
+          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">01</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Features Started Without Context</h2>
+            <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>The mandate arrived in one line. UX needed to work out how to use AI. What came back was not an AI experiment. It was a process fix that happened to need a model.</p>
+            <p>A standing weekly meeting with another designer was the room where it started. That hour existed to build a working partnership rather than trade status, so it could afford to walk the whole feature process looking for the missing piece. The question that landed: what if Claude could help kick a feature off, gather the requirements and stay a partner on it after that?</p>
+            <p>The practical questions came immediately. Where would the information live. How would it be shared. The answer looked like an app for tracking features. Then the scope opened up, because the same app fit a list of problems nobody had set out to solve.</p>
+          </div>
+
+          <figure class="border border-border bg-card">
+            <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 1. Where Context Went Missing</span>
+              <span class="text-right text-foreground">Six gaps, one lifecycle</span>
+            </div>
+            <div class="space-y-3 bg-secondary p-6">
+              @for (gap of gaps; track gap) {
+                <p class="flex gap-3 text-sm leading-relaxed text-muted-foreground"><span class="shrink-0 text-primary">&rarr;</span><span>{{ gap }}</span></p>
+              }
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">None of these are design-system problems. Helios governed what got built. This list is about how a feature got decided, recorded and passed along.</figcaption>
+          </figure>
+
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>Showing the idea around settled what it was. Product managers, engineers, QA, training and technical writing each recognized a different piece of it. That made Orbit a service project rather than a design tool. The designer who started it with me put the point better than I did: AI is not replacing roles, it is connecting them.</p>
+          </div>
+        </section>
+
+        <!-- 02 The Mission Model -->
+        <section class="space-y-6 scroll-mt-32" id="missions">
+          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">02</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">The Mission Model</h2>
+            <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>A feature opened a mission. The mission was the container and it held the whole feature: specs, questions, answers, concerns, notes, research, prototypes and every live link the prototypes produced. It was also the context Claude read, which is what let the partnership continue instead of restarting each session.</p>
+            <p>Storage was deliberate. A folder per mission, holding JSON files, structured so state behaved like a database rather than a chat history. By the time I left, the team had reached the conclusion that those files needed to become a real database. That is what a proof of concept is supposed to do. It ran far enough to prove its own requirements.</p>
+          </div>
+
+          <figure class="border border-border bg-card">
+            <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 2. The Kickoff, Written Down</span>
+              <span class="text-right text-foreground">Wording approximate</span>
+            </div>
+            <div class="space-y-3 bg-secondary p-6">
+              @for (question of kickoffQuestions; track question) {
+                <div class="border border-border bg-background px-4 py-3 text-sm leading-relaxed text-foreground">{{ question }}</div>
+              }
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">The questions a designer would ask a product manager in a kickoff meeting, turned into something repeatable. A designer or a product manager could answer, separately or together. Asking for the evidence that a problem exists, in writing, at the start, changed more conversations than any other line here.</figcaption>
+          </figure>
+
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>Answering created the mission and an overview of it. From there a single click asked for a few starting directions drawn from what had been collected. That mattered most on features that arrived thin. Rather than waiting for requirements, a designer could put something concrete in front of a product manager and get a fast reaction to it.</p>
+            <p>The first version of that interview was too long. It got cut down, because the goal was for people to get in and interact, not to complete a form before finding out whether any of it was useful.</p>
+          </div>
+
+          <figure class="border border-border bg-card">
+            <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 3. The Workspace</span>
+              <span class="text-right text-foreground">Reconstruction</span>
+            </div>
+            <div class="grid gap-px bg-border sm:grid-cols-3">
+              @for (pane of panes; track pane.label) {
+                <div class="min-w-0 space-y-3 bg-secondary p-6">
+                  <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">{{ pane.label }}</div>
+                  <p class="text-sm leading-relaxed text-foreground">{{ pane.role }}</p>
+                  <ul class="space-y-2">
+                    @for (item of pane.holds; track item) {
+                      <li class="flex gap-2 font-mono text-label-lg leading-[1.6] text-muted-foreground"><span class="shrink-0 text-primary">&middot;</span><span>{{ item }}</span></li>
+                    }
+                  </ul>
+                </div>
+              }
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">Redrawn from memory. Orbit was internal and no screenshots left with me. Running it inside the Claude browser is what put the conversation beside the record, and it is also the tradeoff in &sect;05.</figcaption>
+          </figure>
+        </section>
+
+        <!-- 03 Prototypes from the library -->
+        <section class="space-y-6 scroll-mt-32" id="library">
+          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">03</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Prototypes From the Published Library</h2>
+            <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>The interesting part of Orbit was never that it produced a prototype. It was what the prototype was made of.</p>
+            <p>Generation pulled from the published Helios package, so a prototype could only do what the system actually supported. That constraint is the whole value. A mockup can promise any behavior. A prototype assembled from shipped components cannot, which means what got reviewed was closer to what engineering would receive.</p>
+            <p>Anything built to finish an idea that Helios could not supply landed in a scaffolding folder instead, which flagged it as outside the library. That gave me somewhere to look. Either the designer should be using a component that already existed, or a new component had just made its case. Gaps stopped needing to be discovered and started reporting themselves.</p>
+          </div>
+
+          <figure class="border border-border bg-card">
+            <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 4. Inside the Library, or Outside It</span>
+              <span class="text-right text-foreground">Prototype &rarr; system</span>
+            </div>
+            <div class="bg-secondary p-6">
+              <div class="mx-auto max-w-2xl">
+                <div class="border border-border bg-background px-4 py-3 text-center">
+                  <span class="text-sm font-medium text-foreground">A designer asks for a screen</span>
+                </div>
+                <div class="flex flex-col items-center py-1"><div class="h-5 w-px bg-border"></div><span class="text-label-lg text-muted-foreground">&#9660;</span></div>
+
+                <div class="grid items-start gap-4 sm:grid-cols-5 sm:gap-5">
+                  <div class="sm:col-span-2">
+                    <div class="space-y-1 border border-border bg-background px-4 py-3">
+                      <div class="text-sm font-medium text-foreground">{{ inLibrary.label }}</div>
+                      <div class="font-mono text-label-lg leading-[1.6] text-muted-foreground">{{ inLibrary.sub }}</div>
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    @for (step of outsideLibrary; track step.label; let first = $first) {
+                      @if (!first) {
+                        <div class="flex flex-col items-center py-1"><div class="h-5 w-px bg-border"></div><span class="text-label-lg text-muted-foreground">&#9660;</span></div>
+                      }
+                      <div class="flex flex-col gap-1 border px-4 py-3" [class]="first ? 'border-dashed border-border bg-background' : 'border-border bg-background'">
+                        <span class="text-sm font-medium text-foreground">{{ step.label }}</span>
+                        <span class="font-mono text-label-lg leading-[1.6] text-muted-foreground">{{ step.sub }}</span>
+                      </div>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">The dashed box is the signal. Work that could not be built from Helios separated itself out, so the difference between using the system and working around it stayed visible instead of being absorbed into a product.</figcaption>
+          </figure>
+        </section>
+
+        <!-- 04 Who it was for -->
+        <section class="space-y-6 scroll-mt-32" id="audiences">
+          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">04</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Who It Was Actually For</h2>
+            <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>A prototype that lives on one laptop helps one person. Sharing was the part that made Orbit worth anything to the people downstream of design, so it was built into the mechanics rather than left as a step someone had to remember.</p>
+          </div>
+
+          <figure class="border border-border bg-card">
+            <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 5. Mission to Reviewable Link</span>
+              <span class="text-right text-foreground">Shared by default</span>
+            </div>
+            <div class="bg-secondary p-6">
+              <div class="mx-auto max-w-2xl">
+                @for (step of pipeline; track step.label; let last = $last) {
+                  <div class="flex flex-col gap-1 border border-border bg-background px-4 py-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                    <span class="text-sm font-medium text-foreground">{{ step.label }}</span>
+                    <span class="font-mono text-label-lg text-muted-foreground">{{ step.sub }}</span>
+                  </div>
+                  @if (!last) {
+                    <div class="flex flex-col items-center py-1"><div class="h-5 w-px bg-border"></div><span class="text-label-lg text-muted-foreground">&#9660;</span></div>
+                  }
+                }
+              </div>
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">Creating a mission created its branch. Pushing a prototype ran the pipeline and returned a live link. For an organization split across three countries, a link that anyone could open was the difference between review and a scheduled meeting.</figcaption>
+          </figure>
+
+          <div class="space-y-4 pt-2">
+            @for (audience of audiences; track audience.group) {
+              <div class="border-l-2 border-primary bg-secondary p-6">
+                <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-primary">{{ audience.group }}</div>
+                <p class="mt-3 text-sm leading-relaxed text-muted-foreground">{{ audience.before }}</p>
+                <p class="mt-2 text-sm leading-relaxed text-foreground">{{ audience.after }}</p>
+              </div>
+            }
+          </div>
+
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>Training was the clearest case for the whole idea. The prototype gave them something to build against weeks early, and the mission gave them the part that actually shapes good training: the intent behind the feature, and the user problem it was meant to solve.</p>
+          </div>
+        </section>
+
+        <!-- 05 Outcomes & Tradeoffs -->
+        <section class="space-y-6 scroll-mt-32" id="outcomes">
+          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">05</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Outcomes &amp; Tradeoffs</h2>
+            <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>Orbit was an internal tool and it stayed one. Four designers and a manager used it, which was the entire design organization. Two of them used it heavily. Real features went through it, and it was still in use when I left.</p>
+            <p>What it needed next was volume. Enough designers taking enough features all the way through to train the thing and improve it, which is the same problem every internal tool has in its first year.</p>
+          </div>
+
+          <div class="space-y-4 pt-2">
+            <h3 class="font-serif text-xl font-normal text-foreground">Tradeoffs</h3>
+            <div class="space-y-3">
+              @for (tradeoff of tradeoffs; track tradeoff.title) {
+                <p class="flex gap-3 text-sm leading-relaxed text-muted-foreground"><span class="shrink-0 text-primary">&rarr;</span><span><strong class="font-medium text-foreground">{{ tradeoff.title }}</strong> {{ tradeoff.body }}</span></p>
+              }
+            </div>
+          </div>
+
+          <p class="pt-2 font-serif text-statement font-normal leading-[1.3] text-foreground">A design system decides what gets built. Orbit was an attempt to reach one step earlier, into how the work gets decided in the first place.</p>
+        </section>
+
+        <!-- 06 Where it was headed -->
+        <section class="space-y-6 scroll-mt-32" id="next">
+          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">06</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Where It Was Headed</h2>
+            <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <p>The case for Orbit was never throughput alone, though throughput was the easiest part to argue. A working prototype at handoff means engineering starts with more answers and burns fewer rounds of review before release. Training and technical writing get ahead of a release instead of chasing it.</p>
+            <p>The rest of the case was transparency. Every one of the six gaps in &sect;01 is really the same gap: information about a feature sat with whoever happened to hold it. A mission made that information a shared object, which is a smaller idea than an AI workspace and a more useful one.</p>
+            <p>Helios and Orbit were built alongside each other and they answer different questions. <a routerLink="/work/helios" class="text-primary underline underline-offset-2 transition-colors hover:text-foreground">Helios</a> made a design decision reusable. Orbit was the attempt to find out how much else could be built directly from a system once that system exists.</p>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Table of Contents -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-24">
+          <div class="mb-4 font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Contents</div>
+          <ol class="space-y-3 font-mono text-label-lg">
+            <li><a [routerLink]="[]" fragment="problem" class="text-foreground hover:text-primary transition-colors">01. Missing Context</a></li>
+            <li><a [routerLink]="[]" fragment="missions" class="text-foreground hover:text-primary transition-colors">02. The Mission Model</a></li>
+            <li><a [routerLink]="[]" fragment="library" class="text-foreground hover:text-primary transition-colors">03. From the Library</a></li>
+            <li><a [routerLink]="[]" fragment="audiences" class="text-foreground hover:text-primary transition-colors">04. Who It Was For</a></li>
+            <li><a [routerLink]="[]" fragment="outcomes" class="text-foreground hover:text-primary transition-colors">05. Outcomes &amp; Tradeoffs</a></li>
+            <li><a [routerLink]="[]" fragment="next" class="text-foreground hover:text-primary transition-colors">06. Where It Was Headed</a></li>
+          </ol>
+        </div>
+      </aside>
     </div>
   </section>
 
