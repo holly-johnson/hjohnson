@@ -10,7 +10,7 @@ export const siteMetadata = {
   "person": {
     "name": "Holly Johnson",
     "jobTitle": "Product Designer & Design Systems Lead",
-    "description": "Product designer and design systems lead who builds the Figma architecture, the design tokens, and the production component library behind it.",
+    "description": "Product designer and design systems lead who builds the Figma architecture, the design tokens and the production component library behind it.",
     "email": "hme2784@gmail.com",
     "image": "/assets/social/home.png?v=2",
     "sameAs": [
@@ -69,7 +69,7 @@ export const siteMetadata = {
       "path": "/work/analysis-workflow",
       "kind": "case-study",
       "title": "Investigative Workflow Research · Holly Johnson",
-      "description": "Research mapping how investigators query, collect, analyze, connect, visualize, document, and report across fragmented product workflows.",
+      "description": "Research mapping how investigators query, collect, analyze, connect, visualize, document and report across fragmented product workflows.",
       "image": "/assets/social/investigative-workflow.png?v=2"
     },
     {
