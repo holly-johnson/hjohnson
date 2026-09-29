@@ -413,7 +413,7 @@ CARDS = [
     ),
     dict(
         name="nucleus.png",
-        kicker="Platform · 2017–present",
+        kicker="Platform · Built 2017–2022 · Still in use",
         title=["NUcleus", "Design System"],
         subhead="One system, many institutional identities.",
         footer="Case study",
