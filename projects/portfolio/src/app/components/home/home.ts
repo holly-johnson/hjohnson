@@ -139,7 +139,9 @@ export class Home {
 
   protected readonly quotes: ColleagueQuote[] = [
     {
-      quote: '… She was also the first person in our UX group to treat AI as a working tool rather than a novelty. …',
+      // The bracketed subject is the only word not his: the source sentence carries on
+      // from the clause before it, which is elided here.
+      quote: '… She was also the first person in our UX group to treat AI as a working tool rather than a novelty. [She] built new integrations into the tools we already used, Figma among them, so the gains showed up in everyday work instead of in a demo. …',
       name: 'Christian Natis',
       title: 'Head of Canadian R&D',
       org: 'Penlink',
@@ -151,7 +153,9 @@ export class Home {
       org: 'University of Nebraska System',
     },
     {
-      quote: 'Holly was instrumental in bringing front-end development skills and processes to our team. …',
+      // His closing sentence is about personality rather than the work, so it is left
+      // out. The other two cards carry substance only and this one should match.
+      quote: 'Holly was instrumental in bringing front-end development skills and processes to our team. Her expertise, knowledge and leadership skills were vital in developing a design system for the University of Nebraska. …',
       name: 'Eric Zoz',
       title: 'Senior Web Developer',
       org: 'University of Nebraska',

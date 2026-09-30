@@ -215,34 +215,59 @@
   </section>
 
   <!-- ── What colleagues say ───────────────────────────────────── -->
-  <section class="mx-auto max-w-6xl px-6 pt-20 lg:px-12">
-    <h2 class="mb-4 font-serif text-3xl font-normal leading-[1.15] text-foreground">What colleagues say</h2>
-    <!-- One quote per row: quote left, attribution right on desktop, below on mobile. -->
-    <div class="divide-y divide-border">
-      @for (item of quotes; track item.name) {
-        <figure class="grid gap-5 py-8 md:grid-cols-3 md:gap-10">
-          <blockquote class="max-w-[60ch] text-lead leading-[1.65] text-fg-soft md:col-span-2">&ldquo;{{ item.quote }}&rdquo;</blockquote>
-          <figcaption class="flex flex-col gap-0.5 md:pt-1">
-            <span class="font-medium text-foreground">{{ item.name }}</span>
-            <span class="font-mono text-label-lg text-muted-foreground">{{ item.title }}</span>
-            <span class="font-mono text-label-lg text-muted-foreground">{{ item.org }}</span>
-          </figcaption>
-        </figure>
-      }
+  <!--
+    A band, so the one section carrying other people's voices is not set in the same
+    frame as the sections written in mine. Cards are `background` on a `secondary`
+    band, which separates them by tone alone: lighter than the band in light mode,
+    darker in dark mode, and no shadow either way.
+  -->
+  <section class="bg-secondary">
+    <div class="mx-auto max-w-6xl px-6 py-20 lg:px-12">
+
+      <div class="mb-10 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+        <span class="font-mono text-label-lg uppercase tracking-[0.14em] text-primary">Recommendations</span>
+        <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">What colleagues say</h2>
+        <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+      </div>
+
+      <ul class="grid gap-5 md:grid-cols-3 md:gap-6">
+        @for (item of quotes; track item.name) {
+          <li>
+            <figure class="flex h-full flex-col gap-5 border border-border bg-background p-7">
+              <!-- Decorative. The blockquote already marks this as quoted, so the glyph stays out of the text. -->
+              <span aria-hidden="true" class="font-serif text-6xl leading-[0.5] text-primary/40">&ldquo;</span>
+              <!--
+                Body face, not serif italic. Caslon italic at this size goes thin and
+                hard to read light-on-dark in a column this narrow. The card, the band
+                and the glyph carry the section; the quote itself just has to read.
+              -->
+              <blockquote class="text-lead leading-[1.6] text-foreground">{{ item.quote }}</blockquote>
+              <figcaption class="mt-auto flex flex-col gap-0.5 border-t border-border pt-5">
+                <span class="font-medium text-foreground">{{ item.name }}</span>
+                <span class="font-mono text-label-lg leading-[1.5] text-muted-foreground">{{ item.title }}</span>
+                <span class="font-mono text-label-lg leading-[1.5] text-muted-foreground">{{ item.org }}</span>
+              </figcaption>
+            </figure>
+          </li>
+        }
+      </ul>
+
+      <a
+        [href]="social.linkedin + 'details/recommendations/'"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-8 inline-flex items-center gap-1 font-mono text-label-sm uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary"
+      >
+        All recommendations on LinkedIn &#8599;
+      </a>
+
     </div>
-    <a
-      [href]="social.linkedin + 'details/recommendations/'"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="mt-4 inline-flex items-center gap-1 font-mono text-label-sm uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary"
-    >
-      All recommendations on LinkedIn &#8599;
-    </a>
   </section>
 
   <!-- ── Contact ───────────────────────────────────────────────── -->
   <section class="mx-auto max-w-6xl px-6 py-20 lg:px-12">
-    <div class="flex flex-wrap items-center gap-10 border-t border-border pt-20 md:gap-x-16">
+    <!-- No top rule: the quotes band above already closes with an edge. -->
+    <div class="flex flex-wrap items-center gap-10 md:gap-x-16">
       <div class="flex min-w-0 flex-[1_1_360px] flex-col gap-3.5">
         <h2 class="font-serif text-3xl font-normal leading-[1.12] text-foreground md:text-cta">Hiring for a senior design role?</h2>
         <p class="text-lead leading-[1.6] text-muted-foreground">
