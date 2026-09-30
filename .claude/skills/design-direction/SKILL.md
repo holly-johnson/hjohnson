@@ -22,9 +22,11 @@ step-up silently misses, which is exactly how the scale forked before.
 
 | Step | Size | Role |
 |---|---|---|
-| `text-label-sm` | 11px | mono label, small: rail terms, diagram captions |
+| `text-caption` | 11px | label under a hero stat number |
+| `text-label-sm` | 12px | mono label, small: rail terms, diagram captions |
 | `text-label` | 12px | mono label: section labels, kickers, figcaptions |
 | `text-label-lg` | 13px | mono label, large: contents rail, mono list items |
+| `text-card` | 15px | home work card outcome |
 | `text-sm` | 16px | secondary body, list items |
 | `text-dense` | 17px | resume body, a denser document than an article |
 | `text-base` | 18px | body |
@@ -33,7 +35,7 @@ step-up silently misses, which is exactly how the scale forked before.
 | `text-xl` | 24px | serif sub-head H3 inside a case-study section |
 | `text-hero` | 26px | hero subhead, one line under the page H1 |
 | `text-2xl` | 28px | section H2 on About and Resume |
-| `text-name` | 32px | home work-row title |
+| `text-name` | 32px | home work card title |
 | `text-3xl` | 38px | section H2 in the case studies |
 | `text-4xl` | 44px | home flagship name |
 | `text-cta` | 48px | home contact heading |
