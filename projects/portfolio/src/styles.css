@@ -132,6 +132,11 @@
   --b7: #1D4F91;
   --b8: #143A6B;
   --b9: #0C2545;
+
+  /* Elevation. A hover lift, in place of changing an element's border colour.
+     On cream, a warm-black shadow reads on its own. `-sm` is the button step. */
+  --lift-sm: 0 4px 10px -4px rgb(20 20 18 / 0.22), 0 1px 3px -1px rgb(20 20 18 / 0.12);
+  --lift: 0 12px 28px -12px rgb(20 20 18 / 0.30), 0 3px 8px -3px rgb(20 20 18 / 0.14);
 }
 
 .dark {
@@ -207,6 +212,11 @@
   --b7: #7FA9DE;
   --b8: #93B9E6;
   --b9: #A8C8EE;
+
+  /* A black shadow does almost nothing on a near-black surface, so the dark step
+     goes deeper and adds a hairline of light to pick out the top edge. */
+  --lift-sm: 0 4px 12px -4px rgb(0 0 0 / 0.7), 0 0 0 1px rgb(255 255 255 / 0.07);
+  --lift: 0 16px 34px -14px rgb(0 0 0 / 0.8), 0 0 0 1px rgb(255 255 255 / 0.09);
 }
 
 @theme inline {
@@ -260,6 +270,14 @@
   --color-ink-4: var(--ink-4);
   --color-ink-5: var(--ink-5);
   --color-sketch: var(--sketch);
+  --shadow-lift-sm: var(--lift-sm);
+  --shadow-lift: var(--lift);
+  /* Easing for the lift. Decelerating, so the rise arrives rather than stops. */
+  --ease-lift: cubic-bezier(0.22, 1, 0.36, 1);
+  /* The one radius this site uses. Enough to take the blade off a corner without
+     reading as a rounded UI. Panels and buttons take it; hairline rules and
+     full-bleed bands stay square. */
+  --radius-edge: 2px;
   --color-mat: var(--mat);
   --color-ui-panel: var(--ui-panel);
   --color-ui-line: var(--ui-line);
