@@ -4,12 +4,6 @@ import type { Project } from '../../project.model';
 import { unpublishedProjects } from '../../unpublished.content';
 import { availability } from '../../availability';
 
-interface WorkPrinciple {
-  num: string;
-  label: string;
-  body: string;
-}
-
 /**
  * Quoted verbatim from LinkedIn recommendations, read 2026-09-28. Punctuation is theirs,
  * including Jackie's serial comma. An ellipsis marks every place words were left out.
@@ -118,24 +112,6 @@ export class Home {
 
   /** The six stages of the investigative workflow model, drawn small on the research card. */
   protected readonly workflowStages = ['Query', 'Collect', 'Analyze', 'Map', 'Visualize', 'Report'];
-
-  protected readonly principles: WorkPrinciple[] = [
-    {
-      num: '01',
-      label: 'Start in the workflow',
-      body: 'Understand how the work actually happens before deciding what should change. On investigative software, that meant mapping the whole investigation with product management, not one screen at a time.',
-    },
-    {
-      num: '02',
-      label: 'Ship the decision, not the mockup',
-      body: 'A design decision is done when it lives in the component every product uses. Building that component myself removes the handoff where intent gets lost.',
-    },
-    {
-      num: '03',
-      label: 'Direct the AI, keep the judgment',
-      body: 'I use Claude for the repeated work: repository scans, documentation and keeping Figma and the token files in sync. Product logic, accessibility and edge cases stay human decisions.',
-    },
-  ];
 
   protected readonly quotes: ColleagueQuote[] = [
     {

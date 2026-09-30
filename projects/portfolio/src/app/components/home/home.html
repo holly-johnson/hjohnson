@@ -12,10 +12,10 @@
       </p>
       <div class="mt-7 flex flex-col gap-4">
         <div class="flex flex-wrap gap-3">
-          <a [href]="social.email" class="inline-flex items-center justify-center bg-primary px-6 py-3.5 text-dense text-primary-foreground transition-opacity hover:opacity-90">
+          <a [href]="social.email" class="inline-flex items-center justify-center rounded-edge bg-primary px-6 py-3.5 text-dense text-primary-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
             Email me about a role
           </a>
-          <a routerLink="/resume" class="inline-flex items-center justify-center border border-input px-6 py-3.5 text-dense text-foreground transition-colors hover:border-foreground">
+          <a routerLink="/resume" class="inline-flex items-center justify-center rounded-edge border border-input px-6 py-3.5 text-dense text-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
             View r&eacute;sum&eacute;
           </a>
         </div>
@@ -42,12 +42,12 @@
       @for (project of published; track project.id) {
         <a
           [routerLink]="project.link"
-          class="group grid overflow-hidden border border-border bg-card outline-none transition-colors hover:border-primary focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background md:h-72"
+          class="group grid overflow-hidden rounded-edge border border-border bg-card outline-none transition duration-300 ease-lift hover:shadow-lift focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background motion-safe:hover:-translate-y-1 md:h-72"
           [class]="contained(project) ? 'md:grid-cols-[1fr_24rem]' : 'md:grid-cols-[3fr_2fr]'"
         >
           <div class="flex flex-col justify-center gap-1.5 p-5 md:p-6 lg:p-8">
             <span class="font-mono text-label-sm uppercase tracking-[0.08em] text-muted-foreground">{{ project.category }}</span>
-            <!-- The card border carries the hover on its own; a second colour change on the title was too much. -->
+            <!-- The lift carries the hover; nothing in the card changes colour. -->
             <h3 class="font-serif text-2xl font-normal leading-[1.1] text-foreground md:text-name">{{ project.title }}</h3>
             <p class="mt-1 max-w-[52ch] text-card leading-[1.55] text-fg-soft">{{ project.outcome }}</p>
             <p class="pt-3 font-mono text-label-sm leading-[1.6] text-muted-foreground/80">{{ project.capabilities.join(' · ') }}</p>
@@ -77,7 +77,7 @@
                     Browser window. The title bar gives the shot a top edge, so it reads
                     as a screen rather than as a texture bleeding off the card.
                   -->
-                  <div class="flex h-full flex-col overflow-hidden border border-border bg-plate">
+                  <div class="flex h-full flex-col overflow-hidden rounded-edge border border-border bg-plate">
                     <div class="flex shrink-0 items-center gap-1.5 border-b border-border bg-secondary px-3 py-2.5">
                       <span class="h-2 w-2 rounded-full bg-muted-foreground/35"></span>
                       <span class="h-2 w-2 rounded-full bg-muted-foreground/35"></span>
@@ -192,27 +192,22 @@
         <p class="text-lead leading-[1.65] text-fg-soft">
           People, workflows, technology and the teams building it. I ask a lot of questions, make the work visible and stay close enough to implementation to learn whether the answer actually holds up.
         </p>
-        <div class="flex flex-wrap gap-x-8 gap-y-3 font-mono text-label uppercase tracking-[0.1em]">
-          <a routerLink="/about" class="border-b border-primary/40 pb-1 text-primary transition-colors hover:border-primary">More about me &#8594;</a>
-          <a routerLink="/resume" class="border-b border-primary/40 pb-1 text-primary transition-colors hover:border-primary">View r&eacute;sum&eacute; &#8594;</a>
+        <!--
+          Both outlined, not filled. The hero already owns the one primary action on
+          this page, and these two are navigation rather than a call to act.
+        -->
+        <div class="flex flex-wrap gap-3">
+          <a routerLink="/about" class="inline-flex items-center justify-center rounded-edge border border-input px-6 py-3.5 text-dense text-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
+            More about me
+          </a>
+          <a routerLink="/resume" class="inline-flex items-center justify-center rounded-edge border border-input px-6 py-3.5 text-dense text-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
+            View r&eacute;sum&eacute;
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── How I work ────────────────────────────────────────────── -->
-  <section class="mx-auto max-w-6xl px-6 pt-20 lg:px-12">
-    <h2 class="mb-10 font-serif text-3xl font-normal leading-[1.15] text-foreground">How I work</h2>
-    <ol class="grid gap-10 md:grid-cols-3 md:gap-10">
-      @for (item of principles; track item.num) {
-        <li class="flex flex-col gap-2.5">
-          <span class="font-mono text-label-lg tracking-[0.14em] text-primary">{{ item.num }}</span>
-          <h3 class="font-serif text-xl font-normal leading-[1.25] text-foreground">{{ item.label }}</h3>
-          <p class="text-base leading-[1.7] text-muted-foreground">{{ item.body }}</p>
-        </li>
-      }
-    </ol>
-  </section>
 
   <!-- ── What colleagues say ───────────────────────────────────── -->
   <!--
@@ -224,18 +219,14 @@
   <section class="bg-secondary">
     <div class="mx-auto max-w-6xl px-6 py-20 lg:px-12">
 
-      <div class="mb-10 flex flex-wrap items-baseline gap-x-4 gap-y-3">
-        <span class="font-mono text-label-lg uppercase tracking-[0.14em] text-primary">Recommendations</span>
-        <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">What colleagues say</h2>
-        <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
-      </div>
+      <h2 class="mb-10 font-serif text-3xl font-normal leading-[1.15] text-foreground">What colleagues say</h2>
 
       <ul class="grid gap-5 md:grid-cols-3 md:gap-6">
         @for (item of quotes; track item.name) {
           <li>
-            <figure class="flex h-full flex-col gap-5 border border-border bg-background p-7">
+            <figure class="flex h-full flex-col gap-5 rounded-edge border border-border bg-background p-7">
               <!-- Decorative. The blockquote already marks this as quoted, so the glyph stays out of the text. -->
-              <span aria-hidden="true" class="font-serif text-6xl leading-[0.5] text-primary/40">&ldquo;</span>
+              <span aria-hidden="true" class="font-serif text-8xl leading-[0.42] text-primary/80">&ldquo;</span>
               <!--
                 Body face, not serif italic. Caslon italic at this size goes thin and
                 hard to read light-on-dark in a column this narrow. The card, the band
@@ -275,10 +266,10 @@
         </p>
       </div>
       <div class="flex flex-[0_1_auto] flex-wrap gap-3">
-        <a [href]="social.email" class="inline-flex items-center justify-center bg-primary px-6 py-3.5 text-dense text-primary-foreground transition-opacity hover:opacity-90">
+        <a [href]="social.email" class="inline-flex items-center justify-center rounded-edge bg-primary px-6 py-3.5 text-dense text-primary-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
           Email me
         </a>
-        <a [href]="social.linkedin" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border border-input px-6 py-3.5 text-dense text-foreground transition-colors hover:border-foreground">
+        <a [href]="social.linkedin" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-edge border border-input px-6 py-3.5 text-dense text-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
           Connect on LinkedIn
         </a>
       </div>
