@@ -1,34 +1,42 @@
-/** Shared shape for a Selected Work entry, used by home and by unpublished.content. */
-export interface ProjectFigure {
+/** Shared shape for a Selected Work card, used by home and by unpublished.content. */
+
+/**
+ * A real product shot, cropped into the card's 16:10 plate. No alt text: the card is one
+ * link whose name is its category, title and outcome, so the picture is decorative there.
+ */
+export interface ProjectImage {
+  kind: 'image';
   src: string;
-  alt: string;
   /** Intrinsic pixel size, bound so the browser reserves space before the image loads. */
   width: number;
   height: number;
+  /** object-position for the crop, e.g. 'left top'. Defaults to top. */
+  position?: string;
+  /**
+   * 'contain' shows the whole image in a 4:3 box with no crop, plate or background.
+   * For images cropped specifically for the card. Defaults to 'cover'.
+   */
+  fit?: 'cover' | 'contain';
 }
 
-/** The mono metadata rail beside a Selected Work entry. */
-export interface FactRow {
-  label: string;
-  value: string;
-  /** Renders in the accent colour, for the one fact worth landing on. */
-  accent?: boolean;
+/**
+ * A diagram drawn in markup, for work with no cleared imagery yet. Each kind is a
+ * small version of a figure from that project's case study.
+ */
+export interface ProjectDiagram {
+  kind: 'workflow' | 'orbit';
 }
+
+export type ProjectVisual = ProjectImage | ProjectDiagram;
 
 export interface Project {
   id: string;
-  /** Two-digit index shown in the work list. */
-  num: string;
   title: string;
-  discipline: string[];
-  description: string;
-  impact: string;
+  /** Mono label above the title. */
+  category: string;
+  /** One outcome-led sentence. */
+  outcome: string;
+  capabilities: string[];
   link: string;
-  /** Mono kicker above the entry title. */
-  tag: string;
-  /** Text of the entry's one link, without the arrow. */
-  linkLabel: string;
-  facts: FactRow[];
-  /** A real product shot. Unset falls back to the drawn system placeholder. */
-  figure?: ProjectFigure;
+  visual: ProjectVisual;
 }

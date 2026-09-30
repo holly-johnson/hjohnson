@@ -23,16 +23,17 @@ export const theoremNextProject = { link: '/work/nebraska-edu', label: 'Nebraska
 
 export const unpublishedProjects: Project[] = [
   {
-    id: '6',
-    num: '06',
+    id: 'nebraska-edu',
     title: 'Nebraska.edu',
-    discipline: ['Information Architecture', 'Content Strategy', 'Design Systems in Practice'],
-    description: 'The repeatable engagement that turned NUcleus into websites for departments and institutes across the University of Nebraska System.',
-    impact: 'Architecture, content maps and wireframes through to a Sitecore build and client training, so marketing staff ran their own sites afterward.',
-    tag: 'PRACTICE',
+    category: 'Practice',
+    outcome: 'A repeatable engagement that turned NUcleus into sites marketing staff ran themselves.',
+    capabilities: ['Information architecture', 'Content strategy', 'Sitecore'],
     link: '/work/nebraska-edu',
-    linkLabel: 'Read the case study',
-    facts: [{ label: 'ROLE', value: 'Lead Web Designer / Developer' }],
+    visual: {
+      kind: 'image',
+      src: 'assets/work/home/nebraska-edu-card.webp',
+      width: 1680,
+      height: 1000,
+    },
   },
 ];
-

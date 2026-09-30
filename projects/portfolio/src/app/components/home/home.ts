@@ -4,6 +4,23 @@ import type { Project } from '../../project.model';
 import { unpublishedProjects } from '../../unpublished.content';
 import { availability } from '../../availability';
 
+interface WorkPrinciple {
+  num: string;
+  label: string;
+  body: string;
+}
+
+/**
+ * Quoted verbatim from LinkedIn recommendations, read 2026-09-28. Punctuation is theirs,
+ * including Jackie's serial comma. An ellipsis marks every place words were left out.
+ */
+interface ColleagueQuote {
+  quote: string;
+  name: string;
+  title: string;
+  org: string;
+}
+
 @Component({
   selector: 'app-home',
   imports: [RouterLink],
@@ -17,78 +34,75 @@ export class Home {
     email: 'mailto:hme2784@gmail.com',
   };
 
+  /** Order is priority. Every card is the same size; Helios leads by position. */
   protected readonly projects: Project[] = [
     {
-      id: '1',
-      num: '01',
+      id: 'helios',
       title: 'Helios',
-      discipline: ['Design Systems', 'Product Platforms', 'Design Engineering', 'Applied AI'],
-      description: 'A design system and product foundation connecting design architecture, coded components, documentation, distribution and real product implementation.',
-      impact: 'Built from the first Figma foundations and token architecture through to a published Angular component library. Four designers supported more than 150 engineers, so the system had to carry decisions the team could not review screen by screen.',
-      tag: 'DESIGN SYSTEM',
+      category: 'Design System',
+      outcome: 'Design decisions shipped as production Angular components in an organization of more than 150 engineers.',
+      capabilities: ['Design system architecture', 'Front-end development', 'AI-assisted tooling'],
       link: '/work/helios',
-      linkLabel: 'Read the full case study',
-      facts: [
-        { label: 'ROLE', value: 'System and token architecture, Angular component library, accessibility, governance' },
-        { label: 'YEAR', value: '2023–2026' },
-        { label: 'OUTCOME', value: 'Figma decisions shipped as Angular components' },
-      ],
+      visual: {
+        kind: 'image',
+        src: 'assets/work/home/helios-components.webp',
+        width: 615,
+        height: 462,
+        fit: 'contain',
+      },
     },
     {
-      id: '2',
-      num: '02',
+      id: 'orbit',
       title: 'Orbit',
-      discipline: ['DesignOps', 'AI Tooling', 'Prototyping', 'Design Engineering'],
-      description: 'An internal workspace for working a feature through with Claude as a partner, where every prototype was assembled from the published Helios library.',
-      impact: 'The design team ran real features through it. A prototype could only do what Helios actually supported, so anything built outside the library flagged itself as a gap in the system.',
-      tag: 'DESIGNOPS',
+      category: 'AI-Assisted Product Development',
+      outcome: 'A persistent workspace where the design team ran real features using Claude, with every prototype built from published Helios components.',
+      capabilities: ['AI workflow design', 'Prototyping infrastructure', 'Design systems'],
       link: '/work/orbit',
-      linkLabel: 'Read the case study',
-      facts: [
-        { label: 'ROLE', value: 'DesignOps, AI tooling, prototyping infrastructure' },
-        { label: 'YEAR', value: '2025–2026' },
-        { label: 'OUTCOME', value: 'Prototypes built from the real library, and gaps that reported themselves' },
-      ],
+      visual: {
+        kind: 'orbit',
+      },
     },
     {
-      id: '3',
-      num: '03',
+      id: 'research',
       title: 'Investigative Workflow Research',
-      discipline: ['UX Research', 'Workflow Mapping', 'Product Strategy'],
-      description: 'Contextual research mapping how investigators collect, examine, connect and communicate information across a suite of separate tools.',
-      impact: 'Turned a fragmented, tool-by-tool journey into a shared model of the end-to-end workflow.',
-      tag: 'RESEARCH',
+      category: 'Research',
+      outcome: 'One shared picture of investigative work, placed in front of every team responsible for building it.',
+      capabilities: ['Contextual research', 'Workflow modeling', 'Cross-functional alignment'],
       link: '/work/analysis-workflow',
-      linkLabel: 'Read the research',
-      facts: [{ label: 'OUTCOME', value: 'One shared picture of the work, in front of every team that touches it' }],
+      visual: {
+        kind: 'workflow',
+      },
     },
     {
-      id: '4',
-      num: '04',
+      id: 'nucleus',
       title: 'NUcleus',
-      discipline: ['Design Systems', 'Platform Strategy', 'Front-End Integration'],
-      description: 'A shared design and front-end system supporting 9 university brands and more than 20 websites and applications.',
-      impact: 'Built the reusable front-end foundation first, then implemented it in the NU CMS.',
-      tag: 'DESIGN SYSTEM',
+      category: 'Design System',
+      outcome: 'A code-first design system that survived a CMS transition and remains in use after the original team changed.',
+      capabilities: ['Product ownership', 'Design systems', 'Front-end architecture'],
       link: '/work/nucleus',
-      linkLabel: 'Read the case study',
-      facts: [{ label: 'OUTCOME', value: 'The CMS and team changed. The foundation didn’t.' }],
+      visual: {
+        kind: 'image',
+        src: 'assets/work/home/nucleus-card.webp',
+        width: 1680,
+        height: 954,
+      },
     },
     {
-      id: '5',
-      num: '05',
+      id: 'theorem',
       title: 'Theorem',
-      discipline: ['Product Design', 'UX Research', 'Front-End Development'],
-      description: 'A learning management system rebuilt for the University of Nebraska High School, serving students, teachers, customer service, administrators and instructional designers.',
-      impact: 'Analytics on the legacy application showed almost no traffic on paths stakeholders had called essential, which reset the requirements around the actual work.',
-      tag: 'PRODUCT DESIGN',
+      category: 'Product Design',
+      outcome: 'Student needs shaped the replacement for a decades-old learning management system.',
+      capabilities: ['Product design', 'Research', 'Front-end prototyping'],
       link: '/work/theorem',
-      linkLabel: 'Read the case study',
-      facts: [{ label: 'OUTCOME', value: 'Student success drove every decision, replacing a decades-old system' }],
+      visual: {
+        kind: 'image',
+        src: 'assets/work/theorem/lesson.webp',
+        width: 1600,
+        height: 792,
+        position: 'left top',
+      },
     },
   ];
-
-
 
   /**
    * Work that is not ready to publish is appended from a module the production build
@@ -96,7 +110,50 @@ export class Home {
    */
   protected readonly published: Project[] = [...this.projects, ...unpublishedProjects];
 
-  /** Everything below the flagship in the work list. */
-  protected readonly supporting = this.published.filter(p => p.id !== '1');
-  protected readonly flagship = this.published[0];
+  /** A card whose image was cropped for it: shown whole, in a 4:3 box. */
+  protected contained(project: Project): boolean {
+    return project.visual.kind === 'image' && project.visual.fit === 'contain';
+  }
+
+  /** The six stages of the investigative workflow model, drawn small on the research card. */
+  protected readonly workflowStages = ['Query', 'Collect', 'Analyze', 'Map', 'Visualize', 'Report'];
+
+  protected readonly principles: WorkPrinciple[] = [
+    {
+      num: '01',
+      label: 'Start in the workflow',
+      body: 'Understand how the work actually happens before deciding what should change. On investigative software, that meant mapping the whole investigation with product management, not one screen at a time.',
+    },
+    {
+      num: '02',
+      label: 'Ship the decision, not the mockup',
+      body: 'A design decision is done when it lives in the component every product uses. Building that component myself removes the handoff where intent gets lost.',
+    },
+    {
+      num: '03',
+      label: 'Direct the AI, keep the judgment',
+      body: 'I use Claude for the repeated work: repository scans, documentation and keeping Figma and the token files in sync. Product logic, accessibility and edge cases stay human decisions.',
+    },
+  ];
+
+  protected readonly quotes: ColleagueQuote[] = [
+    {
+      quote: '… She was also the first person in our UX group to treat AI as a working tool rather than a novelty. …',
+      name: 'Christian Natis',
+      title: 'Head of Canadian R&D',
+      org: 'Penlink',
+    },
+    {
+      quote: "… Holly noticed that Nebraska.edu didn't use a design system and pitched it for efficiency and consistency. When I bought off on the idea, she designed, implemented, and maintained the design system and has managed it over the past several years. …",
+      name: 'Jackie M. Ostrowicki',
+      title: 'Chief Marketing Officer',
+      org: 'University of Nebraska System',
+    },
+    {
+      quote: 'Holly was instrumental in bringing front-end development skills and processes to our team. …',
+      name: 'Eric Zoz',
+      title: 'Senior Web Developer',
+      org: 'University of Nebraska',
+    },
+  ];
 }

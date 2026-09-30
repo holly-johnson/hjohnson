@@ -43,6 +43,7 @@
   --text-label-sm: 12px;   /* mono label, small: rail terms, diagram captions */
   --text-label: 12px;      /* mono label: section labels, kickers, footers */
   --text-label-lg: 13px;   /* mono label, large: case-study chrome, contents rail */
+  --text-card: 15px;       /* home work card outcome: one step under body, above the mono labels */
   --text-dense: 17px;      /* resume body: a denser document than an article */
   --text-wordmark: 18px;   /* the nav wordmark; its own role, so a body step never drags it */
   --text-lead: 19px;       /* lead paragraph under a page or section heading */
