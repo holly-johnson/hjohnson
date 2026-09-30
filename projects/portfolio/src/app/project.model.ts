@@ -17,6 +17,13 @@ export interface ProjectImage {
    * For images cropped specifically for the card. Defaults to 'cover'.
    */
   fit?: 'cover' | 'contain';
+  /**
+   * Wraps the shot in a browser window: a hairline frame and a title bar. A bare
+   * full-bleed screenshot has no edge, so it reads as texture rather than a screen.
+   * Only for a single screen. A composite of several sites reads as one window and
+   * misrepresents itself.
+   */
+  chrome?: boolean;
 }
 
 /**

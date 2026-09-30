@@ -100,6 +100,7 @@ export class Home {
         width: 1600,
         height: 792,
         position: 'left top',
+        chrome: true,
       },
     },
   ];

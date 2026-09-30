@@ -47,10 +47,8 @@
         >
           <div class="flex flex-col justify-center gap-1.5 p-5 md:p-6 lg:p-8">
             <span class="font-mono text-label-sm uppercase tracking-[0.08em] text-muted-foreground">{{ project.category }}</span>
-            <div class="flex items-baseline gap-3">
-              <h3 class="font-serif text-2xl font-normal leading-[1.1] text-foreground transition-colors group-hover:text-primary md:text-name">{{ project.title }}</h3>
-              <span aria-hidden="true" class="font-mono text-label-lg text-muted-foreground transition-colors group-hover:text-primary">&#8594;</span>
-            </div>
+            <!-- The card border carries the hover on its own; a second colour change on the title was too much. -->
+            <h3 class="font-serif text-2xl font-normal leading-[1.1] text-foreground md:text-name">{{ project.title }}</h3>
             <p class="mt-1 max-w-[52ch] text-card leading-[1.55] text-fg-soft">{{ project.outcome }}</p>
             <p class="pt-3 font-mono text-label-sm leading-[1.6] text-muted-foreground/80">{{ project.capabilities.join(' · ') }}</p>
           </div>
@@ -74,6 +72,28 @@
                     loading="lazy"
                     decoding="async"
                   />
+                } @else if (project.visual.kind === 'image' && project.visual.chrome) {
+                  <!--
+                    Browser window. The title bar gives the shot a top edge, so it reads
+                    as a screen rather than as a texture bleeding off the card.
+                  -->
+                  <div class="flex h-full flex-col overflow-hidden border border-border bg-plate">
+                    <div class="flex shrink-0 items-center gap-1.5 border-b border-border bg-secondary px-3 py-2.5">
+                      <span class="h-2 w-2 rounded-full bg-muted-foreground/35"></span>
+                      <span class="h-2 w-2 rounded-full bg-muted-foreground/35"></span>
+                      <span class="h-2 w-2 rounded-full bg-muted-foreground/35"></span>
+                    </div>
+                    <img
+                      [src]="project.visual.src"
+                      alt=""
+                      [width]="project.visual.width"
+                      [height]="project.visual.height"
+                      [style.object-position]="project.visual.position ?? 'top'"
+                      class="block min-h-0 w-full flex-1 object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
                 } @else if (project.visual.kind === 'image') {
                   <div class="h-full bg-plate">
                     <img
