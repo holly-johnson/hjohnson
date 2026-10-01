@@ -180,84 +180,82 @@
 
   <!-- ── About ─────────────────────────────────────────────────── -->
   <!--
-    Personal and editorial: a serif statement and a short paragraph, no section label.
-    No portrait slot. If a photo arrives later it takes the left column's place.
+    One band: the statement, then the people who can corroborate it, then the two
+    ways to read further. The quotes used to carry their own heading, which split a
+    region that was already visually continuous.
+
+    Cards are `background` on a `secondary` band, separated by tone alone: lighter
+    than the band in light mode, darker in dark mode, and no shadow either way until
+    hover. Each card is a link to the recommendations list, so no callout is needed.
   -->
   <section class="bg-secondary text-foreground">
-    <div class="mx-auto grid max-w-6xl gap-6 px-6 py-11 lg:grid-cols-12 lg:gap-12 lg:px-12 lg:py-14">
-      <h2 class="font-serif text-3xl font-normal leading-[1.15] tracking-[-0.01em] lg:col-span-6">
-        I like the problems with too many moving parts.
-      </h2>
-      <div class="flex flex-col gap-5 lg:col-span-6 lg:pt-2">
-        <p class="text-lead leading-[1.65] text-fg-soft">
+    <div class="mx-auto max-w-6xl px-6 py-16 lg:px-12 lg:py-20">
+
+      <div class="grid gap-6 lg:grid-cols-12 lg:gap-12">
+        <h2 class="font-serif text-3xl font-normal leading-[1.15] tracking-[-0.01em] lg:col-span-6">
+          I like the problems with too many moving parts.
+        </h2>
+        <p class="text-lead leading-[1.65] text-fg-soft lg:col-span-6 lg:pt-2">
           People, workflows, technology and the teams building it. I ask a lot of questions, make the work visible and stay close enough to implementation to learn whether the answer actually holds up.
         </p>
-        <!--
-          Both outlined, not filled. The hero already owns the one primary action on
-          this page, and these two are navigation rather than a call to act.
-        -->
-        <div class="flex flex-wrap gap-3">
-          <a routerLink="/about" class="inline-flex items-center justify-center rounded-edge border border-input px-6 py-3.5 text-dense text-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
-            More about me
-          </a>
-          <a routerLink="/resume" class="inline-flex items-center justify-center rounded-edge border border-input px-6 py-3.5 text-dense text-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
-            View r&eacute;sum&eacute;
-          </a>
-        </div>
       </div>
-    </div>
-  </section>
 
-
-  <!-- ── What colleagues say ───────────────────────────────────── -->
-  <!--
-    A band, so the one section carrying other people's voices is not set in the same
-    frame as the sections written in mine. Cards are `background` on a `secondary`
-    band, which separates them by tone alone: lighter than the band in light mode,
-    darker in dark mode, and no shadow either way.
-  -->
-  <section class="bg-secondary">
-    <div class="mx-auto max-w-6xl px-6 py-20 lg:px-12">
-
-      <h2 class="mb-10 font-serif text-3xl font-normal leading-[1.15] text-foreground">What colleagues say</h2>
-
-      <ul class="grid gap-5 md:grid-cols-3 md:gap-6">
+      <ul class="mt-14 grid gap-5 md:grid-cols-3 md:gap-6">
         @for (item of quotes; track item.name) {
           <li>
-            <figure class="flex h-full flex-col gap-5 rounded-edge border border-border bg-background p-7">
-              <!-- Decorative. The blockquote already marks this as quoted, so the glyph stays out of the text. -->
-              <span aria-hidden="true" class="font-serif text-8xl leading-[0.42] text-primary/80">&ldquo;</span>
-              <!--
-                Body face, not serif italic. Caslon italic at this size goes thin and
-                hard to read light-on-dark in a column this narrow. The card, the band
-                and the glyph carry the section; the quote itself just has to read.
-              -->
-              <blockquote class="text-lead leading-[1.6] text-foreground">{{ item.quote }}</blockquote>
-              <figcaption class="mt-auto flex flex-col gap-0.5 border-t border-border pt-5">
-                <span class="font-medium text-foreground">{{ item.name }}</span>
-                <span class="font-mono text-label-lg leading-[1.5] text-muted-foreground">{{ item.title }}</span>
-                <span class="font-mono text-label-lg leading-[1.5] text-muted-foreground">{{ item.org }}</span>
-              </figcaption>
-            </figure>
+            <a
+              [href]="recommendationsUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="item.name + ', recommendation on LinkedIn'"
+              class="relative flex h-full overflow-hidden rounded-edge border border-border bg-background p-7 outline-none transition duration-300 ease-lift hover:shadow-lift focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-secondary motion-safe:hover:-translate-y-1"
+            >
+              <figure class="relative flex h-full w-full flex-col gap-5">
+                <!--
+                  A corner mark above the quote. Measured against Libre Caslon at 60px: on
+                  leading-none the ink starts exactly at the span's box top, so the card's
+                  own p-7 puts it 28px down, the same as the sides. The ink is only 17px
+                  of that 60px box, so -mb-[43px] drops the dead space underneath and the
+                  quote starts right below the mark. Decorative: the blockquote already
+                  marks the quotation, so the glyph stays out of the text.
+                -->
+                <span aria-hidden="true" class="-mb-[43px] block select-none font-serif text-6xl leading-none text-primary/40">&ldquo;</span>
+                <!--
+                  Body face, not serif italic. Caslon italic at this size goes thin and
+                  hard to read light-on-dark in a column this narrow. The card, the band
+                  and the glyph carry the section; the quote itself just has to read.
+                -->
+                <blockquote class="text-lead leading-[1.6] text-foreground">{{ item.quote }}</blockquote>
+                <figcaption class="mt-auto flex flex-col gap-0.5 border-t border-border pt-5">
+                  <span class="font-medium text-foreground">{{ item.name }}</span>
+                  <span class="font-mono text-label-lg leading-[1.5] text-muted-foreground">{{ item.title }}</span>
+                  <span class="font-mono text-label-lg leading-[1.5] text-muted-foreground">{{ item.org }}</span>
+                </figcaption>
+              </figure>
+            </a>
           </li>
         }
       </ul>
 
-      <a
-        [href]="social.linkedin + 'details/recommendations/'"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-8 inline-flex items-center gap-1 font-mono text-label-sm uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary"
-      >
-        All recommendations on LinkedIn &#8599;
-      </a>
+      <!--
+        Both outlined, not filled. The hero owns the one primary action on this page,
+        and these two are navigation rather than a call to act.
+      -->
+      <div class="mt-14 flex flex-wrap justify-center gap-3">
+        <a routerLink="/about" class="inline-flex items-center justify-center rounded-edge border border-input px-6 py-3.5 text-dense text-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
+          More about me
+        </a>
+        <a routerLink="/resume" class="inline-flex items-center justify-center rounded-edge border border-input px-6 py-3.5 text-dense text-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
+          View r&eacute;sum&eacute;
+        </a>
+      </div>
 
     </div>
   </section>
 
   <!-- ── Contact ───────────────────────────────────────────────── -->
   <section class="mx-auto max-w-6xl px-6 py-20 lg:px-12">
-    <!-- No top rule: the quotes band above already closes with an edge. -->
+    <!-- No top rule: the band above already closes with an edge. -->
     <div class="flex flex-wrap items-center gap-10 md:gap-x-16">
       <div class="flex min-w-0 flex-[1_1_360px] flex-col gap-3.5">
         <h2 class="font-serif text-3xl font-normal leading-[1.12] text-foreground md:text-cta">Hiring for a senior design role?</h2>

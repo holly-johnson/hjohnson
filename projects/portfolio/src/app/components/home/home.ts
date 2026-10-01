@@ -28,6 +28,9 @@ export class Home {
     email: 'mailto:hme2784@gmail.com',
   };
 
+  /** Every quote card opens the recommendations list, where all six of them are. */
+  protected readonly recommendationsUrl = `${this.social.linkedin}details/recommendations/`;
+
   /** Order is priority. Every card is the same size; Helios leads by position. */
   protected readonly projects: Project[] = [
     {

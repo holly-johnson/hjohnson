@@ -214,8 +214,13 @@
   --b9: #A8C8EE;
 
   /* A black shadow does almost nothing on a near-black surface, so the dark step
-     goes deeper and adds a hairline of light to pick out the top edge. */
-  --lift-sm: 0 4px 12px -4px rgb(0 0 0 / 0.7), 0 0 0 1px rgb(255 255 255 / 0.07);
+     goes deeper and adds a hairline of light to pick out the top edge. The hairline
+     sits inside the button, where an outside one would land against the outlined
+     variant's own border and draw it a second edge the filled variant never gets.
+     The card step keeps its hairline outside: four of the five cards hold an image
+     panel flush to the edge, and a child's background paints over an inset shadow,
+     so an inset ring there would show on the text half and vanish on the image. */
+  --lift-sm: 0 4px 12px -4px rgb(0 0 0 / 0.7), inset 0 0 0 1px rgb(255 255 255 / 0.07);
   --lift: 0 16px 34px -14px rgb(0 0 0 / 0.8), 0 0 0 1px rgb(255 255 255 / 0.09);
 }
 
