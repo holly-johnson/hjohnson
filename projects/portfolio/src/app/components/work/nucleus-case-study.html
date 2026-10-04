@@ -132,10 +132,10 @@
                   [href]="site.url"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="group border border-border bg-secondary overflow-hidden transition-colors hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                  class="card-link group bg-secondary focus-visible:ring-offset-card"
                   [attr.aria-label]="'Visit ' + site.name + ' website'"
                 >
-                  <div class="aspect-[4/3] flex items-center justify-center p-4 bg-plate border-b border-plate-line group-hover:bg-plate transition-colors">
+                  <div class="aspect-[4/3] flex items-center justify-center p-4 bg-plate border-b border-plate-line">
                     <img
                       [src]="site.image"
                       alt=""
@@ -310,7 +310,7 @@
           </div>
           <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
             <p>Websites were only half of the university’s digital presence. The rest was applications for contact and event management, data access and learning management. In 2017 the University of Nebraska brand had never been used inside one of them.</p>
-            <p>Website and application components solve different problems. A page section is composed once and read. A data table may be used for hours by someone whose job depends on it. NUcleus therefore became two implementations of one brand. The application system was proven inside a real product first. Its initial patterns came from <a routerLink="/work/theorem" class="font-semibold text-muted-foreground underline underline-offset-2 hover:text-primary transition-colors">Theorem</a>, then were generalized for use across university applications.</p>
+            <p>Website and application components solve different problems. A page section is composed once and read. A data table may be used for hours by someone whose job depends on it. NUcleus therefore became two implementations of one brand. The application system was proven inside a real product first. Its initial patterns came from <a routerLink="/work/theorem" class="link-inline">Theorem</a>, then were generalized for use across university applications.</p>
             <p>The front-end architecture remained implementation agnostic because university applications used different technology stacks. NUcleus defined the patterns, markup and behavior while allowing each team to render them in its own framework.</p>
             <p>Every component shipped with code, configuration options, accessibility requirements, implementation notes and version history. A component that is not documented to that level is a suggestion, not a system.</p>
           </div>
@@ -473,7 +473,7 @@
         </div>
         <p class="font-mono text-label-lg text-muted-foreground/60 leading-relaxed pt-1">
           The
-          <a href="https://nsri.nebraska.edu/nsrireports/2024/index.html" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-primary transition-colors">NSRI 2024 Biennial Report</a>
+          <a href="https://nsri.nebraska.edu/nsrireports/2024/index.html" target="_blank" rel="noopener noreferrer" class="link-inline">NSRI 2024 Biennial Report</a>
           was completed as a contracted project after my employment.
         </p>
       </div>

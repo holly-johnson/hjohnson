@@ -12,10 +12,10 @@
       </p>
       <div class="mt-7 flex flex-col gap-4">
         <div class="flex flex-wrap gap-3">
-          <a [href]="social.email" class="inline-flex items-center justify-center rounded-edge bg-primary px-6 py-3.5 text-dense text-primary-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
+          <a [href]="social.email" class="btn-primary">
             Email me about a role
           </a>
-          <a routerLink="/resume" class="inline-flex items-center justify-center rounded-edge border border-input px-6 py-3.5 text-dense text-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
+          <a routerLink="/resume" class="btn-secondary">
             View r&eacute;sum&eacute;
           </a>
         </div>
@@ -42,7 +42,7 @@
       @for (project of published; track project.id) {
         <a
           [routerLink]="project.link"
-          class="group grid overflow-hidden rounded-edge border border-border bg-card outline-none transition duration-300 ease-lift hover:shadow-lift focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background motion-safe:hover:-translate-y-1 md:h-72"
+          class="card-link group grid bg-card focus-visible:ring-offset-background md:h-72"
           [class]="contained(project) ? 'md:grid-cols-[1fr_24rem]' : 'md:grid-cols-[3fr_2fr]'"
         >
           <div class="flex flex-col justify-center gap-1.5 p-5 md:p-6 lg:p-8">
@@ -208,7 +208,7 @@
               target="_blank"
               rel="noopener noreferrer"
               [attr.aria-label]="item.name + ', recommendation on LinkedIn'"
-              class="relative flex h-full overflow-hidden rounded-edge border border-border bg-background p-7 outline-none transition duration-300 ease-lift hover:shadow-lift focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-secondary motion-safe:hover:-translate-y-1"
+              class="card-link relative flex h-full bg-background p-7 focus-visible:ring-offset-secondary"
             >
               <figure class="relative flex h-full w-full flex-col gap-5">
                 <!--
@@ -242,10 +242,10 @@
         and these two are navigation rather than a call to act.
       -->
       <div class="mt-14 flex flex-wrap justify-center gap-3">
-        <a routerLink="/about" class="inline-flex items-center justify-center rounded-edge border border-input px-6 py-3.5 text-dense text-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
+        <a routerLink="/about" class="btn-secondary">
           More about me
         </a>
-        <a routerLink="/resume" class="inline-flex items-center justify-center rounded-edge border border-input px-6 py-3.5 text-dense text-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
+        <a routerLink="/resume" class="btn-secondary">
           View r&eacute;sum&eacute;
         </a>
       </div>
@@ -264,10 +264,10 @@
         </p>
       </div>
       <div class="flex flex-[0_1_auto] flex-wrap gap-3">
-        <a [href]="social.email" class="inline-flex items-center justify-center rounded-edge bg-primary px-6 py-3.5 text-dense text-primary-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
+        <a [href]="social.email" class="btn-primary">
           Email me
         </a>
-        <a [href]="social.linkedin" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-edge border border-input px-6 py-3.5 text-dense text-foreground transition duration-300 ease-lift hover:shadow-lift-sm motion-safe:hover:-translate-y-0.5">
+        <a [href]="social.linkedin" target="_blank" rel="noopener noreferrer" class="btn-secondary">
           Connect on LinkedIn
         </a>
       </div>

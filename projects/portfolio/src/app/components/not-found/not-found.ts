@@ -17,7 +17,7 @@ import { Icon } from '../shared/icon';
         </p>
         <a
           routerLink="/"
-          class="inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background hover:bg-foreground/90 transition-colors mt-8"
+          class="btn-primary mt-8"
         >
           <app-icon name="home" [size]="20" />
           Back to Home
