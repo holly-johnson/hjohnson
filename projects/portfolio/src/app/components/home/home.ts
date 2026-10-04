@@ -42,10 +42,10 @@ export class Home {
       link: '/work/helios',
       visual: {
         kind: 'image',
-        src: 'assets/work/home/helios-components.webp',
-        width: 615,
-        height: 462,
-        fit: 'contain',
+        src: 'assets/work/home/helios-workarea-card.webp',
+        width: 1536,
+        height: 895,
+        fit: 'framed',
       },
     },
     {
@@ -56,7 +56,12 @@ export class Home {
       capabilities: ['AI workflow design', 'Prototyping infrastructure', 'Design systems'],
       link: '/work/orbit',
       visual: {
-        kind: 'orbit',
+        kind: 'image',
+        src: 'assets/work/home/orbit-card.webp',
+        srcDark: 'assets/work/home/orbit-card-dark.webp',
+        width: 1536,
+        height: 895,
+        fit: 'framed',
       },
     },
     {
@@ -67,7 +72,11 @@ export class Home {
       capabilities: ['Contextual research', 'Workflow modeling', 'Cross-functional alignment'],
       link: '/work/analysis-workflow',
       visual: {
-        kind: 'workflow',
+        kind: 'image',
+        src: 'assets/work/home/workflow-card.webp',
+        width: 1536,
+        height: 895,
+        fit: 'framed',
       },
     },
     {
@@ -80,8 +89,9 @@ export class Home {
       visual: {
         kind: 'image',
         src: 'assets/work/home/nucleus-card.webp',
-        width: 1680,
-        height: 954,
+        width: 1532,
+        height: 835,
+        fit: 'framed',
       },
     },
     {
@@ -93,11 +103,10 @@ export class Home {
       link: '/work/theorem',
       visual: {
         kind: 'image',
-        src: 'assets/work/theorem/lesson.webp',
-        width: 1600,
-        height: 792,
-        position: 'left top',
-        chrome: true,
+        src: 'assets/work/home/theorem-card.webp',
+        width: 1536,
+        height: 895,
+        fit: 'framed',
       },
     },
   ];
@@ -108,13 +117,10 @@ export class Home {
    */
   protected readonly published: Project[] = [...this.projects, ...unpublishedProjects];
 
-  /** A card whose image was cropped for it: shown whole, in a 4:3 box. */
-  protected contained(project: Project): boolean {
-    return project.visual.kind === 'image' && project.visual.fit === 'contain';
+  /** A shot that brought its own window: shown whole, with no panel tone behind it. */
+  protected framed(project: Project): boolean {
+    return project.visual.kind === 'image' && project.visual.fit === 'framed';
   }
-
-  /** The six stages of the investigative workflow model, drawn small on the research card. */
-  protected readonly workflowStages = ['Query', 'Collect', 'Analyze', 'Map', 'Visualize', 'Report'];
 
   protected readonly quotes: ColleagueQuote[] = [
     {

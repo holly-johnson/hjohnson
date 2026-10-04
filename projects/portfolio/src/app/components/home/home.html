@@ -42,8 +42,7 @@
       @for (project of published; track project.id) {
         <a
           [routerLink]="project.link"
-          class="card-link group grid bg-card focus-visible:ring-offset-background md:h-72"
-          [class]="contained(project) ? 'md:grid-cols-[1fr_24rem]' : 'md:grid-cols-[3fr_2fr]'"
+          class="card-link group grid bg-card focus-visible:ring-offset-background md:h-72 md:grid-cols-[3fr_2fr]"
         >
           <div class="flex flex-col justify-center gap-1.5 p-5 md:p-6 lg:p-8">
             <span class="font-mono text-label-sm uppercase tracking-[0.08em] text-muted-foreground">{{ project.category }}</span>
@@ -53,47 +52,42 @@
             <p class="pt-3 font-mono text-label-sm leading-[1.6] text-muted-foreground/80">{{ project.capabilities.join(' · ') }}</p>
           </div>
 
-          <!-- Image above the text on a phone, fixed area on the right from md up. -->
+          <!-- Image above the text on a phone, fixed area on the right from md up. No rule
+               between the two: the panel already changes tone, which is edge enough. -->
           <div
             aria-hidden="true"
-            class="order-first overflow-hidden border-b border-border p-6 md:order-none md:h-full md:border-b-0 md:border-l"
-            [class]="contained(project) ? 'aspect-[4/3]' : 'aspect-[16/10] bg-secondary md:aspect-auto'"
+            class="order-first overflow-hidden p-6 md:order-none md:h-full"
+            [class]="framed(project) ? 'aspect-[16/10] md:aspect-auto' : 'aspect-[16/10] bg-secondary md:aspect-auto'"
           >
             @switch (project.visual.kind) {
 
               @case ('image') {
-                @if (project.visual.kind === 'image' && project.visual.fit === 'contain') {
+                @if (project.visual.kind === 'image' && project.visual.fit === 'framed') {
                   <img
                     [src]="project.visual.src"
                     alt=""
                     [width]="project.visual.width"
                     [height]="project.visual.height"
-                    class="block h-full w-full object-contain"
+                    [class]="project.visual.srcDark ? 'block h-full w-full object-contain dark:hidden' : 'block h-full w-full object-contain'"
                     loading="lazy"
                     decoding="async"
                   />
-                } @else if (project.visual.kind === 'image' && project.visual.chrome) {
-                  <!--
-                    Browser window. The title bar gives the shot a top edge, so it reads
-                    as a screen rather than as a texture bleeding off the card.
-                  -->
-                  <div class="flex h-full flex-col overflow-hidden rounded-edge border border-border bg-plate">
-                    <div class="flex shrink-0 items-center gap-1.5 border-b border-border bg-secondary px-3 py-2.5">
-                      <span class="h-2 w-2 rounded-full bg-muted-foreground/35"></span>
-                      <span class="h-2 w-2 rounded-full bg-muted-foreground/35"></span>
-                      <span class="h-2 w-2 rounded-full bg-muted-foreground/35"></span>
-                    </div>
+                  @if (project.visual.srcDark) {
+                    <!--
+                      The dark-chrome twin. Two elements rather than one swapped src: the
+                      theme is a class on the root, not a media query, so <picture> cannot
+                      see it, and a bound src would flash the wrong window on a theme change.
+                    -->
                     <img
-                      [src]="project.visual.src"
+                      [src]="project.visual.srcDark"
                       alt=""
                       [width]="project.visual.width"
                       [height]="project.visual.height"
-                      [style.object-position]="project.visual.position ?? 'top'"
-                      class="block min-h-0 w-full flex-1 object-cover"
+                      class="hidden h-full w-full object-contain dark:block"
                       loading="lazy"
                       decoding="async"
                     />
-                  </div>
+                  }
                 } @else if (project.visual.kind === 'image') {
                   <div class="h-full bg-plate">
                     <img
@@ -109,68 +103,6 @@
                   </div>
                 }
               }
-
-              <!-- Six-stage investigative workflow as one sequence, from Fig 1 of the research case study -->
-              @case ('workflow') {
-                <svg viewBox="0 0 480 270" class="block h-full w-full" preserveAspectRatio="xMidYMid meet">
-                  <defs>
-                    <marker id="wf-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                      <path d="M0,0 L10,5 L0,10 z" class="fill-primary" />
-                    </marker>
-                  </defs>
-                  <!-- Return paths: Analyze sends the work back -->
-                  <path d="M201,112 C192,30 60,30 45,112" class="fill-none stroke-primary" stroke-width="1.5" stroke-dasharray="5 5" marker-end="url(#wf-arrow)" />
-                  <path d="M196,94 C186,58 136,58 126,94" class="fill-none stroke-primary" stroke-width="1.5" stroke-dasharray="5 5" marker-end="url(#wf-arrow)" />
-                  <text x="123" y="30" text-anchor="middle" class="fill-muted-foreground font-mono uppercase" font-size="12" letter-spacing="1.5">new leads &middot; new questions</text>
-                  <!-- The sequence -->
-                  @for (stage of workflowStages; track stage; let i = $index; let last = $last) {
-                    @if (!last) {
-                      <path [attr.d]="'M' + (45 + i * 78 + 24) + ',' + (i % 2 ? 110 : 130) + ' L' + (45 + (i + 1) * 78 - 26) + ',' + (i % 2 ? 130 : 110)" class="stroke-primary" stroke-width="2.5" marker-end="url(#wf-arrow)" />
-                    }
-                    <circle [attr.cx]="45 + i * 78" [attr.cy]="i % 2 ? 110 : 130" r="21" class="fill-background stroke-primary" stroke-width="2.5" />
-                    <text [attr.x]="45 + i * 78" [attr.y]="(i % 2 ? 110 : 130) + 5" text-anchor="middle" class="fill-primary font-mono" font-size="14">0{{ i + 1 }}</text>
-                    <text [attr.x]="45 + i * 78" [attr.y]="(i % 2 ? 110 : 130) + 48" text-anchor="middle" class="fill-foreground" font-size="16" font-weight="600">{{ stage }}</text>
-                  }
-                  <!-- Documentation runs under every stage -->
-                  <rect x="20" y="212" width="440" height="36" class="fill-background stroke-primary" stroke-width="1.5" />
-                  <text x="240" y="235" text-anchor="middle" class="fill-muted-foreground font-mono uppercase" font-size="13" letter-spacing="2">Documentation &middot; every stage</text>
-                </svg>
-              }
-
-              <!-- The Orbit loop: published Helios components into a prototype, local work back as contributions -->
-              @case ('orbit') {
-                <svg viewBox="0 0 400 262" class="block h-full w-full" preserveAspectRatio="xMidYMid meet">
-                  <defs>
-                    <marker id="orbit-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                      <path d="M0,0 L10,5 L0,10 z" class="fill-primary" />
-                    </marker>
-                  </defs>
-                  <!-- Helios library -->
-                  <text x="20" y="68" class="fill-muted-foreground font-mono uppercase" font-size="12" letter-spacing="1.5">Helios</text>
-                  <rect x="20" y="78" width="130" height="96" class="fill-background stroke-border" stroke-width="1.5" />
-                  <rect x="34" y="92" width="52" height="20" class="fill-b6" />
-                  <rect x="92" y="92" width="44" height="20" class="fill-b2" />
-                  <rect x="34" y="120" width="102" height="18" class="fill-background stroke-ui-f3" stroke-width="1.5" />
-                  <rect x="34" y="146" width="30" height="14" rx="7" class="fill-b5" />
-                  <circle cx="57" cy="153" r="5" class="fill-background" />
-                  <rect x="72" y="146" width="40" height="14" rx="7" class="fill-b1 stroke-b3" stroke-width="1" />
-                  <!-- Prototype -->
-                  <text x="250" y="48" class="fill-muted-foreground font-mono uppercase" font-size="12" letter-spacing="1.5">Prototype</text>
-                  <rect x="250" y="58" width="130" height="150" class="fill-background stroke-border" stroke-width="1.5" />
-                  <rect x="250" y="58" width="130" height="14" class="fill-secondary" />
-                  <rect x="262" y="84" width="46" height="18" class="fill-b6" />
-                  <rect x="262" y="110" width="106" height="18" class="fill-background stroke-ui-f3" stroke-width="1.5" />
-                  <rect x="262" y="136" width="40" height="14" rx="7" class="fill-b1 stroke-b3" stroke-width="1" />
-                  <rect x="262" y="160" width="106" height="36" class="fill-none stroke-primary" stroke-width="2" stroke-dasharray="5 4" />
-                  <text x="315" y="183" text-anchor="middle" class="fill-primary font-mono uppercase" font-size="10" letter-spacing="0.5">Built locally</text>
-                  <!-- The loop -->
-                  <path d="M152,100 C190,30 222,40 246,104" class="fill-none stroke-primary" stroke-width="3" marker-end="url(#orbit-arrow)" />
-                  <path d="M262,200 C220,240 150,240 108,182" class="fill-none stroke-primary" stroke-width="3" marker-end="url(#orbit-arrow)" />
-                  <text x="198" y="26" text-anchor="middle" class="fill-foreground" font-size="14" font-weight="600">Built from Helios</text>
-                  <text x="186" y="256" text-anchor="middle" class="fill-foreground" font-size="14" font-weight="600">Returned as a contribution</text>
-                </svg>
-              }
-
             }
           </div>
         </a>

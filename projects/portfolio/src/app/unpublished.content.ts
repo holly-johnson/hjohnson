@@ -32,8 +32,9 @@ export const unpublishedProjects: Project[] = [
     visual: {
       kind: 'image',
       src: 'assets/work/home/nebraska-edu-card.webp',
-      width: 1680,
-      height: 1000,
+      width: 1536,
+      height: 895,
+      fit: 'framed',
     },
   },
 ];

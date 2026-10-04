@@ -7,34 +7,26 @@
 export interface ProjectImage {
   kind: 'image';
   src: string;
+  /**
+   * The same shot with dark browser chrome, swapped in under .dark. Only for a framed
+   * shot: the page inside stays light either way, it is the window around it that has
+   * to sit on the right background.
+   */
+  srcDark?: string;
   /** Intrinsic pixel size, bound so the browser reserves space before the image loads. */
   width: number;
   height: number;
   /** object-position for the crop, e.g. 'left top'. Defaults to top. */
   position?: string;
   /**
-   * 'contain' shows the whole image in a 4:3 box with no crop, plate or background.
-   * For images cropped specifically for the card. Defaults to 'cover'.
+   * How the shot meets its slot. 'framed' is for a shot that already carries its own
+   * browser window and transparent surround: shown whole, with no plate behind it.
+   * Defaults to 'cover'.
    */
-  fit?: 'cover' | 'contain';
-  /**
-   * Wraps the shot in a browser window: a hairline frame and a title bar. A bare
-   * full-bleed screenshot has no edge, so it reads as texture rather than a screen.
-   * Only for a single screen. A composite of several sites reads as one window and
-   * misrepresents itself.
-   */
-  chrome?: boolean;
+  fit?: 'cover' | 'framed';
 }
 
-/**
- * A diagram drawn in markup, for work with no cleared imagery yet. Each kind is a
- * small version of a figure from that project's case study.
- */
-export interface ProjectDiagram {
-  kind: 'workflow' | 'orbit';
-}
-
-export type ProjectVisual = ProjectImage | ProjectDiagram;
+export type ProjectVisual = ProjectImage;
 
 export interface Project {
   id: string;
