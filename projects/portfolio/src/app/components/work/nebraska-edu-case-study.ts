@@ -6,15 +6,20 @@ interface TocItem {
   label: string;
 }
 
-interface Stage {
-  title: string;
-  detail: string;
-}
-
-interface Property {
+interface Site {
   name: string;
   url?: string;
   domain?: string;
+}
+
+interface SiteGroup {
+  label: string;
+  sites: Site[];
+}
+
+interface Shot {
+  src: string;
+  alt: string;
 }
 
 @Component({
@@ -23,54 +28,61 @@ interface Property {
   templateUrl: './nebraska-edu-case-study.html',
 })
 export class NebraskaEduCaseStudy {
-  /** The repeatable sequence every site engagement ran through. */
-  protected readonly stages: Stage[] = [
+  /**
+   * The site lists from the original Squarespace case study, written in 2022. Buffett sat
+   * on the roadmap then; it launched on NUcleus later and is confirmed among the nine.
+   */
+  protected readonly siteGroups: SiteGroup[] = [
     {
-      title: 'Kickoff',
-      detail: 'Stakeholders, project managers, content creators, designers and developers in one room. The questions asked here become the creative brief.',
+      label: 'Subdomains',
+      sites: [
+        { name: 'Enterprise Data Solutions' },
+        { name: 'Digital Learning', url: 'https://online.nebraska.edu/', domain: 'online.nebraska.edu' },
+        { name: 'Information Technology Services' },
+        { name: 'Young Nebraska Scientists', url: 'https://yns.nebraska.edu/', domain: 'yns.nebraska.edu' },
+        { name: 'Nebraska Research & Innovation Conference' },
+        { name: 'Transfer Nebraska', url: 'https://transfer.nebraska.edu/', domain: 'transfer.nebraska.edu' },
+        { name: 'NU Connections' },
+      ],
     },
     {
-      title: 'Information architecture',
-      detail: 'Content sorted into sections and pages, with SEO decisions made while the structure is still cheap to change.',
+      label: 'Institutes',
+      sites: [
+        { name: 'National Strategic Research Institute', url: 'https://nsri.nebraska.edu/', domain: 'nsri.nebraska.edu' },
+        { name: 'Daugherty Water for Food Global Institute', url: 'https://waterforfood.nebraska.edu/', domain: 'waterforfood.nebraska.edu' },
+        { name: 'Buffett Early Childhood Institute', url: 'https://buffettinstitute.nebraska.edu/', domain: 'buffettinstitute.nebraska.edu' },
+      ],
     },
     {
-      title: 'Page overviews',
-      detail: 'The client states the goal and the action for every page. Paired with the brief, this is how success gets measured later.',
-    },
-    {
-      title: 'Content maps',
-      detail: 'Each page mapped block by block. The client owns the message, the design decides which NUcleus components carry it.',
-    },
-    {
-      title: 'Wireframes',
-      detail: 'Pages composed from what the system already provides. Anything missing enters the new component process.',
-    },
-    {
-      title: 'Build and train',
-      detail: 'Built in Sitecore with assets optimized, reviewed against the content map, then handed over with training.',
+      label: 'On the roadmap',
+      sites: [
+        { name: 'Established Program to Stimulate Competitive Research (EPSCoR)' },
+        { name: 'University of Nebraska High School' },
+      ],
     },
   ];
 
-  /** Domains built on NUcleus through this process. Institutes and departments, not campuses. */
-  protected readonly properties: Property[] = [
-    { name: 'University of Nebraska System', url: 'https://nebraska.edu/', domain: 'nebraska.edu' },
-    { name: 'Digital Learning', url: 'https://online.nebraska.edu/', domain: 'online.nebraska.edu' },
-    { name: 'National Strategic Research Institute', url: 'https://nsri.nebraska.edu/', domain: 'nsri.nebraska.edu' },
-    { name: 'Daugherty Water for Food Global Institute', url: 'https://waterforfood.nebraska.edu/', domain: 'waterforfood.nebraska.edu' },
-    { name: 'Young Nebraska Scientists', url: 'https://yns.nebraska.edu/', domain: 'yns.nebraska.edu' },
-    { name: 'Transfer Nebraska', url: 'https://transfer.nebraska.edu/', domain: 'transfer.nebraska.edu' },
-    { name: 'Information Technology Services' },
-    { name: 'Enterprise Data Solutions' },
-    { name: 'Nebraska Research & Innovation Conference' },
-    { name: 'NU Connections' },
+  /** The gallery from the original case study, in its order. */
+  protected readonly gallery: Shot[] = [
+    { src: 'assets/work/nebraska-edu/gallery-01.webp', alt: 'NU Advance non-credit and professional development landing page' },
+    { src: 'assets/work/nebraska-edu/gallery-02.webp', alt: 'NU Advance sections for bootcamps, credentials, masterclasses and resources' },
+    { src: 'assets/work/nebraska-edu/gallery-03.webp', alt: 'University mission page with the road ahead and the history of the University' },
+    { src: 'assets/work/nebraska-edu/gallery-04.webp', alt: 'Scholarship page with enrollment figures and student stories' },
+    { src: 'assets/work/nebraska-edu/gallery-05.webp', alt: 'Online education page with campus cards and program statistics' },
+    { src: 'assets/work/nebraska-edu/gallery-06.webp', alt: 'One University, four campuses: a campus overview page' },
+    { src: 'assets/work/nebraska-edu/gallery-07.webp', alt: 'Leadership page for the University president and the five-year strategy' },
+    { src: 'assets/work/nebraska-edu/gallery-08.webp', alt: 'Economic impact stories with featured podcast episodes' },
+    { src: 'assets/work/nebraska-edu/gallery-09.webp', alt: 'Discovery research hero with a podcast series and research stories' },
+    { src: 'assets/work/nebraska-edu/gallery-10.webp', alt: 'News and events page with media resources and upcoming events' },
+    { src: 'assets/work/nebraska-edu/gallery-11.webp', alt: 'University-wide business services with policies and documents' },
+    { src: 'assets/work/nebraska-edu/gallery-12.webp', alt: 'Provost office page with announcements and key contacts' },
   ];
 
   protected readonly toc: TocItem[] = [
-    { fragment: 'challenge', label: '01. One University Voice' },
-    { fragment: 'process', label: '02. A Repeatable Process' },
-    { fragment: 'architecture', label: '03. Structure First' },
-    { fragment: 'mapping', label: '04. Content Mapping' },
-    { fragment: 'build', label: '05. Build and Hand Over' },
-    { fragment: 'reach', label: '06. Where It Ran' },
+    { fragment: 'role', label: '01. My Role' },
+    { fragment: 'kickoff', label: '02. Kickoff and Brief' },
+    { fragment: 'mapping', label: '03. Content Mapping' },
+    { fragment: 'build', label: '04. Build and Iterate' },
+    { fragment: 'sites', label: '05. Sites' },
   ];
 }
