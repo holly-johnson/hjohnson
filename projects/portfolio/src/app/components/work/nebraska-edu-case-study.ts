@@ -31,6 +31,8 @@ export class NebraskaEduCaseStudy {
   /**
    * The site lists from the original Squarespace case study, written in 2022. Buffett sat
    * on the roadmap then; it launched on NUcleus later and is confirmed among the nine.
+   * EPSCoR and the University of Nebraska High School were listed as roadmap too; Holly
+   * confirmed both as built subdomains on 2026-10-04.
    */
   protected readonly siteGroups: SiteGroup[] = [
     {
@@ -43,6 +45,8 @@ export class NebraskaEduCaseStudy {
         { name: 'Nebraska Research & Innovation Conference' },
         { name: 'Transfer Nebraska', url: 'https://transfer.nebraska.edu/', domain: 'transfer.nebraska.edu' },
         { name: 'NU Connections' },
+        { name: 'Established Program to Stimulate Competitive Research (EPSCoR)', url: 'https://epscor.nebraska.edu/', domain: 'epscor.nebraska.edu' },
+        { name: 'University of Nebraska High School', url: 'https://highschool.nebraska.edu/', domain: 'highschool.nebraska.edu' },
       ],
     },
     {
@@ -51,13 +55,6 @@ export class NebraskaEduCaseStudy {
         { name: 'National Strategic Research Institute', url: 'https://nsri.nebraska.edu/', domain: 'nsri.nebraska.edu' },
         { name: 'Daugherty Water for Food Global Institute', url: 'https://waterforfood.nebraska.edu/', domain: 'waterforfood.nebraska.edu' },
         { name: 'Buffett Early Childhood Institute', url: 'https://buffettinstitute.nebraska.edu/', domain: 'buffettinstitute.nebraska.edu' },
-      ],
-    },
-    {
-      label: 'On the roadmap',
-      sites: [
-        { name: 'Established Program to Stimulate Competitive Research (EPSCoR)' },
-        { name: 'University of Nebraska High School' },
       ],
     },
   ];
@@ -79,10 +76,11 @@ export class NebraskaEduCaseStudy {
   ];
 
   protected readonly toc: TocItem[] = [
-    { fragment: 'role', label: '01. My Role' },
-    { fragment: 'kickoff', label: '02. Kickoff and Brief' },
-    { fragment: 'mapping', label: '03. Content Mapping' },
-    { fragment: 'build', label: '04. Build and Iterate' },
-    { fragment: 'sites', label: '05. Sites' },
+    { fragment: 'problem', label: '01. Every Site Different' },
+    { fragment: 'kickoff', label: '02. A Repeatable Engagement' },
+    { fragment: 'mapping', label: '03. Content Before Components' },
+    { fragment: 'build', label: '04. Built to Hand Off' },
+    { fragment: 'outcomes', label: '05. Outcomes & Tradeoffs' },
+    { fragment: 'sites', label: '06. What Survived' },
   ];
 }
