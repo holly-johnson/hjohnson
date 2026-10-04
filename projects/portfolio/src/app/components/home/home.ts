@@ -42,7 +42,37 @@ export class Home {
       link: '/work/helios',
       visual: {
         kind: 'image',
-        src: 'assets/work/home/helios-workarea-card.webp',
+        src: 'assets/work/home/helios-dropdown-card.webp',
+        width: 1536,
+        height: 895,
+        fit: 'framed',
+      },
+    },
+    {
+      id: 'nucleus',
+      title: 'NUcleus',
+      category: 'Design System',
+      outcome: 'A code-first design system that survived a CMS transition and remains in use after the original team changed.',
+      capabilities: ['Product ownership', 'Design systems', 'Front-end architecture'],
+      link: '/work/nucleus',
+      visual: {
+        kind: 'image',
+        src: 'assets/work/home/nucleus-card.webp',
+        width: 1536,
+        height: 895,
+        fit: 'framed',
+      },
+    },
+    {
+      id: 'theorem',
+      title: 'Theorem',
+      category: 'Product Design',
+      outcome: 'Student needs shaped the replacement for a decades-old learning management system.',
+      capabilities: ['Product design', 'Research', 'Front-end prototyping'],
+      link: '/work/theorem',
+      visual: {
+        kind: 'image',
+        src: 'assets/work/home/theorem-card.webp',
         width: 1536,
         height: 895,
         fit: 'framed',
@@ -79,43 +109,17 @@ export class Home {
         fit: 'framed',
       },
     },
-    {
-      id: 'nucleus',
-      title: 'NUcleus',
-      category: 'Design System',
-      outcome: 'A code-first design system that survived a CMS transition and remains in use after the original team changed.',
-      capabilities: ['Product ownership', 'Design systems', 'Front-end architecture'],
-      link: '/work/nucleus',
-      visual: {
-        kind: 'image',
-        src: 'assets/work/home/nucleus-card.webp',
-        width: 1532,
-        height: 835,
-        fit: 'framed',
-      },
-    },
-    {
-      id: 'theorem',
-      title: 'Theorem',
-      category: 'Product Design',
-      outcome: 'Student needs shaped the replacement for a decades-old learning management system.',
-      capabilities: ['Product design', 'Research', 'Front-end prototyping'],
-      link: '/work/theorem',
-      visual: {
-        kind: 'image',
-        src: 'assets/work/home/theorem-card.webp',
-        width: 1536,
-        height: 895,
-        fit: 'framed',
-      },
-    },
   ];
 
   /**
-   * Work that is not ready to publish is appended from a module the production build
-   * swaps for an empty one. See unpublished.content.ts.
+   * Work that is not ready to publish is slotted in after NUcleus, from a module the
+   * production build swaps for an empty one. See unpublished.content.ts.
    */
-  protected readonly published: Project[] = [...this.projects, ...unpublishedProjects];
+  protected readonly published: Project[] = [
+    ...this.projects.slice(0, 2),
+    ...unpublishedProjects,
+    ...this.projects.slice(2),
+  ];
 
   /** A shot that brought its own window: shown whole, with no panel tone behind it. */
   protected framed(project: Project): boolean {
