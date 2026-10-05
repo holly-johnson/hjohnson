@@ -51,7 +51,7 @@
   --text-hero: 26px;       /* hero subhead, one line under the page H1 */
   --text-name: 32px;       /* home work-row title */
   --text-statement: 30px;  /* serif statement paragraph: home About block, case-study pull-out */
-  --text-cta: 48px;        /* home contact heading */
+  --text-cta: 42px;        /* home contact heading */
   --text-display: 68px;    /* page H1 */
 }
 

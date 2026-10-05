@@ -53,7 +53,7 @@ export class Home {
       title: 'NUcleus',
       category: 'Design System',
       outcome: 'A code-first design system that survived a CMS transition and remains in use after the original team changed.',
-      capabilities: ['Product ownership', 'Design systems', 'Front-end architecture'],
+      capabilities: ['Product direction', 'Design systems', 'Front-end architecture'],
       link: '/work/nucleus',
       visual: {
         kind: 'image',
@@ -67,7 +67,7 @@ export class Home {
       id: 'theorem',
       title: 'Theorem',
       category: 'Product Design',
-      outcome: 'Student needs shaped the replacement for a decades-old learning management system.',
+      outcome: 'A decades-old learning platform rebuilt around observed workflows and usage data, creating the application patterns that became NUcleus for Apps.',
       capabilities: ['Product design', 'Research', 'Front-end prototyping'],
       link: '/work/theorem',
       visual: {
@@ -82,7 +82,7 @@ export class Home {
       id: 'orbit',
       title: 'Orbit',
       category: 'AI-Assisted Product Development',
-      outcome: 'A persistent workspace where the design team ran real features using Claude, with every prototype built from published Helios components.',
+      outcome: 'An internal AI-assisted workspace that kept each feature’s documentation and working prototype together, with prototypes built in code from published Helios components.',
       capabilities: ['AI workflow design', 'Prototyping infrastructure', 'Design systems'],
       link: '/work/orbit',
       visual: {
@@ -98,7 +98,7 @@ export class Home {
       id: 'research',
       title: 'Investigative Workflow Research',
       category: 'Research',
-      outcome: 'One shared picture of investigative work, placed in front of every team responsible for building it.',
+      outcome: 'A shared model of investigative work that exposed cross-product overlap, surfaced gaps and aligned teams around how each product should support the broader investigative flow.',
       capabilities: ['Contextual research', 'Workflow modeling', 'Cross-functional alignment'],
       link: '/work/analysis-workflow',
       visual: {

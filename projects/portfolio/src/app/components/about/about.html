@@ -3,70 +3,88 @@
 
     <!-- ── Header ────────────────────────────────────────────────── -->
     <header class="pb-4 pt-16">
-      <span class="font-mono text-label-lg uppercase tracking-[0.08em] text-muted-foreground">About</span>
-      <h1 class="mt-5 max-w-[22ch] font-serif text-4xl font-normal leading-[1.12] tracking-[-0.02em] text-foreground md:text-5xl">Helping government, education and communities serve people better.</h1>
+      <span class="font-mono text-label uppercase tracking-[0.14em] text-muted-foreground">About</span>
+      <h1 class="mt-5 max-w-[22ch] font-serif text-3xl font-normal leading-[1.1] tracking-[-0.02em] text-foreground md:text-5xl lg:text-display">Helping government, education and communities serve people better.</h1>
       <p class="mt-3 text-lead text-muted-foreground">Holly Johnson · Senior Product Designer &amp; Design Systems Lead</p>
-      <div class="mt-6 max-w-[62ch] space-y-4 text-lead leading-[1.65] text-fg-soft">
+      <div class="mt-10 max-w-[68ch] space-y-4 text-lead leading-[1.65] text-fg-soft">
         @for (paragraph of lede; track paragraph) {
           <p>{{ paragraph }}</p>
         }
       </div>
     </header>
 
-    @for (section of sections; track section.heading) {
-      <section class="space-y-6 py-12">
-        <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
-          <span class="font-mono text-label-lg tracking-[0.14em] text-primary">{{ section.num }}</span>
-          <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">{{ section.heading }}</h2>
-          <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
-        </div>
+    <div class="pb-20 pt-12">
+      <div class="flex min-w-0 flex-col gap-[72px]">
+        @for (section of sections; track section.heading) {
+          <section [id]="'about-' + section.num" class="space-y-6 scroll-mt-32">
+            <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+              <span class="font-mono text-label-lg tracking-[0.14em] text-primary">{{ section.num }}</span>
+              <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">{{ section.heading }}</h2>
+              <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+            </div>
 
-        @if (section.body.length) {
-          <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            @for (paragraph of section.body; track paragraph) {
-              <p>{{ paragraph }}</p>
+            @if (section.body.length) {
+              <div class="max-w-[72ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+                @for (paragraph of section.body; track paragraph) {
+                  <p>{{ paragraph }}</p>
+                }
+              </div>
+            } @else {
+              <div class="max-w-[72ch] border border-dashed border-border px-4 py-6">
+                <span class="font-mono text-label uppercase tracking-[0.14em] text-muted-foreground">// to write</span>
+              </div>
             }
-          </div>
-        } @else {
-          <div class="max-w-[68ch] border border-dashed border-border px-4 py-6">
-            <span class="font-mono text-label uppercase tracking-[0.14em] text-muted-foreground">// to write</span>
-          </div>
-        }
-      </section>
-    }
 
-    <!-- ── Get in touch ────────────────────────── -->
-    <section class="space-y-6 py-12 pb-20">
-      <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
-        <span class="font-mono text-label-lg tracking-[0.14em] text-primary">08</span>
-        <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Get in touch</h2>
-        <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
-      </div>
-
-      <div class="max-w-[68ch]">
-        @if (availability.open) {
-          <p class="mb-6 text-lead leading-[1.65] text-foreground">
-            {{ availability.aboutLine }}
-          </p>
+            @if (section.images; as images) {
+              <!--
+                text-base sets the ch unit so the row lines up with the paragraphs above.
+                Each photo grows by its aspect ratio, so mixed landscape and portrait shots share one height.
+              -->
+              <div class="flex max-w-[72ch] flex-col gap-4 text-base sm:flex-row">
+                @for (image of images; track image.src) {
+                  <div class="min-w-0" [style.flex-grow]="image.width / image.height" [style.flex-basis]="0">
+                    <img [src]="image.src" [alt]="image.alt" class="block h-auto w-full" loading="lazy" decoding="async" [width]="image.width" [height]="image.height" />
+                  </div>
+                }
+              </div>
+            }
+          </section>
         }
 
-        <div class="flex flex-wrap gap-x-10 gap-y-3">
-          @for (link of links; track link.label) {
-            <a
-              [href]="link.href"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="break-all font-mono text-label leading-[1.7] text-muted-foreground transition-colors hover:text-foreground"
-            >{{ link.url }}</a>
-          }
-        </div>
+        <!-- ── Get in touch ────────────────────────── -->
+        <section id="contact" class="space-y-6 scroll-mt-32">
+          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">08</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Get in touch</h2>
+            <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+          </div>
 
-        <a routerLink="/" fragment="work" class="btn-secondary mt-8">
-          See the work
-          <span aria-hidden="true">&#8594;</span>
-        </a>
+          <div class="max-w-[72ch]">
+            @if (availability.open) {
+              <p class="mb-6 text-base leading-[1.7] text-foreground">
+                {{ availability.aboutLine }}
+              </p>
+            }
+
+            <div class="flex flex-wrap gap-x-10 gap-y-3">
+              @for (link of links; track link.label) {
+                <a
+                  [href]="link.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="break-all font-mono text-label leading-[1.7] text-muted-foreground transition-colors hover:text-foreground"
+                >{{ link.url }}</a>
+              }
+            </div>
+
+            <a routerLink="/" fragment="work" class="btn-secondary mt-8">
+              See the work
+              <span aria-hidden="true">&#8594;</span>
+            </a>
+          </div>
+        </section>
       </div>
-    </section>
+    </div>
 
   </div>
 

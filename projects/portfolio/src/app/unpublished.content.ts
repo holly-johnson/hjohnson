@@ -26,7 +26,7 @@ export const unpublishedProjects: Project[] = [
   {
     id: 'nebraska-edu',
     title: 'Nebraska.edu',
-    category: 'Practice',
+    category: 'Web Platform Practice',
     outcome: 'A repeatable engagement that turned NUcleus into sites marketing staff ran themselves.',
     capabilities: ['Information architecture', 'Content strategy', 'Sitecore'],
     link: '/work/nebraska-edu',

@@ -8,6 +8,8 @@ interface AboutSection {
   heading: string;
   /** Paragraphs. Leave empty and the section renders as an unwritten placeholder. */
   body: string[];
+  /** Optional photos shown side by side after the paragraphs. */
+  images?: { src: string; alt: string; width: number; height: number }[];
 }
 
 interface SocialLink {
@@ -108,8 +110,29 @@ export class About {
     {
       num: '07',
       heading: 'Outside the product work',
+      images: [
+        {
+          src: 'assets/about/outside-lake.webp',
+          alt: 'Holly in a sun hat and sunglasses, sitting on a rock beside a mountain lake',
+          width: 1000,
+          height: 750,
+        },
+        {
+          src: 'assets/about/outside-paddleboard.webp',
+          alt: 'Holly paddleboarding on a lake, seen from a distance against a forested shoreline',
+          width: 750,
+          height: 1000,
+        },
+        {
+          src: 'assets/about/outside-garden.webp',
+          alt: 'Holly sitting on a stone garden wall under an evergreen tree, smiling and holding up a peace sign',
+          width: 1000,
+          height: 750,
+        },
+      ],
       body: [
         'I’m based in Lincoln, Nebraska, with my husband, two kids and a garden that is always becoming some new experiment.',
+        'I’m happiest outside. I’ll take any excuse to be near water, and a paddleboard is my favorite way to get out on it. When I can’t get to a lake, the garden keeps me outdoors.',
         'The question-asking doesn’t stop when I close my laptop. When something catches my attention, I tend to want to understand it and, usually, do something with what I learn.',
         'Sometimes that means getting involved in my community. Sometimes it means starting a new project. Sometimes it means standing in my garden debating whether I should, once again, give the tomatoes more square footage.',
         'Apparently, curiosity is a permanent condition.',

@@ -7,8 +7,8 @@
       <h1 class="max-w-[22ch] font-serif text-4xl font-normal leading-[1.12] tracking-[-0.02em] text-foreground md:text-5xl">
         I work on the seam between design and engineering.
       </h1>
-      <p class="mt-4 max-w-[50ch] text-lead leading-[1.65] text-fg-soft">
-        Senior product designer who writes the production code too. For 10+ years I&rsquo;ve built design systems, front-end foundations and the tooling that keeps design and code in step.
+      <p class="mt-4 max-w-[60ch] text-lead leading-[1.65] text-fg-soft">
+        Design systems lead and senior product designer who writes the production code too. For 10+ years I&rsquo;ve built design systems, front-end foundations and the tooling that keeps design and code in step.
       </p>
       <div class="mt-7 flex flex-col gap-4">
         <div class="flex flex-wrap gap-3">
@@ -21,7 +21,10 @@
         </div>
         @if (availability.open) {
           <p class="flex items-center gap-2 text-sm text-muted-foreground">
-            <span aria-hidden="true" class="h-2 w-2 rounded-full bg-primary"></span>
+            <span aria-hidden="true" class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 motion-safe:animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+            </span>
             {{ availability.line }}
           </p>
         }
@@ -190,7 +193,7 @@
     <!-- No top rule: the band above already closes with an edge. -->
     <div class="flex flex-wrap items-center gap-10 md:gap-x-16">
       <div class="flex min-w-0 flex-[1_1_360px] flex-col gap-3.5">
-        <h2 class="font-serif text-3xl font-normal leading-[1.12] text-foreground md:text-cta">Hiring for a senior design role?</h2>
+        <h2 class="font-serif text-3xl font-normal leading-[1.12] text-foreground md:text-cta">Hiring for a senior product designer or design systems lead?</h2>
         <p class="text-lead leading-[1.6] text-muted-foreground">
           Tell me what's broken. I'll tell you honestly whether I'm the right person for it.
         </p>
