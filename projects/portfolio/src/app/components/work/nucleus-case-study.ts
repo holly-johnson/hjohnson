@@ -15,9 +15,8 @@ interface Reference {
 interface EcosystemSite {
   name: string;
   url: string;
-  image: string;
-  largeImage?: boolean;
-  matchSystemColor?: boolean;
+  /** Archived home-page capture, composited into the browser frame. */
+  screenshot: string;
 }
 
 @Component({
@@ -31,51 +30,39 @@ export class NucleusCaseStudy {
 
   protected readonly scaleSites: EcosystemSite[] = [
     {
-      name: 'National Strategic Research Institute',
-      url: 'https://nsri.nebraska.edu/',
-      image: '/assets/work/nucleus-ecosystem/nsri.webp',
-    },
-    {
       name: 'University of Nebraska System',
       url: 'https://nebraska.edu/',
-      image: '/assets/work/nucleus-ecosystem/nu-system.svg',
+      screenshot: '/assets/work/nucleus-site-nebraska-edu-home-framed.webp',
     },
     {
-      name: 'Office of the President',
-      url: 'https://nebraska.edu/president/',
-      image: '/assets/work/nucleus-ecosystem/president-seal.svg',
-      largeImage: true,
-      matchSystemColor: true,
-    },
-    {
-      name: 'Young Nebraska Scientists',
-      url: 'https://yns.nebraska.edu/',
-      image: '/assets/work/nucleus-ecosystem/young-scientists.svg',
+      name: 'National Strategic Research Institute',
+      url: 'https://nsri.nebraska.edu/',
+      screenshot: '/assets/work/nucleus-site-nsri-framed.webp',
     },
     {
       name: 'Transfer Nebraska',
       url: 'https://transfer.nebraska.edu/',
-      image: '/assets/work/nucleus-ecosystem/transfer.svg',
+      screenshot: '/assets/work/nucleus-site-transfer-nebraska-framed.webp',
     },
     {
-      name: 'Buffett Early Childhood Institute',
-      url: 'https://buffettinstitute.nebraska.edu/',
-      image: '/assets/work/nucleus-ecosystem/buffett.svg',
+      name: 'Office of the President',
+      url: 'https://nebraska.edu/president/',
+      screenshot: '/assets/work/nucleus-site-office-of-the-president-framed.webp',
     },
     {
-      name: 'Daugherty Water for Food Global Institute',
-      url: 'https://waterforfood.nebraska.edu/',
-      image: '/assets/work/nucleus-ecosystem/water-for-food.svg',
+      name: 'Young Nebraska Scientists',
+      url: 'https://yns.nebraska.edu/',
+      screenshot: '/assets/work/nucleus-site-young-nebraska-scientists-framed.webp',
     },
   ];
 
   protected readonly archRows: ArchRow[] = [
-    { label: 'Brand', detail: 'Typography · Color · Spacing' },
-    { label: 'Patterns', detail: 'Layout systems · Interaction rules' },
-    { label: 'Components', detail: 'HTML · SCSS · Handlebars · NU CMS' },
+    { label: 'ITCSS', detail: 'Settings · Elements · Objects · Components · Utilities' },
+    { label: 'SCSS', detail: 'Variables in primitive, semantic and component layers' },
+    { label: 'Patterns', detail: 'Reusable components · Interaction behavior' },
   ];
 
-  protected readonly outputLabels: string[] = ['Departments', 'Institutes', 'Programs', 'Online High School'];
+  protected readonly referenceStack: string[] = ['HTML', 'SCSS', 'Handlebars'];
 
   protected readonly references: Reference[] = [
     { label: 'University of Nebraska System', url: 'https://nebraska.edu/', domain: 'nebraska.edu' },
