@@ -10,6 +10,7 @@ interface UserGroup {
   num: string;
   name: string;
   need: string;
+  later?: boolean;
 }
 
 @Component({
@@ -18,14 +19,14 @@ interface UserGroup {
   templateUrl: './theorem-case-study.html',
 })
 export class TheoremCaseStudy {
-  /** Who the application served. Five groups came out of 2017 discovery; parents were added after phase one. */
+  /** Who the application served. Five groups came out of 2017 discovery and launched together in April 2021; parents and guardians were added later as a sixth portal. */
   protected readonly userGroups: UserGroup[] = [
     { num: '01', name: 'Students', need: 'Move through a course, track progress and know what comes next.' },
     { num: '02', name: 'Teachers', need: 'Grade work and reach students about notifications and news.' },
     { num: '03', name: 'Customer service', need: 'Answer account and enrollment questions.' },
     { num: '04', name: 'Administrators', need: 'Oversee courses, accounts and records across the school.' },
     { num: '05', name: 'Instructional designers', need: 'Author and publish course content.' },
-    { num: '06', name: 'Parents & Guardians', need: 'Stay up to date with their child’s learning.' },
+    { num: '06', name: 'Parents and guardians', need: 'Stay up to date with their child’s learning.', later: true },
   ];
 
   /** Rail labels are trimmed to fit the 230px contents column on one line; the headings themselves are longer. */

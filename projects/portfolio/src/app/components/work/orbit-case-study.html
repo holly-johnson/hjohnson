@@ -7,13 +7,13 @@
 
         <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-16">
           <div>
-            <span class="font-mono text-label-lg uppercase tracking-[0.08em] text-muted-foreground">Internal AI tooling &middot; 2025&ndash;2026</span>
+            <span class="font-mono text-label-lg uppercase tracking-[0.08em] text-muted-foreground">AI-Assisted Product Development &middot; 2025&ndash;2026</span>
             <h1 class="mt-5 font-serif text-4xl font-normal leading-[1.12] tracking-[-0.02em] text-foreground md:text-5xl">Orbit</h1>
-            <p class="mt-3 text-hero leading-[1.3] text-foreground">One place to hold a feature, and a working prototype at the end of it.</p>
+            <p class="mt-3 text-hero leading-[1.3] text-foreground">A shared workspace for building and testing AI-assisted prototypes.</p>
 
             <div class="mt-6 max-w-[64ch] space-y-4 text-lead leading-[1.7] text-muted-foreground">
-              <p>Designers at Penlink opened features with no requirements. Training learned what shipped when it shipped. Orbit was the workspace built to close that distance. A mission held everything known about a feature, Claude worked that feature alongside whoever opened it, and the output was a prototype assembled from the published <a routerLink="/work/helios" class="link-inline">Helios</a> library.</p>
-              <p>Because the prototype was built from real components, it could not promise behavior the system did not have. The whole design team used it on real features.</p>
+              <p>As AI-assisted prototypes multiplied, their prompts, links, documentation and feedback risked becoming scattered across tools and individual designers.</p>
+              <p>I designed and built Orbit as a shared workspace that helped the UX team organize, build, version and test prototypes. Each feature kept its problem, supporting material, working prototype and feedback together. The prototypes were built in code from published <a routerLink="/work/helios" class="link-inline">Helios</a> components.</p>
             </div>
           </div>
 
@@ -21,23 +21,19 @@
             <dl class="flex flex-col gap-5">
               <div>
                 <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Role</dt>
-                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">DesignOps, AI tooling, prototyping infrastructure</dd>
+                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">Designed and built Orbit end to end, including guided intake, workspace structure, live prototype experience, version-control workflow, designer-facing skills and release flow.</dd>
               </div>
               <div>
-                <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Premise</dt>
-                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">Prototype with the real library, not mockups</dd>
+                <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Users</dt>
+                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">Five UX team members used Orbit across multiple prototype workspaces.</dd>
               </div>
               <div>
-                <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Output</dt>
-                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">A working prototype, plus the gaps it exposed</dd>
+                <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Outcome</dt>
+                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">A developer-grade, version-controlled prototyping workflow that designers could use while retaining control over what was committed and shared.</dd>
               </div>
               <div>
-                <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Built alongside</dt>
-                <dd class="mt-1.5 text-sm leading-relaxed text-muted-foreground">Helios, which supplied every component it could reach</dd>
-              </div>
-              <div>
-                <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Status</dt>
-                <dd class="mt-1.5 text-sm leading-relaxed text-muted-foreground">In use by the design team at departure</dd>
+                <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Maturity</dt>
+                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">A working internal tool used on real feature work. Its prototypes were not shipped customer products.</dd>
               </div>
             </dl>
           </div>
@@ -52,105 +48,108 @@
     <div class="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[minmax(0,1fr)_230px] lg:px-12">
       <div class="flex min-w-0 flex-col gap-[72px]">
 
-        <!-- 01 The Problem -->
+        <!-- 01 -->
         <section class="space-y-6 scroll-mt-32" id="problem">
           <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
             <span class="font-mono text-label-lg tracking-[0.14em] text-primary">01</span>
-            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Features Started Without Context</h2>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">A New Practice Created a New Problem</h2>
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>The mandate arrived in one line. UX needed to work out how to use AI. What came back was not an AI experiment. It was a process fix that happened to need a model.</p>
-            <p>A standing weekly meeting with another designer was the room where it started. That hour existed to build a working partnership rather than trade status, so it could afford to walk the whole feature process looking for the missing piece. The question that landed: what if Claude could help kick a feature off, gather the requirements and stay a partner on it after that?</p>
-            <p>The practical questions came immediately. Where would the information live. How would it be shared. The answer looked like an app for tracking features. Then the scope opened up, because the same app fit a list of problems nobody had set out to solve.</p>
+            <p>Penlink leadership asked teams to explore how AI could improve their work. The UX team identified prototyping as the most useful place to begin.</p>
+            <p>As more designers created AI-assisted prototypes, a practical problem appeared. Prompts, feature context, screenshots, links and feedback could easily become scattered across chat histories, repositories and individual machines.</p>
+            <p>The prototype itself was only one part of the work. Someone returning later also needed to understand:</p>
           </div>
-
-          <figure class="overflow-hidden rounded-edge border border-border bg-card">
-            <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
-              <span class="text-muted-foreground">Fig 1. Where Context Went Missing</span>
-              <span class="text-right text-foreground">Six gaps, one lifecycle</span>
-            </div>
-            <div class="space-y-3 bg-secondary p-6">
-              @for (gap of gaps; track gap) {
-                <p class="flex gap-3 text-sm leading-relaxed text-muted-foreground"><span class="shrink-0 text-primary">&rarr;</span><span>{{ gap }}</span></p>
-              }
-            </div>
-            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">None of these are design-system problems. Helios governed what got built. This list is about how a feature got decided, recorded and passed along.</figcaption>
-          </figure>
-
+          <ul class="max-w-[68ch] space-y-2 text-lead leading-[1.65] text-muted-foreground">
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>What problem the feature addressed</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>What evidence supported it</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>Which questions remained open</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>What decisions had already been made</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>Where the current prototype lived</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>What feedback it had received</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>How the work had changed over time</span></li>
+          </ul>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>Showing the idea around settled what it was. Product managers, engineers, QA, training and technical writing each recognized a different piece of it. That made Orbit a service project rather than a design tool. The designer who started it with me put the point better than I did: AI is not replacing roles, it is connecting them.</p>
+            <p>Orbit was built to preserve that complete record.</p>
+            <p>The goal was not another place to store prototype links. It was to keep the context and learning around each prototype intact so the team could find, understand and continue the work.</p>
           </div>
         </section>
 
-        <!-- 02 The Mission Model -->
-        <section class="space-y-6 scroll-mt-32" id="missions">
+        <!-- 02 -->
+        <section class="space-y-6 scroll-mt-32" id="workspace">
           <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
             <span class="font-mono text-label-lg tracking-[0.14em] text-primary">02</span>
-            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">The Mission Model</h2>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">One Workspace for the Whole Feature</h2>
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>A feature opened a mission. The mission was the container and it held the whole feature: specs, questions, answers, concerns, notes, research, prototypes and every live link the prototypes produced. It was also the context Claude read, which is what let the partnership continue instead of restarting each session.</p>
-            <p>Storage was deliberate. A folder per mission, holding JSON files, structured so state behaved like a database rather than a chat history. By the time I left, the team had reached the conclusion that those files needed to become a real database. That is what a proof of concept is supposed to do. It ran far enough to prove its own requirements.</p>
+            <p>Orbit called each feature workspace a mission.</p>
+            <p>A guided intake prompted the designer for the problem statement, available evidence, requirements, risks, open questions and supporting documentation.</p>
+            <p>Submitting the intake created two connected things:</p>
           </div>
-
-          <figure class="overflow-hidden rounded-edge border border-border bg-card">
-            <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
-              <span class="text-muted-foreground">Fig 2. The Kickoff, Written Down</span>
-              <span class="text-right text-foreground">Wording approximate</span>
-            </div>
-            <div class="space-y-3 bg-secondary p-6">
-              @for (question of kickoffQuestions; track question) {
-                <div class="border border-border bg-background px-4 py-3 text-sm leading-relaxed text-foreground">{{ question }}</div>
-              }
-            </div>
-            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">The questions a designer would ask a product manager in a kickoff meeting, turned into something repeatable. A designer or a product manager could answer, separately or together. Asking for the evidence that a problem exists, in writing, at the start, changed more conversations than any other line here.</figcaption>
-          </figure>
-
+          <ul class="max-w-[68ch] space-y-2 text-lead leading-[1.65] text-muted-foreground">
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>A structured workspace in Orbit</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>A corresponding branch in Azure DevOps for the prototype code</span></li>
+          </ul>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>Answering created the mission and an overview of it. From there a single click asked for a few starting directions drawn from what had been collected. That mattered most on features that arrived thin. Rather than waiting for requirements, a designer could put something concrete in front of a product manager and get a fast reaction to it.</p>
-            <p>The first version of that interview was too long. It got cut down, because the goal was for people to get in and interact, not to complete a form before finding out whether any of it was useful.</p>
+            <p>The Orbit workspace held the problem, documentation, screenshots, feedback, changelog and live prototype link. The branch held the version-controlled source.</p>
+            <p>This connected lightweight UX documentation to a real code workflow from the beginning.</p>
           </div>
-
-          <figure class="overflow-hidden rounded-edge border border-border bg-card">
-            <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
-              <span class="text-muted-foreground">Fig 3. The Workspace</span>
-              <span class="text-right text-foreground">Reconstruction</span>
-            </div>
-            <div class="grid gap-px bg-border sm:grid-cols-3">
-              @for (pane of panes; track pane.label) {
-                <div class="min-w-0 space-y-3 bg-secondary p-6">
-                  <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">{{ pane.label }}</div>
-                  <p class="text-sm leading-relaxed text-foreground">{{ pane.role }}</p>
-                  <ul class="space-y-2">
-                    @for (item of pane.holds; track item) {
-                      <li class="flex gap-2 font-mono text-label-lg leading-[1.6] text-muted-foreground"><span class="shrink-0 text-primary">&middot;</span><span>{{ item }}</span></li>
-                    }
-                  </ul>
-                </div>
-              }
-            </div>
-            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">Redrawn from memory. Orbit was internal and no screenshots left with me. Running it inside the Claude browser is what put the conversation beside the record, and it is also the tradeoff in &sect;05.</figcaption>
-          </figure>
+          <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
+            <p>Storage was initially structured as JSON files, with one folder for each workspace. That was enough to prove the model and expose the next requirement. By the time I left, the team had concluded that the files needed to become a real database.</p>
+            <p>That limitation was a sign of useful maturity. Orbit had progressed far enough for its proof-of-concept storage model to become the next constraint.</p>
+          </div>
         </section>
 
-        <!-- 03 Prototypes from the library -->
-        <section class="space-y-6 scroll-mt-32" id="library">
+        <!-- 03 -->
+        <section class="space-y-6 scroll-mt-32" id="build">
           <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
             <span class="font-mono text-label-lg tracking-[0.14em] text-primary">03</span>
-            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Prototypes From the Published Library</h2>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Designers Directed the Build</h2>
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>The interesting part of Orbit was never that it produced a prototype. It was what the prototype was made of.</p>
-            <p>Generation pulled from the published Helios package, so a prototype could only do what the system actually supported. That constraint is the whole value. A mockup can promise any behavior. A prototype assembled from shipped components cannot, which means what got reviewed was closer to what engineering would receive.</p>
-            <p>Anything built to finish an idea that Helios could not supply landed in a scaffolding folder instead, which flagged it as outside the library. That gave me somewhere to look. Either the designer should be using a component that already existed, or a new component had just made its case. Gaps stopped needing to be discovered and started reporting themselves.</p>
+            <p>Designers opened Orbit in the browser alongside Claude Code.</p>
+            <p>Orbit organized and surfaced the feature context. Claude Code performed AI-assisted code changes under the designer&rsquo;s direction.</p>
+            <p>The distinction matters. Orbit was not the generative model or an autonomous coding agent. It was the shared workspace that gave the designer and Claude Code a persistent, structured feature record to work from.</p>
+            <p>The designer remained responsible for the problem, requirements, interaction decisions and quality of the result. Claude Code accelerated implementation and helped maintain the working prototype.</p>
+            <p>I created skills that made the developer workflow usable without requiring every designer to perform the underlying commands manually. Designers could direct the commit, push and deployment process while still choosing when the work was ready to share.</p>
+            <p>The workflow gave designers access to version control and deployment without hiding the fact that those systems existed.</p>
+          </div>
+        </section>
+
+        <!-- 04 -->
+        <section class="space-y-6 scroll-mt-32" id="library">
+          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">04</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Helios First, Then Exceptions</h2>
+            <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
+            <p>Orbit pulled from published Helios components before generating anything new.</p>
+            <p>That constraint made the prototypes more credible. A mockup can imply any behavior. A coded prototype built from production components is limited by what the system actually supports.</p>
+            <p>The Helios agent guidance helped Claude Code select components, use their variants more accurately and keep layouts aligned with the brand.</p>
+            <p>When Helios could not supply what the feature needed, Orbit scaffolded the unresolved interface separately and flagged it in the workspace.</p>
+            <p>That exception became visible to the UX team.</p>
+            <p>The team could determine whether:</p>
+          </div>
+          <ul class="max-w-[68ch] space-y-2 text-lead leading-[1.65] text-muted-foreground">
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>An existing Helios component should have been used</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>The design should align with a supported pattern</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>The product had exposed a legitimate system gap</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>A new or expanded component should enter the normal Helios process</span></li>
+          </ul>
+          <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
+            <p>The resulting loop was:</p>
+          </div>
+          <p class="border-l-2 border-primary bg-secondary px-6 py-5 font-mono text-label-lg leading-[1.8] text-foreground">Helios-first prototype &rarr; flagged exception &rarr; UX review &rarr; alignment or shared-component contribution &rarr; publication through Helios</p>
+          <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
+            <p>Rapid experimentation did not have to create invisible one-off debt. Exceptions became input to design-system governance.</p>
           </div>
 
           <figure class="overflow-hidden rounded-edge border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
-              <span class="text-muted-foreground">Fig 4. Inside the Library, or Outside It</span>
+              <span class="text-muted-foreground">Fig 1. Inside the Library, or Outside It</span>
               <span class="text-right text-foreground">Prototype &rarr; system</span>
             </div>
             <div class="bg-secondary p-6">
@@ -186,20 +185,23 @@
           </figure>
         </section>
 
-        <!-- 04 Who it was for -->
-        <section class="space-y-6 scroll-mt-32" id="audiences">
+        <!-- 05 -->
+        <section class="space-y-6 scroll-mt-32" id="sharing">
           <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
-            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">04</span>
-            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Who It Was Actually For</h2>
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">05</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">From Feature Workspace to Shareable Prototype</h2>
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>A prototype that lives on one laptop helps one person. Sharing was the part that made Orbit worth anything to the people downstream of design, so it was built into the mechanics rather than left as a step someone had to remember.</p>
+            <p>Creating a feature workspace also created its branch.</p>
+            <p>When the designer chose to share changes, the designer-facing skill committed and pushed the work to that branch. CI/CD rebuilt the prototype and updated its live link in Orbit.</p>
+            <p>The designer controlled when that happened. AI assistance did not remove the decision to commit or publish work.</p>
+            <p>The refreshed prototype could then be opened by collaborators across time zones.</p>
           </div>
 
           <figure class="overflow-hidden rounded-edge border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
-              <span class="text-muted-foreground">Fig 5. Mission to Reviewable Link</span>
+              <span class="text-muted-foreground">Fig 2. Mission to Reviewable Link</span>
               <span class="text-right text-foreground">Shared by default</span>
             </div>
             <div class="bg-secondary p-6">
@@ -218,57 +220,95 @@
             <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">Creating a mission created its branch. Pushing a prototype ran the pipeline and returned a live link. For an organization split across three countries, a link that anyone could open was the difference between review and a scheduled meeting.</figcaption>
           </figure>
 
-          <div class="space-y-4 pt-2">
-            @for (audience of audiences; track audience.group) {
-              <div class="border-l-2 border-primary bg-secondary p-6">
-                <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-primary">{{ audience.group }}</div>
-                <p class="mt-3 text-sm leading-relaxed text-muted-foreground">{{ audience.before }}</p>
-                <p class="mt-2 text-sm leading-relaxed text-foreground">{{ audience.after }}</p>
-              </div>
-            }
-          </div>
-
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>Training was the clearest case for the whole idea. The prototype gave them something to build against weeks early, and the mission gave them the part that actually shapes good training: the intent behind the feature, and the user problem it was meant to solve.</p>
+            <p>Orbit supported asynchronous feedback inside the workspace, but the higher-value use was often a live walkthrough. A designer or product partner could guide someone through the interactive prototype and gather feedback against real behavior rather than a static sequence of screens.</p>
+            <p>Orbit shortened the path from an idea to something testable and shareable. It did not reduce the work to faster screen production.</p>
           </div>
         </section>
 
-        <!-- 05 Outcomes & Tradeoffs -->
-        <section class="space-y-6 scroll-mt-32" id="outcomes">
+        <!-- 06 -->
+        <section class="space-y-6 scroll-mt-32" id="research">
           <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
-            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">05</span>
-            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Outcomes &amp; Tradeoffs</h2>
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">06</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Research and Collaboration</h2>
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>Orbit was an internal tool and it stayed one. Four designers and a manager used it, which was the entire design organization. Two of them used it heavily. Real features went through it, and it was still in use when I left.</p>
-            <p>What it needed next was volume. Enough designers taking enough features all the way through to train the thing and improve it, which is the same problem every internal tool has in its first year.</p>
+            <p>Orbit prototypes were used during internal research and subject-matter validation.</p>
+            <p>I used one prototype with internal users while researching an active product feature. Other designers also gathered feedback from internal users, including analysts.</p>
+            <p>These were not external customer studies. The feature stays unnamed here to protect confidential product work.</p>
+            <p>The prototype gave participants something concrete to react to. The workspace preserved the problem, feedback and decisions around that prototype so the learning did not remain with the person who conducted the session.</p>
+            <p>Training and technical-writing partners could also access the current experience before release. That gave them more time to understand the feature intent and prepare supporting material.</p>
+            <p>Orbit supported both synchronous learning through walkthroughs and asynchronous collaboration through a shared, current prototype.</p>
+          </div>
+        </section>
+
+        <!-- 07 -->
+        <section class="space-y-6 scroll-mt-32" id="adoption">
+          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">07</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Adoption and Ownership</h2>
+            <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
+            <p>Five UX team members were using Orbit when I left. They created and maintained workspaces for their own prototype work.</p>
+            <p>Product-manager participation was part of the intended direction, but product managers had not yet started using it.</p>
+            <p>The UX manager directed a product-suite-aligned navigation, which I implemented before leaving. The rest was mine: I designed and built Orbit&rsquo;s intake, workspace model, live prototype experience, DevOps workflow, designer skills and release flow.</p>
+            <p>Orbit was a working internal tool, not a formal launch or an organization-wide rollout.</p>
+            <p>Its demonstrated adoption was five UX team members using it across multiple prototype workspaces.</p>
+          </div>
+        </section>
+
+        <!-- 08 -->
+        <section class="space-y-6 scroll-mt-32" id="outcomes">
+          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">08</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Outcomes and Tradeoffs</h2>
+            <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
+            <p>Orbit made a developer-grade workflow usable by designers while preserving intentional control over the work.</p>
+            <p>It connected:</p>
+          </div>
+          <ul class="max-w-[68ch] space-y-2 text-lead leading-[1.65] text-muted-foreground">
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>Guided feature intake</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>Persistent documentation</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>Version-controlled prototype code</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>Published Helios components</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>Automated deployment</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>Interactive review</span></li>
+            <li class="flex gap-3"><span class="shrink-0 text-primary">&rarr;</span><span>Feedback and change history</span></li>
+          </ul>
+          <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
+            <p>The strongest outcome was continuity. A feature&rsquo;s problem, implementation and learning stayed together instead of being scattered across people and tools.</p>
           </div>
 
           <div class="space-y-4 pt-2">
             <h3 class="font-serif text-xl font-normal text-foreground">Tradeoffs</h3>
             <div class="space-y-3">
               @for (tradeoff of tradeoffs; track tradeoff.title) {
-                <p class="flex gap-3 text-sm leading-relaxed text-muted-foreground"><span class="shrink-0 text-primary">&rarr;</span><span><strong class="font-medium text-foreground">{{ tradeoff.title }}</strong> {{ tradeoff.body }}</span></p>
+                <p class="flex gap-3 text-sm leading-relaxed text-muted-foreground"><span class="shrink-0 text-primary">&rarr;</span><span><strong class="font-medium text-foreground">{{ tradeoff.title }}.</strong> {{ tradeoff.body }}</span></p>
               }
             </div>
           </div>
-
-          <p class="pt-2 font-serif text-statement font-normal leading-[1.3] text-foreground">A design system decides what gets built. Orbit was an attempt to reach one step earlier, into how the work gets decided in the first place.</p>
         </section>
 
-        <!-- 06 Where it was headed -->
+        <!-- 09 -->
         <section class="space-y-6 scroll-mt-32" id="next">
           <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
-            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">06</span>
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">09</span>
             <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Where It Was Headed</h2>
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>The case for Orbit was never throughput alone, though throughput was the easiest part to argue. A working prototype at handoff means engineering starts with more answers and burns fewer rounds of review before release. Training and technical writing get ahead of a release instead of chasing it.</p>
-            <p>The rest of the case was transparency. Every one of the six gaps in &sect;01 is really the same gap: information about a feature sat with whoever happened to hold it. A mission made that information a shared object, which is a smaller idea than an AI workspace and a more useful one.</p>
-            <p>Helios and Orbit were built alongside each other and they answer different questions. <a routerLink="/work/helios" class="link-inline">Helios</a> made a design decision reusable. Orbit was the attempt to find out how much else could be built directly from a system once that system exists.</p>
+            <p>The next step was broader, sustained use.</p>
+            <p>More designers needed to take more features through the complete workflow. That volume would reveal where the intake, storage, review and deployment model needed to improve.</p>
+            <p>Product managers could eventually contribute feature context directly, but that remained an intended expansion rather than delivered adoption.</p>
+            <p>The JSON storage needed to become a database. The system also needed continued investment in Helios because prototype quality could not exceed the production foundation supplying it.</p>
+            <p>Orbit and Helios answered different questions.</p>
+            <p><a routerLink="/work/helios" class="link-inline">Helios</a> made a design decision reusable across products. Orbit explored how much more of a feature workflow could be built directly from that reusable system.</p>
           </div>
+          <p class="pt-2 font-serif text-statement font-normal leading-[1.3] text-foreground">The lasting idea was smaller than &ldquo;an AI workspace&rdquo; and more useful: keep the problem, the working experience and the learning together so the team can continue the work without reconstructing its history.</p>
         </section>
 
       </div>
@@ -278,12 +318,9 @@
         <div class="sticky top-24">
           <div class="mb-4 font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Contents</div>
           <ol class="space-y-3 font-mono text-label-lg">
-            <li><a [routerLink]="[]" fragment="problem" class="text-foreground hover:text-primary transition-colors">01. Missing Context</a></li>
-            <li><a [routerLink]="[]" fragment="missions" class="text-foreground hover:text-primary transition-colors">02. The Mission Model</a></li>
-            <li><a [routerLink]="[]" fragment="library" class="text-foreground hover:text-primary transition-colors">03. From the Library</a></li>
-            <li><a [routerLink]="[]" fragment="audiences" class="text-foreground hover:text-primary transition-colors">04. Who It Was For</a></li>
-            <li><a [routerLink]="[]" fragment="outcomes" class="text-foreground hover:text-primary transition-colors">05. Outcomes &amp; Tradeoffs</a></li>
-            <li><a [routerLink]="[]" fragment="next" class="text-foreground hover:text-primary transition-colors">06. Where It Was Headed</a></li>
+            @for (item of toc; track item.fragment) {
+              <li><a [routerLink]="[]" [fragment]="item.fragment" class="text-foreground hover:text-primary transition-colors">{{ item.label }}</a></li>
+            }
           </ol>
         </div>
       </aside>

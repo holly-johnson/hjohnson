@@ -11,7 +11,7 @@
             <h1 class="mt-5 font-serif text-4xl font-normal leading-[1.12] tracking-[-0.02em] text-foreground md:text-5xl">Theorem</h1>
             <p class="mt-3 text-balance text-hero leading-[1.3] text-foreground">A learning management system rebuilt around how the work is actually done.</p>
             <p class="mt-6 max-w-[64ch] text-pretty text-lead leading-[1.7] text-muted-foreground">
-              The University of Nebraska High School teaches a college-prep curriculum entirely online. I led the experience strategy and design for Theorem and built its front end. Theorem replaced the school&rsquo;s decades-old learning management system, serving students, teachers, customer service, administrators and instructional designers from one application.
+              The University of Nebraska High School teaches a college-prep curriculum entirely online. I led the experience strategy and product design for Theorem and built its front-end reference implementation in Handlebars, HTML and SCSS. Engineering rebuilt the complete shipped interface in React. Theorem replaced the school&rsquo;s decades-old learning management system, serving students, teachers, customer service, administrators and instructional designers from one application.
             </p>
           </div>
 
@@ -31,11 +31,11 @@
               </div>
               <div>
                 <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Built with</dt>
-                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">HTML &amp; SCSS components and prototypes, rebuilt by engineering in React</dd>
+                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">Handlebars, HTML and SCSS reference implementation, rebuilt by engineering in React</dd>
               </div>
               <div>
                 <dt class="font-mono text-label-sm uppercase tracking-[0.1em] text-muted-foreground">Outcome</dt>
-                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">Launched 2021 and still the system the school runs on</dd>
+                <dd class="mt-1.5 text-sm leading-relaxed text-foreground">Launched April 13, 2021. Still the school&rsquo;s learning management system in 2026.</dd>
               </div>
             </dl>
           </div>
@@ -69,7 +69,7 @@
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>The school ran on Way Cool, an application that had accumulated decades of features and no coherent experience. Instructional designers authored courses in it. Students worked through those courses in it. Teachers graded in it and sent deadlines and news through it. Parents checked progress in it. Administrators managed records in it.</p>
+            <p>The school ran on Way Cool, an application that had accumulated decades of features and no coherent experience. Instructional designers authored courses in it. Students worked through those courses in it. Teachers graded in it and sent deadlines and news through it. Customer service handled account and enrollment support in it. Administrators managed records in it.</p>
             <p>One system, five jobs, none served well.</p>
             <p>The driver behind the rebuild was straightforward: <em class="font-semibold italic text-foreground">increase student success</em>. Every decision had to answer to that.</p>
           </div>
@@ -99,20 +99,20 @@
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>Discovery began in 2017, with the product owner, stakeholders, engineers and one designer in the room. The first task was to name who the application actually served. Five groups came out of that and each one turned out to need a portal of its own.</p>
-            <p>Surveys went out. Each type of administrative user walked through the existing application while describing their process, which surfaced needs and clarified requirements at the same time. That material fed journey maps and card sorting sessions run with stakeholders. Those sessions decided what phase one would contain.</p>
+            <p>Discovery began in 2017, with the product owner, stakeholders, engineers and one designer in the room. The first task was to name who the application actually served. Five groups came out of that and each one turned out to need a portal of its own. Parents and guardians came later, as a sixth portal added after launch.</p>
+            <p>Each type of administrative user walked through the existing application while describing their process, which surfaced needs and clarified requirements at the same time. Student surveys added the learner perspective alongside stakeholder workflow sessions. That material fed journey maps and card sorting sessions run with stakeholders. Those sessions decided what phase one would contain.</p>
             <p>Moodboards and low-fidelity sketches of the product architecture followed, revised as the picture kept changing.</p>
           </div>
 
           <div class="mb-5 flex flex-col gap-3">
-            <div class="font-mono text-label-sm uppercase tracking-[0.14em] text-muted-foreground">Who the application served over time</div>
+            <div class="font-mono text-label-sm uppercase tracking-[0.14em] text-muted-foreground">The original five, then a sixth portal</div>
             <dl class="flex flex-col">
               @for (group of userGroups; track group.name) {
                 <div class="flex flex-wrap items-baseline gap-x-6 gap-y-1 border-t border-border py-3.5" [class.border-b]="$last">
                   <dt class="flex flex-[0_0_220px] items-baseline gap-3 text-dense font-semibold text-foreground">
                     <span class="font-mono text-label-sm tracking-[0.1em] text-primary">{{ group.num }}</span>{{ group.name }}
                   </dt>
-                  <dd class="min-w-0 flex-[1_1_260px] text-dense leading-[1.6] text-muted-foreground">{{ group.need }}</dd>
+                  <dd class="min-w-0 flex-[1_1_260px] text-dense leading-[1.6] text-muted-foreground">@if (group.later) {<span class="mb-1 block font-mono text-label-sm uppercase tracking-[0.1em] text-primary">Added after the April 2021 launch</span>}{{ group.need }}</dd>
                 </div>
               }
             </dl>
@@ -143,9 +143,9 @@
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>Canvas and Moodle were reviewed feature by feature with the product owner, engineers and stakeholders, sorting what belonged in the first release of Theorem from what could wait. Running alongside it was research into learning management best practice and online learning styles, plus surveys sent to as many students as we could reach.</p>
+            <p>Canvas and Moodle were reviewed feature by feature with the product owner, engineers and stakeholders, sorting what belonged in the first release of Theorem from what could wait. Research into learning management best practice and online learning styles ran alongside it.</p>
             <p>The stakeholder requirements did not hold up. They described the features of the old system rather than the work the school needed to do.</p>
-            <p>Engineers instrumented the paths in the existing application to test that. The data showed almost no activity on several of the paths stakeholders had described as essential. Rather than present that as a contradiction, the next round of client sessions used open-ended questions and direct observation of the actual workflow. The user path was then rebuilt around what the work required.</p>
+            <p>Engineers instrumented the paths in the existing application to test that. Usage data showed low activity on several paths stakeholders had described as essential. Rather than present that as a contradiction, the next round of client sessions used open-ended questions and direct observation of the actual workflow. The user path was then rebuilt around what the work required.</p>
           </div>
 
 
@@ -155,7 +155,7 @@
               <span class="shrink-0 text-right text-foreground">Stated, measured, rebuilt</span>
             </div>
             <div class="flex justify-center bg-secondary p-6">
-              <svg viewBox="0 0 640 160" class="w-full max-w-[40rem] mx-auto h-auto block" role="img" aria-label="Three stages in sequence: the paths stakeholders called essential, then instrumentation showing almost no activity on those paths, then a user path rebuilt from open questions and observed workflow.">
+              <svg viewBox="0 0 640 160" class="w-full max-w-[40rem] mx-auto h-auto block" role="img" aria-label="Three stages in sequence: the paths stakeholders called essential, then usage data showing low activity on those paths, then a user path rebuilt from open questions and observed workflow.">
                 <defs>
                   <marker id="theorem-step-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
                     <path d="M0 0 L10 5 L0 10 Z" fill="var(--primary)" />
@@ -169,7 +169,7 @@
                 <text x="95" y="104" text-anchor="middle" class="font-mono hidden sm:block" font-size="12" fill="var(--muted-foreground)">called essential</text>
                 <rect x="235" y="30" width="170" height="100" fill="var(--card)" stroke="var(--primary)" stroke-width="1.5" />
                 <text x="320" y="64" text-anchor="middle" class="font-mono" font-size="13" letter-spacing="0.1em" fill="var(--muted-foreground)">MEASURED</text>
-                <text x="320" y="88" text-anchor="middle" class="font-mono hidden sm:block" font-size="12" fill="var(--muted-foreground)">Almost no activity</text>
+                <text x="320" y="88" text-anchor="middle" class="font-mono hidden sm:block" font-size="12" fill="var(--muted-foreground)">Low activity</text>
                 <text x="320" y="104" text-anchor="middle" class="font-mono hidden sm:block" font-size="12" fill="var(--muted-foreground)">on those paths</text>
                 <rect x="460" y="30" width="170" height="100" fill="var(--card)" stroke="var(--primary)" stroke-width="1.5" />
                 <text x="545" y="64" text-anchor="middle" class="font-mono" font-size="13" letter-spacing="0.1em" fill="var(--muted-foreground)">REBUILT</text>
@@ -179,10 +179,21 @@
             </div>
             <dl class="sm:hidden px-6 pb-6 space-y-4 border-t border-border pt-6">
               <div class="space-y-1"><dt class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Stated</dt><dd class="text-sm text-muted-foreground leading-relaxed">The paths stakeholders called essential.</dd></div>
-              <div class="space-y-1"><dt class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Measured</dt><dd class="text-sm text-muted-foreground leading-relaxed">Almost no activity on those paths.</dd></div>
+              <div class="space-y-1"><dt class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Measured</dt><dd class="text-sm text-muted-foreground leading-relaxed">Low activity on those paths.</dd></div>
               <div class="space-y-1"><dt class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Rebuilt</dt><dd class="text-sm text-muted-foreground leading-relaxed">Open questions and observed workflow.</dd></div>
             </dl>
             <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">The requirements were tested against real use before the user path was rebuilt.</figcaption>
+          </figure>
+
+          <figure class="overflow-hidden rounded-edge border border-border bg-card">
+            <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 4. Student login journey</span>
+              <span class="shrink-0 text-right text-foreground">Working session</span>
+            </div>
+            <div class="bg-secondary p-6">
+              <img src="assets/work/theorem/student-login-journey.webp" alt="Whiteboard of sticky notes mapping a student login path that starts at the existing Way Cool login. The success path runs to Successfully logged in. Branches below it cover forgot password, failed attempts with the question locked out for how long, a caps lock error and an unsuccessful login." class="w-full block box-border border border-plate-line bg-plate p-7" loading="lazy" decoding="async" width="1600" height="1200" />
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">A student login path mapped in a Theorem working session, starting from the existing Way Cool login. The failure states get as much room as the success path: a forgotten password, a lockout after failed attempts and a caps lock error. Open questions like how long a lockout lasts sit right on the board.</figcaption>
           </figure>
 
           <blockquote class="border-l-2 border-l-primary bg-secondary px-6 py-5 text-foreground">
@@ -205,6 +216,17 @@
             <p class="text-feature font-semibold leading-snug">A gap in a story is easier to see than a gap in a requirements list.</p>
           </blockquote>
 
+          <figure class="overflow-hidden rounded-edge border border-border bg-card">
+            <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
+              <span class="text-muted-foreground">Fig 5. Assignment and grading workflow</span>
+              <span class="shrink-0 text-right text-foreground">Teacher portal</span>
+            </div>
+            <div class="bg-secondary p-6">
+              <img src="assets/work/theorem/grading-workflow.webp" alt="Whiteboard mapping the existing assignment and grading workflow from login through an assignment manager, an assignment screen and a grade manager. Pink and yellow notes record stakeholder needs, including easier teacher access to a student&rsquo;s questions and answer key, a text box for teacher feedback, the ability to download files and blocking project submissions that arrive without a file." class="w-full block box-border border border-plate-line bg-plate p-7" loading="lazy" decoding="async" width="1600" height="1200" />
+            </div>
+            <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">The existing assignment and grading workflow, mapped from login through the assignment manager and grade manager. The notes record what teachers did, where the old flow failed them and what they asked for: easier access to answer keys, room for written feedback and no project submissions without a file.</figcaption>
+          </figure>
+
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
             <p>Those storyboards then became the reference for writing product requirements, organized by user portal rather than by feature. A requirement belonged to the group whose work it served and was written against that group&rsquo;s storyboard, so each one could be checked against a step someone actually took.</p>
             <p>Organizing the list this way also made the overlaps explicit. Where two groups touched the same object, a course or a grade, the requirement said which portal owned the action and which one only needed to see it. Each group of users got an application shaped around its own work.</p>
@@ -224,7 +246,7 @@
 
           <figure class="overflow-hidden rounded-edge border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
-              <span class="text-muted-foreground">Fig 4. Structure on the wall</span>
+              <span class="text-muted-foreground">Fig 6. Structure on the wall</span>
               <span class="shrink-0 text-right text-foreground">Working sessions</span>
             </div>
             <div class="bg-secondary p-6">
@@ -234,12 +256,13 @@
           </figure>
 
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>Wireframes established the basic structure, key elements and navigation. Once the team agreed on them, prototyping began on the structure of the application itself. Engineers implemented those prototypes as components in the React application stack. Design, experience and functionality testing followed.</p>
+            <p>Wireframes established the basic structure, key elements and navigation. Once the team agreed on them, my design and front-end team built a working reference interface in Handlebars, HTML and SCSS.</p>
+            <p>Engineering rebuilt the complete production interface in React. The Handlebars reference components informed matching React components in Theorem and in the shared NUcleus for Apps system. Design, experience and functionality testing continued across the implementation.</p>
           </div>
 
           <figure class="overflow-hidden rounded-edge border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
-              <span class="text-muted-foreground">Fig 5. Course introduction, on paper</span>
+              <span class="text-muted-foreground">Fig 7. Course introduction, on paper</span>
               <span class="shrink-0 text-right text-foreground">Sketch</span>
             </div>
             <div class="bg-secondary p-6">
@@ -250,7 +273,7 @@
 
           <figure class="overflow-hidden rounded-edge border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
-              <span class="text-muted-foreground">Fig 6. Navigation and lesson content</span>
+              <span class="text-muted-foreground">Fig 8. Navigation and lesson content</span>
               <span class="shrink-0 text-right text-foreground">Student portal</span>
             </div>
             <div class="grid gap-px bg-border grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
@@ -265,7 +288,8 @@
           </figure>
 
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>Three designers joined the work as it grew. I art directed the Theorem brand they built, across logo, type and color, alongside the product design.</p>
+            <p>Three designers contributed to the Theorem brand. I art directed their work across the logo, typography and color.</p>
+            <p>My role changed as the product matured. I led the original experience strategy, product design and front-end reference build. After the April 2021 launch, I hired one of those three designers as a designer and developer assigned more fully to Theorem, which gave the product dedicated support. Active designs continued through my review, and enhancements continued within the system until I left in December 2022.</p>
           </div>
         </section>
 
@@ -277,15 +301,15 @@
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>The prototypes built for Theorem were the first time the University of Nebraska brand had been applied inside an application. Nothing existed to reuse, so the patterns had to be invented here: a card for a course, a table dense enough for administrative work, a way to move between roles.</p>
-            <p>Those patterns were general enough to survive their first product. They became NUcleus for Apps. Other University applications were built on them.</p>
-            <p>The sequence matters more than the artifact. A product problem produced the system, not the other way around. Every component in it had already proven itself in something real before it was offered to anyone else.</p>
-            <p>Theorem launched in April 2021. It is still the system the school runs on.</p>
+            <p>The new University of Nebraska brand had not yet been translated into the applications I encountered. The application patterns had to be worked out here: a card for a course, a table dense enough for administrative work, a way to move between roles.</p>
+            <p>Theorem&rsquo;s product patterns became the basis for NUcleus for Apps. They were reused in other shipped University applications.</p>
+            <p>The sequence matters more than the artifact. A product problem produced the system, not the other way around.</p>
+            <p>Theorem launched on April 13, 2021, with all five original role-based portals. The parent and guardian portal was added later. Theorem remains the school&rsquo;s active learning management system in 2026.</p>
           </div>
 
           <figure class="overflow-hidden rounded-edge border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
-              <span class="text-muted-foreground">Fig 7. The original card</span>
+              <span class="text-muted-foreground">Fig 9. The original card</span>
               <span class="shrink-0 text-right text-foreground">Sketch</span>
             </div>
             <div class="bg-secondary p-6">
@@ -296,7 +320,7 @@
 
           <figure class="overflow-hidden rounded-edge border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
-              <span class="text-muted-foreground">Fig 8. Theorem sign-in</span>
+              <span class="text-muted-foreground">Fig 10. Theorem sign-in</span>
               <span class="shrink-0 text-right text-foreground">Brand application</span>
             </div>
             <div class="bg-secondary p-6">
@@ -307,7 +331,7 @@
 
           <div class="bg-secondary border-l-2 border-primary p-6">
             <div class="font-mono text-label-sm uppercase tracking-wider text-muted-foreground mb-2">Relationship to NUcleus</div>
-            <p class="text-sm leading-relaxed">The application patterns proven in Theorem became <a routerLink="/work/nucleus" fragment="apps" class="link-inline">NUcleus for Apps</a>, the branded foundation other University of Nebraska applications were built on.</p>
+            <p class="text-sm leading-relaxed">The application patterns developed in Theorem became the basis for <a routerLink="/work/nucleus" fragment="apps" class="link-inline">NUcleus for Apps</a>, which other shipped University of Nebraska applications reused.</p>
           </div>
         </section>
       </div>
