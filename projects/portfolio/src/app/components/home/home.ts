@@ -37,7 +37,7 @@ export class Home {
       id: 'helios',
       title: 'Helios',
       category: 'Design System',
-      outcome: 'Design decisions shipped as production Angular components in an organization of more than 150 engineers.',
+      outcome: 'A cross-platform design system connecting a shared Figma library to production Angular components, desktop specifications and AI-assisted prototyping.',
       capabilities: ['Design system architecture', 'Front-end development', 'AI-assisted tooling'],
       link: '/work/helios',
       visual: {
@@ -64,15 +64,30 @@ export class Home {
       },
     },
     {
-      id: 'theorem',
-      title: 'Theorem',
-      category: 'Product Design',
-      outcome: 'A decades-old learning platform rebuilt around observed workflows and usage data, creating the application patterns that became NUcleus for Apps.',
-      capabilities: ['Product design', 'Research', 'Front-end prototyping'],
-      link: '/work/theorem',
+      id: 'nebraska-edu',
+      title: 'Nebraska.edu',
+      category: 'Web Platform Practice',
+      outcome: 'A repeatable web-platform practice that gave distinct university brands a shared foundation and marketing teams the tools to run their own sites.',
+      capabilities: ['Information architecture', 'Content strategy', 'Sitecore'],
+      link: '/work/nebraska-edu',
       visual: {
         kind: 'image',
-        src: 'assets/work/home/theorem-card.webp',
+        src: 'assets/work/home/nebraska-edu-card.webp',
+        width: 1536,
+        height: 895,
+        fit: 'framed',
+      },
+    },
+    {
+      id: 'research',
+      title: 'Investigative Workflow Research',
+      category: 'Research',
+      outcome: 'A shared model of investigative work that exposed cross-product overlap, surfaced gaps and aligned teams around how each product should support the broader investigative flow.',
+      capabilities: ['Contextual research', 'Workflow modeling', 'Cross-functional alignment'],
+      link: '/work/analysis-workflow',
+      visual: {
+        kind: 'image',
+        src: 'assets/work/home/workflow-card.webp',
         width: 1536,
         height: 895,
         fit: 'framed',
@@ -95,15 +110,15 @@ export class Home {
       },
     },
     {
-      id: 'research',
-      title: 'Investigative Workflow Research',
-      category: 'Research',
-      outcome: 'A shared model of investigative work that exposed cross-product overlap, surfaced gaps and aligned teams around how each product should support the broader investigative flow.',
-      capabilities: ['Contextual research', 'Workflow modeling', 'Cross-functional alignment'],
-      link: '/work/analysis-workflow',
+      id: 'theorem',
+      title: 'Theorem',
+      category: 'Product Design',
+      outcome: 'A decades-old learning platform rebuilt around observed workflows and usage data, creating the application patterns that became NUcleus for Apps.',
+      capabilities: ['Product design', 'Research', 'Front-end prototyping'],
+      link: '/work/theorem',
       visual: {
         kind: 'image',
-        src: 'assets/work/home/workflow-card.webp',
+        src: 'assets/work/home/theorem-card.webp',
         width: 1536,
         height: 895,
         fit: 'framed',
@@ -112,13 +127,13 @@ export class Home {
   ];
 
   /**
-   * Work that is not ready to publish is slotted in after NUcleus, from a module the
+   * Work that is not ready to publish is slotted in after Nebraska.edu, from a module the
    * production build swaps for an empty one. See unpublished.content.ts.
    */
   protected readonly published: Project[] = [
-    ...this.projects.slice(0, 2),
+    ...this.projects.slice(0, 3),
     ...unpublishedProjects,
-    ...this.projects.slice(2),
+    ...this.projects.slice(3),
   ];
 
   /** A shot that brought its own window: shown whole, with no panel tone behind it. */

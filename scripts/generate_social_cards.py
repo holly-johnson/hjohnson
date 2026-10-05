@@ -425,6 +425,17 @@ CARDS = [
         ],
     ),
     dict(
+        name="nebraska-edu.png",
+        kicker="Practice · 2017–2023",
+        title=["Nebraska.edu"],
+        subhead="Many sites, one shared foundation.",
+        footer="Case study",
+        terms=[
+            ("Built with", "NUcleus for Sites in Sitecore CMS"),
+            ("Outcome", "9 approved university brands and 20+ implementations, every site still on NUcleus"),
+        ],
+    ),
+    dict(
         name="theorem.png",
         kicker="Product design · 2017–2022",
         title=["Theorem"],

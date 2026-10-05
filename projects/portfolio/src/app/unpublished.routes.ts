@@ -10,10 +10,10 @@ import { Routes } from '@angular/router';
  * not enough: the lazy chunks still shipped as static files anyone could fetch.
  *
  * Anything listed here must also be hidden from whatever links to it, or production
- * gets a dead link to a page that no longer exists. Right now the only such link is
- * Nebraska.edu in Selected Work, and `home.ts` drops it by spreading
- * `unpublishedProjects`, which the prod file swap empties. The `showUnpublished` flag
- * in that same file is the tool for a link that has no list to hide inside.
+ * gets a dead link to a page that no longer exists. `home.ts` spreads
+ * `unpublishedProjects` into Selected Work, which the prod file swap empties. The
+ * `showUnpublished` flag in that same file is the tool for a link that has no list
+ * to hide inside.
  *
  * These routes carry their own metadata rather than calling `seoFor()`, because
  * they are deliberately absent from `seo/site-metadata.json` — that file is the
@@ -27,18 +27,6 @@ import { Routes } from '@angular/router';
  * fails if any of those get out of step.
  */
 export const unpublishedRoutes: Routes = [
-  {
-    path: 'work/nebraska-edu',
-    loadComponent: () => import('./components/work/nebraska-edu-case-study').then(m => m.NebraskaEduCaseStudy),
-    title: 'Nebraska.edu · Holly Johnson',
-    data: {
-      meta: {
-        description: 'The repeatable engagement that turned NUcleus into websites: information architecture, content maps, wireframes, Sitecore build and client training.',
-        image: '/assets/social/nucleus.png?v=2',
-        noIndex: true,
-      },
-    },
-  },
   {
     path: 'field-notes',
     loadComponent: () => import('./components/journal/journal').then(m => m.Journal),

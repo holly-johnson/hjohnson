@@ -65,7 +65,6 @@ describe('generated sitemap', () => {
       expect(sitemap).not.toContain(`<loc>${siteMetadata.origin}${from}</loc>`);
     }
     expect(sitemap).not.toContain('/field-notes');
-    expect(sitemap).not.toContain('/work/nebraska-edu');
   });
 });
 

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { nucleusNextProject } from '../../unpublished.content';
 
 interface ArchRow {
   label: string;
@@ -32,12 +31,8 @@ interface EcosystemSite {
   templateUrl: './nucleus-case-study.html',
 })
 export class NucleusCaseStudy {
-  /**
-   * Nebraska.edu follows NUcleus in the sequence, so the "Next Project" target depends on
-   * whether it is published. Swapped at build time by `fileReplacements`; see
-   * `unpublished.content.ts`.
-   */
-  protected readonly nextProject = nucleusNextProject;
+  /** Nebraska.edu follows NUcleus in the case-study sequence. */
+  protected readonly nextProject = { link: '/work/nebraska-edu', label: 'Nebraska.edu' };
 
   protected readonly scaleSites: EcosystemSite[] = [
     {

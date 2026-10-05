@@ -13,29 +13,4 @@ import type { Project } from './project.model';
  */
 export const showUnpublished = true;
 
-/**
- * The two "Next/Previous Project" links that change when Nebraska.edu publishes: it sits
- * between NUcleus and Theorem in the sequence. Defined here rather than with an `@if` in the
- * template because a template branch still ships the unpublished name inside the compiled
- * output; only the file swap keeps it out.
- */
-export const nucleusNextProject = { link: '/work/nebraska-edu', label: 'Nebraska.edu' };
-export const theoremPreviousProject = { link: '/work/nebraska-edu', label: 'Nebraska.edu' };
-
-export const unpublishedProjects: Project[] = [
-  {
-    id: 'nebraska-edu',
-    title: 'Nebraska.edu',
-    category: 'Web Platform Practice',
-    outcome: 'A repeatable engagement that turned NUcleus into sites marketing staff ran themselves.',
-    capabilities: ['Information architecture', 'Content strategy', 'Sitecore'],
-    link: '/work/nebraska-edu',
-    visual: {
-      kind: 'image',
-      src: 'assets/work/home/nebraska-edu-card.webp',
-      width: 1536,
-      height: 895,
-      fit: 'framed',
-    },
-  },
-];
+export const unpublishedProjects: Project[] = [];

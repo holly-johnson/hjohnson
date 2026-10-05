@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { theoremPreviousProject } from '../../unpublished.content';
 
 interface TocItem {
   fragment: string;
@@ -19,13 +18,6 @@ interface UserGroup {
   templateUrl: './theorem-case-study.html',
 })
 export class TheoremCaseStudy {
-  /**
-   * Nebraska.edu sits between NUcleus and Theorem, so the "Previous Project" target depends
-   * on whether it is published. Swapped at build time by `fileReplacements`; see
-   * `unpublished.content.ts`.
-   */
-  protected readonly previousProject = theoremPreviousProject;
-
   /** Who the application served. Five groups came out of 2017 discovery; parents were added after phase one. */
   protected readonly userGroups: UserGroup[] = [
     { num: '01', name: 'Students', need: 'Move through a course, track progress and know what comes next.' },

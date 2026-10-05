@@ -329,13 +329,13 @@
   <!-- Project sequence footer -->
   <section class="border-t border-border bg-secondary">
     <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16 flex justify-between items-center">
-      <a [routerLink]="previousProject.link" class="group space-y-1 block">
+      <a routerLink="/work/orbit" class="group space-y-1 block">
         <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Previous Project</div>
-        <div class="font-serif text-feature font-normal text-foreground transition-colors group-hover:text-primary">{{ previousProject.label }}</div>
-      </a>
-      <a routerLink="/work/orbit" class="group space-y-1 block text-right">
-        <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Next Project</div>
         <div class="font-serif text-feature font-normal text-foreground transition-colors group-hover:text-primary">Orbit</div>
+      </a>
+      <a routerLink="/work/helios" class="group space-y-1 block text-right">
+        <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Next Project</div>
+        <div class="font-serif text-feature font-normal text-foreground transition-colors group-hover:text-primary">Helios</div>
       </a>
     </div>
   </section>

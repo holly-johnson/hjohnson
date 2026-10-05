@@ -74,6 +74,13 @@
       "image": "/assets/social/nucleus.png?v=3"
     },
     {
+      "path": "/work/nebraska-edu",
+      "kind": "case-study",
+      "title": "Nebraska.edu · Holly Johnson",
+      "description": "The repeatable engagement that turned NUcleus into websites: information architecture, content maps, wireframes, Sitecore build and client training.",
+      "image": "/assets/social/nebraska-edu.png?v=1"
+    },
+    {
       "path": "/work/theorem",
       "kind": "case-study",
       "title": "Theorem · Holly Johnson",
