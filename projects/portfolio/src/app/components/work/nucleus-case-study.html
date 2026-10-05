@@ -5,42 +5,37 @@
     <div class="max-w-6xl mx-auto px-6 lg:px-12">
       <div class="py-20">
 
-        <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-16">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-end lg:gap-16">
           <div>
-            <span class="font-mono text-label-lg uppercase tracking-[0.08em] text-muted-foreground">Platform &middot; Built 2017&ndash;2022 &middot; Still in use</span>
-            <h1 class="mt-5 font-serif text-4xl font-normal leading-[1.12] tracking-[-0.02em] text-foreground md:text-5xl">NUcleus Design System</h1>
+            <span class="font-mono text-label-lg uppercase tracking-[0.08em] text-muted-foreground">Design System &middot; Created 2017 &middot; Led through 2022 &middot; Still in use</span>
+            <h1 class="mt-5 font-serif text-4xl font-normal leading-[1.12] tracking-[-0.02em] text-foreground md:text-5xl">NUcleus</h1>
             <p class="mt-3 text-hero leading-[1.3] text-foreground">One system, many institutional identities.</p>
-            <p class="mt-6 max-w-[64ch] text-lead leading-[1.7] text-muted-foreground">
-              NUcleus unified websites across the University of Nebraska System while allowing departments and institutes to maintain their own identities. Serving as product owner, lead designer and developer, I built the reusable front-end foundation first, then partnered with developers to integrate it into the NU CMS. A second implementation, NUcleus for Apps, carried the same brand into university applications.
-            </p>
+            <div class="mt-6 max-w-[64ch] space-y-4 text-lead leading-[1.7] text-muted-foreground">
+              <p>NUcleus gave University of Nebraska websites a shared front-end foundation without forcing every department and institute into the same visual expression. Leading product direction, design and front-end development, I built the reusable system first, then partnered with developers to integrate it into the university CMS.</p>
+              <p>The work later expanded into NUcleus for Apps, carrying the same brand and system thinking into university applications.</p>
+            </div>
           </div>
 
-          <div class="border-l border-border pl-7">
-            <dl class="grid grid-cols-2 gap-x-6 gap-y-7">
-              <div>
+          <div>
+            <!-- Stat cards, the same treatment as the Helios hero. -->
+            <dl class="grid grid-cols-2 gap-3">
+              <div class="rounded-edge border border-border bg-card p-5">
                 <dd class="font-serif text-3xl font-normal leading-none text-foreground">9</dd>
-                <dt class="mt-2 font-mono text-caption uppercase tracking-[0.1em] text-muted-foreground">university brands</dt>
+                <dt class="mt-2 font-mono text-caption uppercase tracking-[0.1em] text-muted-foreground">Brands</dt>
               </div>
-              <div>
+              <div class="rounded-edge border border-border bg-card p-5">
                 <dd class="font-serif text-3xl font-normal leading-none text-foreground">20+</dd>
-                <dt class="mt-2 font-mono text-caption uppercase tracking-[0.1em] text-muted-foreground">implementations</dt>
+                <dt class="mt-2 font-mono text-caption uppercase tracking-[0.1em] text-muted-foreground">Teams</dt>
               </div>
-              <div>
-                <dd class="font-serif text-3xl font-normal leading-none text-foreground">300+</dd>
-                <dt class="mt-2 font-mono text-caption uppercase tracking-[0.1em] text-muted-foreground">features reviewed</dt>
+              <div class="rounded-edge border border-border bg-card p-5">
+                <dd class="font-serif text-3xl font-normal leading-none text-foreground">3</dd>
+                <dt class="mt-2 font-mono text-caption uppercase tracking-[0.1em] text-muted-foreground">Apps</dt>
               </div>
-              <div>
+              <div class="rounded-edge border border-border bg-card p-5">
                 <dd class="font-serif text-3xl font-normal leading-none text-foreground">8+</dd>
-                <dt class="mt-2 font-mono text-caption uppercase tracking-[0.1em] text-muted-foreground">years in use</dt>
+                <dt class="mt-2 font-mono text-caption uppercase tracking-[0.1em] text-muted-foreground">Years</dt>
               </div>
             </dl>
-
-            <div class="mt-9 flex flex-col gap-5">
-              <div>
-                <div class="font-mono text-label-sm uppercase tracking-[0.14em] text-muted-foreground">Outcome</div>
-                <p class="mt-1.5 text-sm leading-relaxed text-foreground">The brand foundation is still in use after a CMS transition and a change in the team responsible for it.</p>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -54,7 +49,6 @@
 
       <!-- Left Column -->
       <div class="flex min-w-0 flex-col gap-[72px]">
-
         <!-- 01 The Challenge -->
         <div class="space-y-6 scroll-mt-32" id="challenge">
           <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
@@ -63,18 +57,10 @@
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>The University of Nebraska System needed to unify its digital presence following a major rebrand while supporting organizations with different goals, audiences and identities.</p>
-            <p>Key challenges:</p>
-            <ul class="space-y-2 pl-4">
-              @for (item of ['1 designer supporting multiple teams and sites', 'Transition to a new CMS powering system-wide websites', 'Rebrand without a scalable implementation strategy', 'Inconsistent UI patterns and growing design/technical debt']; track item) {
-                <li class="flex items-start gap-2">
-                  <span class="mt-[7px] w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
-                  <span>{{ item }}</span>
-                </li>
-              }
-            </ul>
-            <p>The rebrand established the visual direction, but each site implemented it differently. Without a shared foundation, teams built components and layouts as one-off solutions or outsourced them. That increased costs, slowed progress and made the university’s websites less consistent.</p>
-            <p>The challenge was to translate the university brand into a flexible system that many organizations could use without making every site look the same.</p>
+            <p>The University of Nebraska System had introduced a new brand, but its digital implementation was fragmented. Departments, institutes and programs served different audiences and operated with different resources. Their sites were built on separate foundations, and common interface needs were repeatedly solved as one-off work.</p>
+            <p>At the time, I was the sole designer working across the broader university web ecosystem. No one assigned me to build a design system. I recognized the repeated work, audited the existing interfaces and proposed a shared foundation to my team and leadership.</p>
+            <p>The goal was not to make every university organization look the same. It was to translate the brand into reusable structures flexible enough to support distinct identities, content and institutional goals.</p>
+            <p>The system also needed to work inside a new CMS, support accessibility and let distributed marketing teams manage their own sites without requiring the central team to design and build every page.</p>
           </div>
 
           <!-- Fig 1. UI Audit -->
@@ -106,18 +92,18 @@
           </div>
         </div>
 
-        <!-- 02 Approach -->
-        <div class="space-y-6 scroll-mt-32" id="scale">
+        <!-- 02 Establishing the Product Direction -->
+        <div class="space-y-6 scroll-mt-32" id="direction">
           <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
             <span class="font-mono text-label-lg tracking-[0.14em] text-primary">02</span>
-            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Approach</h2>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Establishing the Product Direction</h2>
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>Rather than relying on rigid page templates, I focused on flexible building blocks that could scale across the university.</p>
-            <p>Departments and institutes needed to create sites around their own content, audiences and goals while maintaining a clear relationship to the broader university brand.</p>
-            <p>I designed and built reusable front-end patterns that developers integrated into the CMS as configurable components. This gave teams shared structures they could adapt to their needs.</p>
-            <p>New priorities from departments and institutes shaped the component backlog. Each addition expanded what every team could build.</p>
+            <p>The project began with an agency redesign that established the visual direction and delivered two coded pages. I preserved that direction while replacing the delivered front-end implementation with a reusable architecture designed for the full university ecosystem.</p>
+            <p>I pitched NUcleus as a way to improve consistency and reduce repeated design and development. After receiving approval, I created and maintained a roadmap that combined stakeholder requests with needs emerging from active projects.</p>
+            <p>The roadmap treated NUcleus as a product rather than a one-time website build. New engagements revealed missing components. Existing sites exposed patterns of drift. Accessibility fixes and technical improvements could return to the shared foundation instead of being solved independently by every team.</p>
+            <p>Product direction did not mean acting as a formal Product Owner. My role combined system strategy, roadmap stewardship, design direction and hands-on front-end development.</p>
           </div>
 
           <!-- Fig 2. System Scale -->
@@ -170,10 +156,29 @@
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>NUcleus established a shared visual and structural language across the university’s websites.</p>
-            <p>I translated the university brand into rules for typography, color, spacing and layout, creating a consistent baseline across its websites.</p>
-            <p>Alongside the visual system, I defined front-end patterns that kept design and development aligned.</p>
-            <p>Together, these foundations gave departments, institutes and programs a consistent starting point without limiting their individual identities.</p>
+            <p>I structured NUcleus with ITCSS, using layers to separate foundational settings, elements, reusable objects, components and utilities. SCSS variables carried shared decisions for typography, color, spacing and interface behavior.</p>
+            <p>The reference implementation used HTML and SCSS. Handlebars made it possible to prototype layouts, component combinations and interactions before CMS integration.</p>
+            <p>This foundation separated the system from a specific production platform. The CMS determined how content editors configured and assembled components. NUcleus defined the front-end patterns, behavior and presentation those components produced.</p>
+            <p>The architecture supported a practical division of responsibilities:</p>
+            <ul class="space-y-2 pl-4">
+              <li class="flex items-start gap-2">
+                <span class="mt-[7px] w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
+                <span>NUcleus provided reusable interface patterns and reference code.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-[7px] w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
+                <span>CMS developers translated those patterns into configurable components.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-[7px] w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
+                <span>Site owners controlled their content and page composition.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-[7px] w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
+                <span>The central team maintained the shared components, tools, guidance and review.</span>
+              </li>
+            </ul>
+            <p>The result was composable infrastructure rather than a rigid set of centrally controlled templates.</p>
           </div>
 
           <!-- NUcleus System Architecture Diagram -->
@@ -244,75 +249,125 @@
           </div>
         </div>
 
-        <!-- 04 Component System -->
+        <!-- 04 From Reference Code to CMS Components -->
         <div class="space-y-6 scroll-mt-32" id="components">
           <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
             <span class="font-mono text-label-lg tracking-[0.14em] text-primary">04</span>
-            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Component System</h2>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">From Reference Code to CMS Components</h2>
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>NUcleus evolved into a modular collection of reusable front-end components that supported a wide range of content and layout needs.</p>
-            <p>I built the reference components in HTML and SCSS, using Handlebars to prototype layouts and interactions before CMS implementation.</p>
-            <p>CMS developers integrated the reference patterns as configurable components. Marketing teams could then build and manage their own sites using shared modules.</p>
-            <p>As new needs emerged, I expanded the component collection while maintaining consistency across the platform.</p>
+            <p>I designed and built the reference components, then partnered with CMS developers as they integrated those patterns into Sitecore.</p>
+            <p>The reference implementation gave developers a concrete definition of the expected markup, responsive behavior and visual result. Collaboration during integration resolved the differences between a controlled prototype and a component that needed to support many sites, content types and editorial choices.</p>
+            <p>Marketing teams could assemble and manage their sites using shared modules. They retained control of their content and page composition while the central team maintained the underlying system.</p>
+            <p>That flexibility came with a tradeoff. Reusable blocks made self-service possible, but compelling pages still required judgment about hierarchy, composition, content and accessibility. Training and ongoing guidance were therefore part of the product model, not cleanup after handoff.</p>
+            <p>Alignment was maintained through direct stewardship rather than a formal contribution program. I reviewed work, helped teams resolve local issues and improved NUcleus when the same problem appeared across multiple sites.</p>
+          </div>
 
             <!-- Fig. 04 — Component output -->
-            <div class="mt-2 space-y-3">
-              <div class="overflow-hidden rounded-edge border border-border bg-card">
-                <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
-                  <span class="text-muted-foreground">Fig 4. Component output</span>
-                  <span class="text-right text-foreground">NU Platform</span>
+          <div class="mt-2 space-y-3">
+            <div class="overflow-hidden rounded-edge border border-border bg-card">
+              <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
+                <span class="text-muted-foreground">Fig 4. Component output</span>
+                <span class="text-right text-foreground">NU Platform</span>
+              </div>
+              <div class="bg-secondary p-2 space-y-1.5">
+                <div class="overflow-hidden">
+                  <img src="assets/work/nucleus-never-stop.webp" alt="NU Advance: Never Stop Learning" class="w-full block" loading="lazy" decoding="async" width="750" height="271" />
                 </div>
-                <div class="bg-secondary p-2 space-y-1.5">
-                  <div class="overflow-hidden">
-                    <img src="assets/work/nucleus-never-stop.webp" alt="NU Advance: Never Stop Learning" class="w-full block" loading="lazy" decoding="async" width="750" height="271" />
+                <div class="overflow-hidden space-y-1.5">
+                  <img src="assets/work/nucleus-masterclasses.webp" alt="Masterclasses banner" class="w-full block" loading="lazy" decoding="async" width="750" height="149" />
+                  <img src="assets/work/nucleus-credentials.webp" alt="Credentials banner" class="w-full block" loading="lazy" decoding="async" width="750" height="149" />
+                </div>
+                <div class="overflow-hidden">
+                  <img src="assets/work/nucleus-scholarship.webp" alt="No One Ever Won a Scholarship for Doubting Themselves: student stats" class="w-full block" loading="lazy" decoding="async" width="750" height="350" />
+                </div>
+                <div class="overflow-hidden">
+                  <img src="assets/work/nucleus-stats.webp" alt="350+ undergrad majors, 80% financial aid stats banner" class="w-full block" loading="lazy" decoding="async" width="750" height="173" />
+                </div>
+                <div class="flex gap-1.5 items-stretch">
+                  <div class="w-1/2 flex-shrink-0 overflow-hidden">
+                    <img src="assets/work/nucleus-unl.webp" alt="University of Nebraska – Lincoln" class="w-full block" loading="lazy" decoding="async" width="1154" height="768" />
                   </div>
-                  <div class="overflow-hidden space-y-1.5">
-                    <img src="assets/work/nucleus-masterclasses.webp" alt="Masterclasses banner" class="w-full block" loading="lazy" decoding="async" width="750" height="149" />
-                    <img src="assets/work/nucleus-credentials.webp" alt="Credentials banner" class="w-full block" loading="lazy" decoding="async" width="750" height="149" />
-                  </div>
-                  <div class="overflow-hidden">
-                    <img src="assets/work/nucleus-scholarship.webp" alt="No One Ever Won a Scholarship for Doubting Themselves: student stats" class="w-full block" loading="lazy" decoding="async" width="750" height="350" />
-                  </div>
-                  <div class="overflow-hidden">
-                    <img src="assets/work/nucleus-stats.webp" alt="350+ undergrad majors, 80% financial aid stats banner" class="w-full block" loading="lazy" decoding="async" width="750" height="173" />
-                  </div>
-                  <div class="flex gap-1.5 items-stretch">
-                    <div class="w-1/2 flex-shrink-0 overflow-hidden">
-                      <img src="assets/work/nucleus-unl.webp" alt="University of Nebraska – Lincoln" class="w-full block" loading="lazy" decoding="async" width="1154" height="768" />
-                    </div>
-                    <div class="flex-1 overflow-hidden">
-                      <img src="assets/work/nucleus-course-card.webp" alt="Applied Science course card" class="block h-full w-auto" loading="lazy" decoding="async" width="178" height="223" />
-                    </div>
-                  </div>
-                  <div class="overflow-hidden">
-                    <img src="assets/work/nucleus-testimonial.webp" alt="April Shaw student testimonial" class="w-full block" loading="lazy" decoding="async" width="1500" height="386" />
-                  </div>
-                  <div class="overflow-hidden">
-                    <img src="assets/work/nucleus-online-exp.webp" alt="Your Online Experience at NU" class="w-full block" loading="lazy" decoding="async" width="1600" height="663" />
+                  <div class="flex-1 overflow-hidden">
+                    <img src="assets/work/nucleus-course-card.webp" alt="Applied Science course card" class="block h-full w-auto" loading="lazy" decoding="async" width="178" height="223" />
                   </div>
                 </div>
-                <div class="border-t border-border bg-background px-4 py-3">
-                  <p class="font-mono text-label-lg leading-[1.6] text-muted-foreground">NUcleus component output across NU platform pages.</p>
+                <div class="overflow-hidden">
+                  <img src="assets/work/nucleus-testimonial.webp" alt="April Shaw student testimonial" class="w-full block" loading="lazy" decoding="async" width="1500" height="386" />
                 </div>
+                <div class="overflow-hidden">
+                  <img src="assets/work/nucleus-online-exp.webp" alt="Your Online Experience at NU" class="w-full block" loading="lazy" decoding="async" width="1600" height="663" />
+                </div>
+              </div>
+              <div class="border-t border-border bg-background px-4 py-3">
+                <p class="font-mono text-label-lg leading-[1.6] text-muted-foreground">NUcleus component output across NU platform pages.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 05 NUcleus for Apps -->
-        <div class="space-y-6 scroll-mt-32" id="apps">
+        <!-- 05 A System That Grew Through Real Work -->
+        <div class="space-y-6 scroll-mt-32" id="growth">
           <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
             <span class="font-mono text-label-lg tracking-[0.14em] text-primary">05</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">A System That Grew Through Real Work</h2>
+            <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
+            <p>NUcleus developed through active website engagements.</p>
+            <p>Whenever possible, new sites were designed around existing components. Reuse reduced the amount of new development required and created capacity for higher-value work.</p>
+            <p>When an engagement introduced a genuinely reusable need, the resulting component returned to NUcleus. Course cards, for example, were first created for Nebraska Online and then became available to other sites through the shared library.</p>
+            <p>This created a compounding cycle:</p>
+          </div>
+          <p class="border-l-2 border-primary bg-secondary px-6 py-5 font-mono text-label-lg leading-[1.8] text-foreground">Reuse reduced new development &rarr; capacity supported better components &rarr; new components expanded the library &rarr; later sites benefited</p>
+          <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
+            <p>Monthly reviews helped identify drift across participating sites. When the issue was local, I worked directly with that team. When the same issue appeared repeatedly, I changed the shared component, guidance or tooling. Often the response required both.</p>
+            <p>Quarterly meetings introduced new components, shared guidance and helped site teams use the system effectively.</p>
+            <p>Governance was not only enforcement. The ways teams struggled with the system became product input for improving it.</p>
+          </div>
+        </div>
+
+        <!-- 06 NUcleus for Apps -->
+        <div class="space-y-6 scroll-mt-32" id="apps">
+          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">06</span>
             <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">NUcleus for Apps</h2>
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>Websites were only half of the university’s digital presence. The rest was applications for contact and event management, data access and learning management. In 2017 the University of Nebraska brand had never been used inside one of them.</p>
-            <p>Website and application components solve different problems. A page section is composed once and read. A data table may be used for hours by someone whose job depends on it. NUcleus therefore became two implementations of one brand. The application system was proven inside a real product first. Its initial patterns came from <a routerLink="/work/theorem" class="link-inline">Theorem</a>, then were generalized for use across university applications.</p>
-            <p>The front-end architecture remained implementation agnostic because university applications used different technology stacks. NUcleus defined the patterns, markup and behavior while allowing each team to render them in its own framework.</p>
-            <p>Every component shipped with code, configuration options, accessibility requirements, implementation notes and version history. A component that is not documented to that level is a suggestion, not a system.</p>
+            <p>The new University of Nebraska brand had not yet been translated into the applications I encountered. <a routerLink="/work/theorem" class="link-inline">Theorem</a> created the opportunity to extend the system beyond websites.</p>
+            <p>The working Theorem interface was built with Handlebars, HTML and SCSS. Its component patterns became the foundation for NUcleus for Apps, a related implementation for role-based university applications.</p>
+            <p>The release standard called for each component to include:</p>
+            <ul class="space-y-2 pl-4">
+              <li class="flex items-start gap-2">
+                <span class="mt-[7px] w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
+                <span>Reference code</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-[7px] w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
+                <span>Configuration options</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-[7px] w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
+                <span>Accessibility requirements</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-[7px] w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
+                <span>Implementation notes</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-[7px] w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
+                <span>Version history</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-[7px] w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
+                <span>Related components</span>
+              </li>
+            </ul>
+            <p>Theorem, NU Contacts and NU Data Access all shipped using NUcleus for Apps before I left the university in December 2022.</p>
+            <p>The application system remained implementation-aware without being locked to one framework. Reference patterns documented the structure, behavior and visual expectations that engineering teams could carry into their production stacks.</p>
+            <p>Theorem’s shipped React interface was implemented by engineering from the working reference experience. NUcleus for Apps provided the shared patterns and documentation supporting that translation.</p>
           </div>
 
           <figure class="overflow-hidden rounded-edge border border-border bg-card">
@@ -326,15 +381,6 @@
             <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">The Datatable entry at version 2.0.0, with its included and related components listed alongside.</figcaption>
           </figure>
 
-          <div class="space-y-2">
-            <div class="font-mono text-label-sm uppercase tracking-wider text-muted-foreground pb-1">Every entry documented</div>
-            <div class="flex flex-wrap gap-2">
-              @for (section of appsDocSections; track section) {
-                <span class="border border-border bg-card px-3 py-1.5 font-mono text-label-sm uppercase tracking-[0.08em] text-muted-foreground">{{ section }}</span>
-              }
-            </div>
-          </div>
-
           <figure class="overflow-hidden rounded-edge border border-border bg-card">
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-border bg-secondary px-4 py-2.5 font-mono text-label-lg uppercase tracking-[0.08em]">
               <span class="text-muted-foreground">Fig 6. Components in use</span>
@@ -346,33 +392,6 @@
             </div>
             <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">Cards carry progress and actions in one unit. Role switching lets a single account move between portals without signing out.</figcaption>
           </figure>
-
-          <div class="space-y-2">
-            <div class="font-mono text-label-sm uppercase tracking-wider text-muted-foreground pb-1">Applications built on it</div>
-            <div class="grid gap-3 sm:grid-cols-3">
-              @for (app of appsAdopters; track app.category) {
-                <div class="rounded-edge border border-border bg-card p-5 space-y-2">
-                  <div class="text-sm font-medium text-foreground">{{ app.category }}</div>
-                  <div class="font-mono text-label-lg leading-snug text-muted-foreground">{{ app.stat }}</div>
-                </div>
-              }
-            </div>
-          </div>
-        </div>
-
-        <!-- 06 Implementation -->
-        <div class="space-y-6 scroll-mt-32" id="bridge">
-          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
-            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">06</span>
-            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Implementation</h2>
-            <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
-          </div>
-          <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>The NUcleus team operated across design and development, often moving from simple wireframes directly into working front-end prototypes.</p>
-            <p>I built the reference implementations, then collaborated with CMS developers as they turned the patterns into configurable components.</p>
-            <p>Working closely with brand leadership in the President's Office, I translated the university brand into scalable patterns that balanced flexibility for individual teams with consistency across the university.</p>
-            <p>As NUcleus grew, I maintained its product vision while helping the team extend it without losing alignment with the university’s identity.</p>
-          </div>
         </div>
 
         <!-- 07 Impact -->
@@ -383,22 +402,35 @@
             <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
           </div>
           <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
-            <p>The work began with an agency redesign that delivered two pages of front-end code for a platform expected to support every university domain and subdomain. I chose to build the shared foundation first. That decision is why NUcleus outlasted the platform it originally launched on.</p>
-            <p>Before NUcleus, departments either waited for the central team to have capacity or hired outside design and development help. After adoption, marketing teams managed their own sites using the tools we built. Accessibility no longer had to be solved separately for every site.</p>
-            <p>Improvements carried across the platform. Work completed for one institute reached every other domain through the shared CMS, giving teams new components and fixes without requiring separate projects. The shared collection also made each team’s work visible to the others. One institute could see how another had used the same components for a different message and borrow what worked.</p>
-            <p>Nebraska Online moved from a separate vendor onto NUcleus. Ending that contract removed recurring hosting and maintenance costs, not just a one-time build expense. Components created for the migration returned to the shared collection for every CMS team to use.</p>
+            <p>NUcleus supported nine approved university brand expressions and more than 20 departmental and institutional teams.</p>
+            <p>Before NUcleus, departments often waited for central-team capacity or hired outside design and development help. The shared system gave marketing teams more tools to operate their own sites while preserving access to guidance and support.</p>
+            <p>Accessibility requirements and fixes moved into shared components instead of being recreated independently by every site team.</p>
+            <p>Improvements also propagated across the platform. Work funded or requested by one engagement could strengthen the shared system and become available to every participating team.</p>
+            <p>Nebraska Online provides the clearest example. I led its migration away from an external vendor and directed the front-end and shared-component work that moved it onto NUcleus. Ending the external arrangement removed recurring hosting and maintenance costs. Components developed through the migration returned to the shared collection.</p>
+            <p>NUcleus also made more efficient use of the central team’s capacity. Reuse reduced repeated implementation work, leaving more time for new components, difficult content problems and direct support where it added the most value.</p>
+          </div>
+        </div>
+
+        <!-- 08 Built to Outlast Its Original Platform -->
+        <div class="space-y-6 scroll-mt-32" id="outlast">
+          <div class="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-3">
+            <span class="font-mono text-label-lg tracking-[0.14em] text-primary">08</span>
+            <h2 class="font-serif text-3xl font-normal leading-[1.15] text-foreground">Built to Outlast Its Original Platform</h2>
+            <span class="h-px flex-1 basis-full bg-border md:basis-0"></span>
+          </div>
+          <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
+            <p>I left the University of Nebraska in December 2022. In 2025, the university moved from Sitecore to Cascade.</p>
+            <p>I did not plan, lead or contribute to that migration. Its value as evidence is what the later team chose to preserve: the NUcleus front end moved with them.</p>
+            <p>The system survived a change in CMS and a change in the team responsible for it. That durability came from treating the front end as a reusable product foundation rather than an extension of one publishing platform.</p>
+            <p>NUcleus remains in use today.</p>
           </div>
 
-          <!-- Impact Snapshot -->
-          <div class="space-y-2">
-            <div class="font-mono text-label-sm uppercase tracking-wider text-muted-foreground pb-1">Outcomes</div>
-            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              @for (item of outcomes; track item.category) {
-                <div class="rounded-edge border border-border bg-card p-5 space-y-2">
-                  <div class="font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">{{ item.category }}</div>
-                  <div class="text-sm text-muted-foreground leading-snug">{{ item.stat }}</div>
-                </div>
-              }
+          <div class="space-y-4 border-l-2 border-primary bg-secondary p-6">
+            <h3 class="font-serif text-xl font-normal text-foreground">Reflection</h3>
+            <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+              <p>Direct stewardship kept NUcleus coherent while it was growing, but it also concentrated review and system knowledge in one person.</p>
+              <p>Given another pass, I would formalize contribution and review earlier. Shared ownership would let teams extend the system without depending on one steward while preserving the standards that made reuse valuable.</p>
+              <p>The lasting lesson was not that every interface should look alike. A design system succeeds when it gives different teams enough structure to move independently without forcing each of them to rebuild the foundation.</p>
             </div>
           </div>
 
@@ -440,12 +472,13 @@
           <div class="mb-4 font-mono text-label-lg uppercase tracking-[0.14em] text-muted-foreground">Contents</div>
           <ul class="space-y-3 font-mono text-label-lg">
             <li><a [routerLink]="[]" fragment="challenge" class="text-foreground hover:text-primary transition-colors">01. The Challenge</a></li>
-            <li><a [routerLink]="[]" fragment="scale" class="text-foreground hover:text-primary transition-colors">02. Approach</a></li>
+            <li><a [routerLink]="[]" fragment="direction" class="text-foreground hover:text-primary transition-colors">02. Product Direction</a></li>
             <li><a [routerLink]="[]" fragment="foundations" class="text-foreground hover:text-primary transition-colors">03. System Foundations</a></li>
-            <li><a [routerLink]="[]" fragment="components" class="text-foreground hover:text-primary transition-colors">04. Component System</a></li>
-            <li><a [routerLink]="[]" fragment="apps" class="text-foreground hover:text-primary transition-colors">05. NUcleus for Apps</a></li>
-            <li><a [routerLink]="[]" fragment="bridge" class="text-foreground hover:text-primary transition-colors">06. Implementation</a></li>
+            <li><a [routerLink]="[]" fragment="components" class="text-foreground hover:text-primary transition-colors">04. Reference to CMS</a></li>
+            <li><a [routerLink]="[]" fragment="growth" class="text-foreground hover:text-primary transition-colors">05. Growth Through Work</a></li>
+            <li><a [routerLink]="[]" fragment="apps" class="text-foreground hover:text-primary transition-colors">06. NUcleus for Apps</a></li>
             <li><a [routerLink]="[]" fragment="impact" class="text-foreground hover:text-primary transition-colors">07. Impact</a></li>
+            <li><a [routerLink]="[]" fragment="outlast" class="text-foreground hover:text-primary transition-colors">08. Built to Outlast</a></li>
           </ul>
         </div>
       </div>

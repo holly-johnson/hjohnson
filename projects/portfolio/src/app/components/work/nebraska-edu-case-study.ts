@@ -12,11 +12,6 @@ interface Site {
   domain?: string;
 }
 
-interface SiteGroup {
-  label: string;
-  sites: Site[];
-}
-
 interface Shot {
   src: string;
   alt: string;
@@ -28,35 +23,17 @@ interface Shot {
   templateUrl: './nebraska-edu-case-study.html',
 })
 export class NebraskaEduCaseStudy {
-  /**
-   * The site lists from the original Squarespace case study, written in 2022. Buffett sat
-   * on the roadmap then; it launched on NUcleus later and is confirmed among the nine.
-   * EPSCoR and the University of Nebraska High School were listed as roadmap too; Holly
-   * confirmed both as built subdomains on 2026-10-04.
-   */
-  protected readonly siteGroups: SiteGroup[] = [
-    {
-      label: 'Subdomains',
-      sites: [
-        { name: 'Enterprise Data Solutions' },
-        { name: 'Digital Learning', url: 'https://online.nebraska.edu/', domain: 'online.nebraska.edu' },
-        { name: 'Information Technology Services' },
-        { name: 'Young Nebraska Scientists', url: 'https://yns.nebraska.edu/', domain: 'yns.nebraska.edu' },
-        { name: 'Nebraska Research & Innovation Conference' },
-        { name: 'Transfer Nebraska', url: 'https://transfer.nebraska.edu/', domain: 'transfer.nebraska.edu' },
-        { name: 'NU Connections' },
-        { name: 'Established Program to Stimulate Competitive Research (EPSCoR)', url: 'https://epscor.nebraska.edu/', domain: 'epscor.nebraska.edu' },
-        { name: 'University of Nebraska High School', url: 'https://highschool.nebraska.edu/', domain: 'highschool.nebraska.edu' },
-      ],
-    },
-    {
-      label: 'Institutes',
-      sites: [
-        { name: 'National Strategic Research Institute', url: 'https://nsri.nebraska.edu/', domain: 'nsri.nebraska.edu' },
-        { name: 'Daugherty Water for Food Global Institute', url: 'https://waterforfood.nebraska.edu/', domain: 'waterforfood.nebraska.edu' },
-        { name: 'Buffett Early Childhood Institute', url: 'https://buffettinstitute.nebraska.edu/', domain: 'buffettinstitute.nebraska.edu' },
-      ],
-    },
+  /** The nine approved brand expressions, in the order Holly listed them on 2026-10-04. */
+  protected readonly brands: Site[] = [
+    { name: 'University of Nebraska System', url: 'https://nebraska.edu/', domain: 'nebraska.edu' },
+    { name: 'University of Nebraska High School', url: 'https://highschool.nebraska.edu/', domain: 'highschool.nebraska.edu' },
+    { name: 'National Strategic Research Institute', url: 'https://nsri.nebraska.edu/', domain: 'nsri.nebraska.edu' },
+    { name: 'Daugherty Water for Food Global Institute', url: 'https://waterforfood.nebraska.edu/', domain: 'waterforfood.nebraska.edu' },
+    { name: 'Buffett Early Childhood Institute', url: 'https://buffettinstitute.nebraska.edu/', domain: 'buffettinstitute.nebraska.edu' },
+    { name: 'Transfer Nebraska', url: 'https://transfer.nebraska.edu/', domain: 'transfer.nebraska.edu' },
+    { name: 'Office of the President', url: 'https://nebraska.edu/president/', domain: 'nebraska.edu/president' },
+    { name: 'Nebraska EPSCoR', url: 'https://epscor.nebraska.edu/', domain: 'epscor.nebraska.edu' },
+    { name: 'Young Nebraska Scientists', url: 'https://yns.nebraska.edu/', domain: 'yns.nebraska.edu' },
   ];
 
   /** The gallery from the original case study, in its order. */
@@ -76,11 +53,14 @@ export class NebraskaEduCaseStudy {
   ];
 
   protected readonly toc: TocItem[] = [
-    { fragment: 'problem', label: '01. Every Site Different' },
-    { fragment: 'kickoff', label: '02. A Repeatable Engagement' },
-    { fragment: 'mapping', label: '03. Content Before Components' },
-    { fragment: 'build', label: '04. Built to Hand Off' },
-    { fragment: 'outcomes', label: '05. Outcomes & Tradeoffs' },
-    { fragment: 'sites', label: '06. What Survived' },
+    { fragment: 'problem', label: '01. A Shared Foundation' },
+    { fragment: 'engagement', label: '02. A Repeatable Engagement' },
+    { fragment: 'content', label: '03. Content to Shipped Page' },
+    { fragment: 'library', label: '04. The Compounding Library' },
+    { fragment: 'self-service', label: '05. Self-Service' },
+    { fragment: 'impact', label: '06. Organizational Impact' },
+    { fragment: 'brands', label: '07. Nine Brand Expressions' },
+    { fragment: 'outlast', label: '08. Built to Outlast' },
+    { fragment: 'reflection', label: 'Reflection' },
   ];
 }

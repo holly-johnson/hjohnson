@@ -6,11 +6,6 @@ interface ArchRow {
   detail: string;
 }
 
-interface Outcome {
-  category: string;
-  stat: string;
-}
-
 interface Reference {
   label: string;
   url: string;
@@ -82,30 +77,12 @@ export class NucleusCaseStudy {
 
   protected readonly outputLabels: string[] = ['Departments', 'Institutes', 'Programs', 'Online High School'];
 
-  protected readonly outcomes: Outcome[] = [
-    { category: 'Reach', stat: 'Websites across University departments, institutes and programs' },
-    { category: 'Efficiency', stat: 'Reusable front-end patterns implemented as CMS components' },
-    { category: 'Cost', stat: 'Reduced reliance on external development' },
-    { category: 'Stewardship', stat: 'More efficient use of public funding' },
-    { category: 'Collaboration', stat: 'Increased collaboration across teams building within the system' },
-  ];
-
   protected readonly references: Reference[] = [
     { label: 'University of Nebraska System', url: 'https://nebraska.edu/', domain: 'nebraska.edu' },
     { label: 'Water for Food Global Institute', url: 'https://waterforfood.nebraska.edu/', domain: 'waterforfood.nebraska.edu' },
     { label: 'Buffett Early Childhood Institute', url: 'https://buffettinstitute.nebraska.edu/', domain: 'buffettinstitute.nebraska.edu' },
     { label: 'National Strategic Research Institute', url: 'https://nsri.nebraska.edu/', domain: 'nsri.nebraska.edu' },
     { label: 'Transfer Nebraska', url: 'https://transfer.nebraska.edu/', domain: 'transfer.nebraska.edu' },
-  ];
-
-  /** What each documentation entry in NUcleus for Apps had to carry before a component counted as released. */
-  protected readonly appsDocSections: string[] = ['Code', 'Options', 'Accessibility', 'Implementation notes', 'Versions', 'Related components'];
-
-  /** Applications built on NUcleus for Apps. */
-  protected readonly appsAdopters: Outcome[] = [
-    { category: 'Theorem', stat: 'University of Nebraska High School' },
-    { category: 'NU Contacts', stat: 'University of Nebraska System' },
-    { category: 'NU Data Access', stat: 'University of Nebraska System' },
   ];
 
   protected favicon(domain: string): string {
