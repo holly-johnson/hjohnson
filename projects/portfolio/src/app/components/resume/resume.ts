@@ -49,7 +49,7 @@ export class Resume {
       period: 'Apr 2022 – Jan 2023',
       achievements: [
         "Continued NUcleus design-system work, including standards, components and support for the teams building on it, after a system-wide restructure moved the role from Information Technology Services into the Office of the President.",
-        'Partnered with communications, marketing, product and engineering teams across campuses to align brand standards with the design system and digital platforms.',
+        'Partnered with communications, marketing, product and engineering teams across the University of Nebraska System to align brand standards with the design system and digital platforms.',
         'Created reusable marketing templates and digital assets that enabled internal teams to produce materials in-house and reduced reliance on external contractors.',
       ],
     },
@@ -59,11 +59,10 @@ export class Resume {
       period: 'May 2018 – Apr 2022',
       note: 'Owned NUcleus end to end: vision, roadmap, standards and adoption',
       achievements: [
-        'Created and led the NUcleus design system from the ground up, defining the vision, roadmap and governance model supporting 9 university brands and 20+ website and application implementations.',
-        "Designed and implemented the system's design token architecture (primitive, semantic and component layers) using Figma variables and SCSS, ensuring consistency between design and front-end implementation.",
+        'Created and led the NUcleus design system from the ground up, defining the vision, roadmap and standards supporting 9 university brands and 20+ website and application implementations.',
+        "Designed and implemented the system's token architecture (primitive, semantic and component layers) in SCSS, with reusable HTML/SCSS reference components prototyped in Handlebars.",
         "Established reusable UI components, interaction patterns and system standards that unified the university's digital ecosystem.",
-        'Reviewed 300+ feature implementations to ensure alignment with system standards and intended user experience.',
-        'Collaborated with product managers, designers and engineers to prioritize system enhancements and drive adoption across teams.',
+        'Directed the system through its roadmap, standards, documentation and hands-on review, working with product managers and engineers to prioritize enhancements and support adoption.',
       ],
     },
     {
