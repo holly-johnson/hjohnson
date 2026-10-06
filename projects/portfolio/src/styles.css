@@ -132,11 +132,6 @@
   --b7: #1D4F91;
   --b8: #143A6B;
   --b9: #0C2545;
-
-  /* Elevation. A hover lift, in place of changing an element's border colour.
-     On cream, a warm-black shadow reads on its own. Cards only, through the
-     `card-link` utility; buttons change colour instead. */
-  --lift: 0 12px 28px -12px rgb(20 20 18 / 0.30), 0 3px 8px -3px rgb(20 20 18 / 0.14);
 }
 
 .dark {
@@ -212,13 +207,6 @@
   --b7: #7FA9DE;
   --b8: #93B9E6;
   --b9: #A8C8EE;
-
-  /* A black shadow does almost nothing on a near-black surface, so the dark step
-     goes deeper and adds a hairline of light to pick out the top edge. The hairline
-     sits outside: most cards hold an image panel flush to the edge, and a child's
-     background paints over an inset shadow, so an inset ring would show on the
-     text half and vanish on the image. */
-  --lift: 0 16px 34px -14px rgb(0 0 0 / 0.8), 0 0 0 1px rgb(255 255 255 / 0.09);
 }
 
 @theme inline {
@@ -272,9 +260,6 @@
   --color-ink-4: var(--ink-4);
   --color-ink-5: var(--ink-5);
   --color-sketch: var(--sketch);
-  --shadow-lift: var(--lift);
-  /* Easing for the lift. Decelerating, so the rise arrives rather than stops. */
-  --ease-lift: cubic-bezier(0.22, 1, 0.36, 1);
   /* The one radius this site uses. Enough to take the blade off a corner without
      reading as a rounded UI. Panels and buttons take it; hairline rules and
      full-bleed bands stay square. */
@@ -368,7 +353,7 @@
 /* ─────────────────────────────────────────────────────────────
    Interactive patterns
    Every clickable thing on the site is one of these, so the hover
-   language stays small: buttons change colour, cards lift, links
+   language stays small: secondary buttons and cards take a green tint, links
    firm up their underline. Layout, spacing and the focus ring's
    offset colour stay at the call site.
    ───────────────────────────────────────────────────────────── */
@@ -382,9 +367,14 @@
   @apply inline-flex items-center justify-center gap-2 rounded-edge border border-border bg-card px-6 py-3.5 text-dense text-foreground transition-colors duration-200 hover:border-primary/50 hover:bg-primary/5;
 }
 
-/* The only element that rises. Reserved for a card that opens something. */
+/* A card that opens something. Flat, with the same hover as `btn-secondary`: a half-green
+   border and a 5% green tint. The tint is mixed into the card's own surface rather than
+   laid over it see-through, so a card on a darker band stays light. A card on another
+   surface sets `--card-surface`. */
 @utility card-link {
-  @apply overflow-hidden rounded-edge border border-border outline-none transition duration-300 ease-lift hover:shadow-lift focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 motion-safe:hover:-translate-y-1;
+  --card-surface: var(--card);
+  @apply overflow-hidden rounded-edge border border-border outline-none transition-colors duration-200 hover:border-primary/50 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4;
+  &:hover { background-color: color-mix(in oklab, var(--primary) 5%, var(--card-surface)); }
 }
 
 /* A link inside running text. Green, with a faint underline that firms up on hover. */

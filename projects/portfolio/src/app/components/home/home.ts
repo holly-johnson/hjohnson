@@ -42,7 +42,7 @@ export class Home {
       link: '/work/helios',
       visual: {
         kind: 'image',
-        src: 'assets/work/home/helios-dropdown-card.webp',
+        src: 'assets/work/home/helios-hero-card.webp',
         width: 1536,
         height: 895,
         fit: 'framed',

@@ -1,7 +1,7 @@
 <div>
 
   <!-- ── Hero ──────────────────────────────────────────────────── -->
-  <section class="mx-auto max-w-6xl px-6 pb-4 pt-6 md:pb-24 md:pt-24 lg:px-12">
+  <section class="mx-auto max-w-6xl px-6 pb-4 pt-6 md:pb-20 md:pt-20 lg:px-12">
     <div class="flex flex-col gap-3">
       <span class="font-mono text-label-lg uppercase tracking-[0.08em] text-muted-foreground">Well, hello. I&rsquo;m Holly.</span>
       <h1 class="max-w-[22ch] font-serif text-4xl font-normal leading-[1.12] tracking-[-0.02em] text-foreground md:text-5xl">
@@ -45,11 +45,11 @@
       @for (project of published; track project.id) {
         <a
           [routerLink]="project.link"
-          class="card-link group grid bg-card focus-visible:ring-offset-background md:h-72 md:grid-cols-[3fr_2fr]"
+          class="card-link group grid bg-card focus-visible:ring-offset-background md:h-72 md:grid-cols-[3fr_2fr] xl:grid-cols-[11fr_9fr]"
         >
           <div class="flex flex-col justify-center gap-1.5 p-5 md:p-6 lg:p-8">
             <span class="font-mono text-label-sm uppercase tracking-[0.08em] text-muted-foreground">{{ project.category }}</span>
-            <!-- The lift carries the hover; nothing in the card changes colour. -->
+            <!-- Hover tints the card like the secondary button; the text never changes colour. -->
             <h3 class="font-serif text-2xl font-normal leading-[1.1] text-foreground md:text-name">{{ project.title }}</h3>
             <p class="mt-1 max-w-[52ch] text-card leading-[1.55] text-fg-soft">{{ project.outcome }}</p>
             <p class="pt-3 font-mono text-label-sm leading-[1.6] text-muted-foreground/80">{{ project.capabilities.join(' · ') }}</p>
@@ -59,7 +59,7 @@
                between the two: the panel already changes tone, which is edge enough. -->
           <div
             aria-hidden="true"
-            class="order-first overflow-hidden p-6 md:order-none md:h-full"
+            class="order-first overflow-hidden p-6 md:order-none md:h-full md:p-3"
             [class]="framed(project) ? 'aspect-[16/10] md:aspect-auto' : 'aspect-[16/10] bg-secondary md:aspect-auto'"
           >
             @switch (project.visual.kind) {
@@ -120,8 +120,8 @@
     region that was already visually continuous.
 
     Cards are `background` on a `secondary` band, separated by tone alone: lighter
-    than the band in light mode, darker in dark mode, and no shadow either way until
-    hover. Each card is a link to the recommendations list, so no callout is needed.
+    than the band in light mode, darker in dark mode, and no shadow either way, hover
+    included. Each card is a link to the recommendations list, so no callout is needed.
   -->
   <section class="bg-secondary text-foreground">
     <div class="mx-auto max-w-6xl px-6 py-16 lg:px-12 lg:py-20">
@@ -143,7 +143,7 @@
               target="_blank"
               rel="noopener noreferrer"
               [attr.aria-label]="item.name + ', recommendation on LinkedIn'"
-              class="card-link relative flex h-full bg-background p-7 focus-visible:ring-offset-secondary"
+              class="card-link relative flex h-full bg-background p-7 [--card-surface:var(--background)] focus-visible:ring-offset-secondary"
             >
               <figure class="relative flex h-full w-full flex-col gap-5">
                 <!--
