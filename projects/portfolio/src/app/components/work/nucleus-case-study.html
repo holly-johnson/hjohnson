@@ -46,7 +46,7 @@
             <span class="text-right text-foreground">Buffett &middot; Water for Food</span>
           </div>
           <div class="grid gap-4 bg-secondary p-4 md:grid-cols-2 md:p-6">
-            <img src="assets/work/nucleus-site-buffett-early-years-matter-framed.webp" alt="The Buffett Early Childhood Institute site in violet with its dandelion mark, under the University of Nebraska System utility bar, with a full-width hero and overlaid headline." class="block h-auto w-full" decoding="async" width="1536" height="895" />
+            <img src="assets/work/nucleus-site-buffett-framed.webp" alt="The Buffett Early Childhood Institute site in violet with its dandelion mark, under the University of Nebraska System utility bar, with a full-width hero and overlaid headline." class="block h-auto w-full" decoding="async" width="1536" height="895" />
             <img src="assets/work/nucleus-site-water-for-food-framed.webp" alt="The Daugherty Water for Food Global Institute site in teal with its water-drop mark, using the same utility bar, header, navigation and hero pattern." class="block h-auto w-full" decoding="async" width="1536" height="895" />
           </div>
           <figcaption class="border-t border-border bg-background px-4 py-3 font-mono text-label-lg leading-[1.6] text-muted-foreground">Each institute brought its own brand guidelines. Both sites share the NUcleus utility bar, header, navigation and hero pattern. The photography belongs to each institute.</figcaption>
@@ -377,7 +377,10 @@
                     loading="lazy"
                     decoding="async"
                   />
-                  <span class="mt-1 flex items-start justify-between gap-3 px-[3%] text-sm font-medium leading-snug text-foreground">
+                  <!-- The frame carries 64px of transparent shadow under the window (64/1536 of
+                       its width, 4.17%). A percentage margin resolves against that same width, so
+                       the label sits 8px under the window at every size. -->
+                  <span class="relative mt-[calc(8px-4.17%)] flex items-start justify-between gap-3 px-[3%] text-sm font-medium leading-snug text-foreground">
                     {{ site.name }}
                     <span aria-hidden="true" class="text-muted-foreground transition-colors group-hover:text-primary">↗</span>
                   </span>
@@ -427,17 +430,17 @@
             <p>NUcleus remains in use today.</p>
           </div>
 
-          <div class="space-y-4 border-l-2 border-primary bg-secondary p-6">
+          <div class="space-y-4 pt-4">
             <h3 class="font-serif text-xl font-normal text-foreground">Reflection</h3>
-            <div class="max-w-[68ch] space-y-4 text-base leading-[1.7] text-muted-foreground">
+            <div class="max-w-[68ch] space-y-4 text-lead leading-[1.65] text-muted-foreground">
               <p>Direct stewardship kept NUcleus coherent while it was growing, but it also concentrated review and system knowledge in one person.</p>
               <p>Given another pass, I would formalize contribution and review earlier. Shared ownership would let teams extend the system without depending on one steward while preserving the standards that made reuse valuable.</p>
               <p>The lasting lesson was not that every interface should look alike. A design system succeeds when it gives different teams enough structure to move independently without forcing each of them to rebuild the foundation.</p>
             </div>
           </div>
 
-          <!-- Pull Quote -->
-          <div class="pt-6">
+          <!-- Pull Quote, boxed like the Helios one -->
+          <div class="mt-12! border-l-2 border-primary bg-secondary p-6">
             <div class="space-y-8">
               <!--
                 Verbatim from the LinkedIn recommendation, full text supplied by Holly
